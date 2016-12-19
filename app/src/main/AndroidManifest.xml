@@ -18,7 +18,8 @@
         <activity android:name=".MenuEstimate" />
         <activity android:name=".EstimateG200" />
         <activity android:name=".MenuSetting" />
-        <activity android:name=".SettingPartsG200"></activity>
+        <activity android:name=".SettingPartsG200" />
+        <activity android:name=".AddPartG200"></activity>
     </application>
 
 </manifest>
