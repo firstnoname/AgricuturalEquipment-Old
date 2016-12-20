@@ -17,13 +17,6 @@ public class SettingPartsG200 extends AppCompatActivity {
 
         bindWidget();
 
-//        btnTest.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intentAddPart = new Intent(this, AddPartG200.class);
-//                startActivity(intentAddPart);
-//            }
-//        });
     }
 
     public void intentAddPartG200(View view){

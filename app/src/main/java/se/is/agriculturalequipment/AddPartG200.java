@@ -1,13 +1,51 @@
 package se.is.agriculturalequipment;
 
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
 
 public class AddPartG200 extends AppCompatActivity {
+
+
+    private TableG200 objTableG200;
+    private Button btnSavePartG200;
+    private EditText edtName, edtPrice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_part_g200);
+
+        //create & connect database.
+        createAndConnectDB();
+
+        //insert data.
+        //testInsert();
+
+        //Bind widget.
+        bindWidget();
     }
+
+    private void bindWidget() {
+        edtName = (EditText) findViewById(R.id.edtG200Name);
+        edtPrice = (EditText) findViewById(R.id.edtG200Price);
+    }
+
+    private void createAndConnectDB() {
+        objTableG200 = new TableG200(this);
+    }
+
+    private void testInsert() {
+        objTableG200.addNewPart("อะไหล่","200");
+    }
+
+    public void savePartG200(){
+        String part_g200_name = edtName.getText().toString();
+        String part_g200_price = edtPrice.getText().toString();
+
+        objTableG200.addNewPart(part_g200_name, part_g200_price);
+    }
+
 }
