@@ -3,6 +3,7 @@ package se.is.agriculturalequipment;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -26,11 +27,19 @@ public class AddPartG200 extends AppCompatActivity {
 
         //Bind widget.
         bindWidget();
+
+        btnSavePartG200.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                savePartG200();
+            }
+        });
     }
 
     private void bindWidget() {
         edtName = (EditText) findViewById(R.id.edtG200Name);
         edtPrice = (EditText) findViewById(R.id.edtG200Price);
+        btnSavePartG200 = (Button) findViewById(R.id.btnSaveG200);
     }
 
     private void createAndConnectDB() {

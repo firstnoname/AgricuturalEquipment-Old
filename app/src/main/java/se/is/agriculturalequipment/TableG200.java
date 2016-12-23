@@ -2,6 +2,7 @@ package se.is.agriculturalequipment;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 /**
@@ -29,5 +30,22 @@ public class TableG200 {
         objContentValues.put(COLUMN_PART_NAME, strName);
         objContentValues.put(COLUMN_PART_PRICE, strPrice);
         return writeSqLiteDatabase.insert(TABLE_G200,null,objContentValues);
+    }
+
+    public String[] readPartName(){
+        String[] strPartName = null;
+        Cursor objCursor = readSqLiteDatabase.query(TABLE_G200,
+                new String[]{COLUMN_G200_ID, COLUMN_PART_NAME},
+                null, null, null, null, null, null);
+        if(objCursor != null){
+            objCursor.moveToFirst();
+            strPartName = new String[objCursor.getCount()];
+            for (int i = 0; i < objCursor.getCount(); i++){
+                strPartName[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_PART_NAME));
+                objCursor.moveToNext();
+            }//end for.
+        }//end if.
+        objCursor.close();
+        return strPartName;
     }
 }

@@ -1,6 +1,7 @@
 package se.is.agriculturalequipment;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
