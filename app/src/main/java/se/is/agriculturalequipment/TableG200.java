@@ -48,4 +48,22 @@ public class TableG200 {
         objCursor.close();
         return strPartName;
     }
+
+    public String[] readPartPrice(){
+        String[] strPartPrice = null;
+        Cursor objCursor = readSqLiteDatabase.query(TABLE_G200,
+                new String[]{COLUMN_G200_ID, COLUMN_PART_PRICE},
+                null, null, null, null, null, null);
+        if(objCursor != null){
+            objCursor.moveToFirst();
+            strPartPrice = new String[objCursor.getCount()];
+            for(int i=0; i<objCursor.getCount();i++) {
+                strPartPrice[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_PART_PRICE));
+                objCursor.moveToNext();
+            }//end for.
+        }//end if.
+
+        objCursor.close();
+        return strPartPrice;
+    }
 }
