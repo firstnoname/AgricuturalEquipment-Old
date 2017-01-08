@@ -13,12 +13,16 @@ public class MenuSetting extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_setting);
 
-
     }
 
     public void intentSelectSettingG200(View view){
         Intent intentSettingG200 = new Intent(this, SettingPartsG200.class);
         startActivity(intentSettingG200);
+    }
+
+    public void intentSelectSettingGX160(View view) {
+        Intent intentSettingGX160 = new Intent(this, SettingPartGX160.class);
+        startActivity(intentSettingGX160);
     }
 
 }
