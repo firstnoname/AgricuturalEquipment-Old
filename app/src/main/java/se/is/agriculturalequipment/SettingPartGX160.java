@@ -12,8 +12,8 @@ public class SettingPartGX160 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_setting_part_gx160);
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_setting_part_gx160);
 
         bindWidget();
 
