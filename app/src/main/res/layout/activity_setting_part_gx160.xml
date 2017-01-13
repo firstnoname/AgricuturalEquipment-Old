@@ -2,10 +2,10 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_setting_parts_g200"
+    android:id="@+id/activity_setting_parts_gx160"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="se.is.agriculturalequipment.SettingPartsG200">
+    tools:context="se.is.agriculturalequipment.SettingPartGX160">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -67,7 +67,7 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
 
         <ListView
-            android:id="@+id/listViewG200"
+            android:id="@+id/listViewGX160"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"

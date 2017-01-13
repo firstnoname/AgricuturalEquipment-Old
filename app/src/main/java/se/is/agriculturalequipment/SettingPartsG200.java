@@ -37,6 +37,7 @@ public class SettingPartsG200 extends AppCompatActivity {
     public void intentAddPartG200(View view){
         Intent intentAddPart = new Intent(this, AddPartG200.class);
         startActivity(intentAddPart);
+        finish();
     }
 
     private void bindWidget() {

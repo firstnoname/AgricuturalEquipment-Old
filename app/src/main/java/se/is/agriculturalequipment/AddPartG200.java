@@ -34,6 +34,7 @@ public class AddPartG200 extends AppCompatActivity {
             public void onClick(View view) {
                 savePartG200();
                 intentSettingG200(view);
+                finish();
             }
         });
     }
@@ -53,9 +54,6 @@ public class AddPartG200 extends AppCompatActivity {
         String part_g200_price = edtPrice.getText().toString();
 
         objTableG200.addNewPart(part_g200_name, part_g200_price);
-
-
-
     }
 
     public void intentSettingG200(View view){
