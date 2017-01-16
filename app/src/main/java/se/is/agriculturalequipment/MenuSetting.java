@@ -25,4 +25,9 @@ public class MenuSetting extends AppCompatActivity {
         startActivity(intentSettingGX160);
     }
 
+    public void intentSelectSettingGX35(View view) {
+        Intent intentSettingGX35 = new Intent(this, SettingPartsGX35.class);
+        startActivity(intentSettingGX35);
+    }
+
 }

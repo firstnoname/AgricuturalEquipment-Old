@@ -13,13 +13,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
     }
 
     public void intentHistory(View view){
 
     }
-
 
     public void intentMenuEstimate(View view){
         Intent intentMenuEstimate = new Intent(this, MenuEstimate.class);
