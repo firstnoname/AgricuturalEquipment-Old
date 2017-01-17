@@ -13,8 +13,8 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "AgriculturalEquipment.db";
     private static final int DATABASE_VERSION = 1;
     private static final String CREATE_TABLE_G200 = "create table g200TABLE(_id integer primary key, partName TEXT, partPrice REAL);";
-    private static final String CREATE_TABLE_GX160 = "create table gx160TABLE (_id integer primary key, partName TEXT, partPrice REAL) ; ";
-
+    private static final String CREATE_TABLE_GX160 = "create table gx160TABLE(_id integer primary key, partName TEXT, partPrice REAL);";
+    private static final String CREATE_TABLE_GX35 = "create table gx35TABLE(_id integer primary key, partName TEXT, partPrice REAL);";
 
     public MyOpenHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -24,6 +24,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL(CREATE_TABLE_G200);
         sqLiteDatabase.execSQL(CREATE_TABLE_GX160);
+        sqLiteDatabase.execSQL(CREATE_TABLE_GX35);
     }
 
     @Override

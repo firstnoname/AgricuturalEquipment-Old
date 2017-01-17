@@ -22,7 +22,8 @@
         <activity android:name=".AddPartG200" />
         <activity android:name=".SettingPartGX160" />
         <activity android:name=".AddPartGX160" />
-        <activity android:name=".SettingPartsGX35"></activity>
+        <activity android:name=".SettingPartsGX35" />
+        <activity android:name=".AddPartGX35"></activity>
     </application>
 
 </manifest>
