@@ -6,43 +6,42 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 /**
- * Created by iFirst on 16/1/2560.
+ * Created by iFirst on 17/1/2560.
  */
 
-public class TableGX35 {
-
+public class TableT200 {
     private MyOpenHelper objMyOpenHelper;
     private SQLiteDatabase readSqLiteDatabase, writeSqLiteDatabase;
 
-    public static final String TABLE_GX35 = "gx35TABLE";
-    public static final String COLUMN_GX35_ID = "_id";
-    public static final String COLUMN_PART_NAME = "partNameGX35";
-    public static final String COLUMN_PART_PRICE = "partPriceGX35";
+    public static final String TABLE_T200 = "t200TABLE";
+    public static final String COLUMN_T200_ID = "_id";
+    public static final String COLUMN_PART_NAME_T200 = "partNameT200";
+    public static final String COLUMN_PART_PRICE_T200 = "partPriceT200";
 
-    public TableGX35(Context context) {
+    public TableT200(Context context) {
         objMyOpenHelper = new MyOpenHelper(context);
         writeSqLiteDatabase = objMyOpenHelper.getWritableDatabase();
         readSqLiteDatabase = objMyOpenHelper.getReadableDatabase();
     }//End of structure.
 
-    public long addNewPart(String strName, String strPrice) {
+    public long addNewPart(String part_t200_name, String part_t200_price) {
         ContentValues objContentValues = new ContentValues();
-        objContentValues.put(COLUMN_PART_NAME, strName);
-        objContentValues.put(COLUMN_PART_PRICE, strPrice);
+        objContentValues.put(COLUMN_PART_NAME_T200, part_t200_name);
+        objContentValues.put(COLUMN_PART_PRICE_T200, part_t200_price);
 
-        return writeSqLiteDatabase.insert(TABLE_GX35, null, objContentValues);
+        return writeSqLiteDatabase.insert(TABLE_T200, null, objContentValues);
     }
 
     public String[] readPartName(){
         String[] strPartName = null;
-        Cursor objCursor = readSqLiteDatabase.query(TABLE_GX35,
-                new String[]{COLUMN_GX35_ID, COLUMN_PART_NAME},
+        Cursor objCursor = readSqLiteDatabase.query(TABLE_T200,
+                new String[]{COLUMN_T200_ID, COLUMN_PART_NAME_T200},
                 null, null, null, null, null, null);
         if (objCursor != null) {
             objCursor.moveToFirst();
             strPartName = new String[objCursor.getCount()];
             for (int i = 0; i < objCursor.getCount(); i++) {
-                strPartName[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_PART_NAME));
+                strPartName[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_PART_NAME_T200));
                 objCursor.moveToNext();
             }//End for loop.
         }//ENd if.
@@ -53,17 +52,17 @@ public class TableGX35 {
 
     public String[] readPartPrice(){
         String[] strPartPrice = null;
-        Cursor objCursor = readSqLiteDatabase.query(TABLE_GX35,
-                new String[]{COLUMN_GX35_ID, COLUMN_PART_PRICE},
+        Cursor objCursor = readSqLiteDatabase.query(TABLE_T200,
+                new String[]{COLUMN_T200_ID, COLUMN_PART_PRICE_T200},
                 null, null, null, null, null, null);
         if (objCursor != null) {
             objCursor.moveToFirst();
             strPartPrice = new String[objCursor.getCount()];
             for (int i = 0; i < objCursor.getCount(); i++) {
-                strPartPrice[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_PART_PRICE));
+                strPartPrice[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_PART_PRICE_T200));
                 objCursor.moveToNext();
             }//End for loop.
-        }//End if.
+        }//ENd if.
 
         objCursor.close();
         return strPartPrice;

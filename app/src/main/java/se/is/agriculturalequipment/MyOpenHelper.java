@@ -12,9 +12,11 @@ public class MyOpenHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "AgriculturalEquipment.db";
     private static final int DATABASE_VERSION = 1;
-    private static final String CREATE_TABLE_G200 = "create table g200TABLE(_id integer primary key, partName TEXT, partPrice REAL);";
-    private static final String CREATE_TABLE_GX160 = "create table gx160TABLE(_id integer primary key, partName TEXT, partPrice REAL);";
-    private static final String CREATE_TABLE_GX35 = "create table gx35TABLE(_id integer primary key, partName TEXT, partPrice REAL);";
+    private static final String CREATE_TABLE_G200 = "create table g200TABLE(_id integer primary key, partNameG200 TEXT, partPriceG200 REAL);";
+    private static final String CREATE_TABLE_GX160 = "create table gx160TABLE(_id integer primary key, partNameGX160 TEXT, partPriceGX160 REAL);";
+    private static final String CREATE_TABLE_GX35 = "create table gx35TABLE(_id integer primary key, partNameGX35 TEXT, partPriceGX35 REAL);";
+    private static final String CREATE_TABLE_T200 = "create table t200TABLE(_id integer primary key, partNameT200 TEXT, partPriceT200 REAL);";
+    private static final String CREATE_TABLE_TM31 = "create table tm31TABLE(_id integer primary key, partNameTM31 TEXT, partPriceTM31 REAL);";
 
     public MyOpenHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -25,6 +27,8 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(CREATE_TABLE_G200);
         sqLiteDatabase.execSQL(CREATE_TABLE_GX160);
         sqLiteDatabase.execSQL(CREATE_TABLE_GX35);
+        sqLiteDatabase.execSQL(CREATE_TABLE_T200);
+        sqLiteDatabase.execSQL(CREATE_TABLE_TM31);
     }
 
     @Override

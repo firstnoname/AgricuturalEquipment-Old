@@ -10,7 +10,6 @@ import android.widget.EditText;
 
 public class AddPartG200 extends AppCompatActivity {
 
-
     private TableG200 objTableG200;
     private Button btnSavePartG200;
     private EditText edtName, edtPrice;

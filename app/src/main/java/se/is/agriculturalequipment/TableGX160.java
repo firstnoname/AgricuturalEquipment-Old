@@ -15,8 +15,8 @@ public class TableGX160 {
 
     public static final String TABLE_GX160 = "gx160TABLE";
     public static final String COLUMN_GX160_ID = "_id";
-    public static final String COLUMN_PART_NAME = "partName";
-    public static final String COLUMN_PART_PRICE = "partPrice";
+    public static final String COLUMN_PART_NAME = "partNameGX160";
+    public static final String COLUMN_PART_PRICE = "partPriceGX160";
 
     public TableGX160(Context context) {
         objMyOpenHelper = new MyOpenHelper(context);
