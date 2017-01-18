@@ -35,4 +35,9 @@ public class MenuSetting extends AppCompatActivity {
         startActivity(intentSettingT200);
     }
 
+    public void intentSelectSettingTM31(View view) {
+        Intent intentSettingTM31 = new Intent(this, SettingPartsTM31.class);
+        startActivity(intentSettingTM31);
+    }
+
 }

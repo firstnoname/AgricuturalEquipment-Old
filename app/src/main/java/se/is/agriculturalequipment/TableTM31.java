@@ -9,39 +9,39 @@ import android.database.sqlite.SQLiteDatabase;
  * Created by iFirst on 17/1/2560.
  */
 
-public class TableT200 {
+public class TableTM31 {
     private MyOpenHelper objMyOpenHelper;
     private SQLiteDatabase readSqLiteDatabase, writeSqLiteDatabase;
 
-    public static final String TABLE_T200 = "t200TABLE";
-    public static final String COLUMN_T200_ID = "_id";
-    public static final String COLUMN_PART_NAME_T200 = "partNameT200";
-    public static final String COLUMN_PART_PRICE_T200 = "partPriceT200";
+    public static final String TABLE_TM31 = "tm31TABLE";
+    public static final String COLUMN_TM31_ID = "_id";
+    public static final String COLUMN_PART_NAME_TM31 = "partNameTM31";
+    public static final String COLUMN_PART_PRICE_TM31 = "partPriceTM31";
 
-    public TableT200(Context context) {
+    public TableTM31(Context context) {
         objMyOpenHelper = new MyOpenHelper(context);
         writeSqLiteDatabase = objMyOpenHelper.getWritableDatabase();
         readSqLiteDatabase = objMyOpenHelper.getReadableDatabase();
     }//End of constructor.
 
-    public long addNewPart(String part_t200_name, String part_t200_price) {
+    public long addNewPart(String str_part_tm31_name, String str_part_tm31_price) {
         ContentValues objContentValues = new ContentValues();
-        objContentValues.put(COLUMN_PART_NAME_T200, part_t200_name);
-        objContentValues.put(COLUMN_PART_PRICE_T200, part_t200_price);
+        objContentValues.put(COLUMN_PART_NAME_TM31, str_part_tm31_name);
+        objContentValues.put(COLUMN_PART_PRICE_TM31, str_part_tm31_price);
 
-        return writeSqLiteDatabase.insert(TABLE_T200, null, objContentValues);
+        return writeSqLiteDatabase.insert(TABLE_TM31, null, objContentValues);
     }
 
     public String[] readPartName(){
         String[] strPartName = null;
-        Cursor objCursor = readSqLiteDatabase.query(TABLE_T200,
-                new String[]{COLUMN_T200_ID, COLUMN_PART_NAME_T200},
+        Cursor objCursor = readSqLiteDatabase.query(TABLE_TM31,
+                new String[]{COLUMN_TM31_ID, COLUMN_PART_NAME_TM31},
                 null, null, null, null, null, null);
         if (objCursor != null) {
             objCursor.moveToFirst();
             strPartName = new String[objCursor.getCount()];
             for (int i = 0; i < objCursor.getCount(); i++) {
-                strPartName[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_PART_NAME_T200));
+                strPartName[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_PART_NAME_TM31));
                 objCursor.moveToNext();
             }//End for loop.
         }//ENd if.
@@ -52,14 +52,14 @@ public class TableT200 {
 
     public String[] readPartPrice(){
         String[] strPartPrice = null;
-        Cursor objCursor = readSqLiteDatabase.query(TABLE_T200,
-                new String[]{COLUMN_T200_ID, COLUMN_PART_PRICE_T200},
+        Cursor objCursor = readSqLiteDatabase.query(TABLE_TM31,
+                new String[]{COLUMN_TM31_ID, COLUMN_PART_PRICE_TM31},
                 null, null, null, null, null, null);
         if (objCursor != null) {
             objCursor.moveToFirst();
             strPartPrice = new String[objCursor.getCount()];
             for (int i = 0; i < objCursor.getCount(); i++) {
-                strPartPrice[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_PART_PRICE_T200));
+                strPartPrice[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_PART_PRICE_TM31));
                 objCursor.moveToNext();
             }//End for loop.
         }//ENd if.
