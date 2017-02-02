@@ -31,7 +31,8 @@
         <activity android:name=".EstimateGX160" />
         <activity android:name=".EstimateGX35" />
         <activity android:name=".EstimateT200" />
-        <activity android:name=".EstimateTM31"></activity>
+        <activity android:name=".EstimateTM31" />
+        <activity android:name=".SubmitEstimateG200"></activity>
     </application>
 
 </manifest>
