@@ -73,7 +73,7 @@ public class EstimateG200 extends AppCompatActivity {
 
     public void intentSubmitEstimateG200(View view){
         //Get value from radio button.
-
+        
 
         Intent intentSubmitEstimateG200 = new Intent(this, SubmitEstimateG200.class);
         startActivity(intentSubmitEstimateG200);
