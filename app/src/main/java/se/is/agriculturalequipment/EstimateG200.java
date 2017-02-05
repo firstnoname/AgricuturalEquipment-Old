@@ -4,19 +4,26 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 public class EstimateG200 extends AppCompatActivity {
 
     private RadioGroup radioGroup1, radioGroup2,radioGroup3,radioGroup4,radioGroup5,radioGroup6,
             radioGroup7,radioGroup8,radioGroup9,radioGroup10, radioGroup11;
+
     private RadioButton rdgEngineTrue, rdgEngineFalse, radioBtn1_1, radioBtn1_2, radioBtn2_1,
             radioBtn2_2, radioBtn3_1, radioBtn3_2, radioBtn4_1, radioBtn4_2, radioBtn4_3,
             radioBtn4_4, radioBtn5_1, radioBtn5_2, radioBtn6_1, radioBtn6_2, radioBtn7_1,
             radioBtn7_2, radioBtn8_1, radioBtn8_2, radioBtn9_1, radioBtn9_2, radioBtn10_1,
             radioBtn10_2,radioBtn10_3, radioBtn11_1, radioBtn11_2;
+
+    private RadioButton rdbChoice1;
+
+    //linearNavi for Show/Hide the button.
     private LinearLayout linearNavi;
 
     @Override
@@ -73,7 +80,9 @@ public class EstimateG200 extends AppCompatActivity {
 
     public void intentSubmitEstimateG200(View view){
         //Get value from radio button.
-        
+        int selectedID = radioGroup1.getCheckedRadioButtonId();
+        rdbChoice1 = (RadioButton) findViewById(selectedID);
+        Toast.makeText(EstimateG200.this,rdbChoice1.getText(),Toast.LENGTH_SHORT).show();
 
         Intent intentSubmitEstimateG200 = new Intent(this, SubmitEstimateG200.class);
         startActivity(intentSubmitEstimateG200);
