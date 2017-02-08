@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class EstimateG200 extends AppCompatActivity {
 
-    private RadioGroup radioGroup1, radioGroup2,radioGroup3,radioGroup4,radioGroup5,radioGroup6,
+    private RadioGroup radioCheckEngine, radioGroup1, radioGroup2,radioGroup3,radioGroup4,radioGroup5,radioGroup6,
             radioGroup7,radioGroup8,radioGroup9,radioGroup10, radioGroup11;
 
     private RadioButton rdgEngineTrue, rdgEngineFalse, radioBtn1_1, radioBtn1_2, radioBtn2_1,
@@ -21,10 +21,19 @@ public class EstimateG200 extends AppCompatActivity {
             radioBtn7_2, radioBtn8_1, radioBtn8_2, radioBtn9_1, radioBtn9_2, radioBtn10_1,
             radioBtn10_2,radioBtn10_3, radioBtn11_1, radioBtn11_2;
 
-    private RadioButton rdbChoice1;
+    private RadioButton rdbChkEngine, rdbChkBodyColor, rdbChkFuelTankCap, rdbChkOilFilter,
+            rdbChkStarter, rdbChkMuffler, rdbChkSparkPlug, rdbChkCaburetor, rdbChkCoilCDI,
+            rdbChkBallValueSwitchOil, rdbChkAirFilter, rdbChkSwitchOnOff;
 
-    //linearNavi for Show/Hide the button.
+    //linearNavi for Show or Hide the button.
     private LinearLayout linearNavi;
+
+    int selectedEngine, selectedBodyColor, selectedFuelTankCap, selectedOilFilter, selectedStarter,
+            selectedMuffler, selectedSparkPlug, selectedCaburetor, selectedCoilCDI, selectedBallValueSwitchOil,
+            selectedAirFilter, selectedSwitchOnOff;
+
+    int idxBodyColor, idxFuelTankCap, idxOilFilter, idxStarter, idxMuffler, idxSparkPlug, idxCaburetor,
+        idxCoilCDI, idxBallValueSwitchOil, idxAirFilter, idxSwitchOnOff;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,10 +88,74 @@ public class EstimateG200 extends AppCompatActivity {
     }
 
     public void intentSubmitEstimateG200(View view){
-        //Get value from radio button.
-        int selectedID = radioGroup1.getCheckedRadioButtonId();
-        rdbChoice1 = (RadioButton) findViewById(selectedID);
-        Toast.makeText(EstimateG200.this,rdbChoice1.getText(),Toast.LENGTH_SHORT).show();
+        /*Get value from radio button.*/
+        selectedEngine = radioCheckEngine.getCheckedRadioButtonId();
+        rdbChkEngine = (RadioButton) findViewById(selectedEngine);
+//        Toast.makeText(EstimateG200.this,rdbChkEngine.getText(),Toast.LENGTH_SHORT).show();
+        int idx = radioCheckEngine.indexOfChild(rdbChkEngine);
+        String index = String.valueOf(idx);
+        Toast.makeText(EstimateG200.this,index,Toast.LENGTH_SHORT).show();
+
+        /*Check engine can start or not? if 0 = Started*/
+        if (idx == 0) {
+            /*No1 = สีตัวเครื่องโดยรวม*/
+            selectedBodyColor = radioGroup1.getCheckedRadioButtonId();
+            rdbChkBodyColor = (RadioButton) findViewById(selectedBodyColor);
+            idxBodyColor = radioGroup1.indexOfChild(rdbChkBodyColor);
+
+            /*No2 = ฝาถังน้ำมันเบยซิน*/
+            selectedFuelTankCap = radioGroup2.getCheckedRadioButtonId();
+            rdbChkFuelTankCap = (RadioButton) findViewById(selectedFuelTankCap);
+            idxFuelTankCap = radioGroup2.indexOfChild(rdbChkFuelTankCap);
+
+            /*No3 = ฝาถังน้ำมันเครื่อง*/
+            selectedOilFilter = radioGroup3.getCheckedRadioButtonId();
+            rdbChkOilFilter = (RadioButton) findViewById(selectedOilFilter);
+            idxOilFilter = radioGroup3.indexOfChild(rdbChkOilFilter);
+
+            /*No4 = จานกระตุก*/
+            selectedStarter = radioGroup4.getCheckedRadioButtonId();
+            rdbChkStarter = (RadioButton) findViewById(selectedStarter);
+            idxStarter = radioGroup4.indexOfChild(rdbChkStarter);
+
+            /*No5 = ท่อไอเสีย*/
+            selectedMuffler = radioGroup5.getCheckedRadioButtonId();
+            rdbChkMuffler = (RadioButton) findViewById(selectedMuffler);
+            idxMuffler = radioGroup5.indexOfChild(rdbChkMuffler);
+
+            /*No6 = ปลั๊กหัวเทียน*/
+            selectedSparkPlug = radioGroup6.getCheckedRadioButtonId();
+            rdbChkSparkPlug = (RadioButton) findViewById(selectedSparkPlug);
+            idxSparkPlug = radioGroup6.indexOfChild(rdbChkSparkPlug);
+
+            /*No7 = คาร์บูเรเตอร์*/
+            selectedCaburetor = radioGroup7.getCheckedRadioButtonId();
+            rdbChkCaburetor = (RadioButton) findViewById(selectedCaburetor);
+            idxCaburetor = radioGroup7.indexOfChild(rdbChkCaburetor);
+
+            /*No8 = CDI*/
+            selectedCoilCDI = radioGroup8.getCheckedRadioButtonId();
+            rdbChkCoilCDI = (RadioButton) findViewById(selectedCoilCDI);
+            idxCoilCDI = radioGroup8.indexOfChild(rdbChkCoilCDI);
+
+            /*No9 = ก๊อกน้ำมัน*/
+            selectedBallValueSwitchOil = radioGroup9.getCheckedRadioButtonId();
+            rdbChkBallValueSwitchOil = (RadioButton) findViewById(selectedBallValueSwitchOil);
+            idxBallValueSwitchOil = radioGroup9.indexOfChild(rdbChkBallValueSwitchOil);
+
+            /*No10 = หม้อกรองอากาศ*/
+            selectedAirFilter = radioGroup10.getCheckedRadioButtonId();
+            rdbChkAirFilter = (RadioButton) findViewById(selectedAirFilter);
+            idxAirFilter = radioGroup10.indexOfChild(rdbChkBallValueSwitchOil);
+
+            /*No11 = สวิตท์เปิด ปิด*/
+            selectedSwitchOnOff = radioGroup11.getCheckedRadioButtonId();
+            rdbChkSwitchOnOff = (RadioButton) findViewById(selectedSwitchOnOff);
+            idxSwitchOnOff = radioGroup11.indexOfChild(rdbChkSwitchOnOff);
+
+        }else{
+
+        }
 
         Intent intentSubmitEstimateG200 = new Intent(this, SubmitEstimateG200.class);
         startActivity(intentSubmitEstimateG200);
@@ -148,6 +221,7 @@ public class EstimateG200 extends AppCompatActivity {
 
         linearNavi = (LinearLayout) findViewById(R.id.layoutNavigation);
 
+        radioCheckEngine = (RadioGroup) findViewById(R.id.checkEngine);
         radioGroup1 = (RadioGroup) findViewById(R.id.no1);
         radioGroup2 = (RadioGroup) findViewById(R.id.no2);
         radioGroup3 = (RadioGroup) findViewById(R.id.no3);
