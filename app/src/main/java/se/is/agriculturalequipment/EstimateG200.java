@@ -22,17 +22,17 @@ public class EstimateG200 extends AppCompatActivity {
             radioBtn10_2,radioBtn10_3, radioBtn11_1, radioBtn11_2;
 
     private RadioButton rdbChkEngine, rdbChkBodyColor, rdbChkFuelTankCap, rdbChkOilFilter,
-            rdbChkStarter, rdbChkMuffler, rdbChkSparkPlug, rdbChkCaburetor, rdbChkCoilCDI,
+            rdbChkStarter, rdbChkMuffler, rdbChkSparkPlug, rdbChkCarburetor, rdbChkCoilCDI,
             rdbChkBallValueSwitchOil, rdbChkAirFilter, rdbChkSwitchOnOff;
 
     //linearNavi for Show or Hide the button.
     private LinearLayout linearNavi;
 
     int selectedEngine, selectedBodyColor, selectedFuelTankCap, selectedOilFilter, selectedStarter,
-            selectedMuffler, selectedSparkPlug, selectedCaburetor, selectedCoilCDI, selectedBallValueSwitchOil,
+            selectedMuffler, selectedSparkPlug, selectedCarburetor, selectedCoilCDI, selectedBallValueSwitchOil,
             selectedAirFilter, selectedSwitchOnOff;
 
-    int idxBodyColor, idxFuelTankCap, idxOilFilter, idxStarter, idxMuffler, idxSparkPlug, idxCaburetor,
+    int idxBodyColor, idxFuelTankCap, idxOilFilter, idxStarter, idxMuffler, idxSparkPlug, idxCarburetor,
         idxCoilCDI, idxBallValueSwitchOil, idxAirFilter, idxSwitchOnOff;
 
     @Override
@@ -91,13 +91,13 @@ public class EstimateG200 extends AppCompatActivity {
         /*Get value from radio button.*/
         selectedEngine = radioCheckEngine.getCheckedRadioButtonId();
         rdbChkEngine = (RadioButton) findViewById(selectedEngine);
+        int idxCheckEngine = radioCheckEngine.indexOfChild(rdbChkEngine);
 //        Toast.makeText(EstimateG200.this,rdbChkEngine.getText(),Toast.LENGTH_SHORT).show();
-        int idx = radioCheckEngine.indexOfChild(rdbChkEngine);
-        String index = String.valueOf(idx);
-        Toast.makeText(EstimateG200.this,index,Toast.LENGTH_SHORT).show();
+//        String index = String.valueOf(idx);
+//        Toast.makeText(EstimateG200.this,index,Toast.LENGTH_SHORT).show();
 
         /*Check engine can start or not? if 0 = Started*/
-        if (idx == 0) {
+        if (idxCheckEngine == 0) {
             /*No1 = สีตัวเครื่องโดยรวม*/
             selectedBodyColor = radioGroup1.getCheckedRadioButtonId();
             rdbChkBodyColor = (RadioButton) findViewById(selectedBodyColor);
@@ -129,9 +129,9 @@ public class EstimateG200 extends AppCompatActivity {
             idxSparkPlug = radioGroup6.indexOfChild(rdbChkSparkPlug);
 
             /*No7 = คาร์บูเรเตอร์*/
-            selectedCaburetor = radioGroup7.getCheckedRadioButtonId();
-            rdbChkCaburetor = (RadioButton) findViewById(selectedCaburetor);
-            idxCaburetor = radioGroup7.indexOfChild(rdbChkCaburetor);
+            selectedCarburetor = radioGroup7.getCheckedRadioButtonId();
+            rdbChkCarburetor = (RadioButton) findViewById(selectedCarburetor);
+            idxCarburetor = radioGroup7.indexOfChild(rdbChkCarburetor);
 
             /*No8 = CDI*/
             selectedCoilCDI = radioGroup8.getCheckedRadioButtonId();
@@ -153,12 +153,28 @@ public class EstimateG200 extends AppCompatActivity {
             rdbChkSwitchOnOff = (RadioButton) findViewById(selectedSwitchOnOff);
             idxSwitchOnOff = radioGroup11.indexOfChild(rdbChkSwitchOnOff);
 
+            /*Intent and send data to another activity.*/
+            Intent intentSubmitEstimateG200 = new Intent(this, SubmitEstimateG200.class);
+
+            intentSubmitEstimateG200.putExtra("Engine", idxCheckEngine);
+            intentSubmitEstimateG200.putExtra("BodyColor", idxBodyColor);
+            intentSubmitEstimateG200.putExtra("FuelTankCap", idxFuelTankCap);
+            intentSubmitEstimateG200.putExtra("OilFilter", idxOilFilter);
+            intentSubmitEstimateG200.putExtra("Starter", idxStarter);
+            intentSubmitEstimateG200.putExtra("Muffler", idxMuffler);
+            intentSubmitEstimateG200.putExtra("SparkPlug", idxSparkPlug);
+            intentSubmitEstimateG200.putExtra("Carburetor", idxCarburetor);
+            intentSubmitEstimateG200.putExtra("CoilCDI", idxCoilCDI);
+            intentSubmitEstimateG200.putExtra("BallValueSwitchOil", idxBallValueSwitchOil);
+            intentSubmitEstimateG200.putExtra("AirFilter", idxAirFilter);
+            intentSubmitEstimateG200.putExtra("SwitchOnOff", idxSwitchOnOff);
+
+            startActivity(intentSubmitEstimateG200);
         }else{
 
         }
 
-        Intent intentSubmitEstimateG200 = new Intent(this, SubmitEstimateG200.class);
-        startActivity(intentSubmitEstimateG200);
+
     }
 
     private void setDefaultSelect() {
