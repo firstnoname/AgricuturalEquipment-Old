@@ -8,12 +8,12 @@
     tools:context="se.is.agriculturalequipment.SettingPartsG200">
 
     <android.support.constraint.ConstraintLayout
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:id="@+id/constraintLayout2"
-        android:layout_height="146dp">
+        android:layout_height="0dp">
 
         <android.support.v7.widget.CardView
             android:layout_width="0dp"
@@ -68,8 +68,8 @@
 
         <ListView
             android:id="@+id/listViewG200"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"

@@ -151,40 +151,40 @@ public class EstimateG200 extends AppCompatActivity {
             idxSwitchOnOff = radioGroup11.indexOfChild(rdbChkSwitchOnOff);
 
         }else{
-            /*No1 = สีตัวเครื่องโดยรวม*//*
+            /*No1 = สีตัวเครื่องโดยรวม*/
             selectedBodyColor = radioGroup1.getCheckedRadioButtonId();
             rdbChkBodyColor = (RadioButton) findViewById(selectedBodyColor);
             idxBodyColor = radioGroup1.indexOfChild(rdbChkBodyColor);
 
-            *//*No2 = ฝาถังน้ำมันเบยซิน*//*
+            /*No2 = ฝาถังน้ำมันเบยซิน*/
             selectedFuelTankCap = radioGroup2.getCheckedRadioButtonId();
             rdbChkFuelTankCap = (RadioButton) findViewById(selectedFuelTankCap);
             idxFuelTankCap = radioGroup2.indexOfChild(rdbChkFuelTankCap);
 
-            *//*No3 = ฝาถังน้ำมันเครื่อง*//*
+            /*No3 = ฝาถังน้ำมันเครื่อง*/
             selectedOilFilter = radioGroup3.getCheckedRadioButtonId();
             rdbChkOilFilter = (RadioButton) findViewById(selectedOilFilter);
             idxOilFilter = radioGroup3.indexOfChild(rdbChkOilFilter);
 
-            *//*No5 = ท่อไอเสีย*//*
+            /*No5 = ท่อไอเสีย*/
             selectedMuffler = radioGroup5.getCheckedRadioButtonId();
             rdbChkMuffler = (RadioButton) findViewById(selectedMuffler);
             idxMuffler = radioGroup5.indexOfChild(rdbChkMuffler);
 
-            *//*No6 = ปลั๊กหัวเทียน*//*
+           /*No6 = ปลั๊กหัวเทียน*/
             selectedSparkPlug = radioGroup6.getCheckedRadioButtonId();
             rdbChkSparkPlug = (RadioButton) findViewById(selectedSparkPlug);
             idxSparkPlug = radioGroup6.indexOfChild(rdbChkSparkPlug);
 
-            *//*No10 = หม้อกรองอากาศ*//*
+            /*No10 = หม้อกรองอากาศ*/
             selectedAirFilter = radioGroup10.getCheckedRadioButtonId();
             rdbChkAirFilter = (RadioButton) findViewById(selectedAirFilter);
             idxAirFilter = radioGroup10.indexOfChild(rdbChkBallValueSwitchOil);
 
-            *//*No11 = สวิตท์เปิด ปิด*//*
+            /*No11 = สวิตท์เปิด ปิด*/
             selectedSwitchOnOff = radioGroup11.getCheckedRadioButtonId();
             rdbChkSwitchOnOff = (RadioButton) findViewById(selectedSwitchOnOff);
-            idxSwitchOnOff = radioGroup11.indexOfChild(rdbChkSwitchOnOff);*/
+            idxSwitchOnOff = radioGroup11.indexOfChild(rdbChkSwitchOnOff);
         }
 
         /*Intent and send data to another activity.*/
