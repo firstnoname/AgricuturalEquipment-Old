@@ -2,7 +2,10 @@ package se.is.agriculturalequipment;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ListView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import static android.R.attr.value;
 
@@ -13,9 +16,15 @@ public class SubmitEstimateG200 extends AppCompatActivity {
 
     private String strEngine, strBodyColor, strFuelTankCap, strOilFilter, strStarter, strMuffler,
             strSparkPlug,strCarburetor, strCoilCDI, strBallValueSwitchOil, strAirFilter,
-            strSwithchOnOff;
+            strSwitchOnOff;
 
-    private Double repairBodyColor = 0.0,
+    private String[] textNameArray, strRepairPriceArray;
+    //private Double[] repairPriceArray;
+
+    private ListView listViewEstimatedG200;
+
+    private Double repairEngine = 0.0,
+            repairBodyColor = 0.0,
             repairFuelTankCap = 0.0,
             repairOilFilter = 0.0,
             repairStarter = 0.0,
@@ -31,6 +40,7 @@ public class SubmitEstimateG200 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_submit_estimate_g200);
 
+        //
         Bundle bundle = getIntent().getExtras();
         getEngine = bundle.getInt("Engine");
         getBodyColor = bundle.getInt("BodyColor");
@@ -61,7 +71,7 @@ public class SubmitEstimateG200 extends AppCompatActivity {
                 String.valueOf(getAirFilter),
                 String.valueOf(getSwitchOnOff)};
 
-        String[] Text = {
+        textNameArray = new String[] {
                 strEngine,
                 strBodyColor,
                 strFuelTankCap,
@@ -73,8 +83,26 @@ public class SubmitEstimateG200 extends AppCompatActivity {
                 strCoilCDI,
                 strBallValueSwitchOil,
                 strAirFilter,
-                strSwithchOnOff
+                strSwitchOnOff
         };
+
+//        repairPriceArray = new Double[]{
+//                repairBodyColor,
+//                repairFuelTankCap,
+//                repairOilFilter,
+//                repairStarter,
+//                repairMuffler,
+//                repairSparkPlug,
+//                repairCarburetor,
+//                repairCoilCDI,
+//                repairBallValueSwitchOil,
+//                repairAirFilter,
+//                repairSwitchOnOff
+//        };
+
+
+        bindWidget();
+        createListView();
 
 //        Toast.makeText(SubmitEstimateG200.this, "0 " + value[0] + " : " + strEngine, Toast.LENGTH_SHORT).show();
 //        Toast.makeText(SubmitEstimateG200.this, "1 " + value[1] + " : " + strBodyColor, Toast.LENGTH_SHORT).show();
@@ -91,6 +119,34 @@ public class SubmitEstimateG200 extends AppCompatActivity {
 
     }//End of constructor.
 
+    private void bindWidget() {
+        listViewEstimatedG200 = (ListView) findViewById(R.id.listViewEstimatedG200);
+    }
+
+    private void createListView() {
+        strRepairPriceArray = new String[]{
+                repairEngine.toString(),
+                repairBodyColor.toString(),
+                repairFuelTankCap.toString(),
+                repairOilFilter.toString(),
+                repairStarter.toString(),
+                repairMuffler.toString(),
+                repairSparkPlug.toString(),
+                repairCarburetor.toString(),
+                repairCoilCDI.toString(),
+                repairBallValueSwitchOil.toString(),
+                repairAirFilter.toString(),
+                repairSwitchOnOff.toString()
+        };
+
+        /*TableG200 objTableG200 = new TableG200(this);
+        String[] strName = objTableG200.readPartName();
+        String[] strPrice = objTableG200.readPartPrice();*/
+
+        AdapterEstimated objAdapterEstimated = new AdapterEstimated(SubmitEstimateG200.this, textNameArray, strRepairPriceArray);
+        listViewEstimatedG200.setAdapter(objAdapterEstimated);
+    }
+
     private void setRepair() {
         //Compare int to text.
         if(getEngine==0){
@@ -103,21 +159,21 @@ public class SubmitEstimateG200 extends AppCompatActivity {
             strBodyColor = "ไม่ทำสีใหม่";
         } else {
             strBodyColor = "ทำสีใหม่";
-            repairBodyColor = 0.0;
+            repairBodyColor = 120.0;
         }
 
         if (getFuelTankCap != 1) {
             strFuelTankCap = "ไม่เปลี่ยนฝาถังน้ำมันเบนซิล";
         }else{
             strFuelTankCap = "เปลี่ยนฝาถังน้ำมันเบนซิล";
-            repairFuelTankCap = 0.0;
+            repairFuelTankCap = 50.0;
         }
 
         if (getOilFilter != 1) {
             strOilFilter = "ไม่เปลี่ยนฝาถังน้ำมันเครื่อง";
         }else{
             strOilFilter = "เปลี่ยนฝาถังน้ำมันเครื่อง";
-            repairOilFilter = 0.0;
+            repairOilFilter = 50.0;
         }
 
         if (getStarter != 1) {
@@ -126,50 +182,50 @@ public class SubmitEstimateG200 extends AppCompatActivity {
                     strStarter = "ไม่เปลี่ยนชุดจานกระตุก";
                 }else{
                     strStarter = "เปลี่ยนเฉพาะเขี้ยวสตาร์ท";
-                    repairStarter = 0.0;
+                    repairStarter = 80.0;
                 }
             }else{
                 strStarter = "เปลี่ยนเฉพาะเชือกกระตุก";
-                repairStarter = 0.0;
+                repairStarter = 30.0;
             }
         }else {
             strStarter = "เปลี่ยนจานกระตุกทั้งชุด";
-            repairStarter = 0.0;
+            repairStarter = 450.0;
         }
 
         if (getMuffler != 1) {
             strMuffler = "ไม่เปลี่ยนท่อไอเสีย";
         } else {
             strMuffler = "เปลี่ยนท่อไอเสีย";
-            repairMuffler = 0.0;
+            repairMuffler = 160.0;
         }
 
         if (getSparkPlug != 1) {
             strSparkPlug = "ไม่เปลี่ยนปลั๊กหัวเทียน";
         } else {
             strSparkPlug = "เปลี่ยนปลั๊กหัวเทียน";
-            repairSparkPlug = 0.0;
+            repairSparkPlug = 50.0;
         }
 
         if (getCarburetor != 1) {
             strCarburetor = "ไม่เปลี่ยนคาร์บูเรเตอร์";
         } else {
             strCarburetor = "เปลี่ยนคาร์บูเรเตอร์";
-            repairCarburetor = 0.0;
+            repairCarburetor = 450.0;
         }
 
         if (getCoilCDI != 1) {
             strCoilCDI = "ไม่เปลี่ยนคอยล์";
         } else {
             strCoilCDI = "เปลี่ยนคอยล์";
-            repairCoilCDI = 0.0;
+            repairCoilCDI = 580.0;
         }
 
         if (getBallValueSwitchOil != 1) {
             strBallValueSwitchOil = "ไม่เปลี่ยนก๊อกน้ำมัน";
         } else {
             strBallValueSwitchOil = "เปลี่ยนก๊อกน้ำมัน";
-            repairBallValueSwitchOil = 0.0;
+            repairBallValueSwitchOil = 150.0;
         }
 
         if (getAirFilter != 1) {
@@ -177,18 +233,18 @@ public class SubmitEstimateG200 extends AppCompatActivity {
                 strAirFilter = "ไม่ต้องเปลี่ยนหม้อกรองอากาศ";
             } else {
                 strAirFilter = "เปลี่ยนหม้อกรองอากาศทั้งลูก";
-                repairAirFilter = 0.0;
+                repairAirFilter = 250.0;
             }
         } else {
             strAirFilter = "เปลี่ยนเฉพาะไส้กรองอากาศ";
-            repairAirFilter = 0.0;
+            repairAirFilter = 100.0;
         }
 
         if (getSwitchOnOff != 1) {
-            strSwithchOnOff = "ไม่เปลี่ยนสวิตท์เปิด-ปิด";
+            strSwitchOnOff = "ไม่เปลี่ยนสวิตท์เปิด-ปิด";
         } else {
-            strSwithchOnOff = "เปลี่ยนสวิตท์เปิด-ปิด";
-            repairSwitchOnOff = 0.0;
+            strSwitchOnOff = "เปลี่ยนสวิตท์เปิด-ปิด";
+            repairSwitchOnOff = 120.0;
         }
     }//End of setRepair.
 }
