@@ -100,7 +100,6 @@ public class SubmitEstimateG200 extends AppCompatActivity {
 //                repairSwitchOnOff
 //        };
 
-
         bindWidget();
         createListView();
 
@@ -138,10 +137,6 @@ public class SubmitEstimateG200 extends AppCompatActivity {
                 repairAirFilter.toString(),
                 repairSwitchOnOff.toString()
         };
-
-        /*TableG200 objTableG200 = new TableG200(this);
-        String[] strName = objTableG200.readPartName();
-        String[] strPrice = objTableG200.readPartPrice();*/
 
         AdapterEstimated objAdapterEstimated = new AdapterEstimated(SubmitEstimateG200.this, textNameArray, strRepairPriceArray);
         listViewEstimatedG200.setAdapter(objAdapterEstimated);

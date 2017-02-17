@@ -23,7 +23,9 @@ public class TableG200 {
         objMyOpenHelper = new MyOpenHelper(context);
         writeSqLiteDatabase = objMyOpenHelper.getWritableDatabase();
         readSqLiteDatabase = objMyOpenHelper.getReadableDatabase();
+
     } //End construct.
+
 
     public long addNewPart(String strName,String strPrice){
         ContentValues objContentValues = new ContentValues();

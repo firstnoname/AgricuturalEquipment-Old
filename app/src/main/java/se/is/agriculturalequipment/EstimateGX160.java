@@ -14,7 +14,7 @@ public class EstimateGX160 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edtimate_gx160);
+        setContentView(R.layout.activity_estimate_gx160);
 
         bindWidget();
 
