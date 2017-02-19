@@ -194,70 +194,116 @@ public class EstimateG200 extends AppCompatActivity {
 
         ArrayList<String> arrNameList = new ArrayList<String>();
 
+        //Get id and text from RadioButton.
         idSelectedEngine = rdgCheckEngine.getCheckedRadioButtonId();
         rdbSelectedEngine = (RadioButton) findViewById(idSelectedEngine);
-        //idxSelectedEngine = rdgCheckEngine.indexOfChild(rdbSelectedEngine);
+        idxSelectedEngine = rdgCheckEngine.indexOfChild(rdbSelectedEngine);
         strEngineSelected = rdbSelectedEngine.getText().toString();
-        //Toast.makeText(this, "This is : " + strEngineSelected, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "This is : " + idxSelectedEngine + ": Text is " + strEngineSelected, Toast.LENGTH_SHORT).show();
 
-        /*No1 = สีตัวเครื่องโดยรวม*/
-        idSelectedBodyColor = rdg1.getCheckedRadioButtonId();
-        rdbSelectedBodyColor = (RadioButton) findViewById(idSelectedBodyColor);
-        //idxSelectedBodyColor = rdg1.indexOfChild(rdbSelectedBodyColor);
-        arrNameList.add(rdbSelectedBodyColor.getText().toString());
+//        Check can start or not. 0 = The engine can starts, 1 = The engine can't starts.
+        if(idxSelectedEngine==0){
 
-        /*No2 = ฝาถังน้ำมันเบนซิน*/
-        idSelectedFuelTankCap = rdg2.getCheckedRadioButtonId();
-        rdbSelectedFuelTankCap = (RadioButton) findViewById(idSelectedFuelTankCap);
-        //idxSelectedFuelTankCap = rdg2.indexOfChild(rdbSelectedFuelTankCap);
-        arrNameList.add(rdbSelectedFuelTankCap.getText().toString());
+            /*No1 = สีตัวเครื่องโดยรวม*/
+            idSelectedBodyColor = rdg1.getCheckedRadioButtonId();
+            rdbSelectedBodyColor = (RadioButton) findViewById(idSelectedBodyColor);
+            //idxSelectedBodyColor = rdg1.indexOfChild(rdbSelectedBodyColor);
+            arrNameList.add(rdbSelectedBodyColor.getText().toString());
 
-        /*No3 = ฝาถังน้ำมันเครื่อง*/
-        idSelectedOilFilter = rdg3.getCheckedRadioButtonId();
-        rdbSelectedOilFilter = (RadioButton) findViewById(idSelectedOilFilter);
-        arrNameList.add(rdbSelectedOilFilter.getText().toString());
+            /*No2 = ฝาถังน้ำมันเบนซิน*/
+            idSelectedFuelTankCap = rdg2.getCheckedRadioButtonId();
+            rdbSelectedFuelTankCap = (RadioButton) findViewById(idSelectedFuelTankCap);
+            //idxSelectedFuelTankCap = rdg2.indexOfChild(rdbSelectedFuelTankCap);
+            arrNameList.add(rdbSelectedFuelTankCap.getText().toString());
 
-        /*No4 = จานกระตุก*/
-        idSelectedStarter = rdg4.getCheckedRadioButtonId();
-        rdbSelectedStarter = (RadioButton) findViewById(idSelectedStarter);
-        arrNameList.add(rdbSelectedStarter.getText().toString());
+            /*No3 = ฝาถังน้ำมันเครื่อง*/
+            idSelectedOilFilter = rdg3.getCheckedRadioButtonId();
+            rdbSelectedOilFilter = (RadioButton) findViewById(idSelectedOilFilter);
+            arrNameList.add(rdbSelectedOilFilter.getText().toString());
 
-        /*No5 = ท่อไอเสีย*/
-        idSelectedMuffler = rdg5.getCheckedRadioButtonId();
-        rdbSelectedMuffler = (RadioButton) findViewById(idSelectedMuffler);
-        arrNameList.add(rdbSelectedMuffler.getText().toString());
+            /*No4 = จานกระตุก*/
+            idSelectedStarter = rdg4.getCheckedRadioButtonId();
+            rdbSelectedStarter = (RadioButton) findViewById(idSelectedStarter);
+            arrNameList.add(rdbSelectedStarter.getText().toString());
 
-        /*No6 = ปลั๊กหัวเทียน*/
-        idSelectedSparkPlug = rdg6.getCheckedRadioButtonId();
-        rdbSelectedSparkPlug = (RadioButton) findViewById(idSelectedSparkPlug);
-        arrNameList.add(rdbSelectedSparkPlug.getText().toString());
+            /*No5 = ท่อไอเสีย*/
+            idSelectedMuffler = rdg5.getCheckedRadioButtonId();
+            rdbSelectedMuffler = (RadioButton) findViewById(idSelectedMuffler);
+            arrNameList.add(rdbSelectedMuffler.getText().toString());
 
-        /*No7 = คาร์บูเรเตอร์*/
-        idSelectedCarburetor = rdg7.getCheckedRadioButtonId();
-        rdbSelectedCarburetor = (RadioButton) findViewById(idSelectedCarburetor);
-        arrNameList.add(rdbSelectedCarburetor.getText().toString());
+            /*No6 = ปลั๊กหัวเทียน*/
+            idSelectedSparkPlug = rdg6.getCheckedRadioButtonId();
+            rdbSelectedSparkPlug = (RadioButton) findViewById(idSelectedSparkPlug);
+            arrNameList.add(rdbSelectedSparkPlug.getText().toString());
 
-        /*No8 = CDI*/
-        idSelectedCoilCDI = rdg8.getCheckedRadioButtonId();
-        rdbSelectedCoilCDI = (RadioButton) findViewById(idSelectedCoilCDI);
-        arrNameList.add(rdbSelectedCoilCDI.getText().toString());
+            /*No7 = คาร์บูเรเตอร์*/
+            idSelectedCarburetor = rdg7.getCheckedRadioButtonId();
+            rdbSelectedCarburetor = (RadioButton) findViewById(idSelectedCarburetor);
+            arrNameList.add(rdbSelectedCarburetor.getText().toString());
 
-        /*No9 = ก๊อกน้ำมัน*/
-        idSelectedBallValueSwitchOil = rdg9.getCheckedRadioButtonId();
-        rdbSelectedBallValueSwitchOil = (RadioButton) findViewById(idSelectedBallValueSwitchOil);
-        arrNameList.add(rdbSelectedBallValueSwitchOil.getText().toString());
+            /*No8 = CDI*/
+            idSelectedCoilCDI = rdg8.getCheckedRadioButtonId();
+            rdbSelectedCoilCDI = (RadioButton) findViewById(idSelectedCoilCDI);
+            arrNameList.add(rdbSelectedCoilCDI.getText().toString());
 
-        /*No10 = หม้อกรองอากาศ*/
-        idSelectedAirFilter = rdg10.getCheckedRadioButtonId();
-        rdbSelectedAirFilter = (RadioButton) findViewById(idSelectedAirFilter);
-        arrNameList.add(rdbSelectedAirFilter.getText().toString());
+            /*No9 = ก๊อกน้ำมัน*/
+            idSelectedBallValueSwitchOil = rdg9.getCheckedRadioButtonId();
+            rdbSelectedBallValueSwitchOil = (RadioButton) findViewById(idSelectedBallValueSwitchOil);
+            arrNameList.add(rdbSelectedBallValueSwitchOil.getText().toString());
 
-        /*No11 = สวิตท์เปิด ปิด*/
-        idSelectedSwitchOnOff = rdg11.getCheckedRadioButtonId();
-        rdbSelectedSwitchOnOff = (RadioButton) findViewById(idSelectedSwitchOnOff);
-        arrNameList.add(rdbSelectedSwitchOnOff.getText().toString());
+            /*No10 = หม้อกรองอากาศ*/
+            idSelectedAirFilter = rdg10.getCheckedRadioButtonId();
+            rdbSelectedAirFilter = (RadioButton) findViewById(idSelectedAirFilter);
+            arrNameList.add(rdbSelectedAirFilter.getText().toString());
 
-        Toast.makeText(this, "This is list name: " + arrNameList, Toast.LENGTH_SHORT).show();
+            /*No11 = สวิตท์เปิด ปิด*/
+            idSelectedSwitchOnOff = rdg11.getCheckedRadioButtonId();
+            rdbSelectedSwitchOnOff = (RadioButton) findViewById(idSelectedSwitchOnOff);
+            arrNameList.add(rdbSelectedSwitchOnOff.getText().toString());
+
+        }else{
+            /*No1 = สีตัวเครื่องโดยรวม*/
+            idSelectedBodyColor = rdg1.getCheckedRadioButtonId();
+            rdbSelectedBodyColor = (RadioButton) findViewById(idSelectedBodyColor);
+            //idxSelectedBodyColor = rdg1.indexOfChild(rdbSelectedBodyColor);
+            arrNameList.add(rdbSelectedBodyColor.getText().toString());
+
+            /*No2 = ฝาถังน้ำมันเบนซิน*/
+            idSelectedFuelTankCap = rdg2.getCheckedRadioButtonId();
+            rdbSelectedFuelTankCap = (RadioButton) findViewById(idSelectedFuelTankCap);
+            //idxSelectedFuelTankCap = rdg2.indexOfChild(rdbSelectedFuelTankCap);
+            arrNameList.add(rdbSelectedFuelTankCap.getText().toString());
+
+            /*No3 = ฝาถังน้ำมันเครื่อง*/
+            idSelectedOilFilter = rdg3.getCheckedRadioButtonId();
+            rdbSelectedOilFilter = (RadioButton) findViewById(idSelectedOilFilter);
+            arrNameList.add(rdbSelectedOilFilter.getText().toString());
+
+            /*No5 = ท่อไอเสีย*/
+            idSelectedMuffler = rdg5.getCheckedRadioButtonId();
+            rdbSelectedMuffler = (RadioButton) findViewById(idSelectedMuffler);
+            arrNameList.add(rdbSelectedMuffler.getText().toString());
+
+            /*No6 = ปลั๊กหัวเทียน*/
+            idSelectedSparkPlug = rdg6.getCheckedRadioButtonId();
+            rdbSelectedSparkPlug = (RadioButton) findViewById(idSelectedSparkPlug);
+            arrNameList.add(rdbSelectedSparkPlug.getText().toString());
+
+            /*No10 = หม้อกรองอากาศ*/
+            idSelectedAirFilter = rdg10.getCheckedRadioButtonId();
+            rdbSelectedAirFilter = (RadioButton) findViewById(idSelectedAirFilter);
+            arrNameList.add(rdbSelectedAirFilter.getText().toString());
+
+            /*No11 = สวิตท์เปิด ปิด*/
+            idSelectedSwitchOnOff = rdg11.getCheckedRadioButtonId();
+            rdbSelectedSwitchOnOff = (RadioButton) findViewById(idSelectedSwitchOnOff);
+            arrNameList.add(rdbSelectedSwitchOnOff.getText().toString());
+        }
+
+        Intent intentSubmitEstimateG200 = new Intent(this, SubmitEstimateG200.class);
+        intentSubmitEstimateG200.putStringArrayListExtra("arrListName",arrNameList);
+        startActivity(intentSubmitEstimateG200);
+
         /*String x="";
         *//*Get value from radio button.*//*
         selectedEngine = radioCheckEngine.getCheckedRadioButtonId();
