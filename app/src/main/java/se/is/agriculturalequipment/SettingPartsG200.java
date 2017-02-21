@@ -23,6 +23,7 @@ public class SettingPartsG200 extends AppCompatActivity {
 
 
         createAndConnectDB();
+
         addDefaultPart();
 
         //Crete listview.
@@ -34,19 +35,22 @@ public class SettingPartsG200 extends AppCompatActivity {
     }
 
     public void addDefaultPart() {
-        objTableG200.addNewPart("จานกระตุกชุด","450");
-        objTableG200.addNewPart("เขี้ยวสตาร์ท","80 ");
-        objTableG200.addNewPart("เชือกดึง","30");
-        objTableG200.addNewPart("ถังน้ำมัน","700");
-        objTableG200.addNewPart("หม้อกรองอากาศ","250");
-        objTableG200.addNewPart("ลูกสูบ","480");
-        objTableG200.addNewPart("คาร์บูเรเตอร์","450");
-        objTableG200.addNewPart("เสื้อสูบ","2200");
-        objTableG200.addNewPart("ก๊อกน้ำมัน","150");
-        objTableG200.addNewPart ("ท่อไอเสีย","160");
-        objTableG200.addNewPart("สวิตช์ปิดเปิด","120");
-        objTableG200.addNewPart("คอยล์","580");
         objTableG200.addNewPart("ทำสี","120");
+        objTableG200.addNewPart("ฝาถังน้ำมัน", "50");
+        objTableG200.addNewPart("ฝาถังน้ำมันเครื่อง", "50");
+        objTableG200.addNewPart("จานกระตุกชุด","450");
+        objTableG200.addNewPart("เชือกดึง","30");
+        objTableG200.addNewPart("เขี้ยวสตาร์ท","80 ");
+        objTableG200.addNewPart("ท่อไอเสีย","160");
+        objTableG200.addNewPart("ปลั๊กหัวเทีียน","30");
+        objTableG200.addNewPart("คาร์บูเรเตอร์","450");
+        objTableG200.addNewPart("คอยล์","580");
+        objTableG200.addNewPart("ก๊อกน้ำมัน","150");
+        objTableG200.addNewPart("หม้อกรองอากาศ","250");
+        objTableG200.addNewPart("สวิตช์ปิดเปิด","120");
+        objTableG200.addNewPart("ลูกสูบ","480");
+        objTableG200.addNewPart("เสื้อสูบ","2200");
+        objTableG200.addNewPart("ถังน้ำมัน","700");
     }
 
     private void createListView() {

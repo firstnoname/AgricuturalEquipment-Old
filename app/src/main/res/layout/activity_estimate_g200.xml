@@ -430,7 +430,7 @@
                     android:id="@+id/radioBtn10_1"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="เปลี่ยนเฉพาะไส้กรองอากาศ"
+                    android:text="เปลี่ยนหม้อกรองทั้งลูก"
                     android:checked="false">
                 </RadioButton>
 
@@ -438,17 +438,10 @@
                     android:id="@+id/radioBtn10_2"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="เปลี่ยนหม้อกรองทั้งลูก"
-                    android:checked="false">
-                </RadioButton>
-
-                <RadioButton
-                    android:id="@+id/radioBtn10_3"
-                    android:layout_width = "match_parent"
-                    android:layout_height="wrap_content"
                     android:text="ไม่เปลี่ยนหม้อกรอง"
                     android:checked="false">
                 </RadioButton>
+
             </RadioGroup>
 
             <!--                No 10              -->
