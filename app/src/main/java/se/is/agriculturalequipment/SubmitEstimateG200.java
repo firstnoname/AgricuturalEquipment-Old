@@ -1,7 +1,9 @@
 package se.is.agriculturalequipment;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -331,6 +333,14 @@ public class SubmitEstimateG200 extends AppCompatActivity {
         Toast.makeText(this, strPartPrice[10], Toast.LENGTH_SHORT).show();
         Toast.makeText(this, strPartPrice[11], Toast.LENGTH_SHORT).show();
         Toast.makeText(this, strPartPrice[12], Toast.LENGTH_SHORT).show();*/
+
+    }
+
+    public void intentSaveG200(View view){
+
+    }
+
+    public void intentBuyG200(View view){
 
     }
 
