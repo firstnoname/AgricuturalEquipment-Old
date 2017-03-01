@@ -69,9 +69,6 @@ public class SubmitEstimateG200 extends AppCompatActivity {
         //Create listview.
         createListView();
 
-
-
-
 //        repairPriceArray = new Double[]{
 //                repairBodyColor,
 //                repairFuelTankCap,

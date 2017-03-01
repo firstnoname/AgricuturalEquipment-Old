@@ -21,7 +21,6 @@ public class SettingPartsG200 extends AppCompatActivity {
 
         bindWidget();
 
-
         createAndConnectDB();
 
         addDefaultPart();
