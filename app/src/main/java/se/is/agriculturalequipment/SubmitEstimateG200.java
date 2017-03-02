@@ -13,6 +13,7 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 import java.util.Objects;
 
+import static android.R.attr.start;
 import static android.R.attr.value;
 
 public class SubmitEstimateG200 extends AppCompatActivity {
@@ -51,6 +52,7 @@ public class SubmitEstimateG200 extends AppCompatActivity {
     private Double dAmount = 0.0;
     private TextView txtAmount;
     private ListView listViewEstimatedG200;
+    private String[] strName, strPrice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,7 +124,7 @@ public class SubmitEstimateG200 extends AppCompatActivity {
             dSwitchOnOff = Double.parseDouble(priceSwitchOnOff);
 
             //Estimate price.
-            dAmount = dBodyColor + dFuelTankCap + dOilFilter + dStarter + dMuffler + dSparkPlug + dCarburetor + dCoilCDI + dBallValueSwitchOil + dAirFilter + dSwitchOnOff;
+            dAmount = 4400 - (dBodyColor + dFuelTankCap + dOilFilter + dStarter + dMuffler + dSparkPlug + dCarburetor + dCoilCDI + dBallValueSwitchOil + dAirFilter + dSwitchOnOff);
 
         }else {
             dBodyColor = Double.parseDouble(priceBodyColor);
@@ -134,7 +136,7 @@ public class SubmitEstimateG200 extends AppCompatActivity {
             dSwitchOnOff = Double.parseDouble(priceSwitchOnOff);
 
             //Estimate price.
-            dAmount = dBodyColor + dFuelTankCap + dOilFilter + dMuffler + dSparkPlug + dAirFilter + dSwitchOnOff;
+            dAmount = 2640-(dBodyColor + dFuelTankCap + dOilFilter + dMuffler + dSparkPlug + dAirFilter + dSwitchOnOff);
         }
 
     }
@@ -145,7 +147,7 @@ public class SubmitEstimateG200 extends AppCompatActivity {
             1.String part name.
             2.String part price.
         */
-        String[] strName, strPrice;
+
         ArrayList<String> strListName = (ArrayList<String>) getIntent().getExtras().getSerializable("arrListName");
 
         if (idxEngine == 0) {
@@ -334,7 +336,11 @@ public class SubmitEstimateG200 extends AppCompatActivity {
     }
 
     public void intentSaveG200(View view){
-
+        Intent intentSaveEstimated = new Intent(this, SaveEstimated.class);
+        intentSaveEstimated.putExtra("amount", dAmount.toString());
+        intentSaveEstimated.putExtra("partName", strName);
+        intentSaveEstimated.putExtra("partPrice", strPrice);
+        startActivity(intentSaveEstimated);
     }
 
     public void intentBuyG200(View view){
