@@ -33,7 +33,8 @@
         <activity android:name=".EstimateT200" />
         <activity android:name=".EstimateTM31" />
         <activity android:name=".SubmitEstimateG200" />
-        <activity android:name=".SaveEstimated"></activity>
+        <activity android:name=".SaveEstimated" />
+        <activity android:name=".BuyEstimated"></activity>
     </application>
 
 </manifest>
