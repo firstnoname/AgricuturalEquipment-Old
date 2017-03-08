@@ -20,7 +20,6 @@ public class SaveEstimated extends AppCompatActivity {
     private EditText edtName, edtIDNo, edtAmount;
     private String[] receiveName, receivePrice;
     private String receiveAmount;
-    public static final int REQUEST_CAMERA = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,17 +34,6 @@ public class SaveEstimated extends AppCompatActivity {
 
         edtAmount.setText(receiveAmount);
 
-    }
-
-    private void intentCamera() {
-        Uri uri;
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        String timeStamp = "timeStamp";
-        String imageFileName = "IMG_" + timeStamp + ".jpg";
-        File f = new File(Environment.getExternalStorageDirectory(), "DCIM/Camera/" + imageFileName);
-        uri = Uri.fromFile(f);
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
-        startActivityForResult(Intent.createChooser(intent, "Take a picture"), REQUEST_CAMERA);
     }
 
     private void bindWidget() {

@@ -344,7 +344,8 @@ public class SubmitEstimateG200 extends AppCompatActivity {
     }
 
     public void intentBuyG200(View view){
-
+        Intent intentBuyG200 = new Intent(this, BuyEstimated.class);
+        startActivity(intentBuyG200);
     }
 
     /*private void bindWidget() {
