@@ -50,20 +50,20 @@ public class BuyEstimated extends AppCompatActivity {
         intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
         startActivityForResult(Intent.createChooser(intent, "Take a picture with"), REQUEST_CAMERA);
 
+
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data){
         if(requestCode == REQUEST_CAMERA && resultCode == RESULT_OK){
-//            getContentResolver().notifyChange(uri, null);
-//            ContentResolver cr = getContentResolver();
-//            try {
-//                edtTest.setText(uri.toString());
-//                Bitmap bitmap = MediaStore.Images.Media.getBitmap(cr, uri);
-//                imageView.setImageBitmap(bitmap);
-//                Toast.makeText(getApplicationContext(),uri.getPath(),Toast.LENGTH_SHORT).show();
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
+            getContentResolver().notifyChange(uri, null);
+            ContentResolver cr = getContentResolver();
+            try {
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(cr, uri);
+                imageView.setImageBitmap(bitmap);
+                Toast.makeText(getApplicationContext(),uri.getPath(),Toast.LENGTH_SHORT).show();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             Bitmap photo = (Bitmap) data.getExtras().get("data");
             imageView.setImageBitmap(photo);
         }
