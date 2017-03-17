@@ -42,31 +42,40 @@ public class BuyEstimated extends AppCompatActivity {
     }
 
     public void takePhoto(View view) {
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        String imageFileName = "IMG_" + timeStamp + ".jpg";
-        File f = new File(Environment.getExternalStorageDirectory(), "DCIM/Camera/" + imageFileName);
-        uri = Uri.fromFile(f);
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
-        startActivityForResult(Intent.createChooser(intent, "Take a picture with"), REQUEST_CAMERA);
+//        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+//        String imageFileName = "IMG_" + timeStamp + ".jpg";
+//        File f = new File(Environment.getExternalStorageDirectory(), "DCIM/Camera/" + imageFileName);
+//        uri = Uri.fromFile(f);
+//        intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
+//        startActivityForResult(Intent.createChooser(intent, "Take a picture with"), REQUEST_CAMERA);
 
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+            startActivityForResult(takePictureIntent, REQUEST_CAMERA);
+        }
 
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data){
-        if(requestCode == REQUEST_CAMERA && resultCode == RESULT_OK){
-            getContentResolver().notifyChange(uri, null);
-            ContentResolver cr = getContentResolver();
-            try {
-                Bitmap bitmap = MediaStore.Images.Media.getBitmap(cr, uri);
-                imageView.setImageBitmap(bitmap);
-                Toast.makeText(getApplicationContext(),uri.getPath(),Toast.LENGTH_SHORT).show();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            Bitmap photo = (Bitmap) data.getExtras().get("data");
-            imageView.setImageBitmap(photo);
-        }
+//        if(requestCode == REQUEST_CAMERA && resultCode == RESULT_OK){
+//            getContentResolver().notifyChange(uri, null);
+//            ContentResolver cr = getContentResolver();
+//            try {
+//                Bitmap bitmap = MediaStore.Images.Media.getBitmap(cr, uri);
+//                imageView.setImageBitmap(bitmap);
+//                Toast.makeText(getApplicationContext(),uri.getPath(),Toast.LENGTH_SHORT).show();
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//            Bitmap photo = (Bitmap) data.getExtras().get("data");
+//            imageView.setImageBitmap(photo);
+//        }
 
+        if (requestCode == REQUEST_CAMERA && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            imageView.setImageBitmap(imageBitmap);
+        }
     }//End of onActivityResult.
 }
