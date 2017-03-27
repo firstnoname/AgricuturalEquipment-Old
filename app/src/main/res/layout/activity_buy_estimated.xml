@@ -29,7 +29,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginTop="8dp"
-            android:onClick="dispatchTakePictureIntent"
+            android:onClick="takePhoto"
             app:layout_constraintBottom_toBottomOf="@+id/imgIdentificationNo"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintLeft_toLeftOf="@+id/imgIdentificationNo"
