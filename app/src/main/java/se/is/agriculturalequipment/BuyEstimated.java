@@ -91,7 +91,7 @@ public class BuyEstimated extends AppCompatActivity {
     }
 
     private File createImageFile() throws IOException{
-        File albumF = getAlbumDir();
+        //File albumF = getAlbumDir();
         File imageF = File.createTempFile(JPEG_FILE_PREFIX, JPEG_FILE_SUFFIX, albumF);
 
         return imageF;
