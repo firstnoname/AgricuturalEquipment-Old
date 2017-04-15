@@ -30,6 +30,9 @@ public class BuyEstimated extends AppCompatActivity {
 
     private AlbumStorageDirFactory mAlbumStorageDirFactory = null;
     private ImageView imageView;
+
+    //Instant for use camera.
+
     private EditText edtAmount, edtTest;
 
     @Override
@@ -57,69 +60,41 @@ public class BuyEstimated extends AppCompatActivity {
         dispatchTakePictureIntent(ACTION_TAKE_PHOTO_B);
     }
 
-    private void dispatchTakePictureIntent(int actionCode){
+    private void dispatchTakePictureIntent(int actionCode) {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
         switch (actionCode) {
             case ACTION_TAKE_PHOTO_B:
                 File f = null;
+
                 try {
                     f = setUpPhotoFile();
                     mCurrentPhotoPath = f.getAbsolutePath();
+
                     takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(f));
                 } catch (IOException e) {
                     e.printStackTrace();
                     f = null;
                     mCurrentPhotoPath = null;
                 }
-                break;
-            default:
-                break;
         }
 
-        startActivityForResult(takePictureIntent, actionCode);
+        startActivityForResult(takePictureIntent,actionCode);
+
     }
 
     private File setUpPhotoFile() throws IOException{
         File f = createImageFile();
-        mCurrentPhotoPath = f.getAbsolutePath();
 
+        mCurrentPhotoPath = f.getAbsolutePath();
         return f;
     }
 
     private File createImageFile() throws IOException{
-        //Create an image file name
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        String imageFileName = JPEG_FILE_PREFIX + timeStamp + "_";
         File albumF = getAlbumDir();
-        File imageF = File.createTempFile(imageFileName, JPEG_FILE_SUFFIX, albumF);
+        File imageF = File.createTempFile(JPEG_FILE_PREFIX, JPEG_FILE_SUFFIX, albumF);
 
         return imageF;
     }
 
-    private File getAlbumDir() {
-        File storageDir = null;
-
-        if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
-
-            storageDir = mAlbumStorageDirFactory.getAlbumStorageDir(getAlbumName());
-
-            if (storageDir != null) {
-                if (!storageDir.mkdirs()) {
-                    if (!storageDir.exists()) {
-                        Log.d("CameraSample", "failed to create directory");
-
-                        return null;
-                    }
-                }
-            }
-        } else {
-            Log.v("PhotoByIntent", "External storage is not mounted READ/WRITE.");
-        }
-
-        return storageDir;
-    }
-
-    public String getAlbumName() {
-        return getString(R.string.album_name);
-    }
 }
