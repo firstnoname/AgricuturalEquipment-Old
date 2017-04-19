@@ -4,37 +4,38 @@ package se.is.agriculturalequipment;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.icu.text.SimpleDateFormat;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 
 public class BuyEstimated extends AppCompatActivity {
-
+    //Instant for use camera.
     private static final int ACTION_TAKE_PHOTO_B = 1;
-
     private String mCurrentPhotoPath;
-
     private static final String JPEG_FILE_PREFIX = "IMG_";
     private static final String JPEG_FILE_SUFFIX = ".jpg";
-
     private AlbumStorageDirFactory mAlbumStorageDirFactory = null;
-
     private ImageView mImageView;
 
-    //Instant for use camera.
+    //Image upload.
+    private String idNo,name,amount, imageName,encodeImage;
 
-    private EditText edtAmount, edtTest;
+    //
+    private String getAmount;
+    private EditText edtAmount, edtName, edtIdentificationNo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +43,8 @@ public class BuyEstimated extends AppCompatActivity {
         setContentView(R.layout.activity_buy_estimated);
 
         bindWidget();
+
+        getValueFromSubmitEstimateG200();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.FROYO) {
             mAlbumStorageDirFactory = new FroyoAlbumDirFactory();
@@ -51,9 +54,17 @@ public class BuyEstimated extends AppCompatActivity {
 
     }
 
+    private void getValueFromSubmitEstimateG200() {
+        Intent intent = getIntent();
+        getAmount = intent.getStringExtra("amount");
+
+        edtAmount.setText(getAmount);
+    }
+
     private void bindWidget() {
         mImageView = (ImageView) findViewById(R.id.imgIdentificationNo);
-        edtTest = (EditText) findViewById(R.id.edtName);
+        edtIdentificationNo = (EditText) findViewById(R.id.edtIdentificationNo);
+        edtName = (EditText) findViewById(R.id.edtName);
         edtAmount = (EditText) findViewById(R.id.edtAmount);
     }
 
@@ -174,6 +185,41 @@ public class BuyEstimated extends AppCompatActivity {
         //Associate the Bitmap to the ImageView.
         mImageView.setImageBitmap(bitmap);
         mImageView.setVisibility(View.VISIBLE);
+
+    }
+
+    public void prepareUpload(View view){
+        uploadValue();
+    }
+
+    private void uploadValue() {
+        //Get values from Edittext.
+        idNo = edtIdentificationNo.getText().toString();
+        name = edtName.getText().toString();
+        amount = edtAmount.getText().toString();
+
+        //Get image name from image path.
+        File file = new File(mCurrentPhotoPath);
+        imageName = file.getName();
+
+        //Encode image to base64.
+        imageEncodeToBase64();
+
+        String method = "insert_profile";
+        BackgroundTask backgroundTask = new BackgroundTask(this);
+        backgroundTask.execute(method,idNo,name,amount,imageName,encodeImage);
+        finish();
+    }
+
+    private void imageEncodeToBase64() {
+        //Convert image into byte array.
+        Bitmap bm = BitmapFactory.decodeFile(mCurrentPhotoPath);
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bm.compress(Bitmap.CompressFormat.JPEG, 1, baos);//bm is the bitmap object.
+        byte[] b = baos.toByteArray();
+
+        //Encode image as byte array into base64.
+        encodeImage = Base64.encodeToString(b, Base64.DEFAULT);
 
     }
 }
