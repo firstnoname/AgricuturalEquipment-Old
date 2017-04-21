@@ -29,7 +29,8 @@ public class BackgroundTask extends AsyncTask<String,Void,String> {
 
     protected String doInBackground(String... params) {
 
-        String insert_profile_url = "http://10.0.2.2/AgricuturalEquipmentServer/insert_profile.php";
+//        String insert_profile_url = "http://10.0.2.2/AgricuturalEquipmentServer/insert_profile.php";
+        String insert_profile_url = "http://tomori.siameki.com/insert_profile.php";
 
         String method = params[0];
         if (method.equals("insert_profile")) {
@@ -48,11 +49,17 @@ public class BackgroundTask extends AsyncTask<String,Void,String> {
 
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(os, "UTF-8"));
 
-                String data = URLEncoder.encode("idNo","UTF-8") + "=" + URLEncoder.encode(idNo,"UTF-8")+"&"+
+                /*String data = URLEncoder.encode("idNo","UTF-8") + "=" + URLEncoder.encode(idNo,"UTF-8")+"&"+
                         URLEncoder.encode("name","UTF-8") + "=" + URLEncoder.encode(name,"UTF-8")+"&"+
                         URLEncoder.encode("amount","UTF-8") + "=" + URLEncoder.encode(amount,"UTF-8")+"&"+
                         URLEncoder.encode("image_name","UTF-8") + "=" + URLEncoder.encode(imageName,"UTF-8")+"&"+
-                        URLEncoder.encode("encoded_image","UTF-8") + "=" + URLEncoder.encode(encodedImage,"UTF-8")+"&";
+                        URLEncoder.encode("encoded_image","UTF-8") + "=" + URLEncoder.encode(encodedImage,"UTF-8");*/
+
+                String data = URLEncoder.encode("idNo","UTF-8") + "=" + URLEncoder.encode(idNo,"UTF-8")+"&"+
+                        URLEncoder.encode("name","UTF-8") + "=" + URLEncoder.encode(name,"UTF-8")+"&"+
+                        URLEncoder.encode("encoded_image","UTF-8") + "=" + URLEncoder.encode(encodedImage,"UTF-8")+"&"+
+                        URLEncoder.encode("image_name","UTF-8") + "=" + URLEncoder.encode(imageName,"UTF-8")+"&";
+
                 bufferedWriter.write(data);
                 bufferedWriter.flush();
                 bufferedWriter.close();
