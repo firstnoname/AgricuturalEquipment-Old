@@ -208,7 +208,7 @@ public class BuyEstimated extends AppCompatActivity {
         String method = "insert_profile";
         BackgroundTask backgroundTask = new BackgroundTask(this);
         backgroundTask.execute(method,idNo,name,amount,imageName,encodeImage);
-        finish();
+        //finish();
     }
 
     private void imageEncodeToBase64() {
@@ -220,6 +220,5 @@ public class BuyEstimated extends AppCompatActivity {
 
         //Encode image as byte array into base64.
         encodeImage = Base64.encodeToString(b, Base64.DEFAULT);
-
     }
 }
