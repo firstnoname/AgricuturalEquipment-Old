@@ -11,7 +11,6 @@ import android.widget.ListView;
 
 public class SettingPartsG200 extends AppCompatActivity {
 
-    private FloatingActionButton fab;
     private ListView listViewG200;
     private TableG200 objTableG200;
     @Override
@@ -69,7 +68,6 @@ public class SettingPartsG200 extends AppCompatActivity {
     }
 
     private void bindWidget() {
-        fab = (FloatingActionButton) findViewById(R.id.floatingActionButton);
         listViewG200 = (ListView) findViewById(R.id.listViewG200);
 
     }

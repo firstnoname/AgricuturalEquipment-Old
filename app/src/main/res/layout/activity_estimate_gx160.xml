@@ -2,10 +2,10 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_estimate_g200"
+    android:id="@+id/activity_estimate_gx160"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="se.is.agriculturalequipment.EstimateG200">
+    tools:context="se.is.agriculturalequipment.EstimateGX160">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="0dp"
@@ -16,18 +16,22 @@
         android:layout_marginStart="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.56"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp">
 
         <ImageView
+            android:id="@+id/imageView"
             android:layout_width="120dp"
             android:layout_height="110dp"
-            app:srcCompat="@drawable/gx_160"
-            android:id="@+id/imageView"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginStart="32dp"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
-            android:layout_marginStart="32dp" />
+            app:srcCompat="@drawable/gx_160"
+            android:layout_marginLeft="32dp" />
 
         <TextView
             android:text="GX160 (Honda)"
@@ -39,7 +43,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginStart="8dp"
             app:layout_constraintLeft_toRightOf="@+id/imageView"
-            app:layout_constraintRight_toRightOf="parent" />
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="8dp" />
     </android.support.constraint.ConstraintLayout>
 
     <ScrollView
@@ -52,48 +57,47 @@
         android:layout_marginStart="32dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="8dp">
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:id="@+id/linearLayout1">
+
+
+            <TextView
+                android:text="เครื่องยนต์"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtView"
+                android:layout_weight="1"
+                android:textSize="16sp" />
 
             <RadioGroup
                 android:id="@+id/checkEngine"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-                <TextView
-                    android:text="เครื่องยนต์"
+                <RadioButton
+                    android:text="สตาร์ทติด"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/txtView"
-                    android:layout_weight="1"
-                    android:textSize="16sp" />
+                    android:id="@+id/radioBtnEngineTrue"
+                    android:layout_weight="1"/>
 
-                <LinearLayout
-                    android:orientation="horizontal"
+                <RadioButton
+                    android:text="สตาร์ทไม่ติด"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radioBtnEngineFalse"
+                    android:layout_weight="1"/>
 
-                    <RadioButton
-                        android:text="สตาร์ทติด"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/radioBtnEngineTrue"
-                        android:layout_weight="1" />
-
-                    <RadioButton
-                        android:text="สตาร์ทไม่ติด"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/radioBtnEngineFalse"
-                        android:layout_weight="1" />
-                </LinearLayout>
 
             </RadioGroup>
 
@@ -103,7 +107,7 @@
                 android:layout_height="match_parent" >
 
                 <TextView
-                    android:text="สีตัวเครื่องโดยรวม(และตัวถัง)"
+                    android:text="สีตัวเครื่องโดยรวม"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/txtView1"
@@ -111,14 +115,14 @@
                     android:textSize="16sp" />
 
                 <RadioButton
-                    android:text="RadioButton"
+                    android:id="@+id/radioBtn1_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/radioBtn1_1"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:text="ทำสีใหม่" />
 
                 <RadioButton
-                    android:text="RadioButton"
+                    android:text="ไม่ทำสีใหม่"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/radioBtn1_2"
@@ -144,7 +148,7 @@
                     android:id="@+id/radioBtn2_1"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choice 1"
+                    android:text="เปลี่ยนฝาถังน้ำมัน"
                     android:checked="false">
                 </RadioButton>
 
@@ -152,9 +156,10 @@
                     android:id="@+id/radioBtn2_2"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choice 2"
+                    android:text="ไม่เปลี่ยนฝาถังน้ำมัน"
                     android:checked="false">
                 </RadioButton>
+
             </RadioGroup>
 
             <!--                No 2              -->
@@ -177,7 +182,7 @@
                     android:id="@+id/radioBtn3_1"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choice 1"
+                    android:text="เปลี่ยนฝาถังน้ำมันเครื่อง"
                     android:checked="false">
                 </RadioButton>
 
@@ -185,7 +190,7 @@
                     android:id="@+id/radioBtn3_2"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choice 2"
+                    android:text="ไม่เปลี่ยนฝาถังน้ำมันเครื่อง"
                     android:checked="false">
                 </RadioButton>
 
@@ -211,7 +216,7 @@
                     android:id="@+id/radioBtn4_1"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choice 1"
+                    android:text="เปลี่ยนจานกระตุกทั้งชุด"
                     android:checked="false">
                 </RadioButton>
 
@@ -219,7 +224,23 @@
                     android:id="@+id/radioBtn4_2"
                     android:layout_width = "wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Choice 2"
+                    android:text="เปลี่ยนเฉพาะเชือกกระตุก"
+                    android:checked="false">
+                </RadioButton>
+
+                <RadioButton
+                    android:id="@+id/radioBtn4_3"
+                    android:layout_width = "wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="เปลี่ยนเฉพาะเขี้ยวสตาร์ท "
+                    android:checked="false">
+                </RadioButton>
+
+                <RadioButton
+                    android:id="@+id/radioBtn4_4"
+                    android:layout_width = "wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ไม่เปลี่ยนจานกระตุก"
                     android:checked="false">
                 </RadioButton>
 
@@ -245,7 +266,7 @@
                     android:id="@+id/radioBtn5_1"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choice 1"
+                    android:text="เปลี่ยนท่อไอเสีย"
                     android:checked="false">
                 </RadioButton>
 
@@ -253,7 +274,7 @@
                     android:id="@+id/radioBtn5_2"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choice 2"
+                    android:text="ไม่เปลี่ยนท่อไอเสีย"
                     android:checked="false">
                 </RadioButton>
 
@@ -279,7 +300,7 @@
                     android:id="@+id/radioBtn6_1"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choice 1"
+                    android:text="เปลี่ยนปลั๊กหัวเทียน"
                     android:checked="false">
                 </RadioButton>
 
@@ -287,7 +308,7 @@
                     android:id="@+id/radioBtn6_2"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choice 2"
+                    android:text="ไม่เปลี่ยนปลั๊กหัวเทียน"
                     android:checked="false">
                 </RadioButton>
 
@@ -313,7 +334,7 @@
                     android:id="@+id/radioBtn7_1"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choice 1"
+                    android:text="เปลี่ยนคาร์บูเรเตอร์"
                     android:checked="false">
                 </RadioButton>
 
@@ -321,7 +342,7 @@
                     android:id="@+id/radioBtn7_2"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choice 2"
+                    android:text="ไม่เปลี่ยนคาร์บูเรเตอร์"
                     android:checked="false">
                 </RadioButton>
 
@@ -339,7 +360,7 @@
 
                 <TextView
                     android:layout_height="match_parent"
-                    android:text="คอย CDI"
+                    android:text="CDI(เฉพาะในรุ่นที่มี CDI)"
                     android:layout_width="match_parent"
                     android:textSize="16sp" />
 
@@ -347,7 +368,7 @@
                     android:id="@+id/radioBtn8_1"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choice 1"
+                    android:text="เปลี่ยนคอยล์"
                     android:checked="false">
                 </RadioButton>
 
@@ -355,7 +376,7 @@
                     android:id="@+id/radioBtn8_2"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choice 2"
+                    android:text="ไม่เปลี่ยนคอยล์"
                     android:checked="false">
                 </RadioButton>
 
@@ -381,7 +402,7 @@
                     android:id="@+id/radioBtn9_1"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choice 1"
+                    android:text="เปลี่ยนก๊อกน้ำมัน"
                     android:checked="false">
                 </RadioButton>
 
@@ -389,7 +410,7 @@
                     android:id="@+id/radioBtn9_2"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choice 2"
+                    android:text="ไม่เปลี่ยนก๊อกน้ำมัน"
                     android:checked="false">
                 </RadioButton>
 
@@ -415,7 +436,7 @@
                     android:id="@+id/radioBtn10_1"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choice 1"
+                    android:text="เปลี่ยนหม้อกรองทั้งลูก"
                     android:checked="false">
                 </RadioButton>
 
@@ -423,7 +444,7 @@
                     android:id="@+id/radioBtn10_2"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choice 2"
+                    android:text="ไม่เปลี่ยนหม้อกรอง"
                     android:checked="false">
                 </RadioButton>
 
@@ -449,7 +470,7 @@
                     android:id="@+id/radioBtn11_1"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choice 1"
+                    android:text="เปลี่ยนสวิตท์"
                     android:checked="false">
                 </RadioButton>
 
@@ -457,7 +478,7 @@
                     android:id="@+id/radioBtn11_2"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choice 2"
+                    android:text="ไม่เปลี่ยนสวิตท์"
                     android:checked="false">
                 </RadioButton>
 
@@ -465,7 +486,33 @@
 
             <!--                No 11              -->
 
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/layoutNavigation"
+                android:layout_marginRight="16dp">
+
+                <Button
+                    android:text="Submit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnSubmit"
+                    android:layout_weight="1"
+                    android:onClick="intentSubmitEstimateGX160"/>
+
+                <Button
+                    android:text="Reset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnReset"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
         </LinearLayout>
+
     </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
