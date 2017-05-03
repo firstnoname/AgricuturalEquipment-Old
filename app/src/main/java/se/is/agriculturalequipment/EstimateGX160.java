@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -39,7 +40,7 @@ public class EstimateGX160 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_estimate_g200);
+        setContentView(R.layout.activity_estimate_gx160);
 
         bindWidget();
         hideRadioGroup();
@@ -156,7 +157,7 @@ public class EstimateGX160 extends AppCompatActivity {
         layoutButtonGroup.setVisibility(View.GONE);
     }
 
-    public void intentSubmitEstimateG200(View view){
+    public void intentSubmitEstimateGX160(View view){
 
         ArrayList<String> arrNameList = new ArrayList<String>();
         ArrayList<Integer> arrSelectedID = new ArrayList<Integer>();
@@ -280,11 +281,12 @@ public class EstimateGX160 extends AppCompatActivity {
             arrNameList.add(rdbSelectedSwitchOnOff.getText().toString());
         }
 
-        Intent intentSubmitEstimateG200 = new Intent(this, SubmitEstimateG200.class);
-        intentSubmitEstimateG200.putExtra("idxEngine", idxSelectedEngine);
-        intentSubmitEstimateG200.putStringArrayListExtra("arrListName",arrNameList);
-        intentSubmitEstimateG200.putIntegerArrayListExtra("arrSelectedID", arrSelectedID);
-        startActivity(intentSubmitEstimateG200);
+
+        Intent intentSubmitEstimateGX160 = new Intent(this, SubmitEstimateGX160.class);
+        intentSubmitEstimateGX160.putExtra("idxEngine", idxSelectedEngine);
+        intentSubmitEstimateGX160.putStringArrayListExtra("arrListName",arrNameList);
+        intentSubmitEstimateGX160.putIntegerArrayListExtra("arrSelectedID", arrSelectedID);
+        startActivity(intentSubmitEstimateGX160);
 
     }
 

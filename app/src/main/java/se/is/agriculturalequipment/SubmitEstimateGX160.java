@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class SubmitEstimateG200 extends AppCompatActivity {
+public class SubmitEstimateGX160 extends AppCompatActivity {
 
     private int idxEngine;
     private String priceBodyColor, priceFuelTankCap, priceOilFilter, priceStarter, priceMuffler,
@@ -19,13 +19,12 @@ public class SubmitEstimateG200 extends AppCompatActivity {
             dSparkPlug, dCarburetor, dCoilCDI, dBallValueSwitchOil, dAirFilter, dSwitchOnOff;
     private Double dAmount = 0.0;
     private TextView txtAmount;
-    private ListView listViewEstimatedG200;
+    private ListView listViewEstimatedGX160;
     private String[] strName, strPrice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_submit_estimate_g200);
 
         //Get data from SQLite.
         getDataFromSQLite();
@@ -33,50 +32,10 @@ public class SubmitEstimateG200 extends AppCompatActivity {
         //Calculate price.
         calculatePrice();
 
-        //Bind widget.
         bindWidget();
 
-        //Create listview.
         createListView();
 
-
-    }//End of constructor.
-
-    private void bindWidget() {
-        txtAmount = (TextView) findViewById(R.id.txtAmount);
-        listViewEstimatedG200 = (ListView) findViewById(R.id.listViewEstimatedG200);
-    }
-
-    private void calculatePrice() {
-        //Convert String to Double.
-        if (idxEngine == 0) {
-            dBodyColor = Double.parseDouble(priceBodyColor);
-            dFuelTankCap = Double.parseDouble(priceFuelTankCap);
-            dOilFilter = Double.parseDouble(priceOilFilter);
-            dStarter = Double.parseDouble(priceStarter);
-            dMuffler = Double.parseDouble(priceMuffler);
-            dSparkPlug = Double.parseDouble(priceSparkPlug);
-            dCarburetor = Double.parseDouble(priceCarburetor);
-            dCoilCDI = Double.parseDouble(priceCoilCDI);
-            dBallValueSwitchOil = Double.parseDouble(priceBallValueSwitchOil);
-            dAirFilter = Double.parseDouble(priceAirFilter);
-            dSwitchOnOff = Double.parseDouble(priceSwitchOnOff);
-
-            //Estimate price.
-            dAmount = 4400 - (dBodyColor + dFuelTankCap + dOilFilter + dStarter + dMuffler + dSparkPlug + dCarburetor + dCoilCDI + dBallValueSwitchOil + dAirFilter + dSwitchOnOff);
-
-        }else {
-            dBodyColor = Double.parseDouble(priceBodyColor);
-            dFuelTankCap = Double.parseDouble(priceFuelTankCap);
-            dOilFilter = Double.parseDouble(priceOilFilter);
-            dMuffler = Double.parseDouble(priceMuffler);
-            dSparkPlug = Double.parseDouble(priceSparkPlug);
-            dAirFilter = Double.parseDouble(priceAirFilter);
-            dSwitchOnOff = Double.parseDouble(priceSwitchOnOff);
-
-            //Estimate price.
-            dAmount = 2640-(dBodyColor + dFuelTankCap + dOilFilter + dMuffler + dSparkPlug + dAirFilter + dSwitchOnOff);
-        }
 
     }
 
@@ -122,10 +81,43 @@ public class SubmitEstimateG200 extends AppCompatActivity {
         strName = new String[strListName.size()];
         strName = strListName.toArray(strName);
 
-        MyAdapter objMyAdapter = new MyAdapter(SubmitEstimateG200.this, strName, strPrice);
-        listViewEstimatedG200.setAdapter(objMyAdapter);
+        MyAdapter objMyAdapter = new MyAdapter(SubmitEstimateGX160.this, strName, strPrice);
+        listViewEstimatedGX160.setAdapter(objMyAdapter);
 
         txtAmount.setText(dAmount.toString());
+    }
+
+    private void calculatePrice() {
+        //Convert String to Double.
+        if (idxEngine == 0) {
+            dBodyColor = Double.parseDouble(priceBodyColor);
+            dFuelTankCap = Double.parseDouble(priceFuelTankCap);
+            dOilFilter = Double.parseDouble(priceOilFilter);
+            dStarter = Double.parseDouble(priceStarter);
+            dMuffler = Double.parseDouble(priceMuffler);
+            dSparkPlug = Double.parseDouble(priceSparkPlug);
+            dCarburetor = Double.parseDouble(priceCarburetor);
+            dCoilCDI = Double.parseDouble(priceCoilCDI);
+            dBallValueSwitchOil = Double.parseDouble(priceBallValueSwitchOil);
+            dAirFilter = Double.parseDouble(priceAirFilter);
+            dSwitchOnOff = Double.parseDouble(priceSwitchOnOff);
+
+            //Estimate price.
+            dAmount = 4400 - (dBodyColor + dFuelTankCap + dOilFilter + dStarter + dMuffler + dSparkPlug + dCarburetor + dCoilCDI + dBallValueSwitchOil + dAirFilter + dSwitchOnOff);
+
+        }else {
+            dBodyColor = Double.parseDouble(priceBodyColor);
+            dFuelTankCap = Double.parseDouble(priceFuelTankCap);
+            dOilFilter = Double.parseDouble(priceOilFilter);
+            dMuffler = Double.parseDouble(priceMuffler);
+            dSparkPlug = Double.parseDouble(priceSparkPlug);
+            dAirFilter = Double.parseDouble(priceAirFilter);
+            dSwitchOnOff = Double.parseDouble(priceSwitchOnOff);
+
+            //Estimate price.
+            dAmount = 2640-(dBodyColor + dFuelTankCap + dOilFilter + dMuffler + dSparkPlug + dAirFilter + dSwitchOnOff);
+        }
+
     }
 
     private void getDataFromSQLite() {
@@ -274,20 +266,10 @@ public class SubmitEstimateG200 extends AppCompatActivity {
 
     }
 
-    public void intentSaveG200(View view){
-        Intent intentSaveEstimated = new Intent(this, SaveEstimated.class);
-        intentSaveEstimated.putExtra("amount", dAmount.toString());
-        intentSaveEstimated.putExtra("partName", strName);
-        intentSaveEstimated.putExtra("partPrice", strPrice);
-        startActivity(intentSaveEstimated);
+    private void bindWidget() {
+        txtAmount = (TextView) findViewById(R.id.txtAmount);
+        listViewEstimatedGX160 = (ListView) findViewById(R.id.listViewEstimatedG200);
     }
 
-    public void intentBuyG200(View view){
-        Intent intentBuyG200 = new Intent(this, BuyEstimated.class);
-        intentBuyG200.putExtra("amount", dAmount.toString());
-        intentBuyG200.putExtra("partName", strName);
-        intentBuyG200.putExtra("partPrice", strPrice);
-        startActivity(intentBuyG200);
-    }
 
 }
