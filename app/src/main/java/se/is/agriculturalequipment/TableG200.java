@@ -26,7 +26,6 @@ public class TableG200 {
 
     } //End construct.
 
-
     public long addNewPart(String strName,String strPrice){
         ContentValues objContentValues = new ContentValues();
         objContentValues.put(COLUMN_PART_NAME, strName);

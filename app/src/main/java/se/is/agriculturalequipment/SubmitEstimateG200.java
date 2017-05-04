@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -43,7 +42,7 @@ public class SubmitEstimateG200 extends AppCompatActivity {
     }//End of constructor.
 
     private void bindWidget() {
-        txtAmount = (TextView) findViewById(R.id.txtAmount);
+        txtAmount = (TextView) findViewById(R.id.txtAmountGX160);
         listViewEstimatedG200 = (ListView) findViewById(R.id.listViewEstimatedG200);
     }
 

@@ -8,6 +8,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 public class SubmitEstimateGX160 extends AppCompatActivity {
@@ -25,14 +27,15 @@ public class SubmitEstimateGX160 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_submit_estimate_gx160);
+
+        bindWidget();
 
         //Get data from SQLite.
         getDataFromSQLite();
 
         //Calculate price.
         calculatePrice();
-
-        bindWidget();
 
         createListView();
 
@@ -84,7 +87,7 @@ public class SubmitEstimateGX160 extends AppCompatActivity {
         MyAdapter objMyAdapter = new MyAdapter(SubmitEstimateGX160.this, strName, strPrice);
         listViewEstimatedGX160.setAdapter(objMyAdapter);
 
-        txtAmount.setText(dAmount.toString());
+        txtAmount.setText("Test");
     }
 
     private void calculatePrice() {
@@ -121,12 +124,12 @@ public class SubmitEstimateGX160 extends AppCompatActivity {
     }
 
     private void getDataFromSQLite() {
-        //Get data from EstimateG200.
+        //Get data from EstimateGX160.
         idxEngine = getIntent().getIntExtra("idxEngine",0);
         ArrayList<Integer> idSelectedList = (ArrayList<Integer>) getIntent().getIntegerArrayListExtra("arrSelectedID");
 
-        TableG200 objTableG200 = new TableG200(this);
-        String[] strPartPrice = objTableG200.readPartPrice();
+        TableGX160 objTableGX160 = new TableGX160(this);
+        String[] strPartPrice = objTableGX160.readPartPrice();
 
         //Compare data from sqlite.
         if (idxEngine == 0) {
@@ -267,8 +270,8 @@ public class SubmitEstimateGX160 extends AppCompatActivity {
     }
 
     private void bindWidget() {
-        txtAmount = (TextView) findViewById(R.id.txtAmount);
-        listViewEstimatedGX160 = (ListView) findViewById(R.id.listViewEstimatedG200);
+        txtAmount = (TextView) findViewById(R.id.txtAmountGX160);
+        listViewEstimatedGX160 = (ListView) findViewById(R.id.listViewEstimatedGX160);
     }
 
 
