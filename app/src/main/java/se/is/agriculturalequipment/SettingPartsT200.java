@@ -9,6 +9,7 @@ import android.widget.ListView;
 public class SettingPartsT200 extends AppCompatActivity {
 
     private ListView listViewT200;
+    private TableT200 objTableT200;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +18,31 @@ public class SettingPartsT200 extends AppCompatActivity {
 
         bindWidget();
 
+        addDefaultPart();
+
         createListView();
+    }
+
+    private void addDefaultPart() {
+        objTableT200.addNewPart("จานกระตุกชุด","340");
+        objTableT200.addNewPart("เขี้ยวสตาร์ท","120");
+        objTableT200.addNewPart("เชือกดึง","30");
+        objTableT200.addNewPart("ถังน้ำมัน","280");
+        objTableT200.addNewPart("มือเร่ง","160");
+        objTableT200.addNewPart("ใบมีด","150");
+        objTableT200.addNewPart("หม้อกรองอากาศ","250");
+        objTableT200.addNewPart("ลูกสูบ","220");
+        objTableT200.addNewPart("คาร์บูเรเตอร์","480");
+        objTableT200.addNewPart("เสื้อสูบ","650");
+        objTableT200.addNewPart("ก๊อกน้ำมัน","120");
+        objTableT200.addNewPart("ท่อไอเสีย","160");
+        objTableT200.addNewPart("คอตัดหญ้า","750");
+        objTableT200.addNewPart("กระบอกหาง","580");
+        objTableT200.addNewPart("สวิตช์ปิดเปิด","80");
+        objTableT200.addNewPart("สวิตช์ปิดเปิด","80");
+        objTableT200.addNewPart("สวิตช์ปิดเปิด","80");
+        objTableT200.addNewPart("สวิตช์ปิดเปิด","80");
+        objTableT200.addNewPart("สวิตช์ปิดเปิด","80");
     }
 
     private void createListView() {
