@@ -61,6 +61,37 @@
             android:layout_marginRight="16dp"
             android:orientation="vertical">
 
+            <TextView
+                android:text="เครื่องยนต์"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtView"
+                android:layout_weight="1"
+                android:textSize="16sp" />
+
+            <RadioGroup
+                android:id="@+id/checkEngine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:text="สตาร์ทติด"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radioBtnEngineTrue"
+                    android:layout_weight="1"/>
+
+                <RadioButton
+                    android:text="สตาร์ทไม่ติด"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radioBtnEngineFalse"
+                    android:layout_weight="1"/>
+
+
+            </RadioGroup>
+
             <RadioGroup
                 android:id="@+id/no1"
                 android:layout_width="match_parent"
@@ -75,14 +106,14 @@
                     android:textSize="16sp" />
 
                 <RadioButton
-                    android:text="RadioButton"
+                    android:id="@+id/radioBtn1_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/radioBtn1_1"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:text="ทำสีใหม่" />
 
                 <RadioButton
-                    android:text="RadioButton"
+                    android:text="ไม่ทำสีใหม่"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/radioBtn1_2"
@@ -108,7 +139,7 @@
                     android:id="@+id/radioBtn2_1"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choice 1"
+                    android:text="เปลี่ยนใหม่"
                     android:checked="false">
                 </RadioButton>
 
@@ -116,7 +147,7 @@
                     android:id="@+id/radioBtn2_2"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choice 2"
+                    android:text="ไม่เปลี่ยน"
                     android:checked="false">
                 </RadioButton>
             </RadioGroup>
@@ -141,7 +172,7 @@
                     android:id="@+id/radioBtn3_1"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choice 1"
+                    android:text="เปลี่ยนทั้งตัว"
                     android:checked="false">
                 </RadioButton>
 
@@ -149,7 +180,15 @@
                     android:id="@+id/radioBtn3_2"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choice 2"
+                    android:text="เปลี่ยนเฉพาะตัวลิ้น"
+                    android:checked="false">
+                </RadioButton>
+
+                <RadioButton
+                    android:id="@+id/radioBtn3_3"
+                    android:layout_width = "match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ไม่เปลี่ยน"
                     android:checked="false">
                 </RadioButton>
 
@@ -175,7 +214,7 @@
                     android:id="@+id/radioBtn4_1"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choice 1"
+                    android:text="เปลี่ยนใหม่"
                     android:checked="false">
                 </RadioButton>
 
@@ -183,7 +222,7 @@
                     android:id="@+id/radioBtn4_2"
                     android:layout_width = "wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Choice 2"
+                    android:text="ไม่เปลี่ยน"
                     android:checked="false">
                 </RadioButton>
 
@@ -209,7 +248,7 @@
                     android:id="@+id/radioBtn5_1"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choice 1"
+                    android:text="เปลี่ยนใหม่"
                     android:checked="false">
                 </RadioButton>
 
@@ -217,7 +256,7 @@
                     android:id="@+id/radioBtn5_2"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choice 2"
+                    android:text="ไม่เปลี่ยน"
                     android:checked="false">
                 </RadioButton>
 
@@ -243,7 +282,7 @@
                     android:id="@+id/radioBtn6_1"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choice 1"
+                    android:text="เปลี่ยนใหม่"
                     android:checked="false">
                 </RadioButton>
 
@@ -251,7 +290,7 @@
                     android:id="@+id/radioBtn6_2"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choice 2"
+                    android:text="ไม่เปลี่ยน"
                     android:checked="false">
                 </RadioButton>
 
@@ -277,7 +316,7 @@
                     android:id="@+id/radioBtn7_1"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choice 1"
+                    android:text="เปลี่ยน"
                     android:checked="false">
                 </RadioButton>
 
@@ -285,7 +324,7 @@
                     android:id="@+id/radioBtn7_2"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choice 2"
+                    android:text="ไม่เปลี่ยน"
                     android:checked="false">
                 </RadioButton>
 
@@ -311,7 +350,7 @@
                     android:id="@+id/radioBtn8_1"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choice 1"
+                    android:text="เปลี่ยน"
                     android:checked="false">
                 </RadioButton>
 
@@ -319,7 +358,7 @@
                     android:id="@+id/radioBtn8_2"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choice 2"
+                    android:text="ไม่เปลี่ยน"
                     android:checked="false">
                 </RadioButton>
 
@@ -345,7 +384,7 @@
                     android:id="@+id/radioBtn9_1"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choice 1"
+                    android:text="เปลี่ยน"
                     android:checked="false">
                 </RadioButton>
 
@@ -353,7 +392,7 @@
                     android:id="@+id/radioBtn9_2"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choice 2"
+                    android:text="ไม่เปลี่ยน"
                     android:checked="false">
                 </RadioButton>
 
@@ -379,7 +418,7 @@
                     android:id="@+id/radioBtn10_1"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choice 1"
+                    android:text="เปลี่ยน"
                     android:checked="false">
                 </RadioButton>
 
@@ -387,7 +426,7 @@
                     android:id="@+id/radioBtn10_2"
                     android:layout_width = "match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choice 2"
+                    android:text="ไม่เปลี่ยน"
                     android:checked="false">
                 </RadioButton>
 
@@ -395,41 +434,30 @@
 
             <!--                No 10              -->
 
-            <RadioGroup
-                android:id="@+id/no11"
-                android:layout_below="@+id/no10"
+
+
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="false"
-                android:layout_centerHorizontal="false">
+                android:layout_height="match_parent"
+                android:id="@+id/layoutNavigation"
+                android:layout_marginRight="16dp">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="เสื้อสูบ"
-                    android:textSize="16sp" />
-
-                <RadioButton
-                    android:id="@+id/radioBtn11_1"
-                    android:layout_width = "match_parent"
+                <Button
+                    android:id="@+id/btnSubmit"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Choice 1"
-                    android:checked="false">
-                </RadioButton>
+                    android:layout_weight="1"
+                    android:onClick="intentSubmitEstimateGX160"
+                    android:text="Submit" />
 
-                <RadioButton
-                    android:id="@+id/radioBtn11_2"
-                    android:layout_width = "match_parent"
+                <Button
+                    android:text="Reset"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Choice 2"
-                    android:checked="false">
-                </RadioButton>
-
-            </RadioGroup>
-
-            <!--                No 11              -->
-
-            <!--                No 12              -->
+                    android:id="@+id/btnReset"
+                    android:layout_weight="1" />
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>

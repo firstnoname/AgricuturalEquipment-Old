@@ -29,21 +29,22 @@ public class SettingPartsGX35 extends AppCompatActivity {
         objTableGX35.addNewPart("เขี้ยวสตาร์ท","100");
         objTableGX35.addNewPart("เชือกดึง","30");
         objTableGX35.addNewPart("ถังน้ำมัน","350");
-        objTableGX35.addNewPart("มือเร่ง","180");
-        objTableGX35.addNewPart("ใบมีด","150");
-        objTableGX35.addNewPart("หม้อกรองอากาศ","250");
+        objTableGX35.addNewPart("หม้อกรองอากาศ", "250");
         objTableGX35.addNewPart("ลูกสูบ","250");
         objTableGX35.addNewPart("คาร์บูเรเตอร์","550");
         objTableGX35.addNewPart("เสื้อสูบ","850");
         objTableGX35.addNewPart("ก๊อกน้ำมัน","120");
-        objTableGX35.addNewPart("ท่อไอเสีย","210");
-        objTableGX35.addNewPart("คอตัดหญ้า","800");
-        objTableGX35.addNewPart("กระบอกหาง","580");
-        objTableGX35.addNewPart("สวิตช์ปิดเปิด","80");
+        objTableGX35.addNewPart("ท่อไอเสีย", "210");
+        objTableGX35.addNewPart("สวิตช์ปิดเปิด", "80");
         objTableGX35.addNewPart("คอยล์ + CDI","550");
         objTableGX35.addNewPart("ฝาถังน้ำมัน","50");
         objTableGX35.addNewPart("ทำสี","120");
+        objTableGX35.addNewPart("มือเร่ง", "180");
+        objTableGX35.addNewPart("ใบมีด", "150");
+        objTableGX35.addNewPart("คอตัดหญ้า","800");
+        objTableGX35.addNewPart("กระบอกหาง","580");
         objTableGX35.addNewPart("แกนเพลา","280");
+
     }
 
     private void createAndConnectDB() {
