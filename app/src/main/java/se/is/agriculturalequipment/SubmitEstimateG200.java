@@ -13,7 +13,8 @@ public class SubmitEstimateG200 extends AppCompatActivity {
 
     private int idxEngine;
     private String priceBodyColor, priceFuelTankCap, priceOilFilter, priceStarter, priceMuffler,
-            priceSparkPlug, priceCarburetor, priceCoilCDI, priceBallValueSwitchOil, priceAirFilter, priceSwitchOnOff;
+            priceSparkPlug, priceCarburetor, priceCoilCDI, priceBallValueSwitchOil, priceAirFilter,
+            priceSwitchOnOff;
     private Double dBodyColor, dFuelTankCap, dOilFilter, dStarter, dMuffler,
             dSparkPlug, dCarburetor, dCoilCDI, dBallValueSwitchOil, dAirFilter, dSwitchOnOff;
     private Double dAmount = 0.0;
@@ -62,7 +63,9 @@ public class SubmitEstimateG200 extends AppCompatActivity {
             dSwitchOnOff = Double.parseDouble(priceSwitchOnOff);
 
             //Estimate price.
-            dAmount = 4400 - (dBodyColor + dFuelTankCap + dOilFilter + dStarter + dMuffler + dSparkPlug + dCarburetor + dCoilCDI + dBallValueSwitchOil + dAirFilter + dSwitchOnOff);
+            dAmount = 4400 - (dBodyColor + dFuelTankCap + dOilFilter + dStarter + dMuffler +
+                    dSparkPlug + dCarburetor + dCoilCDI + dBallValueSwitchOil + dAirFilter +
+                    dSwitchOnOff);
 
         }else {
             dBodyColor = Double.parseDouble(priceBodyColor);
@@ -74,7 +77,8 @@ public class SubmitEstimateG200 extends AppCompatActivity {
             dSwitchOnOff = Double.parseDouble(priceSwitchOnOff);
 
             //Estimate price.
-            dAmount = 2640-(dBodyColor + dFuelTankCap + dOilFilter + dMuffler + dSparkPlug + dAirFilter + dSwitchOnOff);
+            dAmount = 2640-(dBodyColor + dFuelTankCap + dOilFilter + dMuffler + dSparkPlug +
+                    dAirFilter + dSwitchOnOff);
         }
 
     }

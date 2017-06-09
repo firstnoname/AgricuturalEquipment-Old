@@ -131,7 +131,7 @@ public class SubmitEstimateGX160 extends AppCompatActivity {
         TableGX160 objTableGX160 = new TableGX160(this);
         String[] strPartPrice = objTableGX160.readPartPrice();
 
-        //Compare data from sqlite.
+        //Compare data from SQLite.
         if (idxEngine == 0) {
             if (idSelectedList.get(1) == 1) {
                 priceBodyColor = strPartPrice[0];

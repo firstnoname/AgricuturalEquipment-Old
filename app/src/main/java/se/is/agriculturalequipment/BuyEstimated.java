@@ -193,10 +193,10 @@ public class BuyEstimated extends AppCompatActivity {
     }
 
     private void uploadValue() {
-        //Get values from Edittext.
+        //Get values from EditText.
         idNo = edtIdentificationNo.getText().toString();
         name = edtName.getText().toString();
-        amount = edtAmount.getText().toString();
+        amount = getAmount.toString();
 
         //Get image name from image path.
         File file = new File(mCurrentPhotoPath);
@@ -208,15 +208,15 @@ public class BuyEstimated extends AppCompatActivity {
         String method = "insert_profile";
         BackgroundTask backgroundTask = new BackgroundTask(this);
         backgroundTask.execute(method,idNo,name,amount,imageName,encodeImage);
-        //finish();
+        finish();
     }
 
     private void imageEncodeToBase64() {
         //Convert image into byte array.
         Bitmap bm = BitmapFactory.decodeFile(mCurrentPhotoPath);
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bm.compress(Bitmap.CompressFormat.JPEG, 1, baos);//bm is the bitmap object.
-        byte[] b = baos.toByteArray();
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        bm.compress(Bitmap.CompressFormat.JPEG, 1, byteArrayOutputStream);//bm is the bitmap object.
+        byte[] b = byteArrayOutputStream.toByteArray();
 
         //Encode image as byte array into base64.
         encodeImage = Base64.encodeToString(b, Base64.DEFAULT);
