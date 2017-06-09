@@ -27,7 +27,6 @@ public class EstimateGX35 extends AppCompatActivity {
 
         onClickListener();
 
-
     }
 
     private void onClickListener() {
@@ -136,6 +135,34 @@ public class EstimateGX35 extends AppCompatActivity {
         rdg12 = (RadioGroup)findViewById(R.id.no12);
 
         rdb1_1 = (RadioButton) findViewById(R.id.radioBtn1_1);
+        rdb1_2 = (RadioButton)findViewById(R.id.radioBtn1_2);
+        rdb2_1 = (RadioButton)findViewById(R.id.radioBtn2_1);
+        rdb2_2 = (RadioButton) findViewById(R.id.radioBtn2_2);
+        rdb3_1 = (RadioButton)findViewById(R.id.radioBtn3_1);
+        rdb3_2 = (RadioButton)findViewById(R.id.radioBtn3_2);
+        rdb3_3 = (RadioButton)findViewById(R.id.radioBtn3_3);
+        rdb3_4 = (RadioButton)findViewById(R.id.radioBtn3_4);
+        rdb4_1 = (RadioButton)findViewById(R.id.radioBtn4_1);
+        rdb4_2 = (RadioButton)findViewById(R.id.radioBtn4_2);
+        rdb5_1 = (RadioButton)findViewById(R.id.radioBtn5_1);
+        rdb5_2 = (RadioButton)findViewById(R.id.radioBtn5_2);
+        rdb6_1 = (RadioButton)findViewById(R.id.radioBtn6_1);
+        rdb6_2 = (RadioButton)findViewById(R.id.radioBtn6_2);
+        rdb6_3 = (RadioButton)findViewById(R.id.radioBtn6_3);
+        rdb7_1 = (RadioButton)findViewById(R.id.radioBtn7_1);
+        rdb7_2 = (RadioButton)findViewById(R.id.radioBtn7_2);
+        rdb8_1 = (RadioButton)findViewById(R.id.radioBtn8_1);
+        rdb8_2 = (RadioButton)findViewById(R.id.radioBtn8_2);
+        rdb8_3 = (RadioButton)findViewById(R.id.radioBtn8_3);
+        rdb9_1 = (RadioButton)findViewById(R.id.radioBtn9_1);
+        rdb9_2 = (RadioButton)findViewById(R.id.radioBtn9_2);
+        rdb10_1 = (RadioButton)findViewById(R.id.radioBtn10_1);
+        rdb10_2 = (RadioButton)findViewById(R.id.radioBtn10_2);
+        rdb11_1 = (RadioButton)findViewById(R.id.radioBtn11_1);
+        rdb11_2 = (RadioButton)findViewById(R.id.radioBtn11_2);
+        rdb12_1 = (RadioButton)findViewById(R.id.radioBtn12_1);
+        rdb12_2 = (RadioButton)findViewById(R.id.radioBtn12_2);
+        rdb12_3 = (RadioButton) findViewById(R.id.radioBtn12_3);
 
 
         layoutButtonGroup = (LinearLayout) findViewById(R.id.layoutNavigation);
