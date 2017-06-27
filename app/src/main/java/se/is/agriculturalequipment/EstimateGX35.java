@@ -7,14 +7,24 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import java.util.ArrayList;
+
 public class EstimateGX35 extends AppCompatActivity {
 
     private RadioGroup rdgCheckEngine, rdg1, rdg2, rdg3, rdg4, rdg5, rdg6, rdg7, rdg8, rdg9, rdg10,
             rdg11, rdg12;
-    private RadioButton rdbEngineTrue, rdbEngineFalse, rdb1_1,rdb1_2, rdb2_1,rdb2_2,rdb3_1,rdb3_2,
+    private RadioButton rdbSelectedEngine, rdbEngineTrue, rdbEngineFalse, rdb1_1,rdb1_2, rdb2_1,rdb2_2,rdb3_1,rdb3_2,
             rdb3_3,rdb3_4,rdb4_1,rdb4_2,rdb5_1,rdb5_2,rdb6_1,rdb6_2,rdb6_3,rdb7_1,rdb7_2,rdb8_1,
             rdb8_2,rdb8_3,rdb9_1,rdb9_2,rdb10_1,rdb10_2,rdb11_1,rdb11_2,rdb12_1,rdb12_2,rdb12_3;
     private LinearLayout layoutButtonGroup;
+
+    private Integer idSelectedEngine, idSelectedBodyColor, idSelectedFuelTankCap, idSelectedOilFilter, idSelectedStarter,
+            idSelectedMuffler, idSelectedSparkPlug, idSelectedCarburetor, idSelectedCoilCDI,
+            idSelectedBallValueSwitchOil, idSelectedAirFilter, idSelectedSwitchOnOff;
+
+    private Integer idxSelectedEngine, idxSelectedBodyColor, idxSelectedFuelTankCap, idxSelectedOilFilter,
+            idxSelectedStarter, idxSelectedMuffler, idxSelectedSparkPlug, idxSelectedCarburetor, idxSelectedCoilCDI,
+            idxSelectedBallValueSwitchOil, idxSelectedAirFilter, idxSelectedSwitchOnOff;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,9 +127,6 @@ public class EstimateGX35 extends AppCompatActivity {
     }
 
     private void bindWidget() {
-        rdbEngineFalse = (RadioButton) findViewById(R.id.radioBtnEngineFalse);
-        rdbEngineTrue = (RadioButton) findViewById(R.id.radioBtnEngineTrue);
-
         rdgCheckEngine = (RadioGroup) findViewById(R.id.checkEngine);
         rdg1 = (RadioGroup) findViewById(R.id.no1);
         rdg2 = (RadioGroup) findViewById(R.id.no2);
@@ -134,6 +141,8 @@ public class EstimateGX35 extends AppCompatActivity {
         rdg11 = (RadioGroup) findViewById(R.id.no11);
         rdg12 = (RadioGroup)findViewById(R.id.no12);
 
+        rdbEngineFalse = (RadioButton) findViewById(R.id.radioBtnEngineFalse);
+        rdbEngineTrue = (RadioButton) findViewById(R.id.radioBtnEngineTrue);
         rdb1_1 = (RadioButton) findViewById(R.id.radioBtn1_1);
         rdb1_2 = (RadioButton)findViewById(R.id.radioBtn1_2);
         rdb2_1 = (RadioButton)findViewById(R.id.radioBtn2_1);
@@ -164,7 +173,24 @@ public class EstimateGX35 extends AppCompatActivity {
         rdb12_2 = (RadioButton)findViewById(R.id.radioBtn12_2);
         rdb12_3 = (RadioButton) findViewById(R.id.radioBtn12_3);
 
-
         layoutButtonGroup = (LinearLayout) findViewById(R.id.layoutNavigation);
+    }
+
+    public void intentSubmitEstimateGX160(View view) {
+        ArrayList<String> arrNameList = new ArrayList<String>();
+        ArrayList<Integer> arrSelectID = new ArrayList<Integer>();
+
+        //Get id and text from RadioButton.
+        idSelectedEngine = rdgCheckEngine.getCheckedRadioButtonId();
+        arrSelectID.add(idxSelectedEngine = rdgCheckEngine.indexOfChild(rdbSelectedEngine));
+        arrNameList.add(rdbSelectedEngine.getText().toString());
+
+        //Check can start or not. 0 = The engine can starts, 1 = The engine can't starts.
+        if (idxSelectedEngine == 0) {
+            /*No1 = สีตัวเครื่องโดยรวม*/
+
+        }
+
+
     }
 }
