@@ -18,6 +18,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     private static final String CREATE_TABLE_T200 = "create table t200TABLE(_id integer primary key, partNameT200 TEXT, partPriceT200 TEXT);";
     private static final String CREATE_TABLE_TM31 = "create table tm31TABLE(_id integer primary key, partNameTM31 TEXT, partPriceTM31 TEXT);";
 
+
     public MyOpenHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }

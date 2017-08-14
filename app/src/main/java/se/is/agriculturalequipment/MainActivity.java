@@ -16,7 +16,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void intentHistory(View view){
-
+        Intent intentMenuHistory = new Intent(this, HistoryActivity.class);
+        startActivity(intentMenuHistory);
     }
 
     public void intentMenuEstimate(View view){
@@ -28,4 +29,5 @@ public class MainActivity extends AppCompatActivity {
         Intent intentMenuSetting = new Intent(this, MenuSetting.class);
         startActivity(intentMenuSetting);
     }
+
 }

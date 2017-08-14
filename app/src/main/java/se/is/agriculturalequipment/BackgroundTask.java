@@ -29,8 +29,8 @@ public class BackgroundTask extends AsyncTask<String,Void,String> {
 
     protected String doInBackground(String... params) {
 
-//        String insert_profile_url = "http://10.0.2.2/AgricuturalEquipmentServer/insert_profile.php";
-        String insert_profile_url = "http://tomori.siameki.com/insert_profile.php";
+        String insert_profile_url = "http://10.0.2.2/AgriculturalEquipmentServer/insert_profile.php";
+//        String insert_profile_url = "http://tomori.siameki.com/insert_profile.php";
 
         String method = params[0];
         if (method.equals("insert_profile")) {

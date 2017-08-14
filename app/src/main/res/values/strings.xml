@@ -2,4 +2,7 @@
     <string name="app_name">AgriculturalEquipment</string>
     <string name="title_activity_setting_parts_g200">SettingPartsG200</string>
     <string name="album_name">Identification Card</string>
+
+    <!--History Activity.-->
+    <string name="history_main_text">ประวัติซื้อของ</string>
 </resources>

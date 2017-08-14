@@ -52,7 +52,8 @@
                 android:resource="@xml/provider_paths" />
         </provider>
 
-        <activity android:name=".SubmitEstimateGX160"></activity>
+        <activity android:name=".SubmitEstimateGX160" />
+        <activity android:name=".HistoryActivity"></activity>
     </application>
 
 </manifest>
