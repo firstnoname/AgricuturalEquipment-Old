@@ -162,11 +162,10 @@ public class EstimateGX160 extends AppCompatActivity {
         ArrayList<String> arrNameList = new ArrayList<String>();
         ArrayList<Integer> arrSelectedID = new ArrayList<Integer>();
 
-
         //Get id and text from RadioButton.
         idSelectedEngine = rdgCheckEngine.getCheckedRadioButtonId();
-        rdbSelectedEngine = (RadioButton) findViewById(idSelectedEngine);
         arrSelectedID.add(idxSelectedEngine = rdgCheckEngine.indexOfChild(rdbSelectedEngine));
+        rdbSelectedEngine = (RadioButton) findViewById(idSelectedEngine);
         arrNameList.add(rdbSelectedEngine.getText().toString());
 //        Check can start or not. 0 = The engine can starts, 1 = The engine can't starts.
         if(idxSelectedEngine==0){
