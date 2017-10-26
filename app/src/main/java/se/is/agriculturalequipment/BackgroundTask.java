@@ -2,9 +2,12 @@ package se.is.agriculturalequipment;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.widget.Toast;
 
-import java.io.BufferedReader;
+import org.json.JSONArray;
+import org.json.JSONException;
+
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStream;
@@ -29,8 +32,8 @@ public class BackgroundTask extends AsyncTask<String,Void,String> {
 
     protected String doInBackground(String... params) {
 
-        String insert_profile_url = "http://10.0.2.2/AgriculturalEquipmentServer/insert_profile.php";
-//        String insert_profile_url = "http://tomori.siameki.com/insert_profile.php";
+//        String insert_profile_url = "http://10.0.2.2/AgriculturalEquipmentServer/insert_profile.php";
+        String insert_profile_url = "http://tomori.siameki.com/insert_profile.php";
 
         String method = params[0];
         if (method.equals("insert_profile")) {
@@ -39,6 +42,22 @@ public class BackgroundTask extends AsyncTask<String,Void,String> {
             String amount = params[3];
             String imageName = params[4];
             String encodedImage = params[5];
+            String strName = params[6];
+            String[] partName = new String[]{strName};
+
+            //Convert String[] to String.
+            try {
+                JSONArray temp = new JSONArray(strName);
+                partName = temp.join(",").split(",");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+//            Test debug values of partName.
+
+            for (int i=0; i<partName.length; i++) {
+                Log.d("partName " + i + " : ", partName[i]);
+            }
 
             try {
                 URL url = new URL(insert_profile_url);
@@ -49,11 +68,25 @@ public class BackgroundTask extends AsyncTask<String,Void,String> {
 
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(os, "UTF-8"));
 
-                String data = URLEncoder.encode("idNo","UTF-8") + "=" + URLEncoder.encode(idNo,"UTF-8")+"&"+
-                        URLEncoder.encode("name","UTF-8") + "=" + URLEncoder.encode(name,"UTF-8")+"&"+
-                        URLEncoder.encode("amount","UTF-8") + "=" + URLEncoder.encode(amount,"UTF-8")+"&"+
-                        URLEncoder.encode("image_name","UTF-8") + "=" + URLEncoder.encode(imageName,"UTF-8")+"&"+
-                        URLEncoder.encode("encoded_image","UTF-8") + "=" + URLEncoder.encode(encodedImage,"UTF-8");
+                String data = URLEncoder.encode("idNo", "UTF-8") + "=" + URLEncoder.encode(idNo, "UTF-8") + "&" +
+                        URLEncoder.encode("name", "UTF-8") + "=" + URLEncoder.encode(name, "UTF-8") + "&" +
+                        URLEncoder.encode("amount", "UTF-8") + "=" + URLEncoder.encode(amount, "UTF-8") + "&" +
+                        URLEncoder.encode("image_name", "UTF-8") + "=" + URLEncoder.encode(imageName, "UTF-8") + "&" +
+                        URLEncoder.encode("encoded_image", "UTF-8") + "=" + URLEncoder.encode(encodedImage, "UTF-8") + "&"  +
+                        URLEncoder.encode("engineStatus", "UTF-8") + "=" + URLEncoder.encode(partName[0], "UTF-8") + "&" +
+                        URLEncoder.encode("starter","UTF-8") + "=" + URLEncoder.encode(partName[1],"UTF-8") + "&" +
+                        URLEncoder.encode("fuelTank","UTF-8") + "=" + URLEncoder.encode(partName[2],"UTF-8") + "&" +
+                        URLEncoder.encode("airFilter","UTF-8") + "=" + URLEncoder.encode(partName[3],"UTF-8") + "&" +
+                        URLEncoder.encode("carburetor","UTF-8") + "=" + URLEncoder.encode(partName[4],"UTF-8") + "&" +
+                        URLEncoder.encode("cylinderSet","UTF-8") + "=" + URLEncoder.encode(partName[5],"UTF-8") + "&" +
+                        URLEncoder.encode("ballValveSwitchOil","UTF-8") + "=" + URLEncoder.encode(partName[6],"UTF-8") + "&" +
+                        URLEncoder.encode("muffler","UTF-8") + "=" + URLEncoder.encode(partName[7],"UTF-8") + "&" +
+                        URLEncoder.encode("switchOnOff","UTF-8") + "=" + URLEncoder.encode(partName[8],"UTF-8") + "&" +
+                        URLEncoder.encode("coil","UTF-8") + "=" + URLEncoder.encode(partName[9],"UTF-8") + "&" +
+                        URLEncoder.encode("fuelTankCap","UTF-8") + "=" + URLEncoder.encode(partName[10],"UTF-8") + "&" +
+                        URLEncoder.encode("newPaint","UTF-8") + "=" + URLEncoder.encode(partName[11],"UTF-8") + "&" +
+                        URLEncoder.encode("oilTankCap","UTF-8") + "=" + URLEncoder.encode(partName[12],"UTF-8") + "&" +
+                        URLEncoder.encode("sparkPlug","UTF-8") + "=" + URLEncoder.encode(partName[13],"UTF-8");
 
                 /*String data = URLEncoder.encode("idNo","UTF-8") + "=" + URLEncoder.encode(idNo,"UTF-8")+"&"+
                         URLEncoder.encode("name","UTF-8") + "=" + URLEncoder.encode(name,"UTF-8")+"&"+

@@ -12,11 +12,12 @@ import java.util.ArrayList;
 public class SubmitEstimateG200 extends AppCompatActivity {
 
     private int idxEngine;
-    private String priceBodyColor, priceFuelTankCap, priceOilFilter, priceStarter, priceMuffler,
-            priceSparkPlug, priceCarburetor, priceCoilCDI, priceBallValueSwitchOil, priceAirFilter,
-            priceSwitchOnOff;
-    private Double dBodyColor, dFuelTankCap, dOilFilter, dStarter, dMuffler,
-            dSparkPlug, dCarburetor, dCoilCDI, dBallValueSwitchOil, dAirFilter, dSwitchOnOff;
+    private String priceStarter, priceFuelTank, priceAirFilter, priceCarburetor, priceCylinderSet,
+            priceBallValveSwitchOil, priceMuffler, priceSwitchOnOff, priceCoil, priceFuelTankCap,
+            priceNewPaint, priceOilTankCap, priceSparkPlug;
+    private Double dStarter, dFuelTank, dAirFilter, dCarburetor, dCylinderSet,
+            dBallValveSwitchOil, dMuffler, dSwitchOnOff, dCoil, dFuelTankCap,
+            dNewPaint, dOilTankCap, dSparkPlug;
     private Double dAmount = 0.0;
     private TextView txtAmount;
     private ListView listViewEstimatedG200;
@@ -50,35 +51,40 @@ public class SubmitEstimateG200 extends AppCompatActivity {
     private void calculatePrice() {
         //Convert String to Double.
         if (idxEngine == 0) {
-            dBodyColor = Double.parseDouble(priceBodyColor);
-            dFuelTankCap = Double.parseDouble(priceFuelTankCap);
-            dOilFilter = Double.parseDouble(priceOilFilter);
             dStarter = Double.parseDouble(priceStarter);
-            dMuffler = Double.parseDouble(priceMuffler);
-            dSparkPlug = Double.parseDouble(priceSparkPlug);
+            dFuelTank = Double.parseDouble(priceFuelTank);
+            dAirFilter= Double.parseDouble(priceAirFilter);
             dCarburetor = Double.parseDouble(priceCarburetor);
-            dCoilCDI = Double.parseDouble(priceCoilCDI);
-            dBallValueSwitchOil = Double.parseDouble(priceBallValueSwitchOil);
-            dAirFilter = Double.parseDouble(priceAirFilter);
+            dCylinderSet = Double.parseDouble(priceCylinderSet);
+            dBallValveSwitchOil = Double.parseDouble(priceBallValveSwitchOil);
+            dMuffler = Double.parseDouble(priceMuffler);
             dSwitchOnOff = Double.parseDouble(priceSwitchOnOff);
+            dCoil = Double.parseDouble(priceCoil);
+            dFuelTankCap = Double.parseDouble(priceFuelTankCap);
+            dNewPaint = Double.parseDouble(priceNewPaint);
+            dOilTankCap = Double.parseDouble(priceOilTankCap);
+            dSparkPlug = Double.parseDouble(priceSparkPlug);
 
             //Estimate price.
-            dAmount = 4400 - (dBodyColor + dFuelTankCap + dOilFilter + dStarter + dMuffler +
-                    dSparkPlug + dCarburetor + dCoilCDI + dBallValueSwitchOil + dAirFilter +
-                    dSwitchOnOff);
+            dAmount = 4400 - (dStarter + dFuelTank + dAirFilter + dCarburetor + dCylinderSet +
+                    dBallValveSwitchOil + dMuffler + dSwitchOnOff + dCoil + dFuelTankCap +
+                    dNewPaint + dOilTankCap + dSparkPlug);
 
         }else {
-            dBodyColor = Double.parseDouble(priceBodyColor);
-            dFuelTankCap = Double.parseDouble(priceFuelTankCap);
-            dOilFilter = Double.parseDouble(priceOilFilter);
+            dFuelTank = Double.parseDouble(priceFuelTank);
+            dAirFilter= Double.parseDouble(priceAirFilter);
+            dCylinderSet = Double.parseDouble(priceCylinderSet);
             dMuffler = Double.parseDouble(priceMuffler);
-            dSparkPlug = Double.parseDouble(priceSparkPlug);
-            dAirFilter = Double.parseDouble(priceAirFilter);
             dSwitchOnOff = Double.parseDouble(priceSwitchOnOff);
+            dFuelTankCap = Double.parseDouble(priceFuelTankCap);
+            dNewPaint = Double.parseDouble(priceNewPaint);
+            dOilTankCap = Double.parseDouble(priceOilTankCap);
+            dSparkPlug = Double.parseDouble(priceSparkPlug);
 
             //Estimate price.
-            dAmount = 2640-(dBodyColor + dFuelTankCap + dOilFilter + dMuffler + dSparkPlug +
-                    dAirFilter + dSwitchOnOff);
+            dAmount = 2640-(dFuelTank + dAirFilter + dCylinderSet +
+                    dMuffler + dSwitchOnOff + dFuelTankCap +
+                    dNewPaint + dOilTankCap + dSparkPlug);
         }
 
     }
@@ -95,29 +101,33 @@ public class SubmitEstimateG200 extends AppCompatActivity {
         if (idxEngine == 0) {
             strPrice = new String[]{
                     "0.0",
-                    dBodyColor.toString(),
-                    dFuelTankCap.toString(),
-                    dOilFilter.toString(),
                     dStarter.toString(),
-                    dMuffler.toString(),
-                    dSparkPlug.toString(),
-                    dCarburetor.toString(),
-                    dCoilCDI.toString(),
-                    dBallValueSwitchOil.toString(),
+                    dFuelTank.toString(),
                     dAirFilter.toString(),
-                    dSwitchOnOff.toString()
+                    dCarburetor.toString(),
+                    dCylinderSet.toString(),
+                    dBallValveSwitchOil.toString(),
+                    dMuffler.toString(),
+                    dSwitchOnOff.toString(),
+                    dCoil.toString(),
+                    dFuelTankCap.toString(),
+                    dNewPaint.toString(),
+                    dOilTankCap.toString(),
+                    dSparkPlug.toString()
             };
 
         }else {
             strPrice = new String[]{
                     "30%",
-                    dBodyColor.toString(),
-                    dFuelTankCap.toString(),
-                    dOilFilter.toString(),
-                    dMuffler.toString(),
-                    dSparkPlug.toString(),
+                    dFuelTank.toString(),
                     dAirFilter.toString(),
-                    dSwitchOnOff.toString()
+                    dCylinderSet.toString(),
+                    dMuffler.toString(),
+                    dSwitchOnOff.toString(),
+                    dFuelTankCap.toString(),
+                    dNewPaint.toString(),
+                    dOilTankCap.toString(),
+                    dSparkPlug.toString()
             };
 
         }
@@ -142,97 +152,107 @@ public class SubmitEstimateG200 extends AppCompatActivity {
         //Compare data from sqlite.
         if (idxEngine == 0) {
             if (idSelectedList.get(1) == 1) {
-                priceBodyColor = strPartPrice[0];
+                priceStarter = strPartPrice[0];
+            }else if (idSelectedList.get(1) == 2){
+                priceStarter = "0.0";
             }else {
-                priceBodyColor = "0.0";
+                priceStarter = "0.0";
             }
 
             if (idSelectedList.get(2) == 1) {
-                priceFuelTankCap = strPartPrice[1];
+                priceFuelTank = strPartPrice[1];
             }else {
-                priceFuelTankCap = "0.0";
+                priceFuelTank = "0.0";
             }
 
             if (idSelectedList.get(3) == 1) {
-                priceOilFilter = strPartPrice[2];
-            }else {
-                priceOilFilter = "0.0";
-            }
-
-            if (idSelectedList.get(4) != 1) {
-                //4 choices.
-                if (idSelectedList.get(4) != 2) {
-                    if (idSelectedList.get(4) != 3) {
-                        priceStarter = "0.0";
-                    }else {
-                        priceStarter = strPartPrice[5];
-                    }
-                }else {
-                    priceStarter = strPartPrice[4];
-                }
-            }else {
-                priceStarter = strPartPrice[3];
-            }
-
-            if (idSelectedList.get(5) == 1) {
-                priceMuffler = strPartPrice[6];
-            }else {
-                priceMuffler = "0.0";
-            }
-
-            if (idSelectedList.get(6) == 1) {
-                priceSparkPlug = strPartPrice[7];
-            }else {
-                priceSparkPlug = "0.0";
-            }
-
-            if (idSelectedList.get(7) == 1) {
-                priceCarburetor = strPartPrice[8];
-            }else {
-                priceCarburetor = "0.0";
-            }
-
-            if (idSelectedList.get(8) == 1) {
-                priceCoilCDI = strPartPrice[9];
-            }else {
-                priceCoilCDI = "0.0";
-            }
-
-            if (idSelectedList.get(9) == 1) {
-                priceBallValueSwitchOil = strPartPrice[10];
-            }else {
-                priceBallValueSwitchOil = "0.0";
-            }
-
-            if (idSelectedList.get(10) == 1) {
-                priceAirFilter = strPartPrice[11];
+                priceAirFilter = strPartPrice[2];
+            }else if (idSelectedList.get(3) == 2){
+                priceAirFilter = "0.0";
             }else {
                 priceAirFilter = "0.0";
             }
 
-            if (idSelectedList.get(11) == 1) {
-                priceSwitchOnOff = strPartPrice[12];
+            if (idSelectedList.get(4) == 1) {
+                priceCarburetor = strPartPrice[3];
+            }else {
+                priceCarburetor = strPartPrice[3];
+            }
+
+            if (idSelectedList.get(5) == 1) {
+                priceCylinderSet = strPartPrice[6];
+            }else {
+                priceCylinderSet = "0.0";
+            }
+
+            if (idSelectedList.get(6) == 1) {
+                priceBallValveSwitchOil = strPartPrice[7];
+            }else {
+                priceBallValveSwitchOil = "0.0";
+            }
+
+            if (idSelectedList.get(7) == 1) {
+                priceMuffler = strPartPrice[8];
+            }else {
+                priceMuffler = "0.0";
+            }
+
+            if (idSelectedList.get(8) == 1) {
+                priceSwitchOnOff = strPartPrice[9];
             }else {
                 priceSwitchOnOff = "0.0";
             }
 
-        }else{
-            if (idSelectedList.get(1) == 1) {
-                priceBodyColor = strPartPrice[0];
+            if (idSelectedList.get(9) == 1) {
+                priceCoil = strPartPrice[10];
             }else {
-                priceBodyColor = "0.0";
+                priceCoil = "0.0";
             }
 
-            if (idSelectedList.get(2) == 1) {
-                priceFuelTankCap = strPartPrice[1];
+            if (idSelectedList.get(10) == 1) {
+                priceFuelTankCap = strPartPrice[11];
             }else {
                 priceFuelTankCap = "0.0";
             }
 
-            if (idSelectedList.get(3) == 1) {
-                priceOilFilter = strPartPrice[2];
+            if (idSelectedList.get(11) == 1) {
+                priceNewPaint = strPartPrice[12];
             }else {
-                priceOilFilter = "0.0";
+                priceNewPaint = "0.0";
+            }
+
+            if (idSelectedList.get(12) == 1){
+                priceOilTankCap = strPartPrice[13];
+            }else {
+                priceOilTankCap = "0.0";
+            }
+
+            if (idSelectedList.get(13) == 1){
+                priceSparkPlug = strPartPrice[14];
+            }else{
+                priceSparkPlug = "0.0";
+            }
+
+        }else{
+
+            if (idSelectedList.get(1) == 1) {
+                priceFuelTank = strPartPrice[1];
+            }else {
+                priceFuelTank = "0.0";
+            }
+
+            if (idSelectedList.get(2) == 1) {
+                priceAirFilter = strPartPrice[2];
+            }else if (idSelectedList.get(3) == 2){
+                priceAirFilter = "0.0";
+            }else {
+                priceAirFilter = "0.0";
+            }
+
+            if (idSelectedList.get(3) == 1) {
+                priceCylinderSet = strPartPrice[4];
+            }else {
+                priceCylinderSet = "0.0";
             }
 
             if (idSelectedList.get(4) == 1) {
@@ -242,38 +262,37 @@ public class SubmitEstimateG200 extends AppCompatActivity {
             }
 
             if (idSelectedList.get(5) == 1) {
-                priceSparkPlug = strPartPrice[7];
-            }else {
-                priceSparkPlug = "0.0";
-            }
-
-            if (idSelectedList.get(6) == 1) {
-                priceAirFilter = strPartPrice[11];
-            }else {
-                priceAirFilter = "0.0";
-            }
-
-            if (idSelectedList.get(7) == 1) {
-                priceSwitchOnOff = strPartPrice[12];
+                priceSwitchOnOff = strPartPrice[7];
             }else {
                 priceSwitchOnOff = "0.0";
             }
-        }
 
+            if (idSelectedList.get(6) == 1) {
+                priceFuelTankCap = strPartPrice[9];
+            }else {
+                priceFuelTankCap = "0.0";
+            }
 
-        /*Toast.makeText(this, strPartPrice[0], Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, strPartPrice[1], Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, strPartPrice[2], Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, strPartPrice[3], Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, strPartPrice[4], Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, strPartPrice[5], Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, strPartPrice[6], Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, strPartPrice[7], Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, strPartPrice[8], Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, strPartPrice[9], Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, strPartPrice[10], Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, strPartPrice[11], Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, strPartPrice[12], Toast.LENGTH_SHORT).show();*/
+            if (idSelectedList.get(7) == 1) {
+                priceNewPaint = strPartPrice[10];
+            }else {
+                priceNewPaint = "0.0";
+            }
+
+            if (idSelectedList.get(8) == 1){
+                priceOilTankCap = strPartPrice[11];
+            }else {
+                priceOilTankCap = "0.0";
+            }
+
+            if (idSelectedList.get(9) == 1){
+                priceSparkPlug = strPartPrice[12];
+            }else{
+                priceSparkPlug = "0.0";
+            }
+
+        }//End else.
+
 
     }
 
@@ -290,6 +309,7 @@ public class SubmitEstimateG200 extends AppCompatActivity {
         intentBuyG200.putExtra("amount", dAmount.toString());
         intentBuyG200.putExtra("partName", strName);
         intentBuyG200.putExtra("partPrice", strPrice);
+
         startActivity(intentBuyG200);
     }
 

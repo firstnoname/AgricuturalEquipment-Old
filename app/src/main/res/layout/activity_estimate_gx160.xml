@@ -107,11 +107,11 @@
                 android:layout_height="match_parent" >
 
                 <TextView
-                    android:text="สีตัวเครื่องโดยรวม"
+                    android:id="@+id/txtView1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/txtView1"
                     android:layout_weight="1"
+                    android:text="จานกระตุกชุด (Starter)"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -119,14 +119,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="ทำสีใหม่" />
+                    android:text="เปลี่ยนเฉพาะเชือกกระตุก" />
 
                 <RadioButton
-                    android:text="ไม่ทำสีใหม่"
+                    android:id="@+id/radioBtn1_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/radioBtn1_2"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:text="เปลี่ยนเฉพาะเขี้ยวสตาร์ท" />
+
+                <RadioButton
+                    android:id="@+id/radioBtn1_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="ไม่ต้องเปลี่ยนจานกระตุก" />
 
             </RadioGroup>
 

@@ -33,7 +33,7 @@ public class SettingPartsG200 extends AppCompatActivity {
     }
 
     public void addDefaultPart() {
-        objTableG200.addNewPart("ทำสี","120");
+        /*objTableG200.addNewPart("ทำสี","120");
         objTableG200.addNewPart("ฝาถังน้ำมัน", "50");
         objTableG200.addNewPart("ฝาถังน้ำมันเครื่อง", "50");
         objTableG200.addNewPart("จานกระตุกชุด","450");
@@ -48,7 +48,7 @@ public class SettingPartsG200 extends AppCompatActivity {
         objTableG200.addNewPart("สวิตช์ปิดเปิด","120");
         objTableG200.addNewPart("ลูกสูบ","480");
         objTableG200.addNewPart("เสื้อสูบ","2200");
-        objTableG200.addNewPart("ถังน้ำมัน","700");
+        objTableG200.addNewPart("ถังน้ำมัน","700");*/
     }
 
     private void createListView() {

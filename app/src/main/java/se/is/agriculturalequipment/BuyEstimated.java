@@ -20,6 +20,7 @@ import android.widget.Toast;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class BuyEstimated extends AppCompatActivity {
     //Instant for use camera.
@@ -35,6 +36,10 @@ public class BuyEstimated extends AppCompatActivity {
 
     //
     private String getAmount;
+    private String[] strName;
+    private String partName;
+
+    //Instance for bind widget.
     private EditText edtAmount, edtName, edtIdentificationNo;
 
     @Override
@@ -57,8 +62,10 @@ public class BuyEstimated extends AppCompatActivity {
     private void getValueFromSubmitEstimateG200() {
         Intent intent = getIntent();
         getAmount = intent.getStringExtra("amount");
-
         edtAmount.setText(getAmount);
+
+        strName = intent.getStringArrayExtra("partName");
+        partName = Arrays.toString(strName);
     }
 
     private void bindWidget() {
@@ -207,7 +214,7 @@ public class BuyEstimated extends AppCompatActivity {
 
         String method = "insert_profile";
         BackgroundTask backgroundTask = new BackgroundTask(this);
-        backgroundTask.execute(method,idNo,name,amount,imageName,encodeImage);
+        backgroundTask.execute(method,idNo,name,amount,imageName,encodeImage,partName);
         finish();
     }
 
