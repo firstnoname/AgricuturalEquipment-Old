@@ -3,6 +3,7 @@ package se.is.agriculturalequipment;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -12,6 +13,7 @@ import java.util.ArrayList;
 public class SubmitEstimateG200 extends AppCompatActivity {
 
     private int idxEngine;
+    private String idxEnginePass;
     private String priceStarter, priceFuelTank, priceAirFilter, priceCarburetor, priceCylinderSet,
             priceBallValveSwitchOil, priceMuffler, priceSwitchOnOff, priceCoil, priceFuelTankCap,
             priceNewPaint, priceOilTankCap, priceSparkPlug;
@@ -27,6 +29,8 @@ public class SubmitEstimateG200 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_submit_estimate_g200);
+
+        idxEngine = getIntent().getIntExtra("idxEngine",0);
 
         //Get data from SQLite.
         getDataFromSQLite();
@@ -143,7 +147,7 @@ public class SubmitEstimateG200 extends AppCompatActivity {
 
     private void getDataFromSQLite() {
         //Get data from EstimateG200.
-        idxEngine = getIntent().getIntExtra("idxEngine",0);
+//        idxEngine = getIntent().getIntExtra("idxEngine",0);
         ArrayList<Integer> idSelectedList = (ArrayList<Integer>) getIntent().getIntegerArrayListExtra("arrSelectedID");
 
         TableG200 objTableG200 = new TableG200(this);
@@ -305,10 +309,17 @@ public class SubmitEstimateG200 extends AppCompatActivity {
     }
 
     public void intentBuyG200(View view){
+        if (idxEngine == 0) {
+            idxEnginePass = "0";
+        }else{
+            idxEnginePass = "1";
+        }
+
         Intent intentBuyG200 = new Intent(this, BuyEstimated.class);
         intentBuyG200.putExtra("amount", dAmount.toString());
         intentBuyG200.putExtra("partName", strName);
         intentBuyG200.putExtra("partPrice", strPrice);
+        intentBuyG200.putExtra("idxEngine", idxEnginePass);
 
         startActivity(intentBuyG200);
     }

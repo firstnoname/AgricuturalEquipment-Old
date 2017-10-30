@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 
+import se.is.agriculturalequipment.addPart.AddPartGX35;
+
 public class SettingPartsGX35 extends AppCompatActivity {
 
     private ListView listViewGX35;

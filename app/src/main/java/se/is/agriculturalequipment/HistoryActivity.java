@@ -1,12 +1,23 @@
 package se.is.agriculturalequipment;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -22,22 +33,44 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
 
+import se.is.agriculturalequipment.history.HistoryG200Lists;
+import se.is.agriculturalequipment.history.HistoryGX160List;
+
 public class HistoryActivity extends AppCompatActivity {
 
-    ListView history_listview;
     ArrayList<String> exData;
     ProgressDialog progressDialog;
+    Button hisG200, hisGX160, hisGX35, hisT200, hisTM31;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
 
-        history_listview = (ListView) findViewById(R.id.history_listView);
 
         exData = new ArrayList<String>();
 
-        new AsyncTask<Void, Void, Void>() {
+        //Variable for using Volley.
+        RequestQueue queue = Volley.newRequestQueue(this);
+        String url = "http://tomori.siameki.com/test_selTwoTable.php";
+
+        //Request a string response from the provided URL.
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        /*Toast.makeText(HistoryActivity.this, "Response is : " +
+                                response.substring(0, 500), Toast.LENGTH_SHORT).show();*/
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(HistoryActivity.this, "Connection error.", Toast.LENGTH_SHORT).show();
+            }
+        });
+        queue.add(stringRequest);
+
+        /*new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(Void... params) {
 
@@ -108,6 +141,29 @@ public class HistoryActivity extends AppCompatActivity {
 
             }
 
-        }.execute();
+        }.execute();*/
     }
+
+    public void intentHisG200(View view) {
+        Intent intentHisG200 = new Intent(this, HistoryG200Lists.class);
+        startActivity(intentHisG200);
+    }
+
+    public void intentHisGX160(View view) {
+        Intent intentHisGX60 = new Intent(this, HistoryGX160List.class);
+        startActivity(intentHisGX60);
+    }
+
+    public void intentHisGX35(View view) {
+
+    }
+
+    public void intentHisT200(View view) {
+
+    }
+
+    public void intentHisTM31(View view) {
+
+    }
+
 }

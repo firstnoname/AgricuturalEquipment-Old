@@ -61,39 +61,34 @@
             android:layout_marginRight="16dp"
             android:orientation="vertical">
 
+            <TextView
+                android:text="เครื่องยนต์"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtView"
+                android:layout_weight="1"
+                android:textSize="16sp" />
+
             <RadioGroup
                 android:id="@+id/checkEngine"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-                <TextView
-                    android:text="เครื่องยนต์"
+                <RadioButton
+                    android:text="สตาร์ทติด"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/txtView"
-                    android:layout_weight="1"
-                    android:textSize="16sp" />
+                    android:id="@+id/radioBtnEngineTrue"
+                    android:layout_weight="1"/>
 
-                <LinearLayout
-                    android:orientation="horizontal"
+                <RadioButton
+                    android:text="สตาร์ทไม่ติด"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radioBtnEngineFalse"
+                    android:layout_weight="1"/>
 
-                    <RadioButton
-                        android:text="สตาร์ทติด"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/radioBtnEngineTrue"
-                        android:layout_weight="1" />
-
-                    <RadioButton
-                        android:text="สตาร์ทไม่ติด"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/radioBtnEngineFalse"
-                        android:layout_weight="1" />
-                </LinearLayout>
 
             </RadioGroup>
 
@@ -103,26 +98,33 @@
                 android:layout_height="match_parent" >
 
                 <TextView
-                    android:text="สีตัวเครื่องโดยรวม(และตัวถัง)"
+                    android:id="@+id/txtView1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/txtView1"
                     android:layout_weight="1"
+                    android:text="จานกระตุกชุด (Starter)"
                     android:textSize="16sp" />
 
                 <RadioButton
-                    android:text="ทำสีใหม่"
+                    android:id="@+id/radioBtn1_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/radioBtn1_1"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:text="เปลี่ยนเฉพาะเชือกกระตุก " />
 
                 <RadioButton
-                    android:text="ไม่ทำสีใหม่"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
                     android:id="@+id/radioBtn1_2"
-                    android:layout_weight="1" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="เปลี่ยนเฉพาะเขี้ยวสตาร์ท" />
+
+                <RadioButton
+                    android:id="@+id/radioBtn1_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="ไม่ต้องเปลี่ยนจานกระตุก" />
 
             </RadioGroup>
 
@@ -137,24 +139,22 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="ถังน้ำมัน"
+                    android:text="ถังน้ำมัน (Fuel Tank)"
                     android:textSize="16sp" />
 
                 <RadioButton
                     android:id="@+id/radioBtn2_1"
-                    android:layout_width = "match_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="เปลี่ยน"
-                    android:checked="false">
-                </RadioButton>
+                    android:checked="false"
+                    android:text="เปลี่ยนถังน้ำมัน"></RadioButton>
 
                 <RadioButton
                     android:id="@+id/radioBtn2_2"
-                    android:layout_width = "match_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="ไม่เปลี่ยน"
-                    android:checked="false">
-                </RadioButton>
+                    android:checked="false"
+                    android:text="ไม่เปลี่ยนถังน้ำมัน"></RadioButton>
             </RadioGroup>
 
             <!--                No 2              -->
@@ -170,40 +170,22 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="จานกระตุก"
+                    android:text="มือเร่ง (Control Switch)"
                     android:textSize="16sp" />
 
                 <RadioButton
                     android:id="@+id/radioBtn3_1"
-                    android:layout_width = "match_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="เปลี่ยนจานกระตุกทั้งชุด"
-                    android:checked="false">
-                </RadioButton>
+                    android:checked="false"
+                    android:text="เปลี่ยนมือเร่ง"></RadioButton>
 
                 <RadioButton
                     android:id="@+id/radioBtn3_2"
-                    android:layout_width = "wrap_content"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="เปลี่ยนเฉพาะเชือกกระตุก"
-                    android:checked="false">
-                </RadioButton>
-
-                <RadioButton
-                    android:id="@+id/radioBtn3_3"
-                    android:layout_width = "wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="เปลี่ยนเฉพาะเขี้ยวสตาร์ท "
-                    android:checked="false">
-                </RadioButton>
-
-                <RadioButton
-                    android:id="@+id/radioBtn3_4"
-                    android:layout_width = "wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="ไม่เปลี่ยนจานกระตุก"
-                    android:checked="false">
-                </RadioButton>
+                    android:checked="false"
+                    android:text="ไม่เปลี่ยนมือเร่ง"></RadioButton>
 
             </RadioGroup>
 
@@ -220,24 +202,22 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="กระบอกหาง"
+                    android:text="ใบมีด (Brush Cutter Blade)"
                     android:textSize="16sp" />
 
                 <RadioButton
                     android:id="@+id/radioBtn4_1"
-                    android:layout_width = "match_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="เปลี่ยน"
-                    android:checked="false">
-                </RadioButton>
+                    android:checked="false"
+                    android:text="เปลี่ยนใบมีด"></RadioButton>
 
                 <RadioButton
                     android:id="@+id/radioBtn4_2"
-                    android:layout_width = "wrap_content"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ไม่เปลี่ยน"
-                    android:checked="false">
-                </RadioButton>
+                    android:checked="false"
+                    android:text="ไม่เปลี่ยนใบมีด"></RadioButton>
 
             </RadioGroup>
 
@@ -253,25 +233,30 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="ใบมีดตัดหญ้า"
+                    android:layout_height="34dp"
+                    android:text="หม้อกรองอากาศ (Air Filter)"
                     android:textSize="16sp" />
 
                 <RadioButton
                     android:id="@+id/radioBtn5_1"
-                    android:layout_width = "match_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="เปลี่ยน"
-                    android:checked="false">
-                </RadioButton>
+                    android:checked="false"
+                    android:text="เปลี่ยนเฉพาะไส้กรองอากาศ"></RadioButton>
 
                 <RadioButton
                     android:id="@+id/radioBtn5_2"
-                    android:layout_width = "match_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="ไม่เปลี่ยน"
-                    android:checked="false">
-                </RadioButton>
+                    android:checked="false"
+                    android:text="เปลี่ยนกรองอากาศทั้งลูก"></RadioButton>
+
+                <RadioButton
+                    android:id="@+id/radioBtn5_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="ไม่เปลี่ยนกรองอากาศ" />
 
             </RadioGroup>
 
@@ -287,32 +272,23 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="คอตัดหญ้า"
+                    android:layout_height="34dp"
+                    android:text="คาร์บูเรเตอร์ (Carburetor)"
                     android:textSize="16sp" />
 
                 <RadioButton
                     android:id="@+id/radioBtn6_1"
-                    android:layout_width = "match_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="เปลี่ยนทั้งชุด"
-                    android:checked="false">
-                </RadioButton>
+                    android:checked="false"
+                    android:text="เปลี่ยนคาร์บูเรเตอร์"></RadioButton>
 
                 <RadioButton
                     android:id="@+id/radioBtn6_2"
-                    android:layout_width = "match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="เปลี่ยนเฉพาะเฟืองในคอตัดหญ้า"
-                    android:checked="false">
-                </RadioButton>
-
-                <RadioButton
-                    android:id="@+id/radioBtn6_3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="ไม่เปลี่ยน"
-                    android:checked="false"/>
+                    android:checked="false"
+                    android:text="ไม่เปลี่ยนคาร์บูเรเตอร์"></RadioButton>
 
             </RadioGroup>
 
@@ -328,25 +304,30 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="มือเร่ง"
+                    android:layout_height="33dp"
+                    android:text="เสื้อสูบ (Cylinder Set)"
                     android:textSize="16sp" />
 
                 <RadioButton
                     android:id="@+id/radioBtn7_1"
-                    android:layout_width = "match_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="เปลี่ยน"
-                    android:checked="false">
-                </RadioButton>
+                    android:checked="false"
+                    android:text="เปลี่ยนเสื้อสูบ"></RadioButton>
 
                 <RadioButton
                     android:id="@+id/radioBtn7_2"
-                    android:layout_width = "match_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="ไม่เปลี่ยน"
-                    android:checked="false">
-                </RadioButton>
+                    android:checked="false"
+                    android:text="เปลี่ยนเฉพาะลูกสูบ"></RadioButton>
+
+                <RadioButton
+                    android:id="@+id/radioBtn7_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="ไม่เปลี่ยนเสื้อสูบ" />
 
             </RadioGroup>
 
@@ -361,33 +342,24 @@
                 android:layout_width="match_parent">
 
                 <TextView
-                    android:layout_height="match_parent"
-                    android:text="หม้อกรองอากาศ"
                     android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="ก๊อกน้ำมัน (Ball Valve Switch Oil)"
                     android:textSize="16sp" />
 
                 <RadioButton
                     android:id="@+id/radioBtn8_1"
-                    android:layout_width = "match_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="เปลี่ยนเฉพาะไส้กรอง"
-                    android:checked="false">
-                </RadioButton>
+                    android:checked="false"
+                    android:text="เปลี่ยนก๊อกน้ำมัน"></RadioButton>
 
                 <RadioButton
                     android:id="@+id/radioBtn8_2"
-                    android:layout_width = "match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="เปลี่ยนทั้งลูก"
-                    android:checked="false">
-                </RadioButton>
-
-                <RadioButton
-                    android:id="@+id/radioBtn8_3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="ไม่เปลี่ยน"
-                    android:checked="false"/>
+                    android:checked="false"
+                    android:text="ไม่เปลี่ยนก๊อกน้ำมัน"></RadioButton>
 
 
             </RadioGroup>
@@ -405,24 +377,22 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="ท่อไอเสีย"
+                    android:text="ท่อไอเสีย (Muffler)"
                     android:textSize="16sp" />
 
                 <RadioButton
                     android:id="@+id/radioBtn9_1"
-                    android:layout_width = "match_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="เปลี่ยน"
-                    android:checked="false">
-                </RadioButton>
+                    android:checked="false"
+                    android:text="เปลี่ยนท่อ"></RadioButton>
 
                 <RadioButton
                     android:id="@+id/radioBtn9_2"
-                    android:layout_width = "match_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="ไม่เปลี่ยน"
-                    android:checked="false">
-                </RadioButton>
+                    android:checked="false"
+                    android:text="ไม่เปลี่ยนท่อ"></RadioButton>
 
             </RadioGroup>
 
@@ -430,33 +400,38 @@
 
             <RadioGroup
                 android:id="@+id/no10"
-                android:layout_below="@+id/no9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="false"
-                android:layout_centerHorizontal="false">
+                android:layout_below="@+id/no9"
+                android:layout_centerHorizontal="false"
+                android:layout_centerVertical="false">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="คาร์บูเรเตอร์"
+                    android:text="คอตัดหญ้า (Gear Diver)"
                     android:textSize="16sp" />
 
                 <RadioButton
                     android:id="@+id/radioBtn10_1"
-                    android:layout_width = "match_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="เปลี่ยน"
-                    android:checked="false">
-                </RadioButton>
+                    android:checked="false"
+                    android:text="เปลี่ยนคอตัดหญ้า"></RadioButton>
 
                 <RadioButton
                     android:id="@+id/radioBtn10_2"
-                    android:layout_width = "match_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="ไม่เปลี่ยน"
-                    android:checked="false">
-                </RadioButton>
+                    android:checked="false"
+                    android:text="เปลี่ยนเฟืองคอตัดหญ้า"></RadioButton>
+
+                <RadioButton
+                    android:id="@+id/radioBtn10_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="ไม่เปลี่ยนคอตัดหญ้า" />
 
             </RadioGroup>
 
@@ -464,7 +439,7 @@
 
             <RadioGroup
                 android:id="@+id/no11"
-                android:layout_below="@+id/no10"
+                android:layout_below="@+id/no11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="false"
@@ -473,24 +448,22 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="ก๊อกน้ำมัน"
+                    android:text="กระบอกหาง (Main Pipe)"
                     android:textSize="16sp" />
 
                 <RadioButton
                     android:id="@+id/radioBtn11_1"
-                    android:layout_width = "match_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="เปลี่ยน"
-                    android:checked="false">
-                </RadioButton>
+                    android:checked="false"
+                    android:text="เปลี่ยนกระบอกหาง"></RadioButton>
 
                 <RadioButton
                     android:id="@+id/radioBtn11_2"
-                    android:layout_width = "match_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="ไม่ปเลี่ยน"
-                    android:checked="false">
-                </RadioButton>
+                    android:checked="false"
+                    android:text="ไม่เปลี่ยนกระบอกหาง"></RadioButton>
 
             </RadioGroup>
 
@@ -498,7 +471,7 @@
 
             <RadioGroup
                 android:id="@+id/no12"
-                android:layout_below="@+id/no10"
+                android:layout_below="@+id/no11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="false"
@@ -507,36 +480,218 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="เสื้อสูบ"
+                    android:text="สวิตช์ปิดเปิด (Switch On-Off)"
                     android:textSize="16sp" />
 
                 <RadioButton
                     android:id="@+id/radioBtn12_1"
-                    android:layout_width = "match_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="เปลี่ยนทั้งเสื้อสูบ"
-                    android:checked="false">
-                </RadioButton>
+                    android:checked="false"
+                    android:text="เปลี่ยนสวิตช์"></RadioButton>
 
                 <RadioButton
                     android:id="@+id/radioBtn12_2"
-                    android:layout_width = "match_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="เปลี่ยนเฉพาะลูกสูบ"
-                    android:checked="false">
-                </RadioButton>
-
-                <RadioButton
-                    android:id="@+id/radioBtn12_3"
-                    android:layout_width = "match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="ไม่เปลี่ยน"
-                    android:checked="false">
-                </RadioButton>
+                    android:checked="false"
+                    android:text="ไม่เปลี่ยนสวิตช์"></RadioButton>
 
             </RadioGroup>
 
             <!--                No 12              -->
+
+            <RadioGroup
+                android:id="@+id/no13"
+                android:layout_below="@+id/no12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="false"
+                android:layout_centerHorizontal="false">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="คอยล์ ( Coil)"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/radioBtn13_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="เปลี่ยนคอยล์"></RadioButton>
+
+                <RadioButton
+                    android:id="@+id/radioBtn13_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="ไม่เปลี่ยนคอยล์"></RadioButton>
+
+            </RadioGroup>
+
+            <!--                No 13              -->
+
+            <RadioGroup
+                android:id="@+id/no14"
+                android:layout_below="@+id/no13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="false"
+                android:layout_centerHorizontal="false">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="ฝาถังน้ำมัน  (Fuel Tank Cap)"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/radioBtn14_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="เปลี่ยนฝาถังน้ำมัน"></RadioButton>
+
+                <RadioButton
+                    android:id="@+id/radioBtn14_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="ไม่เปลี่ยนฝาถังน้ำมัน"></RadioButton>
+
+            </RadioGroup>
+
+            <!--                No 14              -->
+
+            <RadioGroup
+                android:id="@+id/no15"
+                android:layout_below="@+id/no14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="false"
+                android:layout_centerHorizontal="false">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="ทำสี (New Paint)"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/radioBtn15_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="ทำสีใหม่"></RadioButton>
+
+                <RadioButton
+                    android:id="@+id/radioBtn15_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="ไม่ทำสี"></RadioButton>
+
+            </RadioGroup>
+
+            <!--                No 15              -->
+
+            <RadioGroup
+                android:id="@+id/no16"
+                android:layout_below="@+id/no15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="false"
+                android:layout_centerHorizontal="false">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="แกนเพลา (Shaft)"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/radioBtn16_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="เปลี่ยนแกนเพลา"></RadioButton>
+
+                <RadioButton
+                    android:id="@+id/radioBtn16_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="ไม่เปลี่ยนแกนเพลา"></RadioButton>
+
+            </RadioGroup>
+
+            <!--                No 16              -->
+
+            <RadioGroup
+                android:id="@+id/no17"
+                android:layout_below="@+id/no16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="false"
+                android:layout_centerHorizontal="false">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="ฝาถังน้ำมันเครื่อง (Oil Tank Cap)"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/radioBtn17_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="เปลี่ยนฝาถังน้ำมันเครื่อง"></RadioButton>
+
+                <RadioButton
+                    android:id="@+id/radioBtn17_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="ไม่เปลี่ยนฝาถังน้ำมันเครื่อง"></RadioButton>
+
+            </RadioGroup>
+
+            <!--                No 17              -->
+
+            <RadioGroup
+                android:id="@+id/no18"
+                android:layout_below="@+id/no17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="false"
+                android:layout_centerHorizontal="false">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="ปลั๊กหัวเทียน (Spark Plug)"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/radioBtn18_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="เปลี่ยนปลั๊กหัวเทียน"></RadioButton>
+
+                <RadioButton
+                    android:id="@+id/radioBtn18_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="ไม่เปลี่ยนปลั๊กหัวเทียน"></RadioButton>
+
+            </RadioGroup>
+
+            <!--                No 18              -->
 
             <LinearLayout
                 android:orientation="horizontal"

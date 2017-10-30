@@ -218,7 +218,7 @@ public class EstimateG200 extends AppCompatActivity {
             /*No4 = จานกระตุก*/
             idSelectedCarburetor = rdg4.getCheckedRadioButtonId();
             rdbSelectedCarburetor = (RadioButton) findViewById(idSelectedCarburetor);
-            arrSelectedID.add(idxSelectedStarter = rdg4.indexOfChild(rdbSelectedCarburetor));
+            arrSelectedID.add(idxSelectedCarburetor = rdg4.indexOfChild(rdbSelectedCarburetor));
             arrNameList.add(rdbSelectedCarburetor.getText().toString());
 
             /*No5 = ท่อไอเสีย*/

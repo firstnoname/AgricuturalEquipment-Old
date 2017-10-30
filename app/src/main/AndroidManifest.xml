@@ -9,6 +9,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
+        android:name=".app.AppController"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -25,15 +26,15 @@
         <activity android:name=".EstimateG200" />
         <activity android:name=".MenuSetting" />
         <activity android:name=".SettingPartsG200" />
-        <activity android:name=".AddPartG200" />
+        <activity android:name=".addPart.AddPartG200" />
         <activity android:name=".SettingPartGX160" />
-        <activity android:name=".AddPartGX160" />
+        <activity android:name=".addPart.AddPartGX160" />
         <activity android:name=".SettingPartsGX35" />
-        <activity android:name=".AddPartGX35" />
+        <activity android:name=".addPart.AddPartGX35" />
         <activity android:name=".SettingPartsT200" />
-        <activity android:name=".AddPartT200" />
+        <activity android:name=".addPart.AddPartT200" />
         <activity android:name=".SettingPartsTM31" />
-        <activity android:name=".AddPartTM31" />
+        <activity android:name=".addPart.AddPartTM31" />
         <activity android:name=".EstimateGX160" />
         <activity android:name=".EstimateGX35" />
         <activity android:name=".EstimateT200" />
@@ -53,7 +54,13 @@
         </provider>
 
         <activity android:name=".SubmitEstimateGX160" />
-        <activity android:name=".HistoryActivity"></activity>
+        <activity android:name=".HistoryActivity" />
+        <activity android:name=".history.HistoryG200Lists" />
+        <activity android:name=".SingleItemG200" />
+        <activity android:name=".history.HistoryGX160List" />
+        <activity android:name=".BuyEstimatedGX160" />
+        <activity android:name=".SubmitEstimateGX35" />
+        <activity android:name=".BuyEstimatedGX35"></activity>
     </application>
 
 </manifest>

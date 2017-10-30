@@ -1,11 +1,12 @@
 package se.is.agriculturalequipment;
 
 import android.content.Intent;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
+
+import se.is.agriculturalequipment.addPart.AddPartGX160;
 
 public class SettingPartGX160 extends AppCompatActivity {
 

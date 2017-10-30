@@ -1,6 +1,5 @@
 package se.is.agriculturalequipment;
 
-
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -21,7 +20,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 
-public class BuyEstimated extends AppCompatActivity {
+public class BuyEstimatedGX35 extends AppCompatActivity {
     //Instant for use camera.
     private static final int ACTION_TAKE_PHOTO_B = 1;
     private String mCurrentPhotoPath;
@@ -87,7 +86,7 @@ public class BuyEstimated extends AppCompatActivity {
         switch (actionCode) {
             case ACTION_TAKE_PHOTO_B:
                 File f = null;
-                
+
                 try {
                     f = setUpPhotoFile();
                     mCurrentPhotoPath = f.getAbsolutePath();
@@ -215,8 +214,8 @@ public class BuyEstimated extends AppCompatActivity {
         //Encode image to base64.
         imageEncodeToBase64();
 
-        String method = "insert_profile";
-        BackgroundTask backgroundTask = new BackgroundTask(this);
+        String method = "insert_profile_gx35";
+        BackgroundTaskGX35 backgroundTask = new BackgroundTaskGX35(this);
         backgroundTask.execute(method,idNo,name,amount,imageName,encodeImage,partName,idxEngine,dealingStatus);
         finish();
     }

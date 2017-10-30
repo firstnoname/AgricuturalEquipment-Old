@@ -19,24 +19,23 @@ import java.net.URL;
 import java.net.URLEncoder;
 
 /**
- * Created by iFirst on 19/4/2560.
+ * Created by BlackClover on 10/30/2017.
  */
 
-public class BackgroundTask extends AsyncTask<String,Void,String> {
+public class BackgroundTaskGX160 extends AsyncTask<String,Void,String> {
 
     Context ctx;
 
-    BackgroundTask(Context ctx) {
+    BackgroundTaskGX160(Context ctx) {
         this.ctx = ctx;
     }
-
+    @Override
     protected String doInBackground(String... params) {
-
-//        String insert_profile_url = "http://10.0.2.2/AgriculturalEquipmentServer/insert_profile.php";
-        String insert_profile_url = "http://tomori.siameki.com/insert_profile.php";
+        //        String insert_profile_url = "http://10.0.2.2/AgriculturalEquipmentServer/insert_profile.php";
+        String insert_profile_url = "http://tomori.siameki.com/insert_profile_gx160.php";
 
         String method = params[0];
-        if (method.equals("insert_profile")) {
+        if (method.equals("insert_profile_gx160")) {
             String idNo = params[1];
             String name = params[2];
             String amount = params[3];
@@ -129,7 +128,7 @@ public class BackgroundTask extends AsyncTask<String,Void,String> {
                 InputStream is = httpURLConnection.getInputStream();
                 is.close();
 
-                return "Insert values G200 success.";
+                return "Insert values GX160 success.";
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             } catch (IOException e) {
@@ -137,10 +136,6 @@ public class BackgroundTask extends AsyncTask<String,Void,String> {
             }
         }
         return null;
-    }
-
-    public BackgroundTask() {
-        super();
     }
 
     @Override

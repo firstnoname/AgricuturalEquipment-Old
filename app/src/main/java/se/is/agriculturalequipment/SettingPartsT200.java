@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 
+import se.is.agriculturalequipment.addPart.AddPartT200;
+
 public class SettingPartsT200 extends AppCompatActivity {
 
     private ListView listViewT200;

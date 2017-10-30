@@ -5,7 +5,7 @@
     android:id="@+id/activity_add_part_tm31"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="se.is.agriculturalequipment.AddPartTM31">
+    tools:context="se.is.agriculturalequipment.addPart.AddPartTM31">
 
     <TextView
         android:text="ชื่ออะไหล่"

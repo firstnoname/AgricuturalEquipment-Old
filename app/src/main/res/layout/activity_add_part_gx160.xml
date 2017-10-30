@@ -5,7 +5,7 @@
     android:id="@+id/activity_add_part_g200"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="se.is.agriculturalequipment.AddPartG200">
+    tools:context="se.is.agriculturalequipment.addPart.AddPartG200">
 
     <TextView
         android:text="ชื่ออะไหล่"

@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 
+import se.is.agriculturalequipment.addPart.AddPartTM31;
+
 public class SettingPartsTM31 extends AppCompatActivity {
 
     private ListView listViewTM31;

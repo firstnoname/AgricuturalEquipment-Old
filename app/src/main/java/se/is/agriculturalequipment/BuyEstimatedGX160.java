@@ -1,6 +1,5 @@
 package se.is.agriculturalequipment;
 
-
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -21,7 +20,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 
-public class BuyEstimated extends AppCompatActivity {
+public class BuyEstimatedGX160 extends AppCompatActivity {
     //Instant for use camera.
     private static final int ACTION_TAKE_PHOTO_B = 1;
     private String mCurrentPhotoPath;
@@ -44,11 +43,11 @@ public class BuyEstimated extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_buy_estimated);
+        setContentView(R.layout.activity_buy_estimated_gx160);
 
         bindWidget();
 
-        getValueFromSubmitEstimateG200();
+        getValueFromSubmitEstimateGX160();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.FROYO) {
             mAlbumStorageDirFactory = new FroyoAlbumDirFactory();
@@ -58,7 +57,7 @@ public class BuyEstimated extends AppCompatActivity {
 
     }
 
-    private void getValueFromSubmitEstimateG200() {
+    private void getValueFromSubmitEstimateGX160() {
         Intent intent = getIntent();
 
         idxEngine = intent.getStringExtra("idxEngine");
@@ -87,7 +86,7 @@ public class BuyEstimated extends AppCompatActivity {
         switch (actionCode) {
             case ACTION_TAKE_PHOTO_B:
                 File f = null;
-                
+
                 try {
                     f = setUpPhotoFile();
                     mCurrentPhotoPath = f.getAbsolutePath();
@@ -215,8 +214,8 @@ public class BuyEstimated extends AppCompatActivity {
         //Encode image to base64.
         imageEncodeToBase64();
 
-        String method = "insert_profile";
-        BackgroundTask backgroundTask = new BackgroundTask(this);
+        String method = "insert_profile_gx160";
+        BackgroundTaskGX160 backgroundTask = new BackgroundTaskGX160(this);
         backgroundTask.execute(method,idNo,name,amount,imageName,encodeImage,partName,idxEngine,dealingStatus);
         finish();
     }

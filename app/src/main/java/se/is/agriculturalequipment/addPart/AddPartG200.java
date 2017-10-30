@@ -1,4 +1,4 @@
-package se.is.agriculturalequipment;
+package se.is.agriculturalequipment.addPart;
 
 
 import android.content.Intent;
@@ -7,6 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import se.is.agriculturalequipment.R;
+import se.is.agriculturalequipment.SettingPartsG200;
+import se.is.agriculturalequipment.TableG200;
 
 public class AddPartG200 extends AppCompatActivity {
 
