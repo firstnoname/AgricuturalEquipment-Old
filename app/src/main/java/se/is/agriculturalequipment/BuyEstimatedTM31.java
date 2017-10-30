@@ -20,7 +20,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 
-public class BuyEstimatedGX35 extends AppCompatActivity {
+public class BuyEstimatedTM31 extends AppCompatActivity {
     //Instant for use camera.
     private static final int ACTION_TAKE_PHOTO_B = 1;
     private String mCurrentPhotoPath;
@@ -43,11 +43,11 @@ public class BuyEstimatedGX35 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_buy_estimated_gx35);
+        setContentView(R.layout.activity_buy_estimated_tm31);
 
         bindWidget();
 
-        getValueFromSubmitEstimateG200();
+        getValueFromSubmitEstimateTM31();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.FROYO) {
             mAlbumStorageDirFactory = new FroyoAlbumDirFactory();
@@ -57,7 +57,7 @@ public class BuyEstimatedGX35 extends AppCompatActivity {
 
     }
 
-    private void getValueFromSubmitEstimateG200() {
+    private void getValueFromSubmitEstimateTM31() {
         Intent intent = getIntent();
 
         idxEngine = intent.getStringExtra("idxEngine");
@@ -214,8 +214,8 @@ public class BuyEstimatedGX35 extends AppCompatActivity {
         //Encode image to base64.
         imageEncodeToBase64();
 
-        String method = "insert_profile_gx35";
-        BackgroundTaskGX35 backgroundTask = new BackgroundTaskGX35(this);
+        String method = "insert_profile_tm31";
+        BackgroundTaskTM31 backgroundTask = new BackgroundTaskTM31(this);
         backgroundTask.execute(method,idNo,name,amount,imageName,encodeImage,partName,idxEngine,dealingStatus);
         finish();
     }

@@ -1,15 +1,54 @@
 package se.is.agriculturalequipment;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-public class EstimateT200 extends AppCompatActivity {
+import java.util.ArrayList;
 
-    private RadioGroup radioGroup1, radioGroup2,radioGroup3,radioGroup4,radioGroup5,radioGroup6,radioGroup7,radioGroup8,radioGroup9,radioGroup10, radioGroup11, radioGroup12;
-    private RadioButton rdgEngineTrue, rdgEngineFalse;
+public class EstimateT200 extends AppCompatActivity {
+    private RadioGroup rdgCheckEngine, rdg1, rdg2, rdg3, rdg4, rdg5, rdg6, rdg7, rdg8, rdg9, rdg10,
+            rdg11,rdg12,rdg13,rdg14,rdg15,rdg16,rdg17;
+
+    private RadioButton rdbEngineTrue, rdbEngineFalse, rdb1_1, rdb1_2,rdb1_3,
+            rdb2_1, rdb2_2,
+            rdb3_1, rdb3_2,
+            rdb4_1, rdb4_2,
+            rdb5_1, rdb5_2,rdb5_3,
+            rdb6_1, rdb6_2,
+            rdb7_1, rdb7_2,rdb7_3,
+            rdb8_1, rdb8_2,
+            rdb9_1, rdb9_2,
+            rdb10_1, rdb10_2,rdb10_3,
+            rdb11_1, rdb11_2,
+            rdb12_1,rdb12_2,
+            rdb13_1,rdb13_2,
+            rdb14_1,rdb14_2,
+            rdb15_1,rdb15_2,
+            rdb16_1,rdb16_2,
+            rdb17_1,rdb17_2;
+
+    private RadioButton rdbSelectedEngine, rdbSelectedStarter, rdbSelectedFuelTank, rdbSelectedControlSwitch,
+            rdbSelectedBrushCutterBlade, rdbSelectedAirFilter, rdbSelectedCarburetor, rdbSelectedCylinderSet, rdbSelectedBallValveSwitchOil,
+            rdbSelectedMuffler, rdbSelectedGearDiver, rdbSelectedMainPipe, rdbSelectedSwitchOnOff, rdbSelectedCoil,
+            rdbSelectedFuelTankCap, rdbSelectedNewPaint,rdbSelectedShaft,rdbSelectedOilTankCap;
+
+    private Integer idSelectedEngine, idSelectedStarter, idSelectedFuelTank, idSelectedControlSwitch,
+            idSelectedBrushCutterBlade, idSelectedAirFilter, idSelectedCarburetor, idSelectedCylinderSet, idSelectedBallValveSwitchOil,
+            idSelectedMuffler, idSelectedGearDiver, idSelectedMainPipe, idSelectedSwitchOnOff, idSelectedCoil,
+            idSelectedFuelTankCap, idSelectedNewPaint,idSelectedShaft,idSelectedOilTankCap;
+
+    private Integer idxSelectedEngine, idxSelectedStarter, idxSelectedFuelTank, idxSelectedControlSwitch,
+            idxSelectedBrushCutterBlade, idxSelectedAirFilter, idxSelectedCarburetor, idxSelectedCylinderSet, idxSelectedBallValveSwitchOil,
+            idxSelectedMuffler, idxSelectedGearDiver, idxSelectedMainPipe, idxSelectedSwitchOnOff, idxSelectedCoil,
+            idxSelectedFuelTankCap, idxSelectedNewPaint,idxSelectedShaft,idxSelectedOilTankCap;
+
+    private LinearLayout layoutButtonGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,77 +59,404 @@ public class EstimateT200 extends AppCompatActivity {
 
         hideRadioGroup();
 
-        rdgEngineTrue.setOnClickListener(new View.OnClickListener() {
+        rdbEngineTrue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                rdgEngineFalse.setChecked(false);
-                radioGroup1.setVisibility(View.VISIBLE);
-                radioGroup2.setVisibility(View.VISIBLE);
-                radioGroup3.setVisibility(View.VISIBLE);
-                radioGroup4.setVisibility(View.VISIBLE);
-                radioGroup5.setVisibility(View.VISIBLE);
-                radioGroup6.setVisibility(View.VISIBLE);
-                radioGroup7.setVisibility(View.VISIBLE);
-                radioGroup8.setVisibility(View.VISIBLE);
-                radioGroup9.setVisibility(View.VISIBLE);
-                radioGroup10.setVisibility(View.VISIBLE);
-                radioGroup11.setVisibility(View.VISIBLE);
-                radioGroup12.setVisibility(View.VISIBLE);
+                rdbEngineFalse.setChecked(false);
+                rdg1.setVisibility(View.VISIBLE);
+                rdg2.setVisibility(View.VISIBLE);
+                rdg3.setVisibility(View.VISIBLE);
+                rdg4.setVisibility(View.VISIBLE);
+                rdg5.setVisibility(View.VISIBLE);
+                rdg6.setVisibility(View.VISIBLE);
+                rdg7.setVisibility(View.VISIBLE);
+                rdg8.setVisibility(View.VISIBLE);
+                rdg9.setVisibility(View.VISIBLE);
+                rdg10.setVisibility(View.VISIBLE);
+                rdg11.setVisibility(View.VISIBLE);
+                rdg12.setVisibility(View.VISIBLE);
+                rdg13.setVisibility(View.VISIBLE);
+                rdg14.setVisibility(View.VISIBLE);
+                rdg15.setVisibility(View.VISIBLE);
+                rdg16.setVisibility(View.VISIBLE);
+                rdg17.setVisibility(View.VISIBLE);
+
+                layoutButtonGroup.setVisibility(View.VISIBLE);
+
+                setDefaultSelect(0);
             }
         });
 
-        rdgEngineFalse.setOnClickListener(new View.OnClickListener() {
+        rdbEngineFalse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                rdgEngineTrue.setChecked(false);
-                radioGroup1.setVisibility(View.VISIBLE);
-                radioGroup2.setVisibility(View.VISIBLE);
-                radioGroup3.setVisibility(View.VISIBLE);
-                radioGroup4.setVisibility(View.VISIBLE);
-                radioGroup5.setVisibility(View.VISIBLE);
-                radioGroup6.setVisibility(View.VISIBLE);
-                radioGroup7.setVisibility(View.VISIBLE);
-                radioGroup8.setVisibility(View.VISIBLE);
-                radioGroup9.setVisibility(View.VISIBLE);
-                radioGroup10.setVisibility(View.GONE);
-                radioGroup11.setVisibility(View.VISIBLE);
-                radioGroup12.setVisibility(View.GONE);
+                rdbEngineTrue.setChecked(false);
+                rdg1.setVisibility(View.VISIBLE);
+                rdg2.setVisibility(View.VISIBLE);
+                rdg3.setVisibility(View.VISIBLE);
+                rdg4.setVisibility(View.VISIBLE);
+                rdg5.setVisibility(View.VISIBLE);
+                rdg6.setVisibility(View.GONE);
+                rdg7.setVisibility(View.GONE);
+                rdg8.setVisibility(View.VISIBLE);
+                rdg9.setVisibility(View.VISIBLE);
+                rdg10.setVisibility(View.VISIBLE);
+                rdg11.setVisibility(View.VISIBLE);
+                rdg12.setVisibility(View.VISIBLE);
+                rdg13.setVisibility(View.GONE);
+                rdg14.setVisibility(View.VISIBLE);
+                rdg15.setVisibility(View.VISIBLE);
+                rdg16.setVisibility(View.VISIBLE);
+                rdg17.setVisibility(View.VISIBLE);
+
+                layoutButtonGroup.setVisibility(View.VISIBLE);
+
+                setDefaultSelect(1);
             }
         });
-    }
-
-    private void hideRadioGroup() {
-        radioGroup1.setVisibility(View.GONE);
-        radioGroup2.setVisibility(View.GONE);
-        radioGroup3.setVisibility(View.GONE);
-        radioGroup4.setVisibility(View.GONE);
-        radioGroup5.setVisibility(View.GONE);
-        radioGroup6.setVisibility(View.GONE);
-        radioGroup7.setVisibility(View.GONE);
-        radioGroup8.setVisibility(View.GONE);
-        radioGroup9.setVisibility(View.GONE);
-        radioGroup10.setVisibility(View.GONE);
-        radioGroup11.setVisibility(View.GONE);
-        radioGroup12.setVisibility(View.GONE);
     }
 
     private void bindWidget() {
-        rdgEngineFalse = (RadioButton) findViewById(R.id.radioBtnEngineFalse);
-        rdgEngineTrue = (RadioButton) findViewById(R.id.radioBtnEngineTrue);
+        rdgCheckEngine = (RadioGroup) findViewById(R.id.checkEngine);
+        rdg1 = (RadioGroup) findViewById(R.id.no1);
+        rdg2 = (RadioGroup) findViewById(R.id.no2);
+        rdg3 = (RadioGroup) findViewById(R.id.no3);
+        rdg4 = (RadioGroup) findViewById(R.id.no4);
+        rdg5 = (RadioGroup) findViewById(R.id.no5);
+        rdg6 = (RadioGroup) findViewById(R.id.no6);
+        rdg7 = (RadioGroup) findViewById(R.id.no7);
+        rdg8 = (RadioGroup) findViewById(R.id.no8);
+        rdg9 = (RadioGroup) findViewById(R.id.no9);
+        rdg10 = (RadioGroup) findViewById(R.id.no10);
+        rdg11 = (RadioGroup) findViewById(R.id.no11);
+        rdg12 = (RadioGroup) findViewById(R.id.no12);
+        rdg13 = (RadioGroup) findViewById(R.id.no13);
+        rdg14 = (RadioGroup) findViewById(R.id.no14);
+        rdg15 = (RadioGroup) findViewById(R.id.no15);
+        rdg16 = (RadioGroup) findViewById(R.id.no16);
+        rdg17 = (RadioGroup) findViewById(R.id.no17);
 
-        radioGroup1 = (RadioGroup) findViewById(R.id.no1);
-        radioGroup2 = (RadioGroup) findViewById(R.id.no2);
-        radioGroup3 = (RadioGroup) findViewById(R.id.no3);
-        radioGroup4 = (RadioGroup) findViewById(R.id.no4);
-        radioGroup5 = (RadioGroup) findViewById(R.id.no5);
-        radioGroup6 = (RadioGroup) findViewById(R.id.no6);
-        radioGroup7 = (RadioGroup) findViewById(R.id.no7);
-        radioGroup8 = (RadioGroup) findViewById(R.id.no8);
-        radioGroup9 = (RadioGroup) findViewById(R.id.no9);
-        radioGroup10 = (RadioGroup) findViewById(R.id.no10);
-        radioGroup11 = (RadioGroup) findViewById(R.id.no11);
-        radioGroup12 = (RadioGroup)findViewById(R.id.no12);
+        rdbEngineFalse = (RadioButton) findViewById(R.id.radioBtnEngineFalse);
+        rdbEngineTrue = (RadioButton) findViewById(R.id.radioBtnEngineTrue);
+        rdb1_1 = (RadioButton) findViewById(R.id.radioBtn1_1);
+        rdb1_2 = (RadioButton) findViewById(R.id.radioBtn1_2);
+        rdb1_3 = (RadioButton) findViewById(R.id.radioBtn1_3);
+        rdb2_1 = (RadioButton) findViewById(R.id.radioBtn2_1);
+        rdb2_2 = (RadioButton) findViewById(R.id.radioBtn2_2);
+        rdb3_1 = (RadioButton) findViewById(R.id.radioBtn3_1);
+        rdb3_2 = (RadioButton) findViewById(R.id.radioBtn3_2);
+        rdb4_1 = (RadioButton) findViewById(R.id.radioBtn4_1);
+        rdb4_2 = (RadioButton) findViewById(R.id.radioBtn4_2);
+        rdb5_1 = (RadioButton) findViewById(R.id.radioBtn5_1);
+        rdb5_2 = (RadioButton) findViewById(R.id.radioBtn5_2);
+        rdb5_3 = (RadioButton) findViewById(R.id.radioBtn5_3);
+        rdb6_1 = (RadioButton) findViewById(R.id.radioBtn6_1);
+        rdb6_2 = (RadioButton) findViewById(R.id.radioBtn6_2);
+        rdb7_1 = (RadioButton) findViewById(R.id.radioBtn7_1);
+        rdb7_2 = (RadioButton) findViewById(R.id.radioBtn7_2);
+        rdb7_3 = (RadioButton) findViewById(R.id.radioBtn7_3);
+        rdb8_1 = (RadioButton) findViewById(R.id.radioBtn8_1);
+        rdb8_2 = (RadioButton) findViewById(R.id.radioBtn8_2);
+        rdb9_1 = (RadioButton) findViewById(R.id.radioBtn9_1);
+        rdb9_2 = (RadioButton) findViewById(R.id.radioBtn9_2);
+        rdb10_1 = (RadioButton) findViewById(R.id.radioBtn10_1);
+        rdb10_2 = (RadioButton) findViewById(R.id.radioBtn10_2);
+        rdb10_3 = (RadioButton) findViewById(R.id.radioBtn10_3);
+        rdb11_1 = (RadioButton) findViewById(R.id.radioBtn11_1);
+        rdb11_2 = (RadioButton) findViewById(R.id.radioBtn11_2);
+        rdb12_1 = (RadioButton) findViewById(R.id.radioBtn12_1);
+        rdb12_2 = (RadioButton) findViewById(R.id.radioBtn12_2);
+        rdb13_1 = (RadioButton) findViewById(R.id.radioBtn13_1);
+        rdb13_2 = (RadioButton) findViewById(R.id.radioBtn13_2);
+        rdb14_1 = (RadioButton) findViewById(R.id.radioBtn14_1);
+        rdb14_2 = (RadioButton) findViewById(R.id.radioBtn14_2);
+        rdb15_1 = (RadioButton) findViewById(R.id.radioBtn15_1);
+        rdb15_2 = (RadioButton) findViewById(R.id.radioBtn15_2);
+        rdb16_1 = (RadioButton) findViewById(R.id.radioBtn16_1);
+        rdb16_2 = (RadioButton) findViewById(R.id.radioBtn16_2);
+        rdb17_1 = (RadioButton) findViewById(R.id.radioBtn17_1);
+        rdb17_2 = (RadioButton) findViewById(R.id.radioBtn17_2);
+
+
+        layoutButtonGroup = (LinearLayout) findViewById(R.id.layoutNavigation);
     }
 
+    private void hideRadioGroup() {
+        rdg1.setVisibility(View.GONE);
+        rdg2.setVisibility(View.GONE);
+        rdg3.setVisibility(View.GONE);
+        rdg4.setVisibility(View.GONE);
+        rdg5.setVisibility(View.GONE);
+        rdg6.setVisibility(View.GONE);
+        rdg7.setVisibility(View.GONE);
+        rdg8.setVisibility(View.GONE);
+        rdg9.setVisibility(View.GONE);
+        rdg10.setVisibility(View.GONE);
+        rdg11.setVisibility(View.GONE);
+        rdg12.setVisibility(View.GONE);
+        rdg13.setVisibility(View.GONE);
+        rdg14.setVisibility(View.GONE);
+        rdg15.setVisibility(View.GONE);
+        rdg16.setVisibility(View.GONE);
+        rdg17.setVisibility(View.GONE);
+
+
+        layoutButtonGroup.setVisibility(View.GONE);
+    }
+
+    public void intentSubmitEstimateT200(View view){
+
+        ArrayList<String> arrNameList = new ArrayList<String>();
+        ArrayList<Integer> arrSelectedID = new ArrayList<Integer>();
+
+        //Get id and text from RadioButton.
+        idSelectedEngine = rdgCheckEngine.getCheckedRadioButtonId();
+        rdbSelectedEngine = (RadioButton) findViewById(idSelectedEngine);
+        arrSelectedID.add(idxSelectedEngine = rdgCheckEngine.indexOfChild(rdbSelectedEngine));
+        arrNameList.add(rdbSelectedEngine.getText().toString());
+//        Check can start or not. 0 = The engine can starts, 1 = The engine can't starts.
+        if(idxSelectedEngine==0){
+
+            /*No1 = จานกระตุกชุด*/
+            idSelectedStarter = rdg1.getCheckedRadioButtonId();
+            rdbSelectedStarter = (RadioButton) findViewById(idSelectedStarter);
+            arrSelectedID.add(idxSelectedStarter = rdg1.indexOfChild(rdbSelectedStarter));
+            arrNameList.add(rdbSelectedStarter.getText().toString());
+
+            /*No2 = ถังน้ำมัน*/
+            idSelectedFuelTank = rdg2.getCheckedRadioButtonId();
+            rdbSelectedFuelTank= (RadioButton) findViewById(idSelectedFuelTank);
+            arrSelectedID.add(idxSelectedFuelTank= rdg2.indexOfChild(rdbSelectedFuelTank));
+            arrNameList.add(rdbSelectedFuelTank.getText().toString());
+
+             /*No3 = มือเร่ง */
+            idSelectedControlSwitch= rdg3.getCheckedRadioButtonId();
+            rdbSelectedControlSwitch= (RadioButton) findViewById(idSelectedControlSwitch);
+            arrSelectedID.add(idxSelectedControlSwitch= rdg3.indexOfChild(rdbSelectedControlSwitch));
+            arrNameList.add(rdbSelectedControlSwitch.getText().toString());
+
+             /*No4 = ใบมีด*/
+            idSelectedBrushCutterBlade= rdg4.getCheckedRadioButtonId();
+            rdbSelectedBrushCutterBlade= (RadioButton) findViewById(idSelectedBrushCutterBlade);
+            arrSelectedID.add(idxSelectedBrushCutterBlade= rdg4.indexOfChild(rdbSelectedBrushCutterBlade));
+            arrNameList.add(rdbSelectedBrushCutterBlade.getText().toString());
+
+
+            /*No5 = หม้อกรองอากาศ*/
+            idSelectedAirFilter= rdg5.getCheckedRadioButtonId();
+            rdbSelectedAirFilter= (RadioButton) findViewById(idSelectedAirFilter);
+            arrSelectedID.add(idxSelectedAirFilter= rdg5.indexOfChild(rdbSelectedAirFilter));
+            arrNameList.add(rdbSelectedAirFilter.getText().toString());
+
+            /*No6 = คาร์บูเรเตอร์*/
+            idSelectedCarburetor= rdg6.getCheckedRadioButtonId();
+            rdbSelectedCarburetor= (RadioButton) findViewById(idSelectedCarburetor);
+            arrSelectedID.add(idxSelectedCarburetor= rdg6.indexOfChild(rdbSelectedCarburetor));
+            arrNameList.add(rdbSelectedCarburetor.getText().toString());
+
+            /*No7 = เสื้อสูบ */
+            idSelectedCylinderSet= rdg7.getCheckedRadioButtonId();
+            rdbSelectedCylinderSet= (RadioButton) findViewById(idSelectedCylinderSet);
+            arrSelectedID.add(idxSelectedCylinderSet= rdg7.indexOfChild(rdbSelectedCylinderSet));
+            arrNameList.add(rdbSelectedCylinderSet.getText().toString());
+
+            /*No8 = ก๊อกน้ำมัน*/
+            idSelectedBallValveSwitchOil= rdg8.getCheckedRadioButtonId();
+            rdbSelectedBallValveSwitchOil= (RadioButton) findViewById(idSelectedBallValveSwitchOil);
+            arrSelectedID.add(idxSelectedBallValveSwitchOil= rdg8.indexOfChild(rdbSelectedBallValveSwitchOil));
+            arrNameList.add(rdbSelectedBallValveSwitchOil.getText().toString());
+
+            /*No9 = ท่อไอเสีย*/
+            idSelectedMuffler= rdg9.getCheckedRadioButtonId();
+            rdbSelectedMuffler= (RadioButton) findViewById(idSelectedMuffler);
+            arrSelectedID.add(idxSelectedMuffler= rdg9.indexOfChild(rdbSelectedMuffler));
+            arrNameList.add(rdbSelectedMuffler.getText().toString());
+
+            /*No10 = คอตัดหญ้า */
+            idSelectedGearDiver= rdg10.getCheckedRadioButtonId();
+            rdbSelectedGearDiver= (RadioButton) findViewById(idSelectedGearDiver);
+            arrSelectedID.add(idxSelectedGearDiver= rdg10.indexOfChild(rdbSelectedGearDiver));
+            arrNameList.add(rdbSelectedGearDiver.getText().toString());
+
+            /*No11 = กระบอกหาง */
+            idSelectedMainPipe= rdg11.getCheckedRadioButtonId();
+            rdbSelectedMainPipe= (RadioButton) findViewById(idSelectedMainPipe);
+            arrSelectedID.add(idxSelectedMainPipe= rdg11.indexOfChild(rdbSelectedMainPipe));
+            arrNameList.add(rdbSelectedMainPipe.getText().toString());
+
+            /*No12 = สวิตช์ปิดเปิด*/
+            idSelectedSwitchOnOff= rdg12.getCheckedRadioButtonId();
+            rdbSelectedSwitchOnOff= (RadioButton) findViewById(idSelectedSwitchOnOff);
+            arrSelectedID.add(idxSelectedSwitchOnOff= rdg12.indexOfChild(rdbSelectedSwitchOnOff));
+            arrNameList.add(rdbSelectedSwitchOnOff.getText().toString());
+
+            /*No13 = คอยล์*/
+            idSelectedCoil= rdg13.getCheckedRadioButtonId();
+            rdbSelectedCoil= (RadioButton) findViewById(idSelectedCoil);
+            arrSelectedID.add(idxSelectedCoil= rdg13.indexOfChild(rdbSelectedCoil));
+            arrNameList.add(rdbSelectedCoil.getText().toString());
+
+            /*No14 = ฝาถังน้ำมัน */
+            idSelectedFuelTankCap= rdg14.getCheckedRadioButtonId();
+            rdbSelectedFuelTankCap= (RadioButton) findViewById(idSelectedFuelTankCap);
+            arrSelectedID.add(idxSelectedFuelTankCap= rdg14.indexOfChild(rdbSelectedFuelTankCap));
+            arrNameList.add(rdbSelectedFuelTankCap.getText().toString());
+
+            /*No15 = ทำสี */
+            idSelectedNewPaint= rdg15.getCheckedRadioButtonId();
+            rdbSelectedNewPaint= (RadioButton) findViewById(idSelectedNewPaint);
+            arrSelectedID.add(idxSelectedNewPaint= rdg15.indexOfChild(rdbSelectedNewPaint));
+            arrNameList.add(rdbSelectedNewPaint.getText().toString());
+
+             /*No16 = แกนเพลา */
+            idSelectedShaft= rdg16.getCheckedRadioButtonId();
+            rdbSelectedShaft= (RadioButton) findViewById(idSelectedShaft);
+            arrSelectedID.add(idxSelectedShaft= rdg16.indexOfChild(rdbSelectedShaft));
+            arrNameList.add(rdbSelectedShaft.getText().toString());
+
+            /*No17 = ฝาถังน้ำมันเครื่อง */
+            idSelectedOilTankCap = rdg17.getCheckedRadioButtonId();
+            rdbSelectedOilTankCap = (RadioButton) findViewById(idSelectedOilTankCap);
+            arrSelectedID.add(idxSelectedOilTankCap = rdg17.indexOfChild(rdbSelectedOilTankCap));
+            arrNameList.add(rdbSelectedOilTankCap.getText().toString());
+
+
+        }else{
+            /*No1 = จานกระตุกชุด*/
+            idSelectedStarter = rdg1.getCheckedRadioButtonId();
+            rdbSelectedStarter = (RadioButton) findViewById(idSelectedStarter);
+            arrSelectedID.add(idxSelectedStarter = rdg1.indexOfChild(rdbSelectedStarter));
+            arrNameList.add(rdbSelectedStarter.getText().toString());
+
+            /*No2 = ถังน้ำมัน*/
+            idSelectedFuelTank = rdg2.getCheckedRadioButtonId();
+            rdbSelectedFuelTank= (RadioButton) findViewById(idSelectedFuelTank);
+            arrSelectedID.add(idxSelectedFuelTank= rdg2.indexOfChild(rdbSelectedFuelTank));
+            arrNameList.add(rdbSelectedFuelTank.getText().toString());
+
+             /*No3 = มือเร่ง */
+            idSelectedControlSwitch= rdg3.getCheckedRadioButtonId();
+            rdbSelectedControlSwitch= (RadioButton) findViewById(idSelectedControlSwitch);
+            arrSelectedID.add(idxSelectedControlSwitch= rdg3.indexOfChild(rdbSelectedControlSwitch));
+            arrNameList.add(rdbSelectedControlSwitch.getText().toString());
+
+             /*No4 = ใบมีด*/
+            idSelectedBrushCutterBlade= rdg4.getCheckedRadioButtonId();
+            rdbSelectedBrushCutterBlade= (RadioButton) findViewById(idSelectedBrushCutterBlade);
+            arrSelectedID.add(idxSelectedBrushCutterBlade= rdg4.indexOfChild(rdbSelectedBrushCutterBlade));
+            arrNameList.add(rdbSelectedBrushCutterBlade.getText().toString());
+
+
+            /*No5 = หม้อกรองอากาศ*/
+            idSelectedAirFilter= rdg5.getCheckedRadioButtonId();
+            rdbSelectedAirFilter= (RadioButton) findViewById(idSelectedAirFilter);
+            arrSelectedID.add(idxSelectedAirFilter= rdg5.indexOfChild(rdbSelectedAirFilter));
+            arrNameList.add(rdbSelectedAirFilter.getText().toString());
+
+             /*No8 = ก๊อกน้ำมัน*/
+            idSelectedBallValveSwitchOil= rdg8.getCheckedRadioButtonId();
+            rdbSelectedBallValveSwitchOil= (RadioButton) findViewById(idSelectedBallValveSwitchOil);
+            arrSelectedID.add(idxSelectedBallValveSwitchOil= rdg8.indexOfChild(rdbSelectedBallValveSwitchOil));
+            arrNameList.add(rdbSelectedBallValveSwitchOil.getText().toString());
+
+            /*No9 = ท่อไอเสีย*/
+            idSelectedMuffler= rdg9.getCheckedRadioButtonId();
+            rdbSelectedMuffler= (RadioButton) findViewById(idSelectedMuffler);
+            arrSelectedID.add(idxSelectedMuffler= rdg9.indexOfChild(rdbSelectedMuffler));
+            arrNameList.add(rdbSelectedMuffler.getText().toString());
+
+            /*No10 = คอตัดหญ้า */
+            idSelectedGearDiver= rdg10.getCheckedRadioButtonId();
+            rdbSelectedGearDiver= (RadioButton) findViewById(idSelectedGearDiver);
+            arrSelectedID.add(idxSelectedGearDiver= rdg10.indexOfChild(rdbSelectedGearDiver));
+            arrNameList.add(rdbSelectedGearDiver.getText().toString());
+
+            /*No11 = กระบอกหาง */
+            idSelectedMainPipe= rdg11.getCheckedRadioButtonId();
+            rdbSelectedMainPipe= (RadioButton) findViewById(idSelectedMainPipe);
+            arrSelectedID.add(idxSelectedMainPipe= rdg11.indexOfChild(rdbSelectedMainPipe));
+            arrNameList.add(rdbSelectedMainPipe.getText().toString());
+
+            /*No12 = สวิตช์ปิดเปิด*/
+            idSelectedSwitchOnOff= rdg12.getCheckedRadioButtonId();
+            rdbSelectedSwitchOnOff= (RadioButton) findViewById(idSelectedSwitchOnOff);
+            arrSelectedID.add(idxSelectedSwitchOnOff= rdg12.indexOfChild(rdbSelectedSwitchOnOff));
+            arrNameList.add(rdbSelectedSwitchOnOff.getText().toString());
+
+            /*No14 = ฝาถังน้ำมัน */
+            idSelectedFuelTankCap= rdg14.getCheckedRadioButtonId();
+            rdbSelectedFuelTankCap= (RadioButton) findViewById(idSelectedFuelTankCap);
+            arrSelectedID.add(idxSelectedFuelTankCap= rdg14.indexOfChild(rdbSelectedFuelTankCap));
+            arrNameList.add(rdbSelectedFuelTankCap.getText().toString());
+
+            /*No15 = ทำสี */
+            idSelectedNewPaint= rdg15.getCheckedRadioButtonId();
+            rdbSelectedNewPaint= (RadioButton) findViewById(idSelectedNewPaint);
+            arrSelectedID.add(idxSelectedNewPaint= rdg15.indexOfChild(rdbSelectedNewPaint));
+            arrNameList.add(rdbSelectedNewPaint.getText().toString());
+
+             /*No16 = แกนเพลา */
+            idSelectedShaft= rdg16.getCheckedRadioButtonId();
+            rdbSelectedShaft= (RadioButton) findViewById(idSelectedShaft);
+            arrSelectedID.add(idxSelectedShaft= rdg16.indexOfChild(rdbSelectedShaft));
+            arrNameList.add(rdbSelectedShaft.getText().toString());
+
+            /*No17 = ฝาถังน้ำมันเครื่อง */
+            idSelectedOilTankCap = rdg17.getCheckedRadioButtonId();
+            rdbSelectedOilTankCap = (RadioButton) findViewById(idSelectedOilTankCap);
+            arrSelectedID.add(idxSelectedOilTankCap = rdg17.indexOfChild(rdbSelectedOilTankCap));
+            arrNameList.add(rdbSelectedOilTankCap.getText().toString());
+        }
+
+
+        Intent intentSubmitEstimateT200 = new Intent(this, SubmitEstimateT200.class);
+        intentSubmitEstimateT200.putExtra("idxEngine", idxSelectedEngine);
+        intentSubmitEstimateT200.putStringArrayListExtra("arrListName",arrNameList);
+        intentSubmitEstimateT200.putIntegerArrayListExtra("arrSelectedID", arrSelectedID);
+        Log.d("arrListName : ", arrNameList.toString());
+        Log.d("arrSelectID : ", arrSelectedID.toString());
+        startActivity(intentSubmitEstimateT200);
+
+    }
+
+    private void setDefaultSelect(Integer check) {
+        if(check == 0){
+            //Can start.
+            rdb1_1.setChecked(true);
+            rdb2_1.setChecked(true);
+            rdb3_1.setChecked(true);
+            rdb4_1.setChecked(true);
+            rdb5_1.setChecked(true);
+            rdb6_1.setChecked(true);
+            rdb7_1.setChecked(true);
+            rdb8_1.setChecked(true);
+            rdb9_1.setChecked(true);
+            rdb10_1.setChecked(true);
+            rdb11_1.setChecked(true);
+            rdb12_1.setChecked(true);
+            rdb13_1.setChecked(true);
+            rdb14_1.setChecked(true);
+            rdb15_1.setChecked(true);
+            rdb16_1.setChecked(true);
+            rdb17_1.setChecked(true);
+        }else {
+            //Can't start.
+            rdb1_1.setChecked(true);
+            rdb2_1.setChecked(true);
+            rdb3_1.setChecked(true);
+            rdb4_1.setChecked(true);
+            rdb5_1.setChecked(true);
+            rdb8_1.setChecked(true);
+            rdb9_1.setChecked(true);
+            rdb10_1.setChecked(true);
+            rdb11_1.setChecked(true);
+            rdb12_1.setChecked(true);
+            rdb14_1.setChecked(true);
+            rdb15_1.setChecked(true);
+            rdb16_1.setChecked(true);
+            rdb17_1.setChecked(true);
+        }
+
+    }
 
 }

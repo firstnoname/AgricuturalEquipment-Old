@@ -22,21 +22,20 @@ import java.net.URLEncoder;
  * Created by BlackClover on 10/30/2017.
  */
 
-public class BackgroundTaskGX35 extends AsyncTask<String,Void,String>{
+public class BackgroundTaskTM31 extends AsyncTask<String,Void,String> {
 
     Context ctx;
 
-    BackgroundTaskGX35(Context ctx) {
+    BackgroundTaskTM31(Context ctx) {
         this.ctx = ctx;
     }
-
     @Override
     protected String doInBackground(String... params) {
         //        String insert_profile_url = "http://10.0.2.2/AgriculturalEquipmentServer/insert_profile.php";
-        String insert_profile_url = "http://tomori.siameki.com/insert_profile_gx35.php";
+        String insert_profile_url = "http://tomori.siameki.com/insert_profile_tm31.php";
 
         String method = params[0];
-        if (method.equals("insert_profile_gx35")) {
+        if (method.equals("insert_profile_tm31")) {
             String idNo = params[1];
             String name = params[2];
             String amount = params[3];
@@ -80,24 +79,18 @@ public class BackgroundTaskGX35 extends AsyncTask<String,Void,String>{
                             URLEncoder.encode("image_name", "UTF-8") + "=" + URLEncoder.encode(imageName, "UTF-8") + "&" +
                             URLEncoder.encode("encoded_image", "UTF-8") + "=" + URLEncoder.encode(encodedImage, "UTF-8") + "&"  +
                             URLEncoder.encode("engineStatus", "UTF-8") + "=" + URLEncoder.encode(partName[0], "UTF-8") + "&" +
-                            URLEncoder.encode("starter","UTF-8") + "=" + URLEncoder.encode(partName[1],"UTF-8") + "&" +
-                            URLEncoder.encode("fuelTank","UTF-8") + "=" + URLEncoder.encode(partName[2],"UTF-8") + "&" +
-                            URLEncoder.encode("controlSwitch","UTF-8") + "=" + URLEncoder.encode(partName[3],"UTF-8") + "&" +
-                            URLEncoder.encode("brushCutterBlade","UTF-8") + "=" + URLEncoder.encode(partName[4],"UTF-8") + "&" +
-                            URLEncoder.encode("airFilter","UTF-8") + "=" + URLEncoder.encode(partName[5],"UTF-8") + "&" +
-                            URLEncoder.encode("carburetor","UTF-8") + "=" + URLEncoder.encode(partName[6],"UTF-8") + "&" +
-                            URLEncoder.encode("cylinderSet","UTF-8") + "=" + URLEncoder.encode(partName[7],"UTF-8") + "&" +
-                            URLEncoder.encode("ballValveSwitchOil","UTF-8") + "=" + URLEncoder.encode(partName[8],"UTF-8") + "&" +
-                            URLEncoder.encode("muffler","UTF-8") + "=" + URLEncoder.encode(partName[9],"UTF-8") + "&" +
-                            URLEncoder.encode("gearDiver","UTF-8") + "=" + URLEncoder.encode(partName[10],"UTF-8") + "&" +
-                            URLEncoder.encode("mainPipe","UTF-8") + "=" + URLEncoder.encode(partName[11],"UTF-8") + "&" +
-                            URLEncoder.encode("switchOnOff","UTF-8") + "=" + URLEncoder.encode(partName[12],"UTF-8") + "&" +
-                            URLEncoder.encode("coil","UTF-8") + "=" + URLEncoder.encode(partName[13],"UTF-8") + "&" +
-                            URLEncoder.encode("fuelTankCap","UTF-8") + "=" + URLEncoder.encode(partName[14],"UTF-8") + "&" +
-                            URLEncoder.encode("newPaint","UTF-8") + "=" + URLEncoder.encode(partName[15],"UTF-8") + "&" +
-                            URLEncoder.encode("shaft","UTF-8") + "=" + URLEncoder.encode(partName[16],"UTF-8") + "&" +
-                            URLEncoder.encode("oilTankCap","UTF-8") + "=" + URLEncoder.encode(partName[17],"UTF-8") + "&" +
-                            URLEncoder.encode("sparkPlug","UTF-8") + "=" + URLEncoder.encode(partName[18],"UTF-8") + "&" +
+                            URLEncoder.encode("airChamber","UTF-8") + "=" + URLEncoder.encode(partName[1],"UTF-8") + "&" +
+                            URLEncoder.encode("sealSet","UTF-8") + "=" + URLEncoder.encode(partName[2],"UTF-8") + "&" +
+                            URLEncoder.encode("adjustSet","UTF-8") + "=" + URLEncoder.encode(partName[3],"UTF-8") + "&" +
+                            URLEncoder.encode("dischargeMetal","UTF-8") + "=" + URLEncoder.encode(partName[4],"UTF-8") + "&" +
+                            URLEncoder.encode("suctionMetal","UTF-8") + "=" + URLEncoder.encode(partName[5],"UTF-8") + "&" +
+                            URLEncoder.encode("pistonSet","UTF-8") + "=" + URLEncoder.encode(partName[6],"UTF-8") + "&" +
+                            URLEncoder.encode("starterRopeReel","UTF-8") + "=" + URLEncoder.encode(partName[7],"UTF-8") + "&" +
+                            URLEncoder.encode("pressureGauge","UTF-8") + "=" + URLEncoder.encode(partName[8],"UTF-8") + "&" +
+                            URLEncoder.encode("ballValveSwitch","UTF-8") + "=" + URLEncoder.encode(partName[9],"UTF-8") + "&" +
+                            URLEncoder.encode("oilFilter","UTF-8") + "=" + URLEncoder.encode(partName[10],"UTF-8") + "&" +
+                            URLEncoder.encode("newPaint","UTF-8") + "=" + URLEncoder.encode(partName[11],"UTF-8") + "&" +
+                            URLEncoder.encode("oilTankCap","UTF-8") + "=" + URLEncoder.encode(partName[12],"UTF-8") + "&" +
                             URLEncoder.encode("amount","UTF-8") + "=" + URLEncoder.encode(amount,"UTF-8") + "&" +
                             URLEncoder.encode("dealingStatus","UTF-8") + "=" + URLEncoder.encode(dealingStatus,"UTF-8");
 
@@ -108,21 +101,18 @@ public class BackgroundTaskGX35 extends AsyncTask<String,Void,String>{
                             URLEncoder.encode("image_name", "UTF-8") + "=" + URLEncoder.encode(imageName, "UTF-8") + "&" +
                             URLEncoder.encode("encoded_image", "UTF-8") + "=" + URLEncoder.encode(encodedImage, "UTF-8") + "&"  +
                             URLEncoder.encode("engineStatus", "UTF-8") + "=" + URLEncoder.encode(partName[0], "UTF-8") + "&" +
-                            URLEncoder.encode("starter","UTF-8") + "=" + URLEncoder.encode(partName[1],"UTF-8") + "&" +
-                            URLEncoder.encode("fuelTank","UTF-8") + "=" + URLEncoder.encode(partName[2],"UTF-8") + "&" +
-                            URLEncoder.encode("controlSwitch","UTF-8") + "=" + URLEncoder.encode(partName[3],"UTF-8") + "&" +
-                            URLEncoder.encode("brushCutterBlade","UTF-8") + "=" + URLEncoder.encode(partName[4],"UTF-8") + "&" +
-                            URLEncoder.encode("airFilter","UTF-8") + "=" + URLEncoder.encode(partName[5],"UTF-8") + "&" +
-                            URLEncoder.encode("ballValveSwitchOil","UTF-8") + "=" + URLEncoder.encode(partName[6],"UTF-8") + "&" +
-                            URLEncoder.encode("muffler","UTF-8") + "=" + URLEncoder.encode(partName[7],"UTF-8") + "&" +
-                            URLEncoder.encode("gearDiver","UTF-8") + "=" + URLEncoder.encode(partName[8],"UTF-8") + "&" +
-                            URLEncoder.encode("mainPipe","UTF-8") + "=" + URLEncoder.encode(partName[9],"UTF-8") + "&" +
-                            URLEncoder.encode("switchOnOff","UTF-8") + "=" + URLEncoder.encode(partName[10],"UTF-8") + "&" +
-                            URLEncoder.encode("fuelTankCap","UTF-8") + "=" + URLEncoder.encode(partName[11],"UTF-8") + "&" +
-                            URLEncoder.encode("newPaint","UTF-8") + "=" + URLEncoder.encode(partName[12],"UTF-8") + "&" +
-                            URLEncoder.encode("shaft","UTF-8") + "=" + URLEncoder.encode(partName[13],"UTF-8") + "&" +
-                            URLEncoder.encode("oilTankCap","UTF-8") + "=" + URLEncoder.encode(partName[14],"UTF-8") + "&" +
-                            URLEncoder.encode("sparkPlug","UTF-8") + "=" + URLEncoder.encode(partName[15],"UTF-8") + "&" +
+                            URLEncoder.encode("airChamber","UTF-8") + "=" + URLEncoder.encode(partName[1],"UTF-8") + "&" +
+                            URLEncoder.encode("sealSet","UTF-8") + "=" + URLEncoder.encode(partName[2],"UTF-8") + "&" +
+                            URLEncoder.encode("adjustSet","UTF-8") + "=" + URLEncoder.encode(partName[3],"UTF-8") + "&" +
+                            URLEncoder.encode("dischargeMetal","UTF-8") + "=" + URLEncoder.encode(partName[4],"UTF-8") + "&" +
+                            URLEncoder.encode("suctionMetal","UTF-8") + "=" + URLEncoder.encode(partName[5],"UTF-8") + "&" +
+                            URLEncoder.encode("pistonSet","UTF-8") + "=" + URLEncoder.encode(partName[6],"UTF-8") + "&" +
+                            URLEncoder.encode("starterRopeReel","UTF-8") + "=" + URLEncoder.encode(partName[7],"UTF-8") + "&" +
+                            URLEncoder.encode("pressureGauge","UTF-8") + "=" + URLEncoder.encode(partName[8],"UTF-8") + "&" +
+                            URLEncoder.encode("ballValveSwitch","UTF-8") + "=" + URLEncoder.encode(partName[9],"UTF-8") + "&" +
+                            URLEncoder.encode("oilFilter","UTF-8") + "=" + URLEncoder.encode(partName[10],"UTF-8") + "&" +
+                            URLEncoder.encode("newPaint","UTF-8") + "=" + URLEncoder.encode(partName[11],"UTF-8") + "&" +
+                            URLEncoder.encode("oilTankCap","UTF-8") + "=" + URLEncoder.encode(partName[12],"UTF-8") + "&" +
                             URLEncoder.encode("amount","UTF-8") + "=" + URLEncoder.encode(amount,"UTF-8") + "&" +
                             URLEncoder.encode("dealingStatus","UTF-8") + "=" + URLEncoder.encode(dealingStatus,"UTF-8");
                 }
@@ -139,7 +129,7 @@ public class BackgroundTaskGX35 extends AsyncTask<String,Void,String>{
                 InputStream is = httpURLConnection.getInputStream();
                 is.close();
 
-                return "Insert values GX35 success.";
+                return "Insert values TM31 success.";
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             } catch (IOException e) {

@@ -60,7 +60,11 @@
         <activity android:name=".history.HistoryGX160List" />
         <activity android:name=".BuyEstimatedGX160" />
         <activity android:name=".SubmitEstimateGX35" />
-        <activity android:name=".BuyEstimatedGX35"></activity>
+        <activity android:name=".BuyEstimatedGX35" />
+        <activity android:name=".BuyEstimatedT200" />
+        <activity android:name=".SubmitEstimateT200" />
+        <activity android:name=".SubmitEstimateTM31" />
+        <activity android:name=".BuyEstimatedTM31"></activity>
     </application>
 
 </manifest>

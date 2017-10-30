@@ -22,21 +22,21 @@ import java.net.URLEncoder;
  * Created by BlackClover on 10/30/2017.
  */
 
-public class BackgroundTaskGX35 extends AsyncTask<String,Void,String>{
+public class BackgroundTaskT200 extends AsyncTask<String,Void,String> {
 
     Context ctx;
 
-    BackgroundTaskGX35(Context ctx) {
+    BackgroundTaskT200(Context ctx) {
         this.ctx = ctx;
     }
 
     @Override
     protected String doInBackground(String... params) {
-        //        String insert_profile_url = "http://10.0.2.2/AgriculturalEquipmentServer/insert_profile.php";
-        String insert_profile_url = "http://tomori.siameki.com/insert_profile_gx35.php";
+//        String insert_profile_url = "http://10.0.2.2/AgriculturalEquipmentServer/insert_profile.php";
+        String insert_profile_url = "http://tomori.siameki.com/insert_profile_t200.php";
 
         String method = params[0];
-        if (method.equals("insert_profile_gx35")) {
+        if (method.equals("insert_profile_t200")) {
             String idNo = params[1];
             String name = params[2];
             String amount = params[3];
@@ -97,7 +97,6 @@ public class BackgroundTaskGX35 extends AsyncTask<String,Void,String>{
                             URLEncoder.encode("newPaint","UTF-8") + "=" + URLEncoder.encode(partName[15],"UTF-8") + "&" +
                             URLEncoder.encode("shaft","UTF-8") + "=" + URLEncoder.encode(partName[16],"UTF-8") + "&" +
                             URLEncoder.encode("oilTankCap","UTF-8") + "=" + URLEncoder.encode(partName[17],"UTF-8") + "&" +
-                            URLEncoder.encode("sparkPlug","UTF-8") + "=" + URLEncoder.encode(partName[18],"UTF-8") + "&" +
                             URLEncoder.encode("amount","UTF-8") + "=" + URLEncoder.encode(amount,"UTF-8") + "&" +
                             URLEncoder.encode("dealingStatus","UTF-8") + "=" + URLEncoder.encode(dealingStatus,"UTF-8");
 
@@ -122,7 +121,6 @@ public class BackgroundTaskGX35 extends AsyncTask<String,Void,String>{
                             URLEncoder.encode("newPaint","UTF-8") + "=" + URLEncoder.encode(partName[12],"UTF-8") + "&" +
                             URLEncoder.encode("shaft","UTF-8") + "=" + URLEncoder.encode(partName[13],"UTF-8") + "&" +
                             URLEncoder.encode("oilTankCap","UTF-8") + "=" + URLEncoder.encode(partName[14],"UTF-8") + "&" +
-                            URLEncoder.encode("sparkPlug","UTF-8") + "=" + URLEncoder.encode(partName[15],"UTF-8") + "&" +
                             URLEncoder.encode("amount","UTF-8") + "=" + URLEncoder.encode(amount,"UTF-8") + "&" +
                             URLEncoder.encode("dealingStatus","UTF-8") + "=" + URLEncoder.encode(dealingStatus,"UTF-8");
                 }
