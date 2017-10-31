@@ -95,6 +95,9 @@ public class SubmitEstimateGX160 extends AppCompatActivity {
         MyAdapter objMyAdapter = new MyAdapter(SubmitEstimateGX160.this, strName, strPrice);
         listViewEstimatedGX160.setAdapter(objMyAdapter);
 
+        if (dAmount <= 500.00) {
+            dAmount = 500.00;
+        }
         txtAmount.setText(dAmount.toString());
     }
 

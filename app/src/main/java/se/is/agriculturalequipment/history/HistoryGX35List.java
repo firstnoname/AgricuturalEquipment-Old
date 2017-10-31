@@ -1,5 +1,6 @@
 package se.is.agriculturalequipment.history;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,10 +17,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import se.is.agriculturalequipment.R;
+import se.is.agriculturalequipment.SingleItemG200;
+import se.is.agriculturalequipment.SingleItemGX35;
 import se.is.agriculturalequipment.adapter.AdapterHistoryG200;
 import se.is.agriculturalequipment.adapter.AdapterHistoryGX35;
 import se.is.agriculturalequipment.app.SingletonPattern;
@@ -33,7 +37,6 @@ public class HistoryGX35List extends AppCompatActivity {
     ListView listview_gx35;
     AdapterHistoryGX35 adapterHistoryGX35;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +48,9 @@ public class HistoryGX35List extends AppCompatActivity {
         listview_gx35.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                
+                Intent intentEditGX35 = new Intent(HistoryGX35List.this, SingleItemGX35.class);
+                intentEditGX35.putExtra("editGX35", (Serializable) adapterHistoryGX35.getItem(position));
+                startActivity(intentEditGX35);
             }
         });
 
@@ -68,6 +73,7 @@ public class HistoryGX35List extends AppCompatActivity {
                         gx35.setStarter(obj.getString("starter"));
                         gx35.setFuelTank(obj.getString("fuelTank"));
                         gx35.setControlSwitch(obj.getString("controlSwitch"));
+                        gx35.setBrushCutterBlade(obj.getString("brushCutterBlade"));
                         gx35.setAirFilter(obj.getString("airFilter"));
                         gx35.setCarburetor(obj.getString("carburetor"));
                         gx35.setCylinderSet(obj.getString("cylinderSet"));

@@ -142,6 +142,9 @@ public class SubmitEstimateG200 extends AppCompatActivity {
         MyAdapter objMyAdapter = new MyAdapter(SubmitEstimateG200.this, strName, strPrice);
         listViewEstimatedG200.setAdapter(objMyAdapter);
 
+        if (dAmount <= 500.00) {
+            dAmount = 500.00;
+        }
         txtAmount.setText(dAmount.toString());
     }
 

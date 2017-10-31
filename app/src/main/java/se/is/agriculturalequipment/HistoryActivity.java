@@ -35,6 +35,9 @@ import java.util.ArrayList;
 
 import se.is.agriculturalequipment.history.HistoryG200Lists;
 import se.is.agriculturalequipment.history.HistoryGX160List;
+import se.is.agriculturalequipment.history.HistoryGX35List;
+import se.is.agriculturalequipment.history.HistoryT200List;
+import se.is.agriculturalequipment.history.HistoryTM31List;
 
 public class HistoryActivity extends AppCompatActivity {
 
@@ -155,15 +158,18 @@ public class HistoryActivity extends AppCompatActivity {
     }
 
     public void intentHisGX35(View view) {
-
+        Intent intentHisGX35 = new Intent(this, HistoryGX35List.class);
+        startActivity(intentHisGX35);
     }
 
     public void intentHisT200(View view) {
-
+        Intent intentHisT200 = new Intent(this, HistoryT200List.class);
+        startActivity(intentHisT200);
     }
 
     public void intentHisTM31(View view) {
-
+        Intent intentHisTM31 = new Intent(this, HistoryTM31List.class);
+        startActivity(intentHisTM31);
     }
 
 }
