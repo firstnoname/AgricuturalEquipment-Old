@@ -10,33 +10,31 @@ import android.widget.TextView;
 import java.util.List;
 
 import se.is.agriculturalequipment.R;
-import se.is.agriculturalequipment.model.G200;
 import se.is.agriculturalequipment.model.GX35;
 
 /**
- * Created by BlackClover on 10/28/2017.
+ * Created by BlackClover on 10/31/2017.
  */
 
-public class AdapterHistoryG200 extends BaseAdapter {
+public class AdapterHistoryGX35 extends BaseAdapter {
 
     Context context;
     LayoutInflater inflater;
-    private List<G200> g200Items;
+    private List<GX35> gx35Items;
 
-    public AdapterHistoryG200(Context context, List<G200> g200Items) {
+    public AdapterHistoryGX35(Context context, List<GX35> gx35Items) {
         this.context = context;
-        this.g200Items = g200Items;
+        this.gx35Items = gx35Items;
     }
-
 
     @Override
     public int getCount() {
-        return g200Items.size();
+        return gx35Items.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return g200Items.get(position);
+        return gx35Items.get(position);
     }
 
     @Override
@@ -47,7 +45,7 @@ public class AdapterHistoryG200 extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        G200 mG200 = g200Items.get(position);
+        GX35 gx35 = gx35Items.get(position);
         TextView txtName;
         TextView txtBuyDate;
 
@@ -58,8 +56,9 @@ public class AdapterHistoryG200 extends BaseAdapter {
         txtName = (TextView) view.findViewById(R.id.txtName);
         txtBuyDate = (TextView) view.findViewById(R.id.txtBuyDate);
 
-        txtName.setText(mG200.getName());
-        txtBuyDate.setText(mG200.getBuyDate());
-        return view;
+        txtName.setText(gx35.getName());
+        txtBuyDate.setText(gx35.getBuyDate());
+
+        return null;
     }
 }

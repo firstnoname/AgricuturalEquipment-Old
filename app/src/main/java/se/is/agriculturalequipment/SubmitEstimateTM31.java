@@ -337,7 +337,7 @@ public class SubmitEstimateTM31 extends AppCompatActivity {
     }
 
     public void intentBuyTM31(View view) {
-        Intent intentBuyTM31 = new Intent(this, BuyEstimated.class);
+        Intent intentBuyTM31 = new Intent(this, BuyEstimatedTM31.class);
         intentBuyTM31.putExtra("amount", dAmount.toString());
         intentBuyTM31.putExtra("partName", strName);
         intentBuyTM31.putExtra("partPrice", strPrice);

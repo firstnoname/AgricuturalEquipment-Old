@@ -137,7 +137,7 @@ public class BackgroundTaskT200 extends AsyncTask<String,Void,String> {
                 InputStream is = httpURLConnection.getInputStream();
                 is.close();
 
-                return "Insert values GX35 success.";
+                return "Insert values T200 success.";
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             } catch (IOException e) {
