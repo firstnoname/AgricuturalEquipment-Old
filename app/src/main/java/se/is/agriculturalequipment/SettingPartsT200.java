@@ -4,9 +4,14 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+
 import se.is.agriculturalequipment.addPart.AddPartT200;
+import se.is.agriculturalequipment.model.PartDAO;
+import se.is.agriculturalequipment.model.PartList;
 
 public class SettingPartsT200 extends AppCompatActivity {
 
@@ -20,9 +25,36 @@ public class SettingPartsT200 extends AppCompatActivity {
 
         bindWidget();
 
-        addDefaultPart();
 
-        createListView();
+
+//        addDefaultPart();
+
+//        createListView();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        PartDAO partDAO = new PartDAO(getApplicationContext());
+        partDAO.open();
+        ArrayList<PartList> myList = partDAO.getAllPart("T200TABLE");
+        final ListviewAdapterSettingList adapter = new ListviewAdapterSettingList(myList,this);
+
+        listViewT200.setAdapter(adapter);
+        partDAO.close();
+
+        //Set when click on item list.
+        listViewT200.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Toast.makeText(SettingPartsG200.this, String.valueOf(adapter.getItemId(position)), Toast.LENGTH_SHORT).show();
+                Intent intentEdit = new Intent(getApplicationContext(), EditPart.class);
+                intentEdit.putExtra("editPartList", adapter.getItem(position));
+                intentEdit.putExtra("tblName", "T200");
+                startActivity(intentEdit);
+            }
+        });
     }
 
     private void addDefaultPart() {

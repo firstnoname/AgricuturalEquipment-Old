@@ -225,7 +225,7 @@ public class BuyEstimated extends AppCompatActivity {
         //Convert image into byte array.
         Bitmap bm = BitmapFactory.decodeFile(mCurrentPhotoPath);
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        bm.compress(Bitmap.CompressFormat.PNG, 50, byteArrayOutputStream);//bm is the bitmap object.
+        bm.compress(Bitmap.CompressFormat.JPEG, 50, byteArrayOutputStream);//bm is the bitmap object.
         byte[] b = byteArrayOutputStream.toByteArray();
 
         //Encode image as byte array into base64.

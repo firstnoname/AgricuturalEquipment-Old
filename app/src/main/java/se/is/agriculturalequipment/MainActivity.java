@@ -13,11 +13,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        addDefaultPartG200();
-        addDefaultPartGX35();
-        addDefaultPartGX160();
-        addDefaultPartT200();
-        addDefaultPartTM31();
+//        addDefaultPartG200();
+//        addDefaultPartGX35();
+//        addDefaultPartGX160();
+//        addDefaultPartT200();
+//        addDefaultPartTM31();
+
+
     }
 
     public void intentHistory(View view){

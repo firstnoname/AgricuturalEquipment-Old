@@ -69,7 +69,8 @@
         <activity android:name=".SingleItemGX35" />
         <activity android:name=".history.HistoryT200List" />
         <activity android:name=".history.HistoryTM31List" />
-        <activity android:name=".SingleItemTM31"></activity>
+        <activity android:name=".SingleItemTM31" />
+        <activity android:name=".EditPart"></activity>
     </application>
 
 </manifest>

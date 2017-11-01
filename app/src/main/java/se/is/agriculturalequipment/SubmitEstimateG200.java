@@ -155,7 +155,9 @@ public class SubmitEstimateG200 extends AppCompatActivity {
 
         TableG200 objTableG200 = new TableG200(this);
         String[] strPartPrice = objTableG200.readPartPrice();
-
+        for (int i = 0; i<strPartPrice.length; i++) {
+            Log.d("strPartPrice " + i +" : ", strPartPrice[i]);
+        }
         //Compare data from sqlite.
         if (idxEngine == 0) {
             if (idSelectedList.get(1) == 1) {
@@ -187,55 +189,55 @@ public class SubmitEstimateG200 extends AppCompatActivity {
             }
 
             if (idSelectedList.get(5) == 1) {
-                priceCylinderSet = strPartPrice[6];
+                priceCylinderSet = strPartPrice[4];
             }else {
                 priceCylinderSet = "0.0";
             }
 
             if (idSelectedList.get(6) == 1) {
-                priceBallValveSwitchOil = strPartPrice[7];
+                priceBallValveSwitchOil = strPartPrice[5];
             }else {
                 priceBallValveSwitchOil = "0.0";
             }
 
             if (idSelectedList.get(7) == 1) {
-                priceMuffler = strPartPrice[8];
+                priceMuffler = strPartPrice[6];
             }else {
                 priceMuffler = "0.0";
             }
 
             if (idSelectedList.get(8) == 1) {
-                priceSwitchOnOff = strPartPrice[9];
+                priceSwitchOnOff = strPartPrice[7];
             }else {
                 priceSwitchOnOff = "0.0";
             }
 
             if (idSelectedList.get(9) == 1) {
-                priceCoil = strPartPrice[10];
+                priceCoil = strPartPrice[8];
             }else {
                 priceCoil = "0.0";
             }
 
             if (idSelectedList.get(10) == 1) {
-                priceFuelTankCap = strPartPrice[11];
+                priceFuelTankCap = strPartPrice[9];
             }else {
                 priceFuelTankCap = "0.0";
             }
 
             if (idSelectedList.get(11) == 1) {
-                priceNewPaint = strPartPrice[12];
+                priceNewPaint = strPartPrice[10];
             }else {
                 priceNewPaint = "0.0";
             }
 
             if (idSelectedList.get(12) == 1){
-                priceOilTankCap = strPartPrice[13];
+                priceOilTankCap = strPartPrice[11];
             }else {
                 priceOilTankCap = "0.0";
             }
 
             if (idSelectedList.get(13) == 1){
-                priceSparkPlug = strPartPrice[14];
+                priceSparkPlug = strPartPrice[12];
             }else{
                 priceSparkPlug = "0.0";
             }
