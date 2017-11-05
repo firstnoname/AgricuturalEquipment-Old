@@ -35,9 +35,15 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(CREATE_TABLE_USER);
 
         String insertUser = "INSERT INTO userTable (nameUser, username, password, userRole) VALUES ('กิตติ','kitti','1234','Employee');";
-        String insertUser1 = "INSERT INTO userTable (nameUser, username, password, userRole) VALUES ('เป็นต่อ','pentor','1234','Owner');";
+        String insertUser1 = "INSERT INTO userTable (nameUser, username, password, userRole) VALUES ('จัสติน บีบี้','justinBB','1234','Employee');";
+        String insertUser2 = "INSERT INTO userTable (nameUser, username, password, userRole) VALUES ('เป็นต่อ','pentor','1234','Owner');";
+        String insertUser3 = "INSERT INTO userTable (nameUser, username, password, userRole) VALUES ('พอใจ','porjai','1234','Owner');";
+
+
         sqLiteDatabase.execSQL(insertUser);
         sqLiteDatabase.execSQL(insertUser1);
+        sqLiteDatabase.execSQL(insertUser2);
+        sqLiteDatabase.execSQL(insertUser3);
 
 
         String insertG200a = "INSERT INTO g200TABLE (partNameG200,partPriceG200) VALUES ('จานกระตุก','420');";

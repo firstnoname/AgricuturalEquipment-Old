@@ -35,10 +35,11 @@ public class UserDAO {
     public ArrayList<User> getAllUser(String where){
 
         ArrayList<User> userList = new ArrayList<>();
-        /*Cursor cursor = database.rawQuery("SELECT * FROM userTable WHERE userRole=" + where + ";",
+        /*Cursor cursor = database.rawQuery("SELECT * FROM userTable WHERE userRole = " + where + ";",
                 null);*/
-        String sqlSelect = "SELECT * FROM userTable WHERE userRole = " + where + ";";
-        Cursor cursor = database.rawQuery(sqlSelect,null);
+//        Cursor cursor = database.rawQuery(sqlSelect,null);
+        String selQuery = "SELECT * FROM userTable WHERE userRole=?";
+        Cursor cursor = database.rawQuery(selQuery, new String[]{where});
         cursor.moveToFirst();
 
         User mUser;

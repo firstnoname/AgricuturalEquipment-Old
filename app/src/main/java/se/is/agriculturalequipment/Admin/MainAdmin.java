@@ -29,7 +29,8 @@ public class MainAdmin extends AppCompatActivity {
         btnEmp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intentEmp = new Intent(getApplicationContext(), EmployeePage.class);
+                startActivity(intentEmp);
             }
         });
     }
