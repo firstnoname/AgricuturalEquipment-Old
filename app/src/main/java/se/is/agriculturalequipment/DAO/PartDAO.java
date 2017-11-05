@@ -1,4 +1,4 @@
-package se.is.agriculturalequipment.model;
+package se.is.agriculturalequipment.DAO;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -9,6 +9,7 @@ import android.util.Log;
 import java.util.ArrayList;
 
 import se.is.agriculturalequipment.MyOpenHelper;
+import se.is.agriculturalequipment.model.PartList;
 
 /**
  * Created by iFirst-PC on 31/10/2560.

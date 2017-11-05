@@ -70,7 +70,11 @@
         <activity android:name=".history.HistoryT200List" />
         <activity android:name=".history.HistoryTM31List" />
         <activity android:name=".SingleItemTM31" />
-        <activity android:name=".EditPart"></activity>
+        <activity android:name=".EditPart" />
+        <activity android:name=".Admin.MainAdmin" />
+        <activity android:name=".Admin.OwnerPage" />
+        <activity android:name=".Admin.UpdateUser" />
+        <activity android:name=".Admin.AddUser"></activity>
     </application>
 
 </manifest>

@@ -3,17 +3,14 @@ package se.is.agriculturalequipment;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import se.is.agriculturalequipment.addPart.AddPartG200;
-import se.is.agriculturalequipment.model.PartDAO;
+import se.is.agriculturalequipment.DAO.PartDAO;
 import se.is.agriculturalequipment.model.PartList;
 
 public class SettingPartsG200 extends AppCompatActivity {

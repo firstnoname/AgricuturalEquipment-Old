@@ -10,7 +10,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 import se.is.agriculturalequipment.addPart.AddPartT200;
-import se.is.agriculturalequipment.model.PartDAO;
+import se.is.agriculturalequipment.DAO.PartDAO;
 import se.is.agriculturalequipment.model.PartList;
 
 public class SettingPartsT200 extends AppCompatActivity {

@@ -2,12 +2,11 @@ package se.is.agriculturalequipment;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import se.is.agriculturalequipment.model.PartDAO;
+import se.is.agriculturalequipment.DAO.PartDAO;
 import se.is.agriculturalequipment.model.PartList;
 
 public class EditPart extends AppCompatActivity {

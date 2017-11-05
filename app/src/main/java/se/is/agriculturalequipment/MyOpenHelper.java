@@ -18,6 +18,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     private static final String CREATE_TABLE_GX35 = "create table gx35TABLE(_id integer primary key, partNameGX35 TEXT, partPriceGX35 TEXT);";
     private static final String CREATE_TABLE_T200 = "create table t200TABLE(_id integer primary key, partNameT200 TEXT, partPriceT200 TEXT);";
     private static final String CREATE_TABLE_TM31 = "create table tm31TABLE(_id integer primary key, partNameTM31 TEXT, partPriceTM31 TEXT);";
+    private static final String CREATE_TABLE_USER = "create table userTable(id integer primary key, nameUser TEXT, username TEXT, password TEXT, userRole TEXT);";
 
 
     public MyOpenHelper(Context context) {
@@ -31,6 +32,12 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(CREATE_TABLE_GX35);
         sqLiteDatabase.execSQL(CREATE_TABLE_T200);
         sqLiteDatabase.execSQL(CREATE_TABLE_TM31);
+        sqLiteDatabase.execSQL(CREATE_TABLE_USER);
+
+        String insertUser = "INSERT INTO userTable (nameUser, username, password, userRole) VALUES ('กิตติ','kitti','1234','Employee');";
+        String insertUser1 = "INSERT INTO userTable (nameUser, username, password, userRole) VALUES ('เป็นต่อ','pentor','1234','Owner');";
+        sqLiteDatabase.execSQL(insertUser);
+        sqLiteDatabase.execSQL(insertUser1);
 
 
         String insertG200a = "INSERT INTO g200TABLE (partNameG200,partPriceG200) VALUES ('จานกระตุก','420');";
@@ -127,7 +134,6 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(insertGX35p);
         sqLiteDatabase.execSQL(insertGX35q);
         sqLiteDatabase.execSQL(insertGX35r);
-
 
         String insertT200a = "INSERT INTO t200TABLE (partNameT200,partPriceT200) VALUES ('จานกระตุก','340');";
         String insertT200b = "INSERT INTO t200TABLE (partNameT200,partPriceT200) VALUES ('ถังน้ำมัน','280');";

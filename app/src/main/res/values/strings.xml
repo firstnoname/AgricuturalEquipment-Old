@@ -6,4 +6,14 @@
     <!--History Activity.-->
     <string name="history_main_text">ประวัติซื้อของ</string>
 
+
+    <string-array name="user_role">
+        <item>Owner</item>
+        <item>Employee</item>
+    </string-array>
+
+    <string name="nameUser">ชื่อ - นามสกุล</string>
+    <string name="username">ชื่อเข้าใช้งาน</string>
+    <string name="password">รหัสผ่านเข้าใช้งาน</string>
+
 </resources>

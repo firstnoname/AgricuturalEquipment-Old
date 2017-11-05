@@ -7,6 +7,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import se.is.agriculturalequipment.Admin.MainAdmin;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -35,6 +37,11 @@ public class MainActivity extends AppCompatActivity {
     public void intentMenuSetting(View view){
         Intent intentMenuSetting = new Intent(this, MenuSetting.class);
         startActivity(intentMenuSetting);
+    }
+
+    public void intentAdmin(View view) {
+        Intent intentAdmin = new Intent(this, MainAdmin.class);
+        startActivity(intentAdmin);
     }
 
     public void addDefaultPartG200(){

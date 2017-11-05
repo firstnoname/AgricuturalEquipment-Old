@@ -10,7 +10,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 import se.is.agriculturalequipment.addPart.AddPartGX160;
-import se.is.agriculturalequipment.model.PartDAO;
+import se.is.agriculturalequipment.DAO.PartDAO;
 import se.is.agriculturalequipment.model.PartList;
 
 public class SettingPartGX160 extends AppCompatActivity {
@@ -38,7 +38,7 @@ public class SettingPartGX160 extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         PartDAO partDAO = new PartDAO(getApplicationContext());
-        partDAO.open();
+            partDAO.open();
         ArrayList<PartList> myList = partDAO.getAllPart("GX160TABLE");
         final ListviewAdapterSettingList adapter = new ListviewAdapterSettingList(myList,this);
 
