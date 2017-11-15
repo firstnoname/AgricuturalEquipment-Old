@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import se.is.agriculturalequipment.DAO.UserDAO;
+import se.is.agriculturalequipment.DAO.UserDAOServer;
 import se.is.agriculturalequipment.R;
 import se.is.agriculturalequipment.model.User;
 
@@ -66,10 +67,15 @@ public class UpdateUser extends AppCompatActivity implements AdapterView.OnItemS
                 updateUser.setUsername(String.valueOf(edtUsername.getText()));
                 updateUser.setPassword(String.valueOf(edtPassword.getText()));
                 updateUser.setUserRole(roleSel);
-                UserDAO userDAO = new UserDAO(getApplicationContext());
+
+                /*UserDAO userDAO = new UserDAO(getApplicationContext());
                 userDAO.open();
                 userDAO.updateUser(updateUser);
-                userDAO.close();
+                userDAO.close();*/
+
+                //Update to server.
+                UserDAOServer updateUserServ = new UserDAOServer(getApplicationContext());
+                updateUserServ.updateUser(updateUser);
 
                 finish();
             }

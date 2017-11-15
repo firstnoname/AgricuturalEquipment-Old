@@ -37,7 +37,8 @@ public class UserDAO {
         ArrayList<User> userList = new ArrayList<>();
         /*Cursor cursor = database.rawQuery("SELECT * FROM userTable WHERE userRole=" + where + ";",
                 null);*/
-        String sqlSelect = "SELECT * FROM userTable WHERE userRole = " + where + ";";
+//        String sqlSelect = "SELECT * FROM userTable WHERE userRole = " + where + ";";
+        String sqlSelect = "SELECT * FROM userTable WHERE userRole = '"+where+"'";
         Cursor cursor = database.rawQuery(sqlSelect,null);
         cursor.moveToFirst();
 
@@ -88,6 +89,7 @@ public class UserDAO {
         String sqlText = "DELETE FROM userTable WHERE id=" + delUser.getId();
         this.database.execSQL(sqlText);
     }
+
 
 
 }

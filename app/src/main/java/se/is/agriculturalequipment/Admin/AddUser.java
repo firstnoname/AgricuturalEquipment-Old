@@ -12,6 +12,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import se.is.agriculturalequipment.DAO.UserDAO;
+import se.is.agriculturalequipment.DAO.UserDAOServer;
 import se.is.agriculturalequipment.R;
 import se.is.agriculturalequipment.model.User;
 
@@ -49,10 +50,16 @@ public class AddUser extends AppCompatActivity implements AdapterView.OnItemSele
                 mUser.setPassword(String.valueOf(edtPassword.getText()));
                 mUser.setUserRole(roleSel);
 
-                UserDAO addUser = new UserDAO(getApplicationContext());
+                /*UserDAO addUser = new UserDAO(getApplicationContext());
                 addUser.open();
                 addUser.addUser(mUser);
-                addUser.close();
+                addUser.close();*/
+
+                UserDAOServer addUserServ = new UserDAOServer(getApplicationContext());
+                addUserServ.addUser(mUser);
+
+
+
 
                 finish();
             }
