@@ -1,6 +1,7 @@
 package se.is.agriculturalequipment.DAO;
 
 import android.content.Context;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -8,12 +9,19 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import se.is.agriculturalequipment.app.SingletonPattern;
 import se.is.agriculturalequipment.model.User;
 
 /**
@@ -23,10 +31,51 @@ import se.is.agriculturalequipment.model.User;
 public class UserDAOServer {
     Context mContext;
 
-
-
     public UserDAOServer(Context context) {
         mContext = context;
+    }
+
+    public ArrayList<User> getAllUser(String where){
+        final ArrayList<User> userList = new ArrayList<>();
+        String url = "http://tomori.siameki.com/getAll_user.php";
+
+        RequestQueue queue = SingletonPattern.getInstance(mContext).getRequestQueue();
+
+        JsonArrayRequest jsArr = new JsonArrayRequest(url, new Response.Listener<JSONArray>(){
+
+            @Override
+            public void onResponse(JSONArray response) {
+//                Toast.makeText(mContext, response.toString(), Toast.LENGTH_SHORT).show();
+                //Set JSONArray to object.
+                for (int i = 0; i < response.length(); i++) {
+                    JSONObject obj = null;
+
+                    try {
+                        obj = response.getJSONObject(i);
+                        User getUser = new User();
+                        getUser.setId(obj.getInt("id"));
+                        getUser.setNameUser(obj.getString("nameUser"));
+                        getUser.setUsername(obj.getString("username"));
+                        getUser.setPassword(obj.getString("password"));
+                        getUser.setUserRole(obj.getString("userRole"));
+
+                        userList.add(getUser);
+                        Log.d("userList ", String.valueOf(userList.size()) + " id :" + obj.getInt("id"));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(mContext, error.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        queue.add(jsArr);
+
+        return userList;
     }
 
     public void addUser(User user){
@@ -62,6 +111,7 @@ public class UserDAOServer {
     }
 
     public void updateUser(User user){
+        //TODO file update_user.php still not working.
         final User updateUserServ = user;
         RequestQueue queue = Volley.newRequestQueue(mContext);
         String url = "http://tomori.siameki.com/update_user.php";

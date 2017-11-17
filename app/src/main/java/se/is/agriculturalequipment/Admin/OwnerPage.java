@@ -13,6 +13,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import se.is.agriculturalequipment.DAO.UserDAO;
+import se.is.agriculturalequipment.DAO.UserDAOServer;
 import se.is.agriculturalequipment.R;
 import se.is.agriculturalequipment.adapter.AdapterUserList;
 import se.is.agriculturalequipment.model.User;
@@ -44,12 +45,18 @@ public class OwnerPage extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        UserDAO userDAO = new UserDAO(getApplicationContext());
+        /*UserDAO userDAO = new UserDAO(getApplicationContext());
         userDAO.open();
         ArrayList<User> myListUser = userDAO.getAllUser(strWhere);
         final AdapterUserList adapter = new AdapterUserList(this,myListUser);
         listview_owner.setAdapter(adapter);
-        userDAO.close();
+        userDAO.close();*/
+
+        UserDAOServer userDAOServer = new UserDAOServer(getApplicationContext());
+        ArrayList<User> myListUser = userDAOServer.getAllUser(strWhere);
+        Log.d("myListUser : ", String.valueOf(myListUser.size()));
+        final AdapterUserList adapter = new AdapterUserList(this, myListUser);
+        listview_owner.setAdapter(adapter);
 
         listview_owner.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

@@ -101,7 +101,7 @@ public class HistoryG200Lists extends AppCompatActivity {
                         g200.setBuyDate(obj.getString("buyDate"));
                         g200.setAmount(obj.getString("amount"));
 
-                        Log.d("Buy date: ", g200.getBuyDate());
+                        //Log.d("Buy date: ", g200.getBuyDate());
                         g200List.add(g200);
 
                     } catch (JSONException e) {
