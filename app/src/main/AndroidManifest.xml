@@ -74,7 +74,8 @@
         <activity android:name=".Admin.MainAdmin" />
         <activity android:name=".Admin.OwnerPage" />
         <activity android:name=".Admin.UpdateUser" />
-        <activity android:name=".Admin.AddUser"></activity>
+        <activity android:name=".Admin.AddUser" />
+        <activity android:name=".Admin.EmployeePage"></activity>
     </application>
 
 </manifest>
