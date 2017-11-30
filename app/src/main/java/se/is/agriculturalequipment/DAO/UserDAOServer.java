@@ -52,6 +52,7 @@ public class UserDAOServer {
 
                     try {
                         obj = response.getJSONObject(i);
+
                         User getUser = new User();
                         getUser.setId(obj.getInt("id"));
                         getUser.setNameUser(obj.getString("nameUser"));
@@ -60,12 +61,16 @@ public class UserDAOServer {
                         getUser.setUserRole(obj.getString("userRole"));
 
                         userList.add(getUser);
-                        Log.d("userList ", String.valueOf(userList.size()) + " id :" + obj.getInt("id"));
+//                        Log.d("userList ", String.valueOf(userList.size()) + " id :" + obj.getInt("id"));
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
+
                 }
+
+                //Log.d("userList ", String.valueOf(userList.size()));
             }
+
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
@@ -75,6 +80,7 @@ public class UserDAOServer {
 
         queue.add(jsArr);
 
+//        Log.d("userList outside = ", String.valueOf(userList.size()));
         return userList;
     }
 

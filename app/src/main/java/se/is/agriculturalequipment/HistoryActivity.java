@@ -62,8 +62,7 @@ public class HistoryActivity extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        /*Toast.makeText(HistoryActivity.this, "Response is : " +
-                                response.substring(0, 500), Toast.LENGTH_SHORT).show();*/
+
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -73,6 +72,7 @@ public class HistoryActivity extends AppCompatActivity {
         });
         queue.add(stringRequest);
 
+        //Out of date.
         /*new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(Void... params) {

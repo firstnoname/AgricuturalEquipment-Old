@@ -55,6 +55,7 @@ public class HistoryG200Lists extends AppCompatActivity {
         listview_g200 = (ListView) findViewById(R.id.listView_g200);
         adapterHistoryG200 = new AdapterHistoryG200(this, g200List);
         listview_g200.setAdapter(adapterHistoryG200);
+
         listview_g200.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -75,7 +76,6 @@ public class HistoryG200Lists extends AppCompatActivity {
             @Override
             public void onResponse(JSONArray response) {
                 Log.d("response: ", response.toString());
-//                txtTest.setText(response.toString());
                 for (int i = 0; i < response.length(); i++) {
                     JSONObject obj = null;
                     try {
