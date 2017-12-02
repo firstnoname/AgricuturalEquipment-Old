@@ -50,7 +50,6 @@ public class HistoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
 
-
         exData = new ArrayList<String>();
 
         //Variable for using Volley.

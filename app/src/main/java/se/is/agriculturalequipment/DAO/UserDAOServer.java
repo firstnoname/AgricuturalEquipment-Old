@@ -45,7 +45,6 @@ public class UserDAOServer {
 
             @Override
             public void onResponse(JSONArray response) {
-//                Toast.makeText(mContext, response.toString(), Toast.LENGTH_SHORT).show();
                 //Set JSONArray to object.
                 for (int i = 0; i < response.length(); i++) {
                     JSONObject obj = null;
@@ -61,14 +60,13 @@ public class UserDAOServer {
                         getUser.setUserRole(obj.getString("userRole"));
 
                         userList.add(getUser);
-//                        Log.d("userList ", String.valueOf(userList.size()) + " id :" + obj.getInt("id"));
+
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
 
                 }
 
-                //Log.d("userList ", String.valueOf(userList.size()));
             }
 
         }, new Response.ErrorListener() {
@@ -80,7 +78,6 @@ public class UserDAOServer {
 
         queue.add(jsArr);
 
-//        Log.d("userList outside = ", String.valueOf(userList.size()));
         return userList;
     }
 

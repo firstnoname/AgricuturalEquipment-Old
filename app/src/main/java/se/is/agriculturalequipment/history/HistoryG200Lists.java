@@ -49,6 +49,7 @@ public class HistoryG200Lists extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history_g200_lists);
 
+
 //        edtTest = (EditText) findViewById(R.id.editText2);
         txtTest = (TextView) findViewById(R.id.textView12);
 

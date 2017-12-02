@@ -20,6 +20,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import se.is.agriculturalequipment.DAO.UserDAO;
 import se.is.agriculturalequipment.DAO.UserDAOServer;
@@ -29,11 +30,14 @@ import se.is.agriculturalequipment.app.SingletonPattern;
 import se.is.agriculturalequipment.model.User;
 
 public class OwnerPage extends AppCompatActivity {
-    String strWhere = "Owner";
-    ListView listview_owner;
-    FloatingActionButton btnAddOwner;
 
     String url = "http://tomori.siameki.com/getAll_user.php";
+    List<User> ownerList = new ArrayList<>();
+    ListView listview_owner;
+    AdapterUserList adapter;
+
+    String strWhere = "Owner";
+    FloatingActionButton btnAddOwner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +47,9 @@ public class OwnerPage extends AppCompatActivity {
         listview_owner = (ListView) findViewById(R.id.listview_owner);
         btnAddOwner = (FloatingActionButton) findViewById(R.id.btnAddOwner);
 
+        adapter = new AdapterUserList(this, ownerList);
+        listview_owner.setAdapter(adapter);
+
         btnAddOwner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,9 +58,9 @@ public class OwnerPage extends AppCompatActivity {
             }
         });
 
-    }
+    }//End onCreate.
 
-    @Override
+   @Override
     protected void onResume() {
         super.onResume();
 
@@ -64,56 +71,58 @@ public class OwnerPage extends AppCompatActivity {
         listview_owner.setAdapter(adapter);
         userDAO.close();*/
 
-        //UserDAOServer userDAOServer = new UserDAOServer(getApplicationContext());
-        //final ArrayList<User> myListUser = userDAOServer.getAllUser(strWhere);
-        //Log.d("myListUser : ", String.valueOf(myListUser.size()));
+        //This block it's not work. Becuz myListUser cant get return from UserDAOServer.
+        /*UserDAOServer userDAOServer = new UserDAOServer(getApplicationContext());
+        final ArrayList<User> myListUser = userDAOServer.getAllUser(strWhere);*/
 
         //Get user from server.
-        final ArrayList<User> myListUser = new ArrayList<>();
-        RequestQueue queue = SingletonPattern.getInstance(this.getApplicationContext()).getRequestQueue();
+       // It's should be call UserDAOServer.
+       RequestQueue queue = SingletonPattern.getInstance(this.getApplicationContext()).getRequestQueue();
 
-        JsonArrayRequest jsArr = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray response) {
-                //Log.d("User response ", response.toString());
-                for (int i =0; i < response.length(); i++) {
-                    JSONObject obj = null;
+       JsonArrayRequest jsArr = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
+           @Override
+           public void onResponse(JSONArray response) {
+               for (int i=0; i<response.length(); i++) {
+                   JSONObject obj = null;
 
-                    try {
-                        obj = response.getJSONObject(i);
-                        User ownerUser = new User();
+                   try {
+                       obj = response.getJSONObject(i);
+                       User owner = new User();
 
-                        ownerUser.setId(obj.getInt("id"));
-                        ownerUser.setNameUser(obj.getString("nameUser"));
-                        ownerUser.setUsername(obj.getString("username"));
-                        ownerUser.setPassword(obj.getString("password"));
-                        ownerUser.setUserRole(obj.getString("userRole"));
+                       owner.setId(obj.getInt("id"));
+                       owner.setNameUser(obj.getString("nameUser"));
+                       owner.setUsername(obj.getString("username"));
+                       owner.setPassword(obj.getString("password"));
+                       owner.setUserRole(obj.getString("userRole"));
 
-                        myListUser.add(ownerUser);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
+                       ownerList.add(owner);
+                   } catch (JSONException e) {
+                       e.printStackTrace();
+                   }
+               }
 
-            }
-        });
+               adapter.notifyDataSetChanged();
+           }
+       }, new Response.ErrorListener() {
+           @Override
+           public void onErrorResponse(VolleyError error) {
 
-        queue.add(jsArr);
-        final AdapterUserList adapter = new AdapterUserList(this, myListUser);
-        listview_owner.setAdapter(adapter);
+           }
+       });
 
-        listview_owner.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intentUpdate = new Intent(getApplicationContext(), UpdateUser.class);
-                intentUpdate.putExtra("selectedUser", adapter.getItem(position));
-                intentUpdate.putExtra("where", strWhere);
-                startActivity(intentUpdate);
-            }
-        });
+       queue.add(jsArr);
+
+       /*---- End get json from server. ----*/
+
+
+       listview_owner.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+           @Override
+           public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+               Intent intentUpdateUser = new Intent(getApplicationContext(), UpdateUser.class);
+               intentUpdateUser.putExtra("selectedUser", adapter.getItem(position));
+               startActivity(intentUpdateUser);
+               //Log.d("fromAdapter ", adapter.getItem(position).getNameUser());
+           }
+       });
     }
 }
