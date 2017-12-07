@@ -10,10 +10,12 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.StringRequest;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -79,7 +81,7 @@ public class OwnerPage extends AppCompatActivity {
        // It's should be call UserDAOServer.
        RequestQueue queue = SingletonPattern.getInstance(this.getApplicationContext()).getRequestQueue();
 
-       JsonArrayRequest jsArr = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
+       /*JsonArrayRequest jsArr = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
            @Override
            public void onResponse(JSONArray response) {
                for (int i=0; i<response.length(); i++) {
@@ -107,6 +109,28 @@ public class OwnerPage extends AppCompatActivity {
            @Override
            public void onErrorResponse(VolleyError error) {
 
+           }
+       });*/
+
+       StringRequest jsArr = new StringRequest(Request.Method.POST, url,
+               new Response.Listener<String>() {
+                   @Override
+                   public void onResponse(String response) {
+                       Log.d("Response post", response);
+
+                       try {
+                           JSONObject jsonObject = new JSONObject(response);
+                           JSONArray jsArray = jsonObject.getJSONArray("response");
+                           JSONObject data = jsArray.getJSONObject(0);
+
+                       } catch (JSONException e) {
+                           e.printStackTrace();
+                       }
+                   }
+               }, new Response.ErrorListener() {
+           @Override
+           public void onErrorResponse(VolleyError error) {
+               Log.d("Response post error", error.toString());
            }
        });
 
