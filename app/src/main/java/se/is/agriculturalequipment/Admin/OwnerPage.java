@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -22,7 +23,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import se.is.agriculturalequipment.DAO.UserDAO;
 import se.is.agriculturalequipment.DAO.UserDAOServer;
@@ -84,6 +87,7 @@ public class OwnerPage extends AppCompatActivity {
        /*JsonArrayRequest jsArr = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
            @Override
            public void onResponse(JSONArray response) {
+               Log.d("response json ", response.toString());
                for (int i=0; i<response.length(); i++) {
                    JSONObject obj = null;
 
@@ -112,16 +116,29 @@ public class OwnerPage extends AppCompatActivity {
            }
        });*/
 
-       StringRequest jsArr = new StringRequest(Request.Method.POST, url,
+       listview_owner.removeAllViewsInLayout();
+
+       StringRequest postReq = new StringRequest(Request.Method.POST, url,
                new Response.Listener<String>() {
                    @Override
                    public void onResponse(String response) {
-                       Log.d("Response post", response);
 
                        try {
-                           JSONObject jsonObject = new JSONObject(response);
-                           JSONArray jsArray = jsonObject.getJSONArray("response");
-                           JSONObject data = jsArray.getJSONObject(0);
+                           JSONArray jsArr = new JSONArray(response);
+
+                           for (int i=0; i<jsArr.length(); i++) {
+                               User owner = new User();
+                               JSONObject valueObj = jsArr.getJSONObject(i);
+                               owner.setId(valueObj.getInt("id"));
+                               owner.setNameUser(valueObj.getString("nameUser"));
+                               owner.setUsername(valueObj.getString("username"));
+                               owner.setPassword(valueObj.getString("password"));
+                               owner.setUserRole(valueObj.getString("userRole"));
+
+                               ownerList.add(owner);
+                           }
+
+                           adapter.notifyDataSetChanged();
 
                        } catch (JSONException e) {
                            e.printStackTrace();
@@ -130,11 +147,19 @@ public class OwnerPage extends AppCompatActivity {
                }, new Response.ErrorListener() {
            @Override
            public void onErrorResponse(VolleyError error) {
-               Log.d("Response post error", error.toString());
+               Log.d("Error ", error.toString());
            }
-       });
+       }) {
+           @Override
+           protected Map<String, String> getParams() throws AuthFailureError {
+               Map<String, String> params = new HashMap<>();
+               params.put("where", strWhere);
 
-       queue.add(jsArr);
+               return params;
+           }
+       };
+
+       queue.add(postReq);
 
        /*---- End get json from server. ----*/
 
