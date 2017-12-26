@@ -1,5 +1,6 @@
 package se.is.agriculturalequipment.Admin;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -77,6 +78,8 @@ public class UpdateUser extends AppCompatActivity implements AdapterView.OnItemS
                 UserDAOServer updateUserServ = new UserDAOServer(getApplicationContext());
                 updateUserServ.updateUser(updateUser);
 
+                Intent intentOwnerPage = new Intent(getApplicationContext(), OwnerPage.class);
+                startActivity(intentOwnerPage);
                 finish();
             }
         });

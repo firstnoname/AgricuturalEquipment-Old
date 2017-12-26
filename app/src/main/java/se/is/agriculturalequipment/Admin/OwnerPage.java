@@ -52,22 +52,22 @@ public class OwnerPage extends AppCompatActivity {
         listview_owner = (ListView) findViewById(R.id.listview_owner);
         btnAddOwner = (FloatingActionButton) findViewById(R.id.btnAddOwner);
 
-        adapter = new AdapterUserList(this, ownerList);
-        listview_owner.setAdapter(adapter);
-
-        btnAddOwner.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intentAddUser = new Intent(getApplicationContext(), AddUser.class);
-                startActivity(intentAddUser);
-            }
-        });
-
     }//End onCreate.
 
    @Override
     protected void onResume() {
         super.onResume();
+
+       adapter = new AdapterUserList(this, ownerList);
+       listview_owner.setAdapter(adapter);
+
+       btnAddOwner.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent intentAddUser = new Intent(getApplicationContext(), AddUser.class);
+               startActivity(intentAddUser);
+           }
+       });
 
         /*UserDAO userDAO = new UserDAO(getApplicationContext());
         userDAO.open();
@@ -116,8 +116,6 @@ public class OwnerPage extends AppCompatActivity {
            }
        });*/
 
-       listview_owner.removeAllViewsInLayout();
-
        StringRequest postReq = new StringRequest(Request.Method.POST, url,
                new Response.Listener<String>() {
                    @Override
@@ -163,13 +161,13 @@ public class OwnerPage extends AppCompatActivity {
 
        /*---- End get json from server. ----*/
 
-
        listview_owner.setOnItemClickListener(new AdapterView.OnItemClickListener() {
            @Override
            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                Intent intentUpdateUser = new Intent(getApplicationContext(), UpdateUser.class);
                intentUpdateUser.putExtra("selectedUser", adapter.getItem(position));
                startActivity(intentUpdateUser);
+               finish();
                //Log.d("fromAdapter ", adapter.getItem(position).getNameUser());
            }
        });
