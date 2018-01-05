@@ -114,7 +114,7 @@ public class UserDAOServer {
     }
 
     public void updateUser(User user){
-        //TODO file update_user.php still not working.
+
         final User updateUserServ = user;
         RequestQueue queue = Volley.newRequestQueue(mContext);
         String url = "http://tomori.siameki.com/update_user.php";
@@ -146,4 +146,5 @@ public class UserDAOServer {
 
         queue.add(stringRequest);
     }
+
 }
