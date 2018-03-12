@@ -59,11 +59,12 @@ public class LoginActivity extends AppCompatActivity{
 
     private void checkLogin(final String username, final String password) {
         //if everything is fine.
+        //Toast.makeText(this, username, Toast.LENGTH_SHORT).show();
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
         String url_check_login = "http://tomori.siameki.com/user_check_login.php";
         Log.d("check login ", "Click login");
 
-        JsonArrayRequest jsArr = new JsonArrayRequest(url_check_login, new Response.Listener<JSONArray>() {
+        /*JsonArrayRequest jsArr = new JsonArrayRequest(url_check_login, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
                 Log.d("check login ", response.toString());
@@ -73,7 +74,22 @@ public class LoginActivity extends AppCompatActivity{
             public void onErrorResponse(VolleyError error) {
                 Log.d("check login ", error.toString());
             }
-        }){
+        })*/
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url_check_login,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Toast.makeText(LoginActivity.this, "Login Success." + response, Toast.LENGTH_SHORT).show();
+                        Log.d("test", "Values from server :: " + response);
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(LoginActivity.this, "Login failed : " + error, Toast.LENGTH_SHORT).show();
+                    }
+                })
+        {
             @Override
             protected Map<String, String> getParams() throws  AuthFailureError{
                 Map<String, String> params = new HashMap<>();
@@ -84,7 +100,7 @@ public class LoginActivity extends AppCompatActivity{
             }
         };
 
-        queue.add(jsArr);
+        queue.add(stringRequest);
 
     }//End of checkLogin.
 
