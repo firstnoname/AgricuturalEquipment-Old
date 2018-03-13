@@ -20,11 +20,14 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import se.is.agriculturalequipment.R;
+import se.is.agriculturalequipment.model.User;
 import se.is.agriculturalequipment.util.Singleton;
 
 /**
@@ -62,7 +65,7 @@ public class LoginActivity extends AppCompatActivity{
         //Toast.makeText(this, username, Toast.LENGTH_SHORT).show();
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
         String url_check_login = "http://tomori.siameki.com/user_check_login.php";
-        Log.d("check login ", "Click login");
+        //Log.d("check login ", "Click login");
 
         /*JsonArrayRequest jsArr = new JsonArrayRequest(url_check_login, new Response.Listener<JSONArray>() {
             @Override
@@ -80,7 +83,15 @@ public class LoginActivity extends AppCompatActivity{
                     @Override
                     public void onResponse(String response) {
                         Toast.makeText(LoginActivity.this, "Login Success." + response, Toast.LENGTH_SHORT).show();
-                        Log.d("test", "Values from server :: " + response);
+                        Log.d("test", "Values from server :: " + response.length() + " :: " + response);
+
+                        try {
+                            JSONObject obj = new JSONObject(response);
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
                     }
                 },
                 new Response.ErrorListener() {
