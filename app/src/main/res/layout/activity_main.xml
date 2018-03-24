@@ -57,7 +57,6 @@
         android:layout_height="90dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
-        android:onClick="intentAdmin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnHistoryGX160"
         app:srcCompat="?android:attr/actionModeShareDrawable" />

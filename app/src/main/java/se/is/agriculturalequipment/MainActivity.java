@@ -1,20 +1,42 @@
 package se.is.agriculturalequipment;
 
 import android.content.Intent;
+import android.os.UserManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import se.is.agriculturalequipment.Admin.MainAdmin;
 
 public class MainActivity extends AppCompatActivity {
 
+    private String userRole;
+    private ImageButton btnSetting, btnAdmin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Get session from sharePreferences.
+        final se.is.agriculturalequipment.login.UserManager mManager = new se.is.agriculturalequipment.login.UserManager(this);
+        //Get login status.
+        if (!mManager.getStatus()) {
+            //Statement when not login.
+        }
+        /*Log.d("Login status", mManager.getUsername());
+        Log.d("Login status", mManager.getUserRole());*/
+        userRole = mManager.getUserRole();
+        btnAdmin = (ImageButton) findViewById(R.id.btnAdmin);
+        Toast.makeText(this, userRole, Toast.LENGTH_SHORT).show();
+
+        if (userRole == null) {
+            // TODO: 3/24/2018 check user role. 
+        }
 //        addDefaultPartG200();
 //        addDefaultPartGX35();
 //        addDefaultPartGX160();
@@ -39,10 +61,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intentMenuSetting);
     }
 
-    public void intentAdmin(View view) {
+    /*public void intentAdmin(View view) {
         Intent intentAdmin = new Intent(this, MainAdmin.class);
         startActivity(intentAdmin);
-    }
+    }*/
 
     public void addDefaultPartG200(){
         TableG200 objG200 = new TableG200(this);
@@ -78,7 +100,6 @@ public class MainActivity extends AppCompatActivity {
         objGX160.addNewPart("ปลั๊กหัวเทียน", "50");
 //        Toast.makeText(this, "Add default!!", Toast.LENGTH_SHORT).show();
     }
-
     public void addDefaultPartGX35(){
         TableGX35 objGX35 = new TableGX35(this);
         objGX35.addNewPart("จานกระตุกชุด", "350");
@@ -101,7 +122,6 @@ public class MainActivity extends AppCompatActivity {
         objGX35.addNewPart("ปลั๊กหัวเทียน", "50");
 //        Toast.makeText(this, "Add default!!", Toast.LENGTH_SHORT).show();
     }
-
     public void addDefaultPartT200(){
         TableT200 objT200 = new TableT200(this);
         objT200.addNewPart("จานกระตุกชุด", "340");
@@ -124,7 +144,6 @@ public class MainActivity extends AppCompatActivity {
 
 //        Toast.makeText(this, "Add default!!", Toast.LENGTH_SHORT).show();
     }
-
     public void addDefaultPartTM31(){
         TableTM31 objTM31 = new TableTM31(this);
         objTM31.addNewPart("หม้อลม", "350");

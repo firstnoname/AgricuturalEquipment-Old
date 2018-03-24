@@ -1,6 +1,7 @@
 package se.is.agriculturalequipment.login;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -20,10 +21,13 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import se.is.agriculturalequipment.MainActivity;
 import se.is.agriculturalequipment.R;
 import se.is.agriculturalequipment.util.Singleton;
 
@@ -35,6 +39,9 @@ public class LoginActivity extends AppCompatActivity{
 
     EditText txtUsername, txtPassword;
     Button btnLogin;
+    private String userRole;
+
+    private UserManager mManager;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,6 +52,8 @@ public class LoginActivity extends AppCompatActivity{
         txtPassword = (EditText) findViewById(R.id.edtPassword);
         btnLogin = (Button) findViewById(R.id.btnLogin);
 
+        mManager = new UserManager(this);
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,7 +63,6 @@ public class LoginActivity extends AppCompatActivity{
                 //Toast.makeText(LoginActivity.this, "Hello Login", Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 
     private void checkLogin(final String username, final String password) {
@@ -75,12 +83,38 @@ public class LoginActivity extends AppCompatActivity{
                 Log.d("check login ", error.toString());
             }
         })*/
+
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url_check_login,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(LoginActivity.this, "Login Success." + response, Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(LoginActivity.this, "Login Success." + response, Toast.LENGTH_SHORT).show();
                         Log.d("test", "Values from server :: " + response);
+                        if (response.trim().equals("Owner") || response.trim().equals("Employee")){
+                            userRole = response;
+                            LoginSuccess();
+                        }else {
+                            Log.d("Response Failed", response);
+                            LoginFailed();
+                        }
+                    }
+
+                    private void LoginFailed() {
+
+                    }
+
+                    private void LoginSuccess() {
+                        boolean isSuccess = mManager.registerUser(username,userRole);
+
+                        if (isSuccess) {
+                            Log.d("Register", "Save in sharePref complete.");
+                            //Toast.makeText(getApplicationContext(), "Save in sharePref complete.", Toast.LENGTH_SHORT).show();
+                            Intent intentMainAct = new Intent(getApplicationContext(), MainActivity.class);
+                            startActivity(intentMainAct);
+                        }else{
+                            Log.d("Register", "Save in sharePref failed.");
+                            //Toast.makeText(getApplicationContext(), "Save in sharePrefs failed.", Toast.LENGTH_SHORT).show();
+                        }
                     }
                 },
                 new Response.ErrorListener() {
