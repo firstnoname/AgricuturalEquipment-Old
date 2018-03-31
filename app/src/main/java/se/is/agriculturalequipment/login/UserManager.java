@@ -45,7 +45,7 @@ public class UserManager {
 
         mEditor.putBoolean(KEY_STATUS, true);
         mEditor.putString(KEY_USERNAME, username);
-        mEditor.putString(KEY_UserRole, userRole);
+        mEditor.putString(KEY_UserRole, "Owner");
 
         return mEditor.commit();
     }
