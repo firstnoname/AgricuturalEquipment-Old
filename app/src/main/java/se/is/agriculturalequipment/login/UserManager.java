@@ -38,6 +38,7 @@ public class UserManager {
     }
 
     public boolean registerUser(String username,String userRole){
+        //Save data to local storage.
         if (TextUtils.isEmpty(username) && (TextUtils.isEmpty(userRole))){
             return false;
         }
