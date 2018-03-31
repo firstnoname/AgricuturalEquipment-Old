@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import se.is.agriculturalequipment.Admin.MainAdmin;
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     private String userRole;
     private ImageButton btnSetting, btnAdmin;
+    private TextView txtTest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,14 +30,22 @@ public class MainActivity extends AppCompatActivity {
         if (!mManager.getStatus()) {
             //Statement when not login.
         }
-        /*Log.d("Login status", mManager.getUsername());
-        Log.d("Login status", mManager.getUserRole());*/
-        userRole = mManager.getUserRole();
+        /*Log.d("Login status", mManager.getUsername());*/
+        Log.d("Login status", mManager.getUserRole());
+        userRole = mManager.getUserRole().trim();
         btnAdmin = (ImageButton) findViewById(R.id.btnAdmin);
-        Toast.makeText(this, userRole, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "User Role: " + userRole, Toast.LENGTH_SHORT).show();
 
-        if (userRole == null) {
-            // TODO: 3/24/2018 check user role. 
+        txtTest = (TextView) findViewById(R.id.txtTest);
+
+
+        if (userRole == "Employee") {
+            // TODO: 3/24/2018 check user role.
+            //Toast.makeTex t(this, "Emp", Toast.LENGTH_SHORT).show();
+            txtTest.setText(userRole);
+        }else{
+            //Toast.makeText(this, "Own", Toast.LENGTH_SHORT).show();
+            txtTest.setText(userRole);
         }
 //        addDefaultPartG200();
 //        addDefaultPartGX35();
