@@ -17,7 +17,7 @@ import se.is.agriculturalequipment.model.User;
 
 public class EmployeePage extends AppCompatActivity {
 
-    String strWhere = "Empl oyee";
+    String strWhere = "Employee";
     ListView listview_emp;
     FloatingActionButton btnAddEmp;
 

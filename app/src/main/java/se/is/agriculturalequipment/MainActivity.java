@@ -38,9 +38,20 @@ public class MainActivity extends AppCompatActivity {
 
         userRole = mManager.getUserRole().trim();
 
+
         btnAdmin = (ImageButton) findViewById(R.id.btnAdmin);
 
         txtUserRole.setText(userRole);
+
+        String getRole = txtUserRole.getText().toString();
+        if (getRole == "Owner") {
+            Toast.makeText(this, "Owner", Toast.LENGTH_SHORT).show();
+        } else if (getRole == "Employee") {
+            Toast.makeText(this, "Employee", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Not found", Toast.LENGTH_SHORT).show();
+        } 
+        
 
 //        addDefaultPartG200();
 //        addDefaultPartGX35();
@@ -66,10 +77,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intentMenuSetting);
     }
 
-    /*public void intentAdmin(View view) {
+    public void intentAdmin(View view) {
         Intent intentAdmin = new Intent(this, MainAdmin.class);
         startActivity(intentAdmin);
-    }*/
+    }
 
     public void addDefaultPartG200(){
         TableG200 objG200 = new TableG200(this);

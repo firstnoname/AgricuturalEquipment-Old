@@ -3,6 +3,7 @@ package se.is.agriculturalequipment.login;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
+import android.util.Log;
 
 /**
  * Created by BlackClover on 3/18/2018.
@@ -45,7 +46,7 @@ public class UserManager {
 
         mEditor.putBoolean(KEY_STATUS, true);
         mEditor.putString(KEY_USERNAME, username);
-        mEditor.putString(KEY_UserRole, "Owner");
+        mEditor.putString(KEY_UserRole, userRole);
 
         return mEditor.commit();
     }

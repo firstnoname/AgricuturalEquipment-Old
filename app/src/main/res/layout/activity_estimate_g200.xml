@@ -65,11 +65,12 @@
 
 
             <TextView
-                android:text="เครื่องยนต์"
+                android:id="@+id/txtViewEngine"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/txtView"
                 android:layout_weight="1"
+                android:onClick="txtViewClicked"
+                android:text="เครื่องยนต์"
                 android:textSize="16sp" />
 
             <RadioGroup
@@ -101,10 +102,11 @@
                 android:layout_height="match_parent" >
 
                 <TextView
-                    android:id="@+id/txtView1"
+                    android:id="@+id/txtViewStarter"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:onClick="txtViewClicked"
                     android:text="จานกระตุกชุด (Starter)"
                     android:textSize="16sp" />
 
@@ -140,8 +142,10 @@
                 android:layout_centerHorizontal="false">
 
                 <TextView
+                    android:id="@+id/txtViewFuelTank"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:onClick="guideFuelTank"
                     android:text="ถังน้ำมัน (Fuel Tank)"
                     android:textSize="16sp" />
 
@@ -172,6 +176,7 @@
                 android:layout_centerHorizontal="false">
 
                 <TextView
+                    android:id="@+id/txtViewAirFilter"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="หม้อกรองอากาศ (Air Filter)"
@@ -211,7 +216,7 @@
                 android:layout_centerHorizontal="false">
 
                 <TextView
-                    android:id="@+id/textView10"
+                    android:id="@+id/txtViewCarburetor"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="คาร์บูเรเตอร์ (Carburetor)"
@@ -244,6 +249,7 @@
                 android:layout_centerHorizontal="false">
 
                 <TextView
+                    android:id="@+id/txtViewCylinderSet"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="เสื้อสูบ (Cylinder Set)"
@@ -276,6 +282,7 @@
                 android:layout_centerHorizontal="false">
 
                 <TextView
+                    android:id="@+id/txtViewBallValveSwitchOil"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ก๊อกน้ำมัน (Ball Valve Switch Oil)"
@@ -308,6 +315,7 @@
                 android:layout_centerHorizontal="false">
 
                 <TextView
+                    android:id="@+id/txtViewMuffler"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ท่อไอเสีย (Muffler)"
@@ -340,6 +348,7 @@
                 android:layout_width="match_parent">
 
                 <TextView
+                    android:id="@+id/txtViewSwitchOnOff"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="สวิตช์ปิดเปิด (Switch On-Off)"
@@ -372,6 +381,7 @@
                 android:layout_centerHorizontal="false">
 
                 <TextView
+                    android:id="@+id/txtViewCoil"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="คอยล์ (Coil)"
@@ -404,6 +414,7 @@
                 android:layout_centerHorizontal="false">
 
                 <TextView
+                    android:id="@+id/txtViewFuelTankCap"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ฝาถังน้ำมัน  (Fuel Tank Cap)"
@@ -436,6 +447,7 @@
                 android:layout_centerHorizontal="false">
 
                 <TextView
+                    android:id="@+id/txtViewNewPaint"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ทำสี (New Paint)"
@@ -468,6 +480,7 @@
                 android:layout_centerHorizontal="false">
 
                 <TextView
+                    android:id="@+id/txtViewOilTankCap"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ฝาถังน้ำมันเครื่อง (Oil Tank Cap)"
@@ -500,6 +513,7 @@
                 android:layout_centerHorizontal="false">
 
                 <TextView
+                    android:id="@+id/txtViewSparkPlug"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ปลั๊กหัวเทียน (Spark Plug)"

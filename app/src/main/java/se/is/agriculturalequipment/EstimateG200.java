@@ -1,16 +1,16 @@
 package se.is.agriculturalequipment;
 
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class EstimateG200 extends AppCompatActivity {
@@ -370,4 +370,44 @@ public class EstimateG200 extends AppCompatActivity {
 
     }
 
+    public void guideEngine(View view){
+        //Toast.makeText(this, "Engine guide", Toast.LENGTH_SHORT).show();
+        AlertDialog.Builder mBuilder = new AlertDialog.Builder(EstimateG200.this);
+        View mView = getLayoutInflater().inflate(R.layout.custom_dialog, null);
+
+        mBuilder.setView(mView);
+        AlertDialog dialog = mBuilder.create();
+        dialog.show();
+    }
+
+    public void guideFuelTank(View view) {
+        AlertDialog.Builder mBuilder = new AlertDialog.Builder(EstimateG200.this);
+        View mView = getLayoutInflater().inflate(R.layout.custom_dialog, null);
+
+        mBuilder.setView(mView);
+        AlertDialog dialog = mBuilder.create();
+        dialog.show();
+    }
+
+    //Get id from textview and change image follow the textview name.
+    public void txtViewClicked(View view) {
+        AlertDialog.Builder mBuilder = new AlertDialog.Builder(EstimateG200.this);
+        View mView = getLayoutInflater().inflate(R.layout.custom_dialog,null);
+
+
+        switch (view.getId()) {
+            case R.id.txtViewEngine:
+                //Do something.
+                Toast.makeText(this, "Engine has clicked", Toast.LENGTH_SHORT).show();
+                //ImageView mImage = (ImageView) mView.findViewById(R.id.imageGuide);
+                //mImage.setImageResource(R.drawable.g200_test);
+                mBuilder.setView(mView);
+
+                break;
+            case R.id.txtViewStarter:
+                //Do something.
+                Toast.makeText(this, "Starter has clicked", Toast.LENGTH_SHORT).show();
+                break;
+        }
+    }
 }
