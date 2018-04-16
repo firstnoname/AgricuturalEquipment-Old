@@ -23,7 +23,7 @@ public class UpdateUser extends AppCompatActivity implements AdapterView.OnItemS
 
     int idRole;
     String roleSel;
-    String where;
+    String where, from;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +32,7 @@ public class UpdateUser extends AppCompatActivity implements AdapterView.OnItemS
 
         final User edtUser = (User) getIntent().getSerializableExtra("selectedUser");
         where = getIntent().getStringExtra("where");
+        from = getIntent().getStringExtra("from");
         edtNameUser = (EditText) findViewById(R.id.edtName);
         edtUsername = (EditText) findViewById(R.id.edtUsername);
         edtPassword = (EditText) findViewById(R.id.edtPass);
@@ -78,8 +79,13 @@ public class UpdateUser extends AppCompatActivity implements AdapterView.OnItemS
                 UserDAOServer updateUserServ = new UserDAOServer(getApplicationContext());
                 updateUserServ.updateUser(updateUser);
 
-                Intent intentOwnerPage = new Intent(getApplicationContext(), OwnerPage.class);
-                startActivity(intentOwnerPage);
+                if (from.equals("Owner")) {
+                    Intent intentOwnerPage = new Intent(getApplicationContext(), OwnerPage.class);
+                    startActivity(intentOwnerPage);
+                } else if (from.equals("Employee")) {
+                    Intent intentEmpPage = new Intent(getApplicationContext(), EmployeePage.class);
+                    startActivity(intentEmpPage);
+                }
                 finish();
             }
         });

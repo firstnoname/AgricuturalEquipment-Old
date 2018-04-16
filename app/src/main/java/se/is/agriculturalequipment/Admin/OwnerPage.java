@@ -165,8 +165,9 @@ public class OwnerPage extends AppCompatActivity {
            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                Intent intentUpdateUser = new Intent(getApplicationContext(), UpdateUser.class);
                intentUpdateUser.putExtra("selectedUser", adapter.getItem(position));
+               intentUpdateUser.putExtra("from", "Owner");
                startActivity(intentUpdateUser);
-               //finish();
+               finish();
                //Log.d("fromAdapter ", adapter.getItem(position).getNameUser());
            }
        });

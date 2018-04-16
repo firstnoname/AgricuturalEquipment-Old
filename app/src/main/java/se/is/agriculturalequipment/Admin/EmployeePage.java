@@ -136,5 +136,16 @@ public class EmployeePage extends AppCompatActivity {
 
         queue.add(postReq);
 
+        listview_emp.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intentUpdateUser = new Intent(getApplicationContext(), UpdateUser.class);
+                intentUpdateUser.putExtra("selectedUser", adapter.getItem(position));
+                intentUpdateUser.putExtra("from", "Employee");
+                startActivity(intentUpdateUser);
+                finish();
+            }
+        });
+
     }//End of Resume method.
 }
