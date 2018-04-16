@@ -18,16 +18,18 @@ import se.is.agriculturalequipment.Admin.MainAdmin;
 public class MainActivity extends AppCompatActivity {
 
     private String userRole;
-    private ImageButton btnSetting, btnAdmin;
+    private Button btnSetting;
+    private ImageButton btnAdmin;
     TextView txtUserRole;
-    String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        txtUserRole = (TextView) findViewById(R.id.txtUserRole);
+
+        //Bind widget.
+        bindWidget();
 
         //Get session from sharePreferences.
         final se.is.agriculturalequipment.login.UserManager mManager = new se.is.agriculturalequipment.login.UserManager(this);
@@ -38,19 +40,20 @@ public class MainActivity extends AppCompatActivity {
 
         userRole = mManager.getUserRole().trim();
 
-        btnAdmin = (ImageButton) findViewById(R.id.btnAdmin);
-
-        txtUserRole.setText(userRole);
-
-        String getRole = txtUserRole.getText().toString();
-        if (getRole == "Owner") {
+        if (userRole.equals("Owner")) {
             Toast.makeText(this, "Owner", Toast.LENGTH_SHORT).show();
-        } else if (getRole == "Employee") {
+            txtUserRole.setText(userRole);
+
+            //Owner can do.
+        } else if (userRole.equals("Employee")) {
             Toast.makeText(this, "Employee", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "Not found", Toast.LENGTH_SHORT).show();
-        } 
-        
+            txtUserRole.setText(userRole);
+            btnSetting.setEnabled(false);
+            btnAdmin.setEnabled(false);
+            //Employee can do.
+
+        }
+                
 
 //        addDefaultPartG200();
 //        addDefaultPartGX35();
@@ -59,6 +62,12 @@ public class MainActivity extends AppCompatActivity {
 //        addDefaultPartTM31();
 
 
+    }
+
+    private void bindWidget() {
+        txtUserRole = (TextView) findViewById(R.id.txtUserRole);
+        btnAdmin = (ImageButton) findViewById(R.id.btnAdmin);
+        btnSetting = (Button) findViewById(R.id.btnSetting);
     }
 
     public void intentHistory(View view){

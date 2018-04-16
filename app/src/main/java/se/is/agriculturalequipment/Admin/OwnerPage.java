@@ -57,7 +57,7 @@ public class OwnerPage extends AppCompatActivity {
    @Override
     protected void onResume() {
         super.onResume();
-
+       ownerList.clear();
        adapter = new AdapterUserList(this, ownerList);
        listview_owner.setAdapter(adapter);
 
@@ -135,7 +135,6 @@ public class OwnerPage extends AppCompatActivity {
 
                                ownerList.add(owner);
                            }
-
                            adapter.notifyDataSetChanged();
 
                        } catch (JSONException e) {
@@ -147,7 +146,7 @@ public class OwnerPage extends AppCompatActivity {
            public void onErrorResponse(VolleyError error) {
                Log.d("Error ", error.toString());
            }
-       }) {
+       }){
            @Override
            protected Map<String, String> getParams() throws AuthFailureError {
                Map<String, String> params = new HashMap<>();
@@ -167,7 +166,7 @@ public class OwnerPage extends AppCompatActivity {
                Intent intentUpdateUser = new Intent(getApplicationContext(), UpdateUser.class);
                intentUpdateUser.putExtra("selectedUser", adapter.getItem(position));
                startActivity(intentUpdateUser);
-               finish();
+               //finish();
                //Log.d("fromAdapter ", adapter.getItem(position).getNameUser());
            }
        });
