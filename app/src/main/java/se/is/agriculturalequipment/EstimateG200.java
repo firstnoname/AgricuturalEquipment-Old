@@ -393,21 +393,25 @@ public class EstimateG200 extends AppCompatActivity {
     public void txtViewClicked(View view) {
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(EstimateG200.this);
         View mView = getLayoutInflater().inflate(R.layout.custom_dialog,null);
+        ImageView mImage = (ImageView) mView.findViewById(R.id.imageGuide);
 
 
         switch (view.getId()) {
             case R.id.txtViewEngine:
                 //Do something.
+                mImage.setImageResource(R.drawable.g200_test);
                 Toast.makeText(this, "Engine has clicked", Toast.LENGTH_SHORT).show();
-                //ImageView mImage = (ImageView) mView.findViewById(R.id.imageGuide);
-                //mImage.setImageResource(R.drawable.g200_test);
-                mBuilder.setView(mView);
-
                 break;
             case R.id.txtViewStarter:
                 //Do something.
+                mImage.setImageResource(R.drawable.gx_35);
                 Toast.makeText(this, "Starter has clicked", Toast.LENGTH_SHORT).show();
                 break;
         }
+
+        mBuilder.setView(mView);
+        AlertDialog dialog = mBuilder.create();
+        dialog.show();
+
     }
 }

@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
 
         userRole = mManager.getUserRole().trim();
 
-
         btnAdmin = (ImageButton) findViewById(R.id.btnAdmin);
 
         txtUserRole.setText(userRole);
