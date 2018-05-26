@@ -389,12 +389,20 @@ public class EstimateG200 extends AppCompatActivity {
         dialog.show();
     }
 
+    public void guideAirFilter(View view) {
+        AlertDialog.Builder mBuilder = new AlertDialog.Builder(EstimateG200.this);
+        View mView = getLayoutInflater().inflate(R.layout.custom_dialog, null);
+
+        mBuilder.setView(mView);
+        AlertDialog dialog = mBuilder.create();
+        dialog.show();
+    }
+
     //Get id from textview and change image follow the textview name.
     public void txtViewClicked(View view) {
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(EstimateG200.this);
         View mView = getLayoutInflater().inflate(R.layout.custom_dialog,null);
         ImageView mImage = (ImageView) mView.findViewById(R.id.imageGuide);
-
 
         switch (view.getId()) {
             case R.id.txtViewEngine:
@@ -406,6 +414,51 @@ public class EstimateG200 extends AppCompatActivity {
                 //Do something.
                 mImage.setImageResource(R.drawable.gx_35);
                 Toast.makeText(this, "Starter has clicked", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.txtViewAirFilter:
+                //Do something.
+                mImage.setImageResource(R.drawable.g200_ima3076);
+                Toast.makeText(this, "Air Filter has clicked", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.txtViewCarburetor:
+                mImage.setImageResource(R.drawable.g200_ima3077);
+                Toast.makeText(this, "Carburetor has clicked", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.txtViewCylinderSet:
+                mImage.setImageResource(R.drawable.g200_ima3078);
+                Toast.makeText(this, "CylinderSet has clicked", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.txtViewBallValveSwitchOil:
+                mImage.setImageResource(R.drawable.g200_ima3079);
+                Toast.makeText(this, "Ball switch oil has clicked", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.txtViewMuffler:
+                mImage.setImageResource(R.drawable.g200_ima3098);
+                Toast.makeText(this, "Muffler has clicked", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.txtViewSwitchOnOff:
+                mImage.setImageResource(R.drawable.g200_ima3082);
+                Toast.makeText(this, "Switch on-off has clicked", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.txtViewCoil:
+                mImage.setImageResource(R.drawable.g200_ima3083);
+                Toast.makeText(this, "Coil has clicked", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.txtViewFuelTankCap:
+                mImage.setImageResource(R.drawable.g200_ima3084);
+                Toast.makeText(this, "Fuel Tank Cap has clicked", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.txtViewNewPaint:
+                mImage.setImageResource(R.drawable.g200_ima3085);
+                Toast.makeText(this, "Muffler has clicked", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.txtViewOilTankCap:
+                mImage.setImageResource(R.drawable.g200_ima3086);
+                Toast.makeText(this, "Oil Tank Cap clicked", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.txtViewSparkPlug:
+                mImage.setImageResource(R.drawable.g200_ima3087);
+                Toast.makeText(this, "Spark plug has clicked", Toast.LENGTH_SHORT).show();
                 break;
         }
 

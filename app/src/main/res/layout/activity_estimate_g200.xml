@@ -180,6 +180,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="หม้อกรองอากาศ (Air Filter)"
+                    android:onClick="txtViewClicked"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -220,6 +221,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="คาร์บูเรเตอร์ (Carburetor)"
+                    android:onClick="txtViewClicked"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -253,6 +255,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="เสื้อสูบ (Cylinder Set)"
+                    android:onClick="txtViewClicked"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -286,6 +289,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ก๊อกน้ำมัน (Ball Valve Switch Oil)"
+                    android:onClick="txtViewClicked"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -319,6 +323,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ท่อไอเสีย (Muffler)"
+                    android:onClick="txtViewClicked"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -352,6 +357,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="สวิตช์ปิดเปิด (Switch On-Off)"
+                    android:onClick="txtViewClicked"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -385,6 +391,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="คอยล์ (Coil)"
+                    android:onClick="txtViewClicked"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -418,6 +425,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ฝาถังน้ำมัน  (Fuel Tank Cap)"
+                    android:onClick="txtViewClicked"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -451,6 +459,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ทำสี (New Paint)"
+                    android:onClick="txtViewClicked"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -484,6 +493,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ฝาถังน้ำมันเครื่อง (Oil Tank Cap)"
+                    android:onClick="txtViewClicked"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -517,6 +527,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ปลั๊กหัวเทียน (Spark Plug)"
+                    android:onClick="txtViewClicked"
                     android:textSize="16sp" />
 
                 <RadioButton

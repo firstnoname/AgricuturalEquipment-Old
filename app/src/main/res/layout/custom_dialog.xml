@@ -13,12 +13,12 @@
         android:src="@drawable/g200_fuel_tank"/>
 
     <TextView
-        android:id="@+id/txtView"
+        android:id="@+id/txtGuideDialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ฝาถังน้ำมันต้องอยู่ในสภาพที่สามารถใช้งานได้ ไม่มีรอยรั่ว และปิดสนิท"
-        android:layout_marginTop="5dp"
         android:layout_marginLeft="10dp"
-        android:textSize="16dp"/>
+        android:layout_marginTop="5dp"
+        android:text="ฝาถังน้ำมันต้องอยู่ในสภาพที่สามารถใช้งานได้ ไม่มีรอยรั่ว และปิดสนิท"
+        android:textSize="16dp" />
 
 </LinearLayout>
