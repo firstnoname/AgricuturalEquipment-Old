@@ -390,24 +390,28 @@ public class EstimateGX160 extends AppCompatActivity {
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(EstimateGX160.this);
         View mView = getLayoutInflater().inflate(R.layout.custom_dialog, null);
         ImageView mImage = (ImageView) mView.findViewById(R.id.imageGuide);
+        ImageView mImageL = (ImageView) mView.findViewById(R.id.imageGuideLeft);
         TextView mText = (TextView) mView.findViewById(R.id.txtGuideDialog);
 
         switch (view.getId()) {
             case R.id.txtViewEngine:
                 //Do something.
                 mImage.setImageResource(R.drawable.gx160_3099);
+                mImageL.setImageResource(R.drawable.gx160_3112);
                 mText.setText("ตรวจสอบว่าสตาร์ทติดหรือไม่");
 //                Toast.makeText(this, "Engine has clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.txtViewStarter:
                 //Do something.
                 mImage.setImageResource(R.drawable.gx160_3100);
+                mImageL.setImageResource(R.drawable.gx160_3111);
                 mText.setText("ตรวจสอบชุดจานกระตุก");
 //                Toast.makeText(this, "Starter has clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.txtViewFuelTank:
                 //Do something.
                 mImage.setImageResource(R.drawable.gx160_3101);
+                mImageL.setImageResource(R.drawable.gx160_3102);
                 mText.setText("ตรวจสอบถังน้ำมัน");
 //                Toast.makeText(this, "Fuel tank has clicked", Toast.LENGTH_SHORT).show();
                 break;

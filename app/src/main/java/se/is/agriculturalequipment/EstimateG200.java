@@ -418,12 +418,14 @@ public class EstimateG200 extends AppCompatActivity {
             case R.id.txtViewStarter:
                 //Do something.
                 mImage.setImageResource(R.drawable.gx_35);
+                mImageL.setImageResource(R.drawable.g200_ima3087);
                 mText.setText("ตรวจสอบชุดจานกระตุก");
 //                Toast.makeText(this, "Starter has clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.txtViewFuelTank:
                 //Do something.
                 mImage.setImageResource(R.drawable.g200_ima3097);
+                mImageL.setImageResource(R.drawable.g200_ima3098);
                 mText.setText("ตรวจสอบถังน้ำมัน");
 //                Toast.makeText(this, "Fuel tank has clicked", Toast.LENGTH_SHORT).show();
                 break;
