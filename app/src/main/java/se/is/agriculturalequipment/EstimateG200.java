@@ -404,12 +404,14 @@ public class EstimateG200 extends AppCompatActivity {
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(EstimateG200.this);
         View mView = getLayoutInflater().inflate(R.layout.custom_dialog,null);
         ImageView mImage = (ImageView) mView.findViewById(R.id.imageGuide);
+        ImageView mImageL = (ImageView) mView.findViewById(R.id.imageGuideLeft);
         TextView mText = (TextView) mView.findViewById(R.id.txtGuideDialog);
 
         switch (view.getId()) {
             case R.id.txtViewEngine:
                 //Do something.
                 mImage.setImageResource(R.drawable.g200_test);
+                mImageL.setImageResource(R.drawable.g200_ima3097);
                 mText.setText("ตรวจสอบว่าสตาร์ทติดหรือไม่");
 //                Toast.makeText(this, "Engine has clicked", Toast.LENGTH_SHORT).show();
                 break;
