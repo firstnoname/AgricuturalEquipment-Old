@@ -145,7 +145,7 @@
                     android:id="@+id/txtViewFuelTank"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:onClick="guideFuelTank"
+                    android:onClick="txtViewClicked"
                     android:text="ถังน้ำมัน (Fuel Tank)"
                     android:textSize="16sp" />
 
