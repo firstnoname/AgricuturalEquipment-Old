@@ -20,11 +20,10 @@ public class SettingPartGX160 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_setting_part_gx160);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_setting_part_gx160);
 
         bindWidget();
-
 
 
 //        createAndConnectDB();
@@ -38,9 +37,9 @@ public class SettingPartGX160 extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         PartDAO partDAO = new PartDAO(getApplicationContext());
-            partDAO.open();
+        partDAO.open();
         ArrayList<PartList> myList = partDAO.getAllPart("GX160TABLE");
-        final ListviewAdapterSettingList adapter = new ListviewAdapterSettingList(myList,this);
+        final ListviewAdapterSettingList adapter = new ListviewAdapterSettingList(myList, this);
 
         listViewGX160.setAdapter(adapter);
         partDAO.close();
@@ -58,22 +57,22 @@ public class SettingPartGX160 extends AppCompatActivity {
     }
 
     private void addDefaultPart() {
-            objTableGX160.addNewPart("ทำสี", "120");
-            objTableGX160.addNewPart("ฝาถังน้ำมัน", "50");
-            objTableGX160.addNewPart("ฝาถังน้ำมันเครื่อง", "50");
-            objTableGX160.addNewPart("จานกระตุกชุด", "420");
-            objTableGX160.addNewPart("เชือกดึง", "30");
-            objTableGX160.addNewPart("เขี้ยวสตาร์ท", "70");
-            objTableGX160.addNewPart("ท่อไอเสีย", "160");
-            objTableGX160.addNewPart("ปลั๊กหัวเทีียน", "30");
-            objTableGX160.addNewPart("คาร์บูเรเตอร์", "420");
-            objTableGX160.addNewPart("คอยล์", "550");
-            objTableGX160.addNewPart("ก๊อกน้ำมัน", "150");
-            objTableGX160.addNewPart("หม้อกรองอากาศ", "300");
-            objTableGX160.addNewPart("สวิตช์ปิดเปิด", "120");
-            objTableGX160.addNewPart("เสื้อสูบ", "180");
-            objTableGX160.addNewPart("ลูกสูบ", "380");
-            objTableGX160.addNewPart("ถังน้ำมัน", "650");
+        objTableGX160.addNewPart("ทำสี", "120");
+        objTableGX160.addNewPart("ฝาถังน้ำมัน", "50");
+        objTableGX160.addNewPart("ฝาถังน้ำมันเครื่อง", "50");
+        objTableGX160.addNewPart("จานกระตุกชุด", "420");
+        objTableGX160.addNewPart("เชือกดึง", "30");
+        objTableGX160.addNewPart("เขี้ยวสตาร์ท", "70");
+        objTableGX160.addNewPart("ท่อไอเสีย", "160");
+        objTableGX160.addNewPart("ปลั๊กหัวเทีียน", "30");
+        objTableGX160.addNewPart("คาร์บูเรเตอร์", "420");
+        objTableGX160.addNewPart("คอยล์", "550");
+        objTableGX160.addNewPart("ก๊อกน้ำมัน", "150");
+        objTableGX160.addNewPart("หม้อกรองอากาศ", "300");
+        objTableGX160.addNewPart("สวิตช์ปิดเปิด", "120");
+        objTableGX160.addNewPart("เสื้อสูบ", "180");
+        objTableGX160.addNewPart("ลูกสูบ", "380");
+        objTableGX160.addNewPart("ถังน้ำมัน", "650");
 
     }
 
@@ -90,7 +89,7 @@ public class SettingPartGX160 extends AppCompatActivity {
         listViewGX160.setAdapter(objMyAdapter);
     }
 
-    public void intentAddPartGX160(View view){
+    public void intentAddPartGX160(View view) {
         Intent intentGX160 = new Intent(this, AddPartGX160.class);
         startActivity(intentGX160);
         finish();

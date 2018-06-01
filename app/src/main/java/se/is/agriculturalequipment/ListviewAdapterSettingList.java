@@ -19,10 +19,10 @@ import se.is.agriculturalequipment.model.PartList;
 public class ListviewAdapterSettingList extends BaseAdapter {
 
     private static Activity activity;
-    private LayoutInflater inflater;
     ArrayList<PartList> mPartLists;
+    private LayoutInflater inflater;
 
-    public ListviewAdapterSettingList(ArrayList<PartList> mPartLists,Activity activity) {
+    public ListviewAdapterSettingList(ArrayList<PartList> mPartLists, Activity activity) {
         this.mPartLists = mPartLists;
         this.activity = activity;
         inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);

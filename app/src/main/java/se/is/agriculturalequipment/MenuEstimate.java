@@ -13,7 +13,7 @@ public class MenuEstimate extends AppCompatActivity {
         setContentView(R.layout.activity_menu_estimate);
     }
 
-    public void intentSelectEstimateG200(View view){
+    public void intentSelectEstimateG200(View view) {
         Intent intentSelEstimateG200 = new Intent(this, EstimateG200.class);
         startActivity(intentSelEstimateG200);
     }

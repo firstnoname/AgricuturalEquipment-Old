@@ -10,13 +10,12 @@ import android.database.sqlite.SQLiteDatabase;
  */
 
 public class TableTM31 {
-    private MyOpenHelper objMyOpenHelper;
-    private SQLiteDatabase readSqLiteDatabase, writeSqLiteDatabase;
-
     public static final String TABLE_TM31 = "tm31TABLE";
     public static final String COLUMN_TM31_ID = "_id";
     public static final String COLUMN_PART_NAME_TM31 = "partNameTM31";
     public static final String COLUMN_PART_PRICE_TM31 = "partPriceTM31";
+    private MyOpenHelper objMyOpenHelper;
+    private SQLiteDatabase readSqLiteDatabase, writeSqLiteDatabase;
 
     public TableTM31(Context context) {
         objMyOpenHelper = new MyOpenHelper(context);
@@ -32,7 +31,7 @@ public class TableTM31 {
         return writeSqLiteDatabase.insert(TABLE_TM31, null, objContentValues);
     }
 
-    public String[] readPartName(){
+    public String[] readPartName() {
         String[] strPartName = null;
         Cursor objCursor = readSqLiteDatabase.query(TABLE_TM31,
                 new String[]{COLUMN_TM31_ID, COLUMN_PART_NAME_TM31},
@@ -50,7 +49,7 @@ public class TableTM31 {
         return strPartName;
     }
 
-    public String[] readPartPrice(){
+    public String[] readPartPrice() {
         String[] strPartPrice = null;
         Cursor objCursor = readSqLiteDatabase.query(TABLE_TM31,
                 new String[]{COLUMN_TM31_ID, COLUMN_PART_PRICE_TM31},

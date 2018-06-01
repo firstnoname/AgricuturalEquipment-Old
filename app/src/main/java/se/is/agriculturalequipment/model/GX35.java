@@ -6,17 +6,17 @@ import java.io.Serializable;
  * Created by BlackClover on 10/31/2017.
  */
 
-public class GX35 implements Serializable{
+public class GX35 implements Serializable {
 
-    private String id_customer,identification_no,name;
-    private String engineStatus,starter,fuelTank,controlSwitch,brushCutterBlade,airFilter,carburetor;
+    private String id_customer, identification_no, name;
+    private String engineStatus, starter, fuelTank, controlSwitch, brushCutterBlade, airFilter, carburetor;
     private String cylinderSet;
     private String ballValveSwitchOil;
-    private String muffler,gearDiver,mainPipe;
+    private String muffler, gearDiver, mainPipe;
     private String switchOnOff;
     private String coil;
     private String fuelTankCap;
-    private String newPaint,shaft;
+    private String newPaint, shaft;
     private String oilTankCap;
     private String sparkPlug;
     private String dealStatus;

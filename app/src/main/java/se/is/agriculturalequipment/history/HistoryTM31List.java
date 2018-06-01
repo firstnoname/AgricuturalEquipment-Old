@@ -33,9 +33,9 @@ import se.is.agriculturalequipment.model.TM31;
 public class HistoryTM31List extends AppCompatActivity {
 
     private static final String url = "http://tomori.siameki.com/select_tm31.php";
-    private List<TM31> tm31List = new ArrayList<>();
     ListView listview_tm31;
     AdapterHistoryTM31 adapterHistoryTM31;
+    private List<TM31> tm31List = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

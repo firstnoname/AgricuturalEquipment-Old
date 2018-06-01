@@ -14,42 +14,42 @@ import java.util.ArrayList;
 public class EstimateGX35 extends AppCompatActivity {
 
     private RadioGroup rdgCheckEngine, rdg1, rdg2, rdg3, rdg4, rdg5, rdg6, rdg7, rdg8, rdg9, rdg10,
-            rdg11, rdg12,rdg13,rdg14,rdg15,rdg16,rdg17,rdg18;
-    private RadioButton rdbEngineTrue, rdbEngineFalse, rdb1_1,rdb1_2,rdb1_3,
-            rdb2_1,rdb2_2,
-            rdb3_1,rdb3_2,
-            rdb4_1,rdb4_2,
-            rdb5_1,rdb5_2,rdb5_3,
-            rdb6_1,rdb6_2,
-            rdb7_1,rdb7_2,rdb7_3,
-            rdb8_1,rdb8_2,
-            rdb9_1,rdb9_2,
-            rdb10_1,rdb10_2,rdb10_3,
-            rdb11_1,rdb11_2,
-            rdb12_1,rdb12_2,
-            rdb13_1,rdb13_2,
-            rdb14_1,rdb14_2,
-            rdb15_1,rdb15_2,
-            rdb16_1,rdb16_2,
-            rdb17_1,rdb17_2,
-            rdb18_1,rdb18_2;
+            rdg11, rdg12, rdg13, rdg14, rdg15, rdg16, rdg17, rdg18;
+    private RadioButton rdbEngineTrue, rdbEngineFalse, rdb1_1, rdb1_2, rdb1_3,
+            rdb2_1, rdb2_2,
+            rdb3_1, rdb3_2,
+            rdb4_1, rdb4_2,
+            rdb5_1, rdb5_2, rdb5_3,
+            rdb6_1, rdb6_2,
+            rdb7_1, rdb7_2, rdb7_3,
+            rdb8_1, rdb8_2,
+            rdb9_1, rdb9_2,
+            rdb10_1, rdb10_2, rdb10_3,
+            rdb11_1, rdb11_2,
+            rdb12_1, rdb12_2,
+            rdb13_1, rdb13_2,
+            rdb14_1, rdb14_2,
+            rdb15_1, rdb15_2,
+            rdb16_1, rdb16_2,
+            rdb17_1, rdb17_2,
+            rdb18_1, rdb18_2;
 
     private RadioButton rdbSelectedEngine, rdbSelectedStarter, rdbSelectedFuelTank, rdbSelectedControlSwitch,
             rdbSelectedBrushCutterBlade, rdbSelectedAirFilter, rdbSelectedCarburetor, rdbSelectedCylinderSet, rdbSelectedBallValveSwitchOil,
-            rdbSelectedMuffler, rdbSelectedGearDiver, rdbSelectedMainPipe,rdbSelectedSwitchOnOff,rdbSelectedCoil,rdbSelectedFuelTankCap,
-            rdbSelectedNewPaint,rdbSelectedShaft,rdbSelectedOilTankCap,rdbSelectedSparkPlug;
+            rdbSelectedMuffler, rdbSelectedGearDiver, rdbSelectedMainPipe, rdbSelectedSwitchOnOff, rdbSelectedCoil, rdbSelectedFuelTankCap,
+            rdbSelectedNewPaint, rdbSelectedShaft, rdbSelectedOilTankCap, rdbSelectedSparkPlug;
 
     private LinearLayout layoutButtonGroup;
 
     private Integer idSelectedEngine, idSelectedStarter, idSelectedFuelTank, idSelectedControlSwitch,
-            idSelectedBrushCutterBlade,idSelectedAirFilter, idSelectedCarburetor, idSelectedCylinderSet, idSelectedBallValveSwitchOil,
-            idSelectedMuffler, idSelectedGearDiver, idSelectedMainPipe,idSelectedSwitchOnOff,idSelectedCoil,
-            idSelectedFuelTankCap,idSelectedNewPaint,idSelectedShaft,idSelectedOilTankCap,idSelectedSparkPlug;
+            idSelectedBrushCutterBlade, idSelectedAirFilter, idSelectedCarburetor, idSelectedCylinderSet, idSelectedBallValveSwitchOil,
+            idSelectedMuffler, idSelectedGearDiver, idSelectedMainPipe, idSelectedSwitchOnOff, idSelectedCoil,
+            idSelectedFuelTankCap, idSelectedNewPaint, idSelectedShaft, idSelectedOilTankCap, idSelectedSparkPlug;
 
     private Integer idxSelectedEngine, idxSelectedStarter, idxSelectedFuelTank, idxSelectedControlSwitch,
             idxSelectedBrushCutterBlade, idxSelectedAirFilter, idxSelectedCarburetor, idxSelectedCylinderSet, idxSelectedBallValveSwitchOil,
-            idxSelectedMuffler, idxSelectedGearDiver, idxSelectedMainPipe,idxSelectedSwitchOnOff,idxSelectedCoil,
-            idxSelectedFuelTankCap,idxSelectedNewPaint,idxSelectedShaft,idxSelectedOilTankCap,idxSelectedSparkPlug;
+            idxSelectedMuffler, idxSelectedGearDiver, idxSelectedMainPipe, idxSelectedSwitchOnOff, idxSelectedCoil,
+            idxSelectedFuelTankCap, idxSelectedNewPaint, idxSelectedShaft, idxSelectedOilTankCap, idxSelectedSparkPlug;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -147,7 +147,7 @@ public class EstimateGX35 extends AppCompatActivity {
             rdb16_1.setChecked(true);
             rdb17_1.setChecked(true);
             rdb18_1.setChecked(true);
-        }else {
+        } else {
             rdb1_1.setChecked(true);
             rdb2_1.setChecked(true);
             rdb3_1.setChecked(true);
@@ -202,47 +202,47 @@ public class EstimateGX35 extends AppCompatActivity {
         rdg7 = (RadioGroup) findViewById(R.id.no7);
         rdg8 = (RadioGroup) findViewById(R.id.no8);
         rdg9 = (RadioGroup) findViewById(R.id.no9);
-        rdg10 = (RadioGroup)findViewById(R.id.no10);
-        rdg11 = (RadioGroup)findViewById(R.id.no11);
-        rdg12 = (RadioGroup)findViewById(R.id.no12);
-        rdg13 = (RadioGroup)findViewById(R.id.no13);
-        rdg14 = (RadioGroup)findViewById(R.id.no14);
-        rdg15 = (RadioGroup)findViewById(R.id.no15);
-        rdg16 = (RadioGroup)findViewById(R.id.no16);
-        rdg17 = (RadioGroup)findViewById(R.id.no17);
-        rdg18 = (RadioGroup)findViewById(R.id.no18);
+        rdg10 = (RadioGroup) findViewById(R.id.no10);
+        rdg11 = (RadioGroup) findViewById(R.id.no11);
+        rdg12 = (RadioGroup) findViewById(R.id.no12);
+        rdg13 = (RadioGroup) findViewById(R.id.no13);
+        rdg14 = (RadioGroup) findViewById(R.id.no14);
+        rdg15 = (RadioGroup) findViewById(R.id.no15);
+        rdg16 = (RadioGroup) findViewById(R.id.no16);
+        rdg17 = (RadioGroup) findViewById(R.id.no17);
+        rdg18 = (RadioGroup) findViewById(R.id.no18);
 
 
         rdbEngineFalse = (RadioButton) findViewById(R.id.radioBtnEngineFalse);
         rdbEngineTrue = (RadioButton) findViewById(R.id.radioBtnEngineTrue);
         rdb1_1 = (RadioButton) findViewById(R.id.radioBtn1_1);
-        rdb1_2 = (RadioButton)findViewById(R.id.radioBtn1_2);
-        rdb1_3 = (RadioButton)findViewById(R.id.radioBtn1_3);
-        rdb2_1 = (RadioButton)findViewById(R.id.radioBtn2_1);
+        rdb1_2 = (RadioButton) findViewById(R.id.radioBtn1_2);
+        rdb1_3 = (RadioButton) findViewById(R.id.radioBtn1_3);
+        rdb2_1 = (RadioButton) findViewById(R.id.radioBtn2_1);
         rdb2_2 = (RadioButton) findViewById(R.id.radioBtn2_2);
-        rdb3_1 = (RadioButton)findViewById(R.id.radioBtn3_1);
-        rdb3_2 = (RadioButton)findViewById(R.id.radioBtn3_2);
-        rdb4_1 = (RadioButton)findViewById(R.id.radioBtn4_1);
-        rdb4_2 = (RadioButton)findViewById(R.id.radioBtn4_2);
-        rdb5_1 = (RadioButton)findViewById(R.id.radioBtn5_1);
-        rdb5_2 = (RadioButton)findViewById(R.id.radioBtn5_2);
-        rdb5_3 = (RadioButton)findViewById(R.id.radioBtn5_3);
-        rdb6_1 = (RadioButton)findViewById(R.id.radioBtn6_1);
-        rdb6_2 = (RadioButton)findViewById(R.id.radioBtn6_2);
-        rdb7_1 = (RadioButton)findViewById(R.id.radioBtn7_1);
-        rdb7_2 = (RadioButton)findViewById(R.id.radioBtn7_2);
-        rdb7_3 = (RadioButton)findViewById(R.id.radioBtn7_3);
-        rdb8_1 = (RadioButton)findViewById(R.id.radioBtn8_1);
-        rdb8_2 = (RadioButton)findViewById(R.id.radioBtn8_2);
-        rdb9_1 = (RadioButton)findViewById(R.id.radioBtn9_1);
-        rdb9_2 = (RadioButton)findViewById(R.id.radioBtn9_2);
-        rdb10_1 = (RadioButton)findViewById(R.id.radioBtn10_1);
-        rdb10_2 = (RadioButton)findViewById(R.id.radioBtn10_2);
-        rdb10_3 = (RadioButton)findViewById(R.id.radioBtn10_3);
-        rdb11_1 = (RadioButton)findViewById(R.id.radioBtn11_1);
-        rdb11_2 = (RadioButton)findViewById(R.id.radioBtn11_2);
-        rdb12_1 = (RadioButton)findViewById(R.id.radioBtn12_1);
-        rdb12_2 = (RadioButton)findViewById(R.id.radioBtn12_2);
+        rdb3_1 = (RadioButton) findViewById(R.id.radioBtn3_1);
+        rdb3_2 = (RadioButton) findViewById(R.id.radioBtn3_2);
+        rdb4_1 = (RadioButton) findViewById(R.id.radioBtn4_1);
+        rdb4_2 = (RadioButton) findViewById(R.id.radioBtn4_2);
+        rdb5_1 = (RadioButton) findViewById(R.id.radioBtn5_1);
+        rdb5_2 = (RadioButton) findViewById(R.id.radioBtn5_2);
+        rdb5_3 = (RadioButton) findViewById(R.id.radioBtn5_3);
+        rdb6_1 = (RadioButton) findViewById(R.id.radioBtn6_1);
+        rdb6_2 = (RadioButton) findViewById(R.id.radioBtn6_2);
+        rdb7_1 = (RadioButton) findViewById(R.id.radioBtn7_1);
+        rdb7_2 = (RadioButton) findViewById(R.id.radioBtn7_2);
+        rdb7_3 = (RadioButton) findViewById(R.id.radioBtn7_3);
+        rdb8_1 = (RadioButton) findViewById(R.id.radioBtn8_1);
+        rdb8_2 = (RadioButton) findViewById(R.id.radioBtn8_2);
+        rdb9_1 = (RadioButton) findViewById(R.id.radioBtn9_1);
+        rdb9_2 = (RadioButton) findViewById(R.id.radioBtn9_2);
+        rdb10_1 = (RadioButton) findViewById(R.id.radioBtn10_1);
+        rdb10_2 = (RadioButton) findViewById(R.id.radioBtn10_2);
+        rdb10_3 = (RadioButton) findViewById(R.id.radioBtn10_3);
+        rdb11_1 = (RadioButton) findViewById(R.id.radioBtn11_1);
+        rdb11_2 = (RadioButton) findViewById(R.id.radioBtn11_2);
+        rdb12_1 = (RadioButton) findViewById(R.id.radioBtn12_1);
+        rdb12_2 = (RadioButton) findViewById(R.id.radioBtn12_2);
         rdb13_1 = (RadioButton) findViewById(R.id.radioBtn13_1);
         rdb13_2 = (RadioButton) findViewById(R.id.radioBtn13_2);
         rdb14_1 = (RadioButton) findViewById(R.id.radioBtn14_1);
@@ -297,9 +297,9 @@ public class EstimateGX35 extends AppCompatActivity {
 
             /*No5 = หม้อกรองอากาศ*/
             idSelectedAirFilter = rdg5.getCheckedRadioButtonId();
-            rdbSelectedAirFilter  = (RadioButton) findViewById(idSelectedAirFilter );
-            arrSelectedID.add(idxSelectedAirFilter  = rdg5.indexOfChild(rdbSelectedAirFilter ));
-            arrNameList.add(rdbSelectedAirFilter .getText().toString());
+            rdbSelectedAirFilter = (RadioButton) findViewById(idSelectedAirFilter);
+            arrSelectedID.add(idxSelectedAirFilter = rdg5.indexOfChild(rdbSelectedAirFilter));
+            arrNameList.add(rdbSelectedAirFilter.getText().toString());
 
             /*No6 = คาร์บูเรเตอร์*/
             idSelectedCarburetor = rdg6.getCheckedRadioButtonId();
@@ -379,7 +379,7 @@ public class EstimateGX35 extends AppCompatActivity {
             arrSelectedID.add(idxSelectedSparkPlug = rdg18.indexOfChild(rdbSelectedSparkPlug));
             arrNameList.add(rdbSelectedSparkPlug.getText().toString());
 
-        }else{
+        } else {
             /*No1 = จานกระตุกชุด */
             idSelectedStarter = rdg1.getCheckedRadioButtonId();
             rdbSelectedStarter = (RadioButton) findViewById(idSelectedStarter);
@@ -475,7 +475,7 @@ public class EstimateGX35 extends AppCompatActivity {
 
         Intent intentSubmitEstimateGX160 = new Intent(this, SubmitEstimateGX35.class);
         intentSubmitEstimateGX160.putExtra("idxEngine", idxSelectedEngine);
-        intentSubmitEstimateGX160.putStringArrayListExtra("arrListName",arrNameList);
+        intentSubmitEstimateGX160.putStringArrayListExtra("arrListName", arrNameList);
         intentSubmitEstimateGX160.putIntegerArrayListExtra("arrSelectedID", arrSelectedID);
         Log.d("arrListName : ", arrNameList.toString());
         Log.d("arrSelectID : ", arrSelectedID.toString());

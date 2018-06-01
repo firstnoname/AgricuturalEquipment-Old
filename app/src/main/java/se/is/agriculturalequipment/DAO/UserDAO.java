@@ -24,22 +24,22 @@ public class UserDAO {
         dbHelper = new MyOpenHelper(context);
     }
 
-    public void open(){
+    public void open() {
         database = dbHelper.getWritableDatabase();
     }
 
-    public void close(){
+    public void close() {
         database.close();
     }
 
-    public ArrayList<User> getAllUser(String where){
+    public ArrayList<User> getAllUser(String where) {
 
         ArrayList<User> userList = new ArrayList<>();
         /*Cursor cursor = database.rawQuery("SELECT * FROM userTable WHERE userRole=" + where + ";",
                 null);*/
 //        String sqlSelect = "SELECT * FROM userTable WHERE userRole = " + where + ";";
-        String sqlSelect = "SELECT * FROM userTable WHERE userRole = '"+where+"'";
-        Cursor cursor = database.rawQuery(sqlSelect,null);
+        String sqlSelect = "SELECT * FROM userTable WHERE userRole = '" + where + "'";
+        Cursor cursor = database.rawQuery(sqlSelect, null);
         cursor.moveToFirst();
 
         User mUser;
@@ -63,9 +63,9 @@ public class UserDAO {
 
         ContentValues values = new ContentValues();
         values.put("nameUser", newUser.getNameUser());
-        values.put("username",newUser.getUsername());
+        values.put("username", newUser.getUsername());
         values.put("password", newUser.getPassword());
-        values.put("userRole",newUser.getUserRole());
+        values.put("userRole", newUser.getUserRole());
         this.database.insert("userTable", null, values);
         Log.d("User :: ", "Insert user complete.");
     }
@@ -89,7 +89,6 @@ public class UserDAO {
         String sqlText = "DELETE FROM userTable WHERE id=" + delUser.getId();
         this.database.execSQL(sqlText);
     }
-
 
 
 }

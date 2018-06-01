@@ -52,7 +52,7 @@ public class AdapterHistoryTM31 extends BaseAdapter {
 
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        View view = inflater.inflate(R.layout.listview_history,null);
+        View view = inflater.inflate(R.layout.listview_history, null);
 
         txtName = (TextView) view.findViewById(R.id.txtName);
         txtBuyDate = (TextView) view.findViewById(R.id.txtBuyDate);

@@ -17,6 +17,7 @@ public class SettingPartsG200 extends AppCompatActivity {
 
     private ListView listViewG200;
     private TableG200 objTableG200;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +41,7 @@ public class SettingPartsG200 extends AppCompatActivity {
         /*ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, myList);*/
         ArrayList<PartList> myList = partDAO.getAllPart("G200TABLE");
-        final ListviewAdapterSettingList adapter = new ListviewAdapterSettingList(myList,this);
+        final ListviewAdapterSettingList adapter = new ListviewAdapterSettingList(myList, this);
 
         listViewG200.setAdapter(adapter);
         partDAO.close();
@@ -91,7 +92,7 @@ public class SettingPartsG200 extends AppCompatActivity {
 
     }//Create ListView.
 
-    public void intentAddPartG200(View view){
+    public void intentAddPartG200(View view) {
         Intent intentAddPart = new Intent(this, AddPartG200.class);
         startActivity(intentAddPart);
         finish();

@@ -13,11 +13,11 @@ import java.util.ArrayList;
 
 public class EstimateTM31 extends AppCompatActivity {
 
-    private RadioGroup rdgCheckEngine, rdg1, rdg2, rdg3, rdg4, rdg5, rdg6, rdg7, rdg8, rdg9, rdg10, rdg11,rdg12;
+    private RadioGroup rdgCheckEngine, rdg1, rdg2, rdg3, rdg4, rdg5, rdg6, rdg7, rdg8, rdg9, rdg10, rdg11, rdg12;
 
     private RadioButton rdbEngineTrue, rdbEngineFalse, rdb1_1, rdb1_2,
             rdb2_1, rdb2_2,
-            rdb3_1, rdb3_2,rdb3_3,
+            rdb3_1, rdb3_2, rdb3_3,
             rdb4_1, rdb4_2,
             rdb5_1, rdb5_2,
             rdb6_1, rdb6_2,
@@ -26,19 +26,19 @@ public class EstimateTM31 extends AppCompatActivity {
             rdb9_1, rdb9_2,
             rdb10_1, rdb10_2,
             rdb11_1, rdb11_2,
-            rdb12_1,rdb12_2;
+            rdb12_1, rdb12_2;
 
     private RadioButton rdbSelectedEngine, rdbSelectedAirChamber, rdbSelectedSealSet, rdbSelectedAdjustSet,
             rdbSelectedDischargeMetal, rdbSelectedSuctionMetal, rdbSelectedPistonSet, rdbSelectedStarterRopeReel, rdbSelectedPressureGauge,
-            rdbSelectedBallValveSwitch, rdbSelectedOilFilter, rdbSelectedNewPaint,rdbSelectedOilTankCap;
+            rdbSelectedBallValveSwitch, rdbSelectedOilFilter, rdbSelectedNewPaint, rdbSelectedOilTankCap;
 
     private Integer idSelectedEngine, idSelectedAirChamber, idSelectedSealSet, idSelectedAdjustSet,
             idSelectedDischargeMetal, idSelectedSuctionMetal, idSelectedPistonSet, idSelectedStarterRopeReel, idSelectedPressureGauge,
-            idSelectedBallValveSwitch, idSelectedOilFilter, idSelectedNewPaint,idSelectedOilTankCap;
+            idSelectedBallValveSwitch, idSelectedOilFilter, idSelectedNewPaint, idSelectedOilTankCap;
 
     private Integer idxSelectedEngine, idxSelectedAirChamber, idxSelectedSealSet, idxSelectedAdjustSet,
             idxSelectedDischargeMetal, idxSelectedSuctionMetal, idxSelectedPistonSet, idxSelectedStarterRopeReel, idxSelectedPressureGauge,
-            idxSelectedBallValveSwitch, idxSelectedOilFilter, idxSelectedNewPaint,idxSelectedOilTankCap;
+            idxSelectedBallValveSwitch, idxSelectedOilFilter, idxSelectedNewPaint, idxSelectedOilTankCap;
 
     private LinearLayout layoutButtonGroup;
 
@@ -152,7 +152,6 @@ public class EstimateTM31 extends AppCompatActivity {
         rdb12_2 = (RadioButton) findViewById(R.id.radioBtn12_2);
 
 
-
         layoutButtonGroup = (LinearLayout) findViewById(R.id.layoutNavigation);
     }
 
@@ -174,7 +173,7 @@ public class EstimateTM31 extends AppCompatActivity {
         layoutButtonGroup.setVisibility(View.GONE);
     }
 
-    public void intentSubmitEstimateTM31(View view){
+    public void intentSubmitEstimateTM31(View view) {
 
         ArrayList<String> arrNameList = new ArrayList<String>();
         ArrayList<Integer> arrSelectedID = new ArrayList<Integer>();
@@ -185,7 +184,7 @@ public class EstimateTM31 extends AppCompatActivity {
         arrSelectedID.add(idxSelectedEngine = rdgCheckEngine.indexOfChild(rdbSelectedEngine));
         arrNameList.add(rdbSelectedEngine.getText().toString());
 //        Check can start or not. 0 = The engine can starts, 1 = The engine can't starts.
-        if(idxSelectedEngine==0){
+        if (idxSelectedEngine == 0) {
 
             /*No1 = หม้อลม*/
             idSelectedAirChamber = rdg1.getCheckedRadioButtonId();
@@ -195,50 +194,50 @@ public class EstimateTM31 extends AppCompatActivity {
 
             /*No2 = ลูกยางชุด*/
             idSelectedSealSet = rdg2.getCheckedRadioButtonId();
-            rdbSelectedSealSet= (RadioButton) findViewById(idSelectedSealSet);
-            arrSelectedID.add(idxSelectedSealSet= rdg2.indexOfChild(rdbSelectedSealSet));
+            rdbSelectedSealSet = (RadioButton) findViewById(idSelectedSealSet);
+            arrSelectedID.add(idxSelectedSealSet = rdg2.indexOfChild(rdbSelectedSealSet));
             arrNameList.add(rdbSelectedSealSet.getText().toString());
 
             /*No3 = ตัวตั้งโปโล*/
-            idSelectedAdjustSet= rdg3.getCheckedRadioButtonId();
-            rdbSelectedAdjustSet= (RadioButton) findViewById(idSelectedAdjustSet);
-            arrSelectedID.add(idxSelectedAdjustSet= rdg3.indexOfChild(rdbSelectedAdjustSet));
+            idSelectedAdjustSet = rdg3.getCheckedRadioButtonId();
+            rdbSelectedAdjustSet = (RadioButton) findViewById(idSelectedAdjustSet);
+            arrSelectedID.add(idxSelectedAdjustSet = rdg3.indexOfChild(rdbSelectedAdjustSet));
             arrNameList.add(rdbSelectedAdjustSet.getText().toString());
 
             /*No4 = ท่อนดูด*/
-            idSelectedDischargeMetal= rdg4.getCheckedRadioButtonId();
-            rdbSelectedDischargeMetal= (RadioButton) findViewById(idSelectedDischargeMetal);
-            arrSelectedID.add(idxSelectedDischargeMetal= rdg4.indexOfChild(rdbSelectedDischargeMetal));
+            idSelectedDischargeMetal = rdg4.getCheckedRadioButtonId();
+            rdbSelectedDischargeMetal = (RadioButton) findViewById(idSelectedDischargeMetal);
+            arrSelectedID.add(idxSelectedDischargeMetal = rdg4.indexOfChild(rdbSelectedDischargeMetal));
             arrNameList.add(rdbSelectedDischargeMetal.getText().toString());
 
             /*No5 = ท่อนส่ง */
-            idSelectedSuctionMetal= rdg5.getCheckedRadioButtonId();
-            rdbSelectedSuctionMetal= (RadioButton) findViewById(idSelectedSuctionMetal);
-            arrSelectedID.add(idxSelectedSuctionMetal= rdg5.indexOfChild(rdbSelectedSuctionMetal));
+            idSelectedSuctionMetal = rdg5.getCheckedRadioButtonId();
+            rdbSelectedSuctionMetal = (RadioButton) findViewById(idSelectedSuctionMetal);
+            arrSelectedID.add(idxSelectedSuctionMetal = rdg5.indexOfChild(rdbSelectedSuctionMetal));
             arrNameList.add(rdbSelectedSuctionMetal.getText().toString());
 
             /*No6 = ลูกสูบ */
-            idSelectedPistonSet= rdg6.getCheckedRadioButtonId();
-            rdbSelectedPistonSet= (RadioButton) findViewById(idSelectedPistonSet);
-            arrSelectedID.add(idxSelectedPistonSet= rdg6.indexOfChild(rdbSelectedPistonSet));
+            idSelectedPistonSet = rdg6.getCheckedRadioButtonId();
+            rdbSelectedPistonSet = (RadioButton) findViewById(idSelectedPistonSet);
+            arrSelectedID.add(idxSelectedPistonSet = rdg6.indexOfChild(rdbSelectedPistonSet));
             arrNameList.add(rdbSelectedPistonSet.getText().toString());
 
             /*No7 = มู่เล่ย์*/
-            idSelectedStarterRopeReel= rdg7.getCheckedRadioButtonId();
-            rdbSelectedStarterRopeReel= (RadioButton) findViewById(idSelectedStarterRopeReel);
-            arrSelectedID.add(idxSelectedStarterRopeReel= rdg7.indexOfChild(rdbSelectedStarterRopeReel));
+            idSelectedStarterRopeReel = rdg7.getCheckedRadioButtonId();
+            rdbSelectedStarterRopeReel = (RadioButton) findViewById(idSelectedStarterRopeReel);
+            arrSelectedID.add(idxSelectedStarterRopeReel = rdg7.indexOfChild(rdbSelectedStarterRopeReel));
             arrNameList.add(rdbSelectedStarterRopeReel.getText().toString());
 
             /*No8 = เกย์วัดความดัน*/
-            idSelectedPressureGauge= rdg8.getCheckedRadioButtonId();
-            rdbSelectedPressureGauge= (RadioButton) findViewById(idSelectedPressureGauge);
-            arrSelectedID.add(idxSelectedPressureGauge= rdg8.indexOfChild(rdbSelectedPressureGauge));
+            idSelectedPressureGauge = rdg8.getCheckedRadioButtonId();
+            rdbSelectedPressureGauge = (RadioButton) findViewById(idSelectedPressureGauge);
+            arrSelectedID.add(idxSelectedPressureGauge = rdg8.indexOfChild(rdbSelectedPressureGauge));
             arrNameList.add(rdbSelectedPressureGauge.getText().toString());
 
             /*No9 = ก๊อกน้ำ*/
-            idSelectedBallValveSwitch= rdg9.getCheckedRadioButtonId();
-            rdbSelectedBallValveSwitch= (RadioButton) findViewById(idSelectedBallValveSwitch);
-            arrSelectedID.add(idxSelectedBallValveSwitch= rdg9.indexOfChild(rdbSelectedBallValveSwitch));
+            idSelectedBallValveSwitch = rdg9.getCheckedRadioButtonId();
+            rdbSelectedBallValveSwitch = (RadioButton) findViewById(idSelectedBallValveSwitch);
+            arrSelectedID.add(idxSelectedBallValveSwitch = rdg9.indexOfChild(rdbSelectedBallValveSwitch));
             arrNameList.add(rdbSelectedBallValveSwitch.getText().toString());
 
              /*No10 = ฝาถังน้ำมันเครื่อง */
@@ -249,9 +248,9 @@ public class EstimateTM31 extends AppCompatActivity {
 
 
             /*No11 = ทำสี */
-            idSelectedNewPaint= rdg11.getCheckedRadioButtonId();
-            rdbSelectedNewPaint= (RadioButton) findViewById(idSelectedNewPaint);
-            arrSelectedID.add(idxSelectedNewPaint= rdg11.indexOfChild(rdbSelectedNewPaint));
+            idSelectedNewPaint = rdg11.getCheckedRadioButtonId();
+            rdbSelectedNewPaint = (RadioButton) findViewById(idSelectedNewPaint);
+            arrSelectedID.add(idxSelectedNewPaint = rdg11.indexOfChild(rdbSelectedNewPaint));
             arrNameList.add(rdbSelectedNewPaint.getText().toString());
 
             /*No12 = ฝาถังน้ำมันเครื่อง */
@@ -261,11 +260,7 @@ public class EstimateTM31 extends AppCompatActivity {
             arrNameList.add(rdbSelectedOilTankCap.getText().toString());
 
 
-
-
-
-
-        }else{
+        } else {
             /*No1 = หม้อลม*/
             idSelectedAirChamber = rdg1.getCheckedRadioButtonId();
             rdbSelectedAirChamber = (RadioButton) findViewById(idSelectedAirChamber);
@@ -274,50 +269,50 @@ public class EstimateTM31 extends AppCompatActivity {
 
             /*No2 = ลูกยางชุด*/
             idSelectedSealSet = rdg2.getCheckedRadioButtonId();
-            rdbSelectedSealSet= (RadioButton) findViewById(idSelectedSealSet);
-            arrSelectedID.add(idxSelectedSealSet= rdg2.indexOfChild(rdbSelectedSealSet));
+            rdbSelectedSealSet = (RadioButton) findViewById(idSelectedSealSet);
+            arrSelectedID.add(idxSelectedSealSet = rdg2.indexOfChild(rdbSelectedSealSet));
             arrNameList.add(rdbSelectedSealSet.getText().toString());
 
             /*No3 = ตัวตั้งโปโล*/
-            idSelectedAdjustSet= rdg3.getCheckedRadioButtonId();
-            rdbSelectedAdjustSet= (RadioButton) findViewById(idSelectedAdjustSet);
-            arrSelectedID.add(idxSelectedAdjustSet= rdg3.indexOfChild(rdbSelectedAdjustSet));
+            idSelectedAdjustSet = rdg3.getCheckedRadioButtonId();
+            rdbSelectedAdjustSet = (RadioButton) findViewById(idSelectedAdjustSet);
+            arrSelectedID.add(idxSelectedAdjustSet = rdg3.indexOfChild(rdbSelectedAdjustSet));
             arrNameList.add(rdbSelectedAdjustSet.getText().toString());
 
             /*No4 = ท่อนดูด*/
-            idSelectedDischargeMetal= rdg4.getCheckedRadioButtonId();
-            rdbSelectedDischargeMetal= (RadioButton) findViewById(idSelectedDischargeMetal);
-            arrSelectedID.add(idxSelectedDischargeMetal= rdg4.indexOfChild(rdbSelectedDischargeMetal));
+            idSelectedDischargeMetal = rdg4.getCheckedRadioButtonId();
+            rdbSelectedDischargeMetal = (RadioButton) findViewById(idSelectedDischargeMetal);
+            arrSelectedID.add(idxSelectedDischargeMetal = rdg4.indexOfChild(rdbSelectedDischargeMetal));
             arrNameList.add(rdbSelectedDischargeMetal.getText().toString());
 
             /*No5 = ท่อนส่ง */
-            idSelectedSuctionMetal= rdg5.getCheckedRadioButtonId();
-            rdbSelectedSuctionMetal= (RadioButton) findViewById(idSelectedSuctionMetal);
-            arrSelectedID.add(idxSelectedSuctionMetal= rdg5.indexOfChild(rdbSelectedSuctionMetal));
+            idSelectedSuctionMetal = rdg5.getCheckedRadioButtonId();
+            rdbSelectedSuctionMetal = (RadioButton) findViewById(idSelectedSuctionMetal);
+            arrSelectedID.add(idxSelectedSuctionMetal = rdg5.indexOfChild(rdbSelectedSuctionMetal));
             arrNameList.add(rdbSelectedSuctionMetal.getText().toString());
 
             /*No6 = ลูกสูบ */
-            idSelectedPistonSet= rdg6.getCheckedRadioButtonId();
-            rdbSelectedPistonSet= (RadioButton) findViewById(idSelectedPistonSet);
-            arrSelectedID.add(idxSelectedPistonSet= rdg6.indexOfChild(rdbSelectedPistonSet));
+            idSelectedPistonSet = rdg6.getCheckedRadioButtonId();
+            rdbSelectedPistonSet = (RadioButton) findViewById(idSelectedPistonSet);
+            arrSelectedID.add(idxSelectedPistonSet = rdg6.indexOfChild(rdbSelectedPistonSet));
             arrNameList.add(rdbSelectedPistonSet.getText().toString());
 
             /*No7 = มู่เล่ย์*/
-            idSelectedStarterRopeReel= rdg7.getCheckedRadioButtonId();
-            rdbSelectedStarterRopeReel= (RadioButton) findViewById(idSelectedStarterRopeReel);
-            arrSelectedID.add(idxSelectedStarterRopeReel= rdg7.indexOfChild(rdbSelectedStarterRopeReel));
+            idSelectedStarterRopeReel = rdg7.getCheckedRadioButtonId();
+            rdbSelectedStarterRopeReel = (RadioButton) findViewById(idSelectedStarterRopeReel);
+            arrSelectedID.add(idxSelectedStarterRopeReel = rdg7.indexOfChild(rdbSelectedStarterRopeReel));
             arrNameList.add(rdbSelectedStarterRopeReel.getText().toString());
 
             /*No8 = เกย์วัดความดัน*/
-            idSelectedPressureGauge= rdg8.getCheckedRadioButtonId();
-            rdbSelectedPressureGauge= (RadioButton) findViewById(idSelectedPressureGauge);
-            arrSelectedID.add(idxSelectedPressureGauge= rdg8.indexOfChild(rdbSelectedPressureGauge));
+            idSelectedPressureGauge = rdg8.getCheckedRadioButtonId();
+            rdbSelectedPressureGauge = (RadioButton) findViewById(idSelectedPressureGauge);
+            arrSelectedID.add(idxSelectedPressureGauge = rdg8.indexOfChild(rdbSelectedPressureGauge));
             arrNameList.add(rdbSelectedPressureGauge.getText().toString());
 
             /*No9 = ก๊อกน้ำ*/
-            idSelectedBallValveSwitch= rdg9.getCheckedRadioButtonId();
-            rdbSelectedBallValveSwitch= (RadioButton) findViewById(idSelectedBallValveSwitch);
-            arrSelectedID.add(idxSelectedBallValveSwitch= rdg9.indexOfChild(rdbSelectedBallValveSwitch));
+            idSelectedBallValveSwitch = rdg9.getCheckedRadioButtonId();
+            rdbSelectedBallValveSwitch = (RadioButton) findViewById(idSelectedBallValveSwitch);
+            arrSelectedID.add(idxSelectedBallValveSwitch = rdg9.indexOfChild(rdbSelectedBallValveSwitch));
             arrNameList.add(rdbSelectedBallValveSwitch.getText().toString());
 
              /*No10 = ฝาถังน้ำมันเครื่อง */
@@ -328,9 +323,9 @@ public class EstimateTM31 extends AppCompatActivity {
 
 
             /*No11 = ทำสี */
-            idSelectedNewPaint= rdg11.getCheckedRadioButtonId();
-            rdbSelectedNewPaint= (RadioButton) findViewById(idSelectedNewPaint);
-            arrSelectedID.add(idxSelectedNewPaint= rdg11.indexOfChild(rdbSelectedNewPaint));
+            idSelectedNewPaint = rdg11.getCheckedRadioButtonId();
+            rdbSelectedNewPaint = (RadioButton) findViewById(idSelectedNewPaint);
+            arrSelectedID.add(idxSelectedNewPaint = rdg11.indexOfChild(rdbSelectedNewPaint));
             arrNameList.add(rdbSelectedNewPaint.getText().toString());
 
             /*No12 = ฝาถังน้ำมันเครื่อง */
@@ -343,7 +338,7 @@ public class EstimateTM31 extends AppCompatActivity {
 
         Intent intentSubmitEstimateTM31 = new Intent(this, SubmitEstimateTM31.class);
         intentSubmitEstimateTM31.putExtra("idxEngine", idxSelectedEngine);
-        intentSubmitEstimateTM31.putStringArrayListExtra("arrListName",arrNameList);
+        intentSubmitEstimateTM31.putStringArrayListExtra("arrListName", arrNameList);
         intentSubmitEstimateTM31.putIntegerArrayListExtra("arrSelectedID", arrSelectedID);
         Log.d("arrListName : ", arrNameList.toString());
         Log.d("arrSelectID : ", arrSelectedID.toString());
@@ -352,7 +347,7 @@ public class EstimateTM31 extends AppCompatActivity {
     }
 
     private void setDefaultSelect(Integer check) {
-        if(check == 0){
+        if (check == 0) {
             //Can start.
             rdb1_1.setChecked(true);
             rdb2_1.setChecked(true);
@@ -367,7 +362,7 @@ public class EstimateTM31 extends AppCompatActivity {
             rdb11_1.setChecked(true);
             rdb12_1.setChecked(true);
 
-        }else {
+        } else {
             //Can't start.
             rdb1_1.setChecked(true);
             rdb2_1.setChecked(true);

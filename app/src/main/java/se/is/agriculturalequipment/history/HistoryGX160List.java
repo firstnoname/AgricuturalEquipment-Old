@@ -33,11 +33,11 @@ import se.is.agriculturalequipment.model.G200;
 public class HistoryGX160List extends AppCompatActivity {
 
     private static final String url = "http://tomori.siameki.com/select_gx160.php";
-    private List<G200> gx160List = new ArrayList<>();
     ListView listview_gx160;
     AdapterHistoryG200 adapterHistoryGX160;
-
     TextView txtTest;
+    private List<G200> gx160List = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

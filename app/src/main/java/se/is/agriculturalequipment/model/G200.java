@@ -6,10 +6,10 @@ import java.io.Serializable;
  * Created by BlackClover on 10/27/2017.
  */
 
-public class G200 implements Serializable{
+public class G200 implements Serializable {
 
-    private String id_customer,identification_no,name;
-    private String engineStatus,starter,fuelTank,airFilter,carburetor;
+    private String id_customer, identification_no, name;
+    private String engineStatus, starter, fuelTank, airFilter, carburetor;
     private String cylinderSet;
     private String ballValveSwitchOil;
     private String muffler;
@@ -23,7 +23,7 @@ public class G200 implements Serializable{
     private String buyDate;
     private String amount;
 
-    public G200(){
+    public G200() {
 
     }
 

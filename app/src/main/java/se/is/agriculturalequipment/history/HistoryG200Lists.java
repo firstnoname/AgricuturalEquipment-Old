@@ -38,11 +38,10 @@ import se.is.agriculturalequipment.model.G200;
 public class HistoryG200Lists extends AppCompatActivity {
 
     private static final String url = "http://tomori.siameki.com/select_g200.php";
-    private List<G200> g200List = new ArrayList<>();
     ListView listview_g200;
     AdapterHistoryG200 adapterHistoryG200;
-
     TextView txtTest;
+    private List<G200> g200List = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

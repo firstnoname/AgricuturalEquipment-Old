@@ -15,9 +15,9 @@ import com.android.volley.toolbox.Volley;
 
 public class SingletonPattern {
     private static SingletonPattern mInstance;
+    private static Context mCtx;
     private RequestQueue mRequestQueue;
     private ImageLoader mImageLoader;
-    private static Context mCtx;
 
     private SingletonPattern(Context context) {
         mCtx = context;

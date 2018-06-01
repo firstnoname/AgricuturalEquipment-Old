@@ -52,20 +52,20 @@ public class AddPartG200 extends AppCompatActivity {
         objTableG200 = new TableG200(this);
     }
 
-    public void savePartG200(){
+    public void savePartG200() {
         String part_g200_name = edtName.getText().toString();
         String part_g200_price = edtPrice.getText().toString();
 
         objTableG200.addNewPart(part_g200_name, part_g200_price);
     }
 
-    public void intentSettingG200(View view){
+    public void intentSettingG200(View view) {
         Intent intentSettingG200 = new Intent(this, SettingPartsG200.class);
         startActivity(intentSettingG200);
     }
 
     private void testInsert() {
-        objTableG200.addNewPart("อะไหล่","200");
+        objTableG200.addNewPart("อะไหล่", "200");
     }
 
 }

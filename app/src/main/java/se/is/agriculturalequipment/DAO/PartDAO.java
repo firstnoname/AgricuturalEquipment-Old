@@ -23,18 +23,18 @@ public class PartDAO {
         dbHelper = new MyOpenHelper(context);
     }
 
-    public void open(){
+    public void open() {
         database = dbHelper.getWritableDatabase();
     }
 
-    public void close(){
+    public void close() {
         dbHelper.close();
     }
 
-    public ArrayList<PartList> getAllPart(String tblName){
+    public ArrayList<PartList> getAllPart(String tblName) {
         String tableName = tblName;
         ArrayList<PartList> partLists = new ArrayList<>();
-        Cursor cursor = database.rawQuery("SELECT * FROM "+ tableName +";", null);
+        Cursor cursor = database.rawQuery("SELECT * FROM " + tableName + ";", null);
         cursor.moveToFirst();
 
         PartList mPartList;
@@ -53,9 +53,9 @@ public class PartDAO {
         return partLists;
     }
 
-    public void add(PartList partList,String tableName){
+    public void add(PartList partList, String tableName) {
 
-        String lowCase=null;
+        String lowCase = null;
         if (tableName == "G200") {
             lowCase = tableName.toLowerCase();
         }
@@ -83,7 +83,7 @@ public class PartDAO {
 
         String where = "_id=" + updatePartList.getId();
 
-        this.database.update(lowCase + "TABLE", values, where,null);
+        this.database.update(lowCase + "TABLE", values, where, null);
         //Log.d("Part List Demo :: ", "Update OK!");
     }
 

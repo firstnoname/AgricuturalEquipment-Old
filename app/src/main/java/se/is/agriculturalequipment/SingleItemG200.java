@@ -10,6 +10,7 @@ import se.is.agriculturalequipment.model.G200;
 public class SingleItemG200 extends AppCompatActivity {
 
     Button btnChangeStatus;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

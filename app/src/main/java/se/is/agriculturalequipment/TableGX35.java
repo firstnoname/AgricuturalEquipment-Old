@@ -11,13 +11,12 @@ import android.database.sqlite.SQLiteDatabase;
 
 public class TableGX35 {
 
-    private MyOpenHelper objMyOpenHelper;
-    private SQLiteDatabase readSqLiteDatabase, writeSqLiteDatabase;
-
     public static final String TABLE_GX35 = "gx35TABLE";
     public static final String COLUMN_GX35_ID = "_id";
     public static final String COLUMN_PART_NAME = "partNameGX35";
     public static final String COLUMN_PART_PRICE = "partPriceGX35";
+    private MyOpenHelper objMyOpenHelper;
+    private SQLiteDatabase readSqLiteDatabase, writeSqLiteDatabase;
 
     public TableGX35(Context context) {
         objMyOpenHelper = new MyOpenHelper(context);
@@ -33,7 +32,7 @@ public class TableGX35 {
         return writeSqLiteDatabase.insert(TABLE_GX35, null, objContentValues);
     }
 
-    public String[] readPartName(){
+    public String[] readPartName() {
         String[] strPartName = null;
         Cursor objCursor = readSqLiteDatabase.query(TABLE_GX35,
                 new String[]{COLUMN_GX35_ID, COLUMN_PART_NAME},
@@ -51,7 +50,7 @@ public class TableGX35 {
         return strPartName;
     }
 
-    public String[] readPartPrice(){
+    public String[] readPartPrice() {
         String[] strPartPrice = null;
         Cursor objCursor = readSqLiteDatabase.query(TABLE_GX35,
                 new String[]{COLUMN_GX35_ID, COLUMN_PART_PRICE},

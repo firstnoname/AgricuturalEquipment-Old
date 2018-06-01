@@ -42,7 +42,7 @@ public class SettingPartsTM31 extends AppCompatActivity {
         /*ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, myList);*/
         ArrayList<PartList> myList = partDAO.getAllPart("TM31TABLE");
-        final ListviewAdapterSettingList adapter = new ListviewAdapterSettingList(myList,this);
+        final ListviewAdapterSettingList adapter = new ListviewAdapterSettingList(myList, this);
 
         listViewTM31.setAdapter(adapter);
         partDAO.close();
@@ -61,16 +61,16 @@ public class SettingPartsTM31 extends AppCompatActivity {
     }
 
     private void addDefaultPart() {
-        objTableTM31.addNewPart("ทำสี","80");
-        objTableTM31.addNewPart("หม้อลม","350");
-        objTableTM31.addNewPart("ตัวตั้งโปโล","580");
-        objTableTM31.addNewPart("ท่อนดูด","350");
+        objTableTM31.addNewPart("ทำสี", "80");
+        objTableTM31.addNewPart("หม้อลม", "350");
+        objTableTM31.addNewPart("ตัวตั้งโปโล", "580");
+        objTableTM31.addNewPart("ท่อนดูด", "350");
         objTableTM31.addNewPart("ท่อนส่ง", "550");
-        objTableTM31.addNewPart("ก๊อกน้ำ","65");
-        objTableTM31.addNewPart("มู่เล่ย์","280");
-        objTableTM31.addNewPart("เกย์วัดความดัน","180");
-        objTableTM31.addNewPart("ลูกสูบ","220");
-        objTableTM31.addNewPart("ลูกยางชุด","220");
+        objTableTM31.addNewPart("ก๊อกน้ำ", "65");
+        objTableTM31.addNewPart("มู่เล่ย์", "280");
+        objTableTM31.addNewPart("เกย์วัดความดัน", "180");
+        objTableTM31.addNewPart("ลูกสูบ", "220");
+        objTableTM31.addNewPart("ลูกยางชุด", "220");
 //        objTableTM31.addNewPart("ฝาถังน้ำมันเครื่อง","50");
 
     }

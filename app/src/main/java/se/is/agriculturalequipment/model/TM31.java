@@ -8,8 +8,8 @@ import java.io.Serializable;
 
 public class TM31 implements Serializable {
 
-    private String id_customer,identification_no,name;
-    private String engineStatus,airChamber,sealSet,adjustSet,dischargeMetal;
+    private String id_customer, identification_no, name;
+    private String engineStatus, airChamber, sealSet, adjustSet, dischargeMetal;
     private String suctionMetal;
     private String pistonSet;
     private String starterRopeReel;
@@ -22,7 +22,7 @@ public class TM31 implements Serializable {
     private String buyDate;
     private String amount;
 
-    public TM31(){
+    public TM31() {
 
     }
 

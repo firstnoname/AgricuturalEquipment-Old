@@ -47,7 +47,7 @@ public class AdapterUserList extends BaseAdapter {
         TextView txtNameUser;
 
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View v = inflater.inflate(R.layout.listview_user,null);
+        View v = inflater.inflate(R.layout.listview_user, null);
 
         txtNameUser = (TextView) v.findViewById(R.id.txtNameUser);
         txtNameUser.setText(user.getNameUser());

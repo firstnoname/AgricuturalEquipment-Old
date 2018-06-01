@@ -55,6 +55,6 @@ public class AddPartGX35 extends AppCompatActivity {
     private void bindWidget() {
         edtName = (EditText) findViewById(R.id.edtGX35Name);
         edtPrice = (EditText) findViewById(R.id.edtGX35Price);
-        btnSavePartGX35 = (Button)findViewById(R.id.btnSaveGX35);
+        btnSavePartGX35 = (Button) findViewById(R.id.btnSaveGX35);
     }
 }

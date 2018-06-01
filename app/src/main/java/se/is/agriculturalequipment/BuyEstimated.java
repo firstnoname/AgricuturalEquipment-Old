@@ -24,20 +24,18 @@ import java.util.Arrays;
 public class BuyEstimated extends AppCompatActivity {
     //Instant for use camera.
     private static final int ACTION_TAKE_PHOTO_B = 1;
-    private String mCurrentPhotoPath;
     private static final String JPEG_FILE_PREFIX = "IMG_";
     private static final String JPEG_FILE_SUFFIX = ".jpg";
+    String idxEngine;
+    String dealingStatus = "Buy";
+    private String mCurrentPhotoPath;
     private AlbumStorageDirFactory mAlbumStorageDirFactory = null;
     private ImageView mImageView;
-
     //Image upload.
-    private String idNo,name,amount, imageName,encodeImage;
+    private String idNo, name, amount, imageName, encodeImage;
     private String getAmount;
     private String[] strName;
     private String partName;
-    String idxEngine;
-    String dealingStatus = "Buy";
-
     //Instance for bind widget.
     private EditText edtAmount, edtName, edtIdentificationNo;
 
@@ -78,7 +76,7 @@ public class BuyEstimated extends AppCompatActivity {
         edtAmount = (EditText) findViewById(R.id.edtAmount);
     }
 
-    public void takePhoto (View view) {
+    public void takePhoto(View view) {
         dispatchTakePictureIntent(ACTION_TAKE_PHOTO_B);
     }
 
@@ -87,7 +85,7 @@ public class BuyEstimated extends AppCompatActivity {
         switch (actionCode) {
             case ACTION_TAKE_PHOTO_B:
                 File f = null;
-                
+
                 try {
                     f = setUpPhotoFile();
                     mCurrentPhotoPath = f.getAbsolutePath();
@@ -99,18 +97,18 @@ public class BuyEstimated extends AppCompatActivity {
                 }
         }
 
-        startActivityForResult(takePictureIntent,actionCode);
+        startActivityForResult(takePictureIntent, actionCode);
 
     }
 
-    private File setUpPhotoFile() throws IOException{
+    private File setUpPhotoFile() throws IOException {
         File f = createImageFile();
         mCurrentPhotoPath = f.getAbsolutePath();
 
         return f;
     }
 
-    private File createImageFile() throws IOException{
+    private File createImageFile() throws IOException {
         File albumF = getAlbumDir();
         File imageF = File.createTempFile(JPEG_FILE_PREFIX, JPEG_FILE_SUFFIX, albumF);
         return imageF;
@@ -142,7 +140,7 @@ public class BuyEstimated extends AppCompatActivity {
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
-            case ACTION_TAKE_PHOTO_B:{
+            case ACTION_TAKE_PHOTO_B: {
                 if (resultCode == RESULT_OK) {
                     handleBigCameraPhoto();
                 }
@@ -198,7 +196,7 @@ public class BuyEstimated extends AppCompatActivity {
 
     }
 
-    public void prepareUpload(View view){
+    public void prepareUpload(View view) {
         uploadValue();
     }
 
@@ -217,7 +215,7 @@ public class BuyEstimated extends AppCompatActivity {
 
         String method = "insert_profile";
         BackgroundTask backgroundTask = new BackgroundTask(this);
-        backgroundTask.execute(method,idNo,name,amount,imageName,encodeImage,partName,idxEngine,dealingStatus);
+        backgroundTask.execute(method, idNo, name, amount, imageName, encodeImage, partName, idxEngine, dealingStatus);
         finish();
     }
 

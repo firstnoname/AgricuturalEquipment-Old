@@ -35,13 +35,13 @@ public class UserDAOServer {
         mContext = context;
     }
 
-    public ArrayList<User> getAllUser(String where){
+    public ArrayList<User> getAllUser(String where) {
         final ArrayList<User> userList = new ArrayList<>();
         String url = "http://tomori.siameki.com/getAll_user.php";
 
         RequestQueue queue = SingletonPattern.getInstance(mContext).getRequestQueue();
 
-        JsonArrayRequest jsArr = new JsonArrayRequest(url, new Response.Listener<JSONArray>(){
+        JsonArrayRequest jsArr = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
 
             @Override
             public void onResponse(JSONArray response) {
@@ -81,7 +81,7 @@ public class UserDAOServer {
         return userList;
     }
 
-    public void addUser(User user){
+    public void addUser(User user) {
         final User mUser = user;
         RequestQueue queue = Volley.newRequestQueue(mContext);
         String url = "http://tomori.siameki.com/insert_user.php";
@@ -97,7 +97,7 @@ public class UserDAOServer {
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(mContext, error.toString(), Toast.LENGTH_SHORT).show();
             }
-        }){
+        }) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
@@ -113,7 +113,7 @@ public class UserDAOServer {
         queue.add(stringRequest);
     }
 
-    public void updateUser(User user){
+    public void updateUser(User user) {
 
         final User updateUserServ = user;
         RequestQueue queue = Volley.newRequestQueue(mContext);
@@ -130,7 +130,7 @@ public class UserDAOServer {
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(mContext, "Update failed. " + error, Toast.LENGTH_SHORT).show();
             }
-        }){
+        }) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();

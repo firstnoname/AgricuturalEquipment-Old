@@ -16,11 +16,11 @@ import se.is.agriculturalequipment.DAO.UserDAOServer;
 import se.is.agriculturalequipment.R;
 import se.is.agriculturalequipment.model.User;
 
-public class AddUser extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+public class AddUser extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     Spinner spnRole;
     Button btnAddUser;
-    EditText edtNameUser,edtUsername,edtPassword;
+    EditText edtNameUser, edtUsername, edtPassword;
     String roleSel;
 
     @Override
@@ -57,8 +57,6 @@ public class AddUser extends AppCompatActivity implements AdapterView.OnItemSele
 
                 UserDAOServer addUserServ = new UserDAOServer(getApplicationContext());
                 addUserServ.addUser(mUser);
-
-
 
 
                 finish();

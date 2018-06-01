@@ -10,6 +10,7 @@ import se.is.agriculturalequipment.model.GX35;
 public class SingleItemGX35 extends AppCompatActivity {
 
     Button btnChangeStatus;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

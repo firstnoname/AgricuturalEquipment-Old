@@ -43,7 +43,7 @@ public class AddPartTM31 extends AppCompatActivity {
         objTableTM31.addNewPart(part_tm31_name, part_tm31_price);
     }
 
-    private void intentSettingTM31(){
+    private void intentSettingTM31() {
         Intent intentSettingTM31 = new Intent(this, SettingPartsTM31.class);
         startActivity(intentSettingTM31);
     }

@@ -6,7 +6,7 @@ import java.io.Serializable;
  * Created by iFirst-PC on 31/10/2560.
  */
 
-public class PartList implements Serializable{
+public class PartList implements Serializable {
 
     private int id;
     private String partname, partPrice;

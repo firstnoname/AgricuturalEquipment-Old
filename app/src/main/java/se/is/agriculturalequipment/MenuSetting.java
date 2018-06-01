@@ -15,7 +15,7 @@ public class MenuSetting extends AppCompatActivity {
 
     }
 
-    public void intentSelectSettingG200(View view){
+    public void intentSelectSettingG200(View view) {
         Intent intentSettingG200 = new Intent(this, SettingPartsG200.class);
         startActivity(intentSettingG200);
     }

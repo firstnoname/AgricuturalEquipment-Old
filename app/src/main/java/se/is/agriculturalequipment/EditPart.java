@@ -23,7 +23,7 @@ public class EditPart extends AppCompatActivity {
 //        Log.d("tblname editpart", tblName);
 
         final EditText edtName = (EditText) findViewById(R.id.edtName);
-        final EditText edtPrice = (EditText)findViewById(R.id.edtPrice);
+        final EditText edtPrice = (EditText) findViewById(R.id.edtPrice);
         edtName.setText(edtPartList.getPartname());
         edtPrice.setText(edtPartList.getPartPrice());
 
@@ -40,7 +40,7 @@ public class EditPart extends AppCompatActivity {
 
                 PartDAO partDAO = new PartDAO(getApplicationContext());
                 partDAO.open();
-                partDAO.update(mEdtPartList,tblName);
+                partDAO.update(mEdtPartList, tblName);
                 partDAO.close();
 
                 finish();

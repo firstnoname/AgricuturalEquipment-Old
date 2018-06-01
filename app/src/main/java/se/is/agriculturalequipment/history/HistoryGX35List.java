@@ -33,9 +33,9 @@ import se.is.agriculturalequipment.model.GX35;
 public class HistoryGX35List extends AppCompatActivity {
 
     private static final String url = "http://tomori.siameki.com/select_gx35.php";
-    private List<GX35> gx35List = new ArrayList<>();
     ListView listview_gx35;
     AdapterHistoryGX35 adapterHistoryGX35;
+    private List<GX35> gx35List = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

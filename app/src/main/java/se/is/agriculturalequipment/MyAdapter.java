@@ -12,7 +12,7 @@ import android.widget.TextView;
  * Created by iFirst on 12/20/16.
  */
 
-public class MyAdapter extends BaseAdapter{
+public class MyAdapter extends BaseAdapter {
 
     private Context objContext;
     private String[] nameString, priceString;

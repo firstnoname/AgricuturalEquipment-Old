@@ -10,13 +10,12 @@ import android.database.sqlite.SQLiteDatabase;
  */
 
 public class TableGX160 {
-    private MyOpenHelper objMyOpenHelper;
-    private SQLiteDatabase readSqLiteDatabase, writeSqLiteDatabase;
-
     public static final String TABLE_GX160 = "gx160TABLE";
     public static final String COLUMN_GX160_ID = "_id";
     public static final String COLUMN_PART_NAME = "partNameGX160";
     public static final String COLUMN_PART_PRICE = "partPriceGX160";
+    private MyOpenHelper objMyOpenHelper;
+    private SQLiteDatabase readSqLiteDatabase, writeSqLiteDatabase;
 
     public TableGX160(Context context) {
         objMyOpenHelper = new MyOpenHelper(context);
@@ -24,7 +23,7 @@ public class TableGX160 {
         readSqLiteDatabase = objMyOpenHelper.getReadableDatabase();
     }//End of constructor.
 
-    public long addNewPart(String strName, String strPrice){
+    public long addNewPart(String strName, String strPrice) {
         ContentValues objContentValues = new ContentValues();
         objContentValues.put(COLUMN_PART_NAME, strName);
         objContentValues.put(COLUMN_PART_PRICE, strPrice);
@@ -32,7 +31,7 @@ public class TableGX160 {
         return writeSqLiteDatabase.insert(TABLE_GX160, null, objContentValues);
     }
 
-    public String[] readPartName(){
+    public String[] readPartName() {
         String[] strPartName = null;
         Cursor objCursor = readSqLiteDatabase.query(TABLE_GX160,
                 new String[]{COLUMN_GX160_ID, COLUMN_PART_NAME},
@@ -50,15 +49,15 @@ public class TableGX160 {
         return strPartName;
     }
 
-    public String[] readPartPrice(){
+    public String[] readPartPrice() {
         String[] strPartPrice = null;
         Cursor objCursor = readSqLiteDatabase.query(TABLE_GX160,
                 new String[]{COLUMN_GX160_ID, COLUMN_PART_PRICE},
                 null, null, null, null, null, null);
-        if(objCursor != null){
+        if (objCursor != null) {
             objCursor.moveToFirst();
             strPartPrice = new String[objCursor.getCount()];
-            for(int i=0; i<objCursor.getCount();i++) {
+            for (int i = 0; i < objCursor.getCount(); i++) {
                 strPartPrice[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_PART_PRICE));
                 objCursor.moveToNext();
             }//end for.
