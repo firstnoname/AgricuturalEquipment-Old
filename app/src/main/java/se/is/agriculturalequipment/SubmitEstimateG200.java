@@ -306,11 +306,20 @@ public class SubmitEstimateG200 extends AppCompatActivity {
     }
 
     public void intentSaveG200(View view) {
-        Intent intentSaveEstimated = new Intent(this, SaveEstimated.class);
-        intentSaveEstimated.putExtra("amount", dAmount.toString());
-        intentSaveEstimated.putExtra("partName", strName);
-        intentSaveEstimated.putExtra("partPrice", strPrice);
-        startActivity(intentSaveEstimated);
+        if (idxEngine == 0) {
+            idxEnginePass = "0";
+        } else {
+            idxEnginePass = "1";
+        }
+
+        Intent intentSaveG200 = new Intent(this, BuyEstimated.class);
+        intentSaveG200.putExtra("amount", dAmount.toString());
+        intentSaveG200.putExtra("partName", strName);
+        intentSaveG200.putExtra("partPrice", strPrice);
+        intentSaveG200.putExtra("idxEngine", idxEnginePass);
+        intentSaveG200.putExtra("dealStatus", "Save");
+
+        startActivity(intentSaveG200);
     }
 
     public void intentBuyG200(View view) {
@@ -325,6 +334,7 @@ public class SubmitEstimateG200 extends AppCompatActivity {
         intentBuyG200.putExtra("partName", strName);
         intentBuyG200.putExtra("partPrice", strPrice);
         intentBuyG200.putExtra("idxEngine", idxEnginePass);
+        intentBuyG200.putExtra("dealStatus", "Buy");
 
         startActivity(intentBuyG200);
     }

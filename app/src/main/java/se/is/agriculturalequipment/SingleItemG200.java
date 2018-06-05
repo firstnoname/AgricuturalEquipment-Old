@@ -2,6 +2,7 @@ package se.is.agriculturalequipment;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -62,6 +63,12 @@ public class SingleItemG200 extends AppCompatActivity {
         txtBuyDate.setText(edtG200.getBuyDate());
         txtAmount.setText(edtG200.getAmount());
 
+        //Change status from Save to Buy.
+        btnChangeStatus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+            }
+        });
     }
 }

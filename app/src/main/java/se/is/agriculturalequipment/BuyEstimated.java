@@ -1,6 +1,5 @@
 package se.is.agriculturalequipment;
 
-
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -27,7 +26,7 @@ public class BuyEstimated extends AppCompatActivity {
     private static final String JPEG_FILE_PREFIX = "IMG_";
     private static final String JPEG_FILE_SUFFIX = ".jpg";
     String idxEngine;
-    String dealingStatus = "Buy";
+    String dealingStatus = "";
     private String mCurrentPhotoPath;
     private AlbumStorageDirFactory mAlbumStorageDirFactory = null;
     private ImageView mImageView;
@@ -66,6 +65,8 @@ public class BuyEstimated extends AppCompatActivity {
 
         strName = intent.getStringArrayExtra("partName");
         partName = Arrays.toString(strName);
+
+        dealingStatus = intent.getStringExtra("dealStatus");
 
     }
 
