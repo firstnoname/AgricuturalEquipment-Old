@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -66,6 +67,8 @@ public class BuyEstimated extends AppCompatActivity {
         strName = intent.getStringArrayExtra("partName");
         partName = Arrays.toString(strName);
 
+        /*Toast.makeText(this, "strName : " + strName.toString(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "partName : " + partName, Toast.LENGTH_SHORT).show();*/
         dealingStatus = intent.getStringExtra("dealStatus");
 
     }
@@ -216,8 +219,8 @@ public class BuyEstimated extends AppCompatActivity {
 
         String method = "insert_profile";
         BackgroundTask backgroundTask = new BackgroundTask(this);
-        backgroundTask.execute(method, idNo, name, amount, imageName, encodeImage, partName, idxEngine, dealingStatus);
-        finish();
+        //backgroundTask.execute(method, idNo, name, amount, imageName, encodeImage, partName, idxEngine, dealingStatus);
+        //finish();
     }
 
     private void imageEncodeToBase64() {

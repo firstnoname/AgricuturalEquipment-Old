@@ -42,7 +42,6 @@ public class SingleItemG200 extends AppCompatActivity {
 
         btnChangeStatus = (Button) findViewById(R.id.btnChangeStatus);
 
-
         txtID.setText(edtG200.getIdentification_no());
         txtName.setText(edtG200.getName());
         txtEngine.setText(edtG200.getEngineStatus());
