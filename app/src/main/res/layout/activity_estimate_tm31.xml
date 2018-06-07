@@ -62,7 +62,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/txtView"
+                android:id="@+id/txtViewEngine"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -98,7 +98,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/txtView1"
+                    android:id="@+id/txtViewAirChamber"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -130,6 +130,7 @@
                 android:layout_centerVertical="false">
 
                 <TextView
+                    android:id="@+id/txtViewSealSet"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ลูกยางชุด (Seal Set)"
@@ -161,6 +162,7 @@
                 android:layout_centerVertical="false">
 
                 <TextView
+                    android:id="@+id/txtViewAdjustSet"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ตัวตั้งโปโล (Adjust Set)"
@@ -200,6 +202,7 @@
                 android:layout_centerVertical="false">
 
                 <TextView
+                    android:id="@+id/txtViewDischargeMetal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ท่อนดูด (Discharge Metal)"
@@ -232,6 +235,7 @@
                 android:layout_centerVertical="false">
 
                 <TextView
+                    android:id="@+id/txtViewSuctionMetal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ท่อนส่ง (Suction Metal)"
@@ -264,6 +268,7 @@
                 android:layout_centerVertical="false">
 
                 <TextView
+                    android:id="@+id/txtViewPistonSet"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ลูกสูบ (Piston Set)"
@@ -296,6 +301,7 @@
                 android:layout_centerVertical="false">
 
                 <TextView
+                    android:id="@+id/txtViewStarterRopeReel"
                     android:layout_width="match_parent"
                     android:layout_height="33dp"
                     android:text="มู่เล่ย์ (Starter Rope Reel)"
@@ -328,6 +334,7 @@
                 android:layout_centerVertical="false">
 
                 <TextView
+                    android:id="@+id/txtViewPressureGauge"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="เกย์วัดความดัน (Pressure Gauge)"
@@ -360,6 +367,7 @@
                 android:layout_centerVertical="false">
 
                 <TextView
+                    android:id="@+id/txtViewBallValveSwitch"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ก๊อกน้ำ (Ball Valve Switch)"
@@ -392,6 +400,7 @@
                 android:layout_centerVertical="false">
 
                 <TextView
+                    android:id="@+id/txtViewOilFilter"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ฝาปิดน้ำมันเครื่อง (Oil Filter)"
@@ -424,6 +433,7 @@
                 android:layout_centerVertical="false">
 
                 <TextView
+                    android:id="@+id/txtViewNewPaint"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ทำสี (New Paint)"
@@ -456,6 +466,7 @@
                 android:layout_centerVertical="false">
 
                 <TextView
+                    android:id="@+id/txtViewOilTankCap"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ฝาถังน้ำมันเครื่อง (Oil Tank Cap)"
