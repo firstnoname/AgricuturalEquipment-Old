@@ -33,7 +33,7 @@
 
     <!-- String in history screen -->
     <string name="title_history_name">ชื่อผู้ขาย</string>
-    <string name="title_history_date">วันที่ขาย</string>
+    <string name="title_history_date">วันที่ประเมิน</string>
 
 
 </resources>

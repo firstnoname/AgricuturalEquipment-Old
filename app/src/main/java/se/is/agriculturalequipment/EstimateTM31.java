@@ -1,13 +1,16 @@
 package se.is.agriculturalequipment;
 
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -380,5 +383,46 @@ public class EstimateTM31 extends AppCompatActivity {
 
         }
 
+    }
+
+    public void txtViewClickedTM31(View view) {
+        AlertDialog.Builder mBuilder = new AlertDialog.Builder(EstimateTM31.this);
+        View mView = getLayoutInflater().inflate(R.layout.custom_dialog, null);
+        ImageView mImage = (ImageView) mView.findViewById(R.id.imageGuide);
+        ImageView mImageL = (ImageView) mView.findViewById(R.id.imageGuideLeft);
+        TextView mText = (TextView) mView.findViewById(R.id.txtGuideDialog);
+
+        switch (view.getId()) {
+            case R.id.txtViewEngine:
+                mText.setText("ตรวจสอบเครื่องสตาร์ทติด");
+                break;
+            case R.id.txtViewAirChamber:
+                break;
+            case R.id.txtViewSealSet:
+                break;
+            case R.id.txtViewAdjustSet:
+                break;
+            case R.id.txtViewDischargeMetal:
+                break;
+            case R.id.txtViewSuctionMetal:
+                break;
+            case R.id.txtViewPistonSet:
+                break;
+            case R.id.txtViewStarterRopeReel:
+                break;
+            case R.id.txtViewPressureGauge:
+                break;
+            case R.id.txtViewBallValveSwitch:
+                break;
+            case R.id.txtViewOilFilter:
+                break;
+            case R.id.txtViewNewPaint:
+                break;
+            case R.id.txtViewOilTankCap:
+                break;
+        }
+        mBuilder.setView(mView);
+        AlertDialog dialog = mBuilder.create();
+        dialog.show();
     }
 }

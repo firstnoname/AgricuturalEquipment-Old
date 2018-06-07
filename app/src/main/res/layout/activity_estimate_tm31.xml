@@ -67,6 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="เครื่องยนต์"
+                android:onClick="txtViewClickedTM31"
                 android:textSize="16sp" />
 
             <RadioGroup
@@ -103,6 +104,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="หม้อลม (Air Chamber)"
+                    android:onClick="txtViewClickedTM31"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -134,6 +136,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ลูกยางชุด (Seal Set)"
+                    android:onClick="txtViewClickedTM31"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -166,6 +169,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ตัวตั้งโปโล (Adjust Set)"
+                    android:onClick="txtViewClickedTM31"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -206,6 +210,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ท่อนดูด (Discharge Metal)"
+                    android:onClick="txtViewClickedTM31"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -239,6 +244,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ท่อนส่ง (Suction Metal)"
+                    android:onClick="txtViewClickedTM31"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -272,6 +278,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ลูกสูบ (Piston Set)"
+                    android:onClick="txtViewClickedTM31"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -305,6 +312,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="33dp"
                     android:text="มู่เล่ย์ (Starter Rope Reel)"
+                    android:onClick="txtViewClickedTM31"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -338,6 +346,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="เกย์วัดความดัน (Pressure Gauge)"
+                    android:onClick="txtViewClickedTM31"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -371,6 +380,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ก๊อกน้ำ (Ball Valve Switch)"
+                    android:onClick="txtViewClickedTM31"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -404,6 +414,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ฝาปิดน้ำมันเครื่อง (Oil Filter)"
+                    android:onClick="txtViewClickedTM31"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -437,6 +448,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ทำสี (New Paint)"
+                    android:onClick="txtViewClickedTM31"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -470,6 +482,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ฝาถังน้ำมันเครื่อง (Oil Tank Cap)"
+                    android:onClick="txtViewClickedTM31"
                     android:textSize="16sp" />
 
                 <RadioButton

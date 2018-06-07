@@ -1,13 +1,16 @@
 package se.is.agriculturalequipment;
 
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -456,6 +459,58 @@ public class EstimateT200 extends AppCompatActivity {
             rdb16_1.setChecked(true);
             rdb17_1.setChecked(true);
         }
+
+    }
+
+    public void txtViewClickedT200(View view) {
+        AlertDialog.Builder mBuilder = new AlertDialog.Builder(EstimateT200.this);
+        View mView = getLayoutInflater().inflate(R.layout.custom_dialog, null);
+        ImageView mImage = (ImageView)mView.findViewById(R.id.imageGuide);
+        ImageView mImageL = (ImageView)mView.findViewById(R.id.imageGuideLeft);
+        TextView mText = (TextView)mView.findViewById(R.id.txtGuideDialog);
+
+        switch (view.getId()) {
+            case R.id.txtViewEngine:
+                break;
+            case R.id.txtViewStarter:
+                break;
+            case R.id.txtFuelTank:
+                break;
+            case R.id.txtViewControlSwitch:
+                break;
+            case R.id.txtViewBrushCutterBlade:
+                break;
+            case R.id.txtViewAirFilter:
+                break;
+            case R.id.txtViewCarburetor:
+                break;
+            case R.id.txtViewCylinderSet:
+                break;
+            case R.id.txtViewBallValveSwitchOil:
+                break;
+            case R.id.txtViewMuffler:
+                break;
+            case R.id.txtViewGearDiver:
+                break;
+            case R.id.txtViewMainPipe:
+                break;
+            case R.id.txtViewSwitchOnOff:
+                break;
+            case R.id.txtViewCoil:
+                break;
+            case R.id.txtViewFuelTankCap:
+                break;
+            case R.id.txtViewNewPaint:
+                break;
+            case R.id.txtViewShaft:
+                break;
+            case R.id.txtViewOilTankCap:
+                break;
+        }
+
+        mBuilder.setView(mView);
+        AlertDialog dialog = mBuilder.create();
+        dialog.show();
 
     }
 
