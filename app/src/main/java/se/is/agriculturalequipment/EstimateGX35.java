@@ -1,13 +1,16 @@
 package se.is.agriculturalequipment;
 
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -483,4 +486,94 @@ public class EstimateGX35 extends AppCompatActivity {
 
     }
 
+    public void txtViewClickedGX35(View view) {
+        AlertDialog.Builder mBuilder = new AlertDialog.Builder(EstimateGX35.this);
+        View mView = getLayoutInflater().inflate(R.layout.custom_dialog, null);
+        ImageView mImage = (ImageView) mView.findViewById(R.id.imageGuide);
+        ImageView mImageL = (ImageView) mView.findViewById(R.id.imageGuideLeft);
+        TextView mText = (TextView)mView.findViewById(R.id.txtGuideDialog);
+
+        switch (view.getId()) {
+            case R.id.txtViewEngine:
+                mText.setText("ตรวจสอบว่าสตาร์ทติดหรือไม่");
+                break;
+            case R.id.txtViewStarter:
+                mImage.setImageResource(R.drawable.gx35_starter_change);
+                mImageL.setImageResource(R.drawable.gx35_starter_not);
+                mText.setText("ตรวจสอบชุดจานกระตุก");
+                break;
+            case R.id.txtFuelTank:
+                mImage.setImageResource(R.drawable.gx35_fueltank_change);
+                mImageL.setImageResource(R.drawable.gx35_fueltank_not);
+                mText.setText("ตรวจสอบถังน้ำมัน");
+                break;
+            case R.id.txtViewControlSwitch:
+                mImage.setImageResource(R.drawable.gx35_controlswitch_change);
+                mImageL.setImageResource(R.drawable.gx35_controlswitch_not);
+                break;
+            case R.id.txtViewBrushCutterBlade:
+                mImage.setImageResource(R.drawable.gx35_brushcutterblade_change);
+                mImageL.setImageResource(R.drawable.gx35_brushcutterblade_not);
+                break;
+            case R.id.txtViewAirFilter:
+                mImage.setImageResource(R.drawable.gx35_airfilter_change);
+                mImageL.setImageResource(R.drawable.gx35_airfilter_not);
+                mText.setText("ตรวจสอบหม้อกรองอากาศ");
+                break;
+            case R.id.txtViewCarburetor:
+                mImage.setImageResource(R.drawable.gx35_carburater_change);
+                mImageL.setImageResource(R.drawable.gx35_carburater_not);
+                mText.setText("ตรวจสอบคร์บิวเรเตอร์");
+                break;
+            case R.id.txtViewCylinderSet:
+                mText.setText("ตรวจสอบเสื้อสูบ");
+                break;
+            case R.id.txtViewBallValveSwitchOil:
+                mImage.setImageResource(R.drawable.gx35_ballvalveswitch_change);
+                mImageL.setImageResource(R.drawable.gx35_ballvalveswitch_not);
+                mText.setText("ตรวจสอบก๊อกน้ำมัน");
+                break;
+            case R.id.txtViewMuffler:
+                mImage.setImageResource(R.drawable.gx35_muffler_change);
+                mImageL.setImageResource(R.drawable.gx35_muffler_not);
+                mText.setText("ตรวจสอบท่อไอเสีย");
+                break;
+            case R.id.txtViewGearDiver:
+                mImage.setImageResource(R.drawable.gx35_geardiver_change);
+                mImageL.setImageResource(R.drawable.gx35_geardiver_not);
+                mText.setText("ตรวจสอบคอตัดหญ้า");
+                break;
+            case R.id.txtViewMainPipe:
+                mImage.setImageResource(R.drawable.gx35_mainpipe_change);
+                mImageL.setImageResource(R.drawable.gx35_mainpipe_not);
+                mText.setText("ตรวจสอบกระบอกหาง");
+                break;
+            case R.id.txtViewCoil:
+                mText.setText("ตรวจสอบคอยล์");
+                break;
+            case R.id.txtViewFuelTankCap:
+                mImage.setImageResource(R.drawable.gx35_fueltankcap_change);
+                mImageL.setImageResource(R.drawable.gx35_fueltankcap_not);
+                mText.setText("ตรวจสอบฝาถังน้ำมัน");
+                break;
+            case R.id.txtViewNewPaint:
+                mText.setText("ตรวจสอบทำสี");
+                break;
+            case R.id.txtViewShaft:
+                mText.setText("ตรวจสอบแกนเพลา");
+                break;
+            case R.id.txtViewOilTankCap:
+                mText.setText("ตรวจสอบฝาถังน้ำมันเครื่อง");
+                break;
+            case R.id.txtViewSparkPlug:
+                mImage.setImageResource(R.drawable.gx35_sparkplug_change);
+                mImageL.setImageResource(R.drawable.gx35_sparkplug_not);
+                mText.setText("ตรวจสอบปลั๊คหัวเทียน");
+                break;
+        }
+
+        mBuilder.setView(mView);
+        AlertDialog dialog = mBuilder.create();
+        dialog.show();
+    }
 }

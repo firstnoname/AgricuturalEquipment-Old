@@ -63,6 +63,7 @@
 
             <TextView
                 android:text="เครื่องยนต์"
+                android:onClick="txtViewClickedGX35"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/txtView"
@@ -98,11 +99,12 @@
                 android:layout_height="match_parent" >
 
                 <TextView
-                    android:id="@+id/txtView1"
+                    android:id="@+id/txtViewStarter"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="จานกระตุกชุด (Starter)"
+                    android:onClick="txtViewClickedGX35"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -137,9 +139,11 @@
                 android:layout_centerHorizontal="false">
 
                 <TextView
+                    android:id="@+id/txtViewFuelTank"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ถังน้ำมัน (Fuel Tank)"
+                    android:onClick="txtViewClickedGX35"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -168,9 +172,11 @@
                 android:layout_centerHorizontal="false">
 
                 <TextView
+                    android:id="@+id/txtViewControlSwitch"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="มือเร่ง (Control Switch)"
+                    android:onClick="txtViewClickedGX35"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -200,9 +206,11 @@
                 android:layout_centerHorizontal="false">
 
                 <TextView
+                    android:id="@+id/txtViewBrushCutterBlade"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ใบมีด (Brush Cutter Blade)"
+                    android:onClick="txtViewClickedGX35"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -232,9 +240,11 @@
                 android:layout_centerHorizontal="false">
 
                 <TextView
+                    android:id="@+id/txtViewAirFilter"
                     android:layout_width="match_parent"
                     android:layout_height="34dp"
                     android:text="หม้อกรองอากาศ (Air Filter)"
+                    android:onClick="txtViewClickedGX35"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -271,9 +281,11 @@
                 android:layout_centerHorizontal="false">
 
                 <TextView
+                    android:id="@+id/txtViewCarburetor"
                     android:layout_width="match_parent"
                     android:layout_height="34dp"
                     android:text="คาร์บูเรเตอร์ (Carburetor)"
+                    android:onClick="txtViewClickedGX35"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -303,9 +315,11 @@
                 android:layout_centerHorizontal="false">
 
                 <TextView
+                    android:id="@+id/txtViewCylinderSet"
                     android:layout_width="match_parent"
                     android:layout_height="33dp"
                     android:text="เสื้อสูบ (Cylinder Set)"
+                    android:onClick="txtViewClickedGX35"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -342,9 +356,11 @@
                 android:layout_width="match_parent">
 
                 <TextView
+                    android:id="@+id/txtViewBallValveSwitchOil"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ก๊อกน้ำมัน (Ball Valve Switch Oil)"
+                    android:onClick="txtViewClickedGX35"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -375,9 +391,11 @@
                 android:layout_centerHorizontal="false">
 
                 <TextView
+                    android:id="@+id/txtViewMuffler"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ท่อไอเสีย (Muffler)"
+                    android:onClick="txtViewClickedGX35"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -407,9 +425,11 @@
                 android:layout_centerVertical="false">
 
                 <TextView
+                    android:id="@+id/txtViewGearDiver"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="คอตัดหญ้า (Gear Diver)"
+                    android:onClick="txtViewClickedGX35"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -446,9 +466,11 @@
                 android:layout_centerHorizontal="false">
 
                 <TextView
+                    android:id="@+id/txtViewMainPipe"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="กระบอกหาง (Main Pipe)"
+                    android:onClick="txtViewClickedGX35"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -478,9 +500,11 @@
                 android:layout_centerHorizontal="false">
 
                 <TextView
+                    android:id="@+id/txtViewSwitchOnOff"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="สวิตช์ปิดเปิด (Switch On-Off)"
+                    android:onClick="txtViewClickedGX35"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -510,9 +534,11 @@
                 android:layout_centerHorizontal="false">
 
                 <TextView
+                    android:id="@+id/txtViewCoil"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="คอยล์ ( Coil)"
+                    android:onClick="txtViewClickedGX35"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -542,9 +568,11 @@
                 android:layout_centerHorizontal="false">
 
                 <TextView
+                    android:id="@+id/txtViewFuelTankCap"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ฝาถังน้ำมัน  (Fuel Tank Cap)"
+                    android:onClick="txtViewClickedGX35"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -574,9 +602,11 @@
                 android:layout_centerHorizontal="false">
 
                 <TextView
+                    android:id="@+id/txtViewNewPaint"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ทำสี (New Paint)"
+                    android:onClick="txtViewClickedGX35"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -606,9 +636,11 @@
                 android:layout_centerHorizontal="false">
 
                 <TextView
+                    android:id="@+id/txtViewShaft"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="แกนเพลา (Shaft)"
+                    android:onClick="txtViewClickedGX35"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -638,9 +670,11 @@
                 android:layout_centerHorizontal="false">
 
                 <TextView
+                    android:id="@+id/txtViewOilTankCap"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ฝาถังน้ำมันเครื่อง (Oil Tank Cap)"
+                    android:onClick="txtViewClickedGX35"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -670,9 +704,11 @@
                 android:layout_centerHorizontal="false">
 
                 <TextView
+                    android:id="@+id/txtViewSparkPlug"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="ปลั๊กหัวเทียน (Spark Plug)"
+                    android:onClick="txtViewClickedGX35"
                     android:textSize="16sp" />
 
                 <RadioButton
