@@ -81,10 +81,9 @@
         <activity android:name=".Admin.UpdateUser" />
         <activity android:name=".Admin.AddUser" />
         <activity android:name=".Admin.EmployeePage" />
-        <activity
-            android:name=".LoginActivity"
-            android:label="@string/title_activity_login"></activity>
         <activity android:name=".MainActivity" />
+        <activity android:name=".GuideMainMenu" />
+        <activity android:name=".GuideG200"></activity>
     </application>
 
 </manifest>
