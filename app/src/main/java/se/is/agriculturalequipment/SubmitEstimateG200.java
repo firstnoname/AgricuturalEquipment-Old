@@ -81,6 +81,7 @@ public class SubmitEstimateG200 extends AppCompatActivity {
             dMuffler = Double.parseDouble(priceMuffler);
             dSwitchOnOff = Double.parseDouble(priceSwitchOnOff);
             dFuelTankCap = Double.parseDouble(priceFuelTankCap);
+
             dNewPaint = Double.parseDouble(priceNewPaint);
             dOilTankCap = Double.parseDouble(priceOilTankCap);
             dSparkPlug = Double.parseDouble(priceSparkPlug);

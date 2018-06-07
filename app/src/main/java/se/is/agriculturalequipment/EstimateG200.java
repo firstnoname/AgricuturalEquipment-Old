@@ -410,78 +410,83 @@ public class EstimateG200 extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.txtViewEngine:
                 //Do something.
-                mImage.setImageResource(R.drawable.g200_test);
-                mImageL.setImageResource(R.drawable.g200_ima3097);
+                mImage.setImageResource(R.drawable.g200_airfilter_change);
+                mImageL.setImageResource(R.drawable.g200_airfilter_not);
                 mText.setText("ตรวจสอบว่าสตาร์ทติดหรือไม่");
 //                Toast.makeText(this, "Engine has clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.txtViewStarter:
                 //Do something.
-                mImage.setImageResource(R.drawable.gx_35);
-                mImageL.setImageResource(R.drawable.g200_ima3087);
+                mImage.setImageResource(R.drawable.g200_starter_change);
+                mImageL.setImageResource(R.drawable.g200_starter_not);
                 mText.setText("ตรวจสอบชุดจานกระตุก");
 //                Toast.makeText(this, "Starter has clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.txtViewFuelTank:
                 //Do something.
-                mImage.setImageResource(R.drawable.g200_ima3097);
-                mImageL.setImageResource(R.drawable.g200_ima3098);
+                mImage.setImageResource(R.drawable.g200_fueltank_change);
+                mImageL.setImageResource(R.drawable.g200_fueltank_not);
                 mText.setText("ตรวจสอบถังน้ำมัน");
 //                Toast.makeText(this, "Fuel tank has clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.txtViewAirFilter:
                 //Do something.
-                mImage.setImageResource(R.drawable.g200_ima3076);
+                mImage.setImageResource(R.drawable.g200_airfilter_change);
+                mImageL.setImageResource(R.drawable.g200_airfilter_not);
                 mText.setText("ตรวจสอบหม้อกรองอากาศ");
 //                Toast.makeText(this, "Air Filter has clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.txtViewCarburetor:
-                mImage.setImageResource(R.drawable.g200_ima3077);
-                mText.setText("ตรวจสอบคร์บิวเรเตอร์");
+                mImage.setImageResource(R.drawable.g200_carburetor_change);
+                mImageL.setImageResource(R.drawable.g200_carburetor_not);
+                mText.setText("ตรวจสอบคาร์บิวเรเตอร์");
 //                Toast.makeText(this, "Carburetor has clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.txtViewCylinderSet:
-                mImage.setImageResource(R.drawable.g200_ima3078);
                 mText.setText("ตรวจสอบเสื้อสูบ");
 //                Toast.makeText(this, "CylinderSet has clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.txtViewBallValveSwitchOil:
-                mImage.setImageResource(R.drawable.g200_ima3079);
+                mImage.setImageResource(R.drawable.g200_ballvalveswitchoil_change);
+                mImageL.setImageResource(R.drawable.g200_ballvalveswitchoil_not);
                 mText.setText("ตรวจสอบก๊อกน้ำมัน");
 //                Toast.makeText(this, "Ball switch oil has clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.txtViewMuffler:
-                mImage.setImageResource(R.drawable.g200_ima3098);
+                mImage.setImageResource(R.drawable.g200_muffler_change);
+                mImageL.setImageResource(R.drawable.g200_muffler_not);
                 mText.setText("ตรวจสอบท่อไอเสีย");
 //                Toast.makeText(this, "Muffler has clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.txtViewSwitchOnOff:
-                mImage.setImageResource(R.drawable.g200_ima3082);
+                mImage.setImageResource(R.drawable.g200_switch_on_off_change);
+                mImageL.setImageResource(R.drawable.g200_switch_on_off_not);
                 mText.setText("ตรวจสอบสวิตช์เปิดปิด");
 //                Toast.makeText(this, "Switch on-off has clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.txtViewCoil:
-                mImage.setImageResource(R.drawable.g200_ima3083);
                 mText.setText("ตรวจสอบคอยล์");
 //                Toast.makeText(this, "Coil has clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.txtViewFuelTankCap:
-                mImage.setImageResource(R.drawable.g200_ima3084);
-                mText.setText("ตรวจสอฝาถังน้ำมัน");
+                mImage.setImageResource(R.drawable.g200_fueltankcap_change);
+                mImageL.setImageResource(R.drawable.g200_fueltankcap_not);
+                mText.setText("ตรวจสอบฝาถังน้ำมัน");
 //                Toast.makeText(this, "Fuel Tank Cap has clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.txtViewNewPaint:
-                mImage.setImageResource(R.drawable.g200_ima3085);
+                mImage.setImageResource(R.drawable.g200_new_paint_change);
+                mImageL.setImageResource(R.drawable.g200_new_paint_not);
                 mText.setText("ตรวจสอบทำสี");
 //                Toast.makeText(this, "Muffler has clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.txtViewOilTankCap:
-                mImage.setImageResource(R.drawable.g200_ima3086);
-                mText.setText("ตรวจสอบฝาถังน้ำมัน");
+                mText.setText("ตรวจสอบฝาถังน้ำมันเครื่อง");
 //                Toast.makeText(this, "Oil Tank Cap clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.txtViewSparkPlug:
-                mImage.setImageResource(R.drawable.g200_ima3087);
+                mImage.setImageResource(R.drawable.g200_spark_plug_change);
+                mImageL.setImageResource(R.drawable.g200_spark_plug_not);
                 mText.setText("ตรวจสอบปลั๊คหัวเทียน");
 //                Toast.makeText(this, "Spark plug has clicked", Toast.LENGTH_SHORT).show();
                 break;

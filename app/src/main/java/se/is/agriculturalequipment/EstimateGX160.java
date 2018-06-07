@@ -396,78 +396,83 @@ public class EstimateGX160 extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.txtViewEngine:
                 //Do something.
-                mImage.setImageResource(R.drawable.gx160_3099);
-                mImageL.setImageResource(R.drawable.gx160_3112);
                 mText.setText("ตรวจสอบว่าสตาร์ทติดหรือไม่");
 //                Toast.makeText(this, "Engine has clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.txtViewStarter:
                 //Do something.
-                mImage.setImageResource(R.drawable.gx160_3100);
-                mImageL.setImageResource(R.drawable.gx160_3111);
+                mImage.setImageResource(R.drawable.gx160_starter_change);
+                mImageL.setImageResource(R.drawable.gx160_starter_not);
                 mText.setText("ตรวจสอบชุดจานกระตุก");
 //                Toast.makeText(this, "Starter has clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.txtViewFuelTank:
                 //Do something.
-                mImage.setImageResource(R.drawable.gx160_3101);
-                mImageL.setImageResource(R.drawable.gx160_3102);
+                mImage.setImageResource(R.drawable.gx160_fueltank_change);
+                mImageL.setImageResource(R.drawable.gx160_fueltank_not);
                 mText.setText("ตรวจสอบถังน้ำมัน");
 //                Toast.makeText(this, "Fuel tank has clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.txtViewAirFilter:
                 //Do something.
-                mImage.setImageResource(R.drawable.gx160_3102);
+                mImage.setImageResource(R.drawable.gx160_airfilter_change);
+                mImageL.setImageResource(R.drawable.gx160_airfilter_not);
                 mText.setText("ตรวจสอบหม้อกรองอากาศ");
 //                Toast.makeText(this, "Air Filter has clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.txtViewCarburetor:
-                mImage.setImageResource(R.drawable.gx160_3103);
+                mImage.setImageResource(R.drawable.gx160_carburetor_change);
+                mImageL.setImageResource(R.drawable.gx160_carburetor_not);
                 mText.setText("ตรวจสอบคร์บิวเรเตอร์");
 //                Toast.makeText(this, "Carburetor has clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.txtViewCylinderSet:
-                mImage.setImageResource(R.drawable.gx160_3104);
                 mText.setText("ตรวจสอบเสื้อสูบ");
 //                Toast.makeText(this, "CylinderSet has clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.txtViewBallValveSwitchOil:
-                mImage.setImageResource(R.drawable.gx160_3105);
+                mImage.setImageResource(R.drawable.gx160_ballvalveswitchoil_change);
+                mImageL.setImageResource(R.drawable.gx160_ballvalveswitchoil_not);
                 mText.setText("ตรวจสอบก๊อกน้ำมัน");
 //                Toast.makeText(this, "Ball switch oil has clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.txtViewMuffler:
-                mImage.setImageResource(R.drawable.gx160_3106);
+                mImage.setImageResource(R.drawable.gx160_muffler_change);
+                mImageL.setImageResource(R.drawable.gx160_muffler_not);
                 mText.setText("ตรวจสอบท่อไอเสีย");
 //                Toast.makeText(this, "Muffler has clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.txtViewSwitchOnOff:
-                mImage.setImageResource(R.drawable.gx160_3107);
+                mImage.setImageResource(R.drawable.gx160_switch_on_off_change);
+                mImageL.setImageResource(R.drawable.gx160_switch_on_off_not);
                 mText.setText("ตรวจสอบสวิตช์เปิดปิด");
 //                Toast.makeText(this, "Switch on-off has clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.txtViewCoil:
-                mImage.setImageResource(R.drawable.gx160_3108);
                 mText.setText("ตรวจสอบคอยล์");
 //                Toast.makeText(this, "Coil has clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.txtViewFuelTankCap:
-                mImage.setImageResource(R.drawable.gx160_3109);
-                mText.setText("ตรวจสอฝาถังน้ำมัน");
+                mImage.setImageResource(R.drawable.gx160_fueltankcap_change);
+                mImageL.setImageResource(R.drawable.gx160_fueltankcap_not);
+                mText.setText("ตรวจสอบฝาถังน้ำมัน");
 //                Toast.makeText(this, "Fuel Tank Cap has clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.txtViewNewPaint:
-                mImage.setImageResource(R.drawable.gx160_3110);
+                mImage.setImageResource(R.drawable.gx160_new_paint_change);
+                mImageL.setImageResource(R.drawable.gx160_new_paint_not);
                 mText.setText("ตรวจสอบทำสี");
 //                Toast.makeText(this, "Muffler has clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.txtViewOilTankCap:
-                mImage.setImageResource(R.drawable.gx160_3111);
-                mText.setText("ตรวจสอบฝาถังน้ำมัน");
+                mImage.setImageResource(R.drawable.gx160_oil_filter_change);
+                mImageL.setImageResource(R.drawable.gx160_oil_filter_not);
+                mText.setText("ตรวจสอบฝาถังน้ำมันเครื่อง");
 //                Toast.makeText(this, "Oil Tank Cap clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.txtViewSparkPlug:
-                mImage.setImageResource(R.drawable.gx160_3112);
+                mImage.setImageResource(R.drawable.gx160_spark_plug_change);
+                mImageL.setImageResource(R.drawable.gx160_spark_plug_not);
                 mText.setText("ตรวจสอบปลั๊คหัวเทียน");
 //                Toast.makeText(this, "Spark plug has clicked", Toast.LENGTH_SHORT).show();
                 break;

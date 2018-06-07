@@ -22,8 +22,7 @@
             android:layout_width="220dp"
             android:layout_height="250dp"
             android:layout_gravity="center"
-            android:layout_weight="1"
-            android:src="@drawable/g200_fuel_tank" />
+            android:layout_weight="1"/>
     </LinearLayout>
 
     <TextView
