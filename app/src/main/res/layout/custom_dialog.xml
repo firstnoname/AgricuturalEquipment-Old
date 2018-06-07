@@ -15,6 +15,7 @@
             android:id="@+id/imageGuideLeft"
             android:layout_width="220dp"
             android:layout_height="250dp"
+            android:layout_margin="5dp"
             android:layout_weight="1" />
 
         <ImageView
@@ -22,7 +23,8 @@
             android:layout_width="220dp"
             android:layout_height="250dp"
             android:layout_gravity="center"
-            android:layout_weight="1"/>
+            android:layout_margin="5dp"
+            android:layout_weight="1" />
     </LinearLayout>
 
     <TextView
