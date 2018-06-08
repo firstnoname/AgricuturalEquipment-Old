@@ -54,6 +54,10 @@ public class LoginActivity extends AppCompatActivity{
 
         mManager = new UserManager(this);
 
+        //Set default for test.
+        txtUsername.setText("first");
+        txtPassword.setText("123");
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -83,7 +83,11 @@
         <activity android:name=".Admin.EmployeePage" />
         <activity android:name=".MainActivity" />
         <activity android:name=".GuideMainMenu" />
-        <activity android:name=".GuideG200"></activity>
+        <activity android:name=".GuideG200" />
+        <activity android:name=".GuideGX160" />
+        <activity android:name=".GuideGX35" />
+        <activity android:name=".GuideT200" />
+        <activity android:name=".GuideTM31"></activity>
     </application>
 
 </manifest>

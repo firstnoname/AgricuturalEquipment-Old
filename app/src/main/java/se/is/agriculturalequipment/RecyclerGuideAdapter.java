@@ -16,7 +16,18 @@ class RecyclerGuideAdapter extends RecyclerView.Adapter<RecyclerGuideAdapter.Vie
 
     private int[] guideExplainsG200 = {
             R.string.g200_guide_starter,
-            R.string.g200_guide_cylinder
+            R.string.g200_guide_fuel_tank,
+            R.string.g200_guide_air_filter,
+            R.string.g200_guide_carburetor,
+            R.string.g200_guide_cylinder_set,
+            R.string.g200_guide_ball_valve_switch_oil,
+            R.string.g200_guide_muffler,
+            R.string.g200_guide_switch_onoff,
+            R.string.g200_guide_coil,
+            R.string.g200_guide_fuel_tank_cap,
+            R.string.g200_guide_new_paint,
+            R.string.g200_guide_oil_tank_cap,
+            R.string.g200_guide_spark_plug
     };
 
     private int[] guideImageG200L = {
@@ -86,8 +97,8 @@ class RecyclerGuideAdapter extends RecyclerView.Adapter<RecyclerGuideAdapter.Vie
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        //holder.imgGuideL.setImageResource(guideImageG200L[position]);
-        //holder.imgGuideR.setImageResource(guideImageG200R[position]);
+        holder.imgGuideL.setImageResource(guideImageG200L[position]);
+        holder.imgGuideR.setImageResource(guideImageG200R[position]);
         holder.txtGuide.setText(guideExplainsG200[position]);
     }
 

@@ -20,18 +20,22 @@ public class GuideMainMenu extends AppCompatActivity {
     }
 
     public void intentGuideGX160(View view) {
-
+        Intent intentGuideGX160 = new Intent(this, GuideGX160.class);
+        startActivity(intentGuideGX160);
     }
 
     public void intentGuideT200(View view) {
-
+        Intent intentGuideT200 = new Intent(this, GuideT200.class);
+        startActivity(intentGuideT200);
     }
 
     public void intentGuideTM31(View view) {
-
+        Intent intentGuideTM31 = new Intent(this, GuideTM31.class);
+        startActivity(intentGuideTM31);
     }
 
     public void intentGuideGX35(View view) {
-
+        Intent intentGuideGX35 = new Intent(this, GuideGX35.class);
+        startActivity(intentGuideGX35);
     }
 }
