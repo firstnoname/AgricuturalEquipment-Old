@@ -1,5 +1,6 @@
 package se.is.agriculturalequipment;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,7 +15,8 @@ public class GuideMainMenu extends AppCompatActivity {
     }
 
     public void intentGuideG200(View view){
-
+        Intent intentGuideG200 = new Intent(this,GuideG200.class);
+        startActivity(intentGuideG200);
     }
 
     public void intentGuideGX160(View view) {

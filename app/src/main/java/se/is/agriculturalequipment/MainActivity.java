@@ -90,6 +90,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intentAdmin);
     }
 
+    public void intentGuide(View view) {
+        Intent intentGuide = new Intent(this, GuideMainMenu.class);
+        startActivity(intentGuide);
+    }
+
     public void addDefaultPartG200(){
         TableG200 objG200 = new TableG200(this);
         objG200.addNewPart("จานกระตุกชุด", "450");
