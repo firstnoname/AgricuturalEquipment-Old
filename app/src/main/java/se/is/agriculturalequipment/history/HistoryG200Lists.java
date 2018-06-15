@@ -66,9 +66,9 @@ public class HistoryG200Lists extends AppCompatActivity {
 //                Toast.makeText(HistoryG200Lists.this, adapterHistoryG200.getItem(position).toString()
 //                        , Toast.LENGTH_SHORT).show();
                 startActivity(intentEditG200);
+                finish();
             }
         });
-
 
         RequestQueue queue = SingletonPattern.getInstance(this.getApplicationContext()).getRequestQueue();
 
@@ -84,6 +84,7 @@ public class HistoryG200Lists extends AppCompatActivity {
                         g200.setId_customer(obj.getString("id_customer"));
                         g200.setIdentification_no(obj.getString("identification_no"));
                         g200.setName(obj.getString("name"));
+                        g200.setId_buy_g200(obj.getString("id_buy_g200"));
                         g200.setStarter(obj.getString("starter"));
                         g200.setFuelTank(obj.getString("fuelTank"));
                         g200.setAirFilter(obj.getString("airFilter"));
@@ -100,7 +101,6 @@ public class HistoryG200Lists extends AppCompatActivity {
                         g200.setDealStatus(obj.getString("dealStatus"));
                         g200.setBuyDate(obj.getString("buyDate"));
                         g200.setAmount(obj.getString("amount"));
-
                         //Log.d("Buy date: ", g200.getBuyDate());
                         g200List.add(g200);
 

@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 public class G200 implements Serializable {
 
-    private String id_customer, identification_no, name;
+    private String id_customer, identification_no, name, id_buy_g200;
     private String engineStatus, starter, fuelTank, airFilter, carburetor;
     private String cylinderSet;
     private String ballValveSwitchOil;
@@ -27,7 +27,7 @@ public class G200 implements Serializable {
 
     }
 
-    public G200(String id_customer, String identification_no, String name, String engineStatus, String starter,
+    public G200(String id_customer, String identification_no, String name, String id_buy_g200, String engineStatus, String starter,
                 String fuelTank, String airFilter, String carburetor, String cylinderSet,
                 String ballValveSwitchOil, String muffler, String switchOnOff, String coil,
                 String fuelTankCap, String newPaint, String oilTankCap, String sparkPlug,
@@ -36,6 +36,7 @@ public class G200 implements Serializable {
         this.id_customer = id_customer;
         this.identification_no = identification_no;
         this.name = name;
+        this.id_buy_g200 = id_buy_g200;
         this.engineStatus = engineStatus;
         this.starter = starter;
         this.fuelTank = fuelTank;
@@ -77,6 +78,14 @@ public class G200 implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getId_buy_g200() {
+        return id_buy_g200;
+    }
+
+    public void setId_buy_g200(String id_buy_g200){
+        this.id_buy_g200 = id_buy_g200;
     }
 
     public String getEngineStatus() {

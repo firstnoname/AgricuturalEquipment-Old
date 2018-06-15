@@ -1,11 +1,26 @@
 package se.is.agriculturalequipment;
 
+import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import se.is.agriculturalequipment.history.HistoryG200Lists;
 import se.is.agriculturalequipment.model.G200;
 
 public class SingleItemG200 extends AppCompatActivity {
@@ -19,6 +34,7 @@ public class SingleItemG200 extends AppCompatActivity {
 
         //Get object from HistoryG200List.
         final G200 edtG200 = (G200) getIntent().getSerializableExtra("editG200");
+        final String id_who_buy;
 
         TextView txtID = (TextView) findViewById(R.id.txtIdCustomer);
         TextView txtName = (TextView) findViewById(R.id.txtName);
@@ -61,12 +77,43 @@ public class SingleItemG200 extends AppCompatActivity {
         txtDealStatus.setText(edtG200.getDealStatus());
         txtBuyDate.setText(edtG200.getBuyDate());
         txtAmount.setText(edtG200.getAmount());
+        id_who_buy = edtG200.getId_buy_g200();
 
         //Change status from Save to Buy.
         btnChangeStatus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+               //Update deal status in server.
+                //Toast.makeText(SingleItemG200.this, id_who_buy, Toast.LENGTH_SHORT).show();
+                RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
+                String url_update_dealStatus = "http://tomori.siameki.com/update_dealStatus.php";
 
+                StringRequest stringRequest = new StringRequest(Request.Method.POST, url_update_dealStatus,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                Toast.makeText(SingleItemG200.this, response, Toast.LENGTH_SHORT).show();
+                                Intent intentHistoryG200 = new Intent(SingleItemG200.this, HistoryG200Lists.class);
+                                startActivity(intentHistoryG200);
+                                finish();
+                            }
+                        }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(SingleItemG200.this, "Update deal status error! " + error, Toast.LENGTH_SHORT).show();
+                        finish();
+                    }
+                }){
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError{
+                        Map<String, String> params = new HashMap<>();
+                        params.put("id_who_buy", id_who_buy);
+
+                        return params;
+                    }
+                };
+
+                queue.add(stringRequest);
             }
         });
     }

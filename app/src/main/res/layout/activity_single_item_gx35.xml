@@ -37,7 +37,7 @@
             <TextView
                 android:id="@+id/textView52"
                 android:layout_width="150dp"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -59,7 +59,7 @@
             <TextView
                 android:id="@+id/textView53"
                 android:layout_width="150dp"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -70,19 +70,18 @@
                 android:id="@+id/txtName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="128dp"
+                android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/textView53"
                 app:layout_constraintTop_toBottomOf="@+id/txtIdCustomer" />
 
             <TextView
                 android:id="@+id/textView54"
                 android:layout_width="150dp"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -91,21 +90,20 @@
 
             <TextView
                 android:id="@+id/txtEngine"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="168dp"
+                android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="TextView"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/textView54"
                 app:layout_constraintTop_toBottomOf="@+id/txtName" />
 
             <TextView
                 android:id="@+id/textView55"
                 android:layout_width="150dp"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -114,9 +112,9 @@
 
             <TextView
                 android:id="@+id/txtStarter"
-                android:layout_width="55dp"
-                android:layout_height="19dp"
-                android:layout_marginEnd="176dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -127,7 +125,7 @@
             <TextView
                 android:id="@+id/textView56"
                 android:layout_width="150dp"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -136,9 +134,9 @@
 
             <TextView
                 android:id="@+id/txtFuelTank"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="192dp"
+                android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -149,7 +147,7 @@
             <TextView
                 android:id="@+id/textView57"
                 android:layout_width="150dp"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -158,9 +156,9 @@
 
             <TextView
                 android:id="@+id/txtControlSwitch"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="192dp"
+                android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -171,7 +169,7 @@
             <TextView
                 android:id="@+id/textView59"
                 android:layout_width="150dp"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -180,9 +178,9 @@
 
             <TextView
                 android:id="@+id/txtBrushCutterBlade"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="192dp"
+                android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -193,7 +191,7 @@
             <TextView
                 android:id="@+id/textView60"
                 android:layout_width="150dp"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -202,9 +200,9 @@
 
             <TextView
                 android:id="@+id/txtAirFilter"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="192dp"
+                android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -215,7 +213,7 @@
             <TextView
                 android:id="@+id/textView61"
                 android:layout_width="150dp"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -224,9 +222,9 @@
 
             <TextView
                 android:id="@+id/txtCarburetor"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="192dp"
+                android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -237,7 +235,7 @@
             <TextView
                 android:id="@+id/textView64"
                 android:layout_width="150dp"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -246,11 +244,11 @@
 
             <TextView
                 android:id="@+id/txtCylinderSet"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_marginEnd="192dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="TextView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -260,7 +258,7 @@
             <TextView
                 android:id="@+id/textView75"
                 android:layout_width="150dp"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -269,7 +267,7 @@
 
             <TextView
                 android:id="@+id/txtBallValveSwitchOil"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
@@ -282,7 +280,7 @@
             <TextView
                 android:id="@+id/textView76"
                 android:layout_width="150dp"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -291,7 +289,7 @@
 
             <TextView
                 android:id="@+id/txtMuffler"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
@@ -304,7 +302,7 @@
             <TextView
                 android:id="@+id/textView77"
                 android:layout_width="150dp"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -313,7 +311,7 @@
 
             <TextView
                 android:id="@+id/txtGearDiver"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
@@ -326,7 +324,7 @@
             <TextView
                 android:id="@+id/textView78"
                 android:layout_width="150dp"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -335,9 +333,9 @@
 
             <TextView
                 android:id="@+id/txtMainPipe"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="184dp"
+                android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -357,9 +355,9 @@
 
             <TextView
                 android:id="@+id/txtSwitchOnOff"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="180dp"
+                android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -370,7 +368,7 @@
             <TextView
                 android:id="@+id/textView80"
                 android:layout_width="150dp"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -379,9 +377,9 @@
 
             <TextView
                 android:id="@+id/txtCoil"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="92dp"
+                android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -392,7 +390,7 @@
             <TextView
                 android:id="@+id/textView81"
                 android:layout_width="150dp"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -401,9 +399,9 @@
 
             <TextView
                 android:id="@+id/txtFuelTankCap"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="32dp"
+                android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -414,7 +412,7 @@
             <TextView
                 android:id="@+id/textView82"
                 android:layout_width="150dp"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -423,9 +421,9 @@
 
             <TextView
                 android:id="@+id/txtNewPaint"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="84dp"
+                android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -436,7 +434,7 @@
             <TextView
                 android:id="@+id/textView83"
                 android:layout_width="150dp"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -445,9 +443,9 @@
 
             <TextView
                 android:id="@+id/txtShaft"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="152dp"
+                android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -458,7 +456,7 @@
             <TextView
                 android:id="@+id/textView84"
                 android:layout_width="150dp"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -467,9 +465,9 @@
 
             <TextView
                 android:id="@+id/txtOilTankCap"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="152dp"
+                android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -480,7 +478,7 @@
             <TextView
                 android:id="@+id/textView85"
                 android:layout_width="150dp"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -489,9 +487,9 @@
 
             <TextView
                 android:id="@+id/txtSparkPlug"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="116dp"
+                android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -502,7 +500,7 @@
             <TextView
                 android:id="@+id/textView86"
                 android:layout_width="150dp"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -511,9 +509,9 @@
 
             <TextView
                 android:id="@+id/txtDealStatus"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="116dp"
+                android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -524,7 +522,7 @@
             <TextView
                 android:id="@+id/textView87"
                 android:layout_width="150dp"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -533,7 +531,7 @@
 
             <TextView
                 android:id="@+id/txtBuyDate"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
@@ -546,7 +544,7 @@
             <TextView
                 android:id="@+id/textView90"
                 android:layout_width="150dp"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
@@ -555,9 +553,9 @@
 
             <TextView
                 android:id="@+id/txtAmount"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="180dp"
+                android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
