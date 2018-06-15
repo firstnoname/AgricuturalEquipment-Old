@@ -22,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton btnAdmin;
     TextView txtUserRole;
 
+    private TextView btnSettingText;
+    private TextView btnAdminText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +53,12 @@ public class MainActivity extends AppCompatActivity {
             txtUserRole.setText(userRole);
             btnSetting.setEnabled(false);
             btnAdmin.setEnabled(false);
+            btnSetting.setVisibility(View.INVISIBLE);
+            btnAdmin.setVisibility(View.INVISIBLE);
+            btnSettingText.setVisibility(View.INVISIBLE);
+            btnAdminText.setVisibility(View.INVISIBLE);
+
+
             //Employee can do.
 
         }
@@ -68,6 +77,10 @@ public class MainActivity extends AppCompatActivity {
         txtUserRole = (TextView) findViewById(R.id.txtUserRole);
         btnAdmin = (ImageButton) findViewById(R.id.btnAdmin);
         btnSetting = (Button) findViewById(R.id.btnSetting);
+
+        btnAdminText = (TextView) findViewById(R.id.textView50);
+        btnSettingText  = (TextView) findViewById(R.id.textView51);
+
     }
 
     public void intentHistory(View view){
