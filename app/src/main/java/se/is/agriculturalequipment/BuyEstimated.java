@@ -219,8 +219,8 @@ public class BuyEstimated extends AppCompatActivity {
 
         String method = "insert_profile";
         BackgroundTask backgroundTask = new BackgroundTask(this);
-        //backgroundTask.execute(method, idNo, name, amount, imageName, encodeImage, partName, idxEngine, dealingStatus);
-        //finish();
+        backgroundTask.execute(method, idNo, name, amount, imageName, encodeImage, partName, idxEngine, dealingStatus);
+        finish();
     }
 
     private void imageEncodeToBase64() {
