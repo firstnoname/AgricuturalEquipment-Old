@@ -50,7 +50,9 @@ public class HistoryGX35List extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intentEditGX35 = new Intent(HistoryGX35List.this, SingleItemGX35.class);
                 intentEditGX35.putExtra("editGX35", (Serializable) adapterHistoryGX35.getItem(position));
+                intentEditGX35.putExtra("table_name", "gx35");
                 startActivity(intentEditGX35);
+                finish();
             }
         });
 
@@ -91,6 +93,7 @@ public class HistoryGX35List extends AppCompatActivity {
                         gx35.setDealStatus(obj.getString("dealStatus"));
                         gx35.setBuyDate(obj.getString("buyDate"));
                         gx35.setAmount(obj.getString("amount"));
+                        gx35.setId_buy_gx35(obj.getString("id_buy_gx35"));
 
                         Log.d("Buy date: ", gx35.getBuyDate());
                         gx35List.add(gx35);

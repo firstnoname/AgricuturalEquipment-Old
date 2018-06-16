@@ -53,6 +53,7 @@ public class HistoryGX160List extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intentEditGX160 = new Intent(HistoryGX160List.this, SingleItemG200.class);
                 intentEditGX160.putExtra("editG200", (Serializable) adapterHistoryGX160.getItem(position));
+                intentEditGX160.putExtra("table_name", "gx160");
                 startActivity(intentEditGX160);
             }
         });
@@ -72,6 +73,7 @@ public class HistoryGX160List extends AppCompatActivity {
                         gx160.setId_customer(obj.getString("id_customer"));
                         gx160.setIdentification_no(obj.getString("identification_no"));
                         gx160.setName(obj.getString("name"));
+                        gx160.setId_buy_g200(obj.getString("id_buy_gx160"));
                         gx160.setStarter(obj.getString("starter"));
                         gx160.setFuelTank(obj.getString("fuelTank"));
                         gx160.setAirFilter(obj.getString("airFilter"));
@@ -88,6 +90,7 @@ public class HistoryGX160List extends AppCompatActivity {
                         gx160.setDealStatus(obj.getString("dealStatus"));
                         gx160.setBuyDate(obj.getString("buyDate"));
                         gx160.setAmount(obj.getString("amount"));
+
 
                         Log.d("Buy date: ", gx160.getBuyDate());
                         gx160List.add(gx160);

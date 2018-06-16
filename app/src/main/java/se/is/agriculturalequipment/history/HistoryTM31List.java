@@ -50,6 +50,7 @@ public class HistoryTM31List extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intentEditTM31 = new Intent(HistoryTM31List.this, SingleItemTM31.class);
                 intentEditTM31.putExtra("editTM31", (Serializable) adapterHistoryTM31.getItem(position));
+                intentEditTM31.putExtra("table_name", "tm31");
                 startActivity(intentEditTM31);
             }
         });
@@ -85,6 +86,7 @@ public class HistoryTM31List extends AppCompatActivity {
                         tm31.setDealStatus(obj.getString("dealStatus"));
                         tm31.setBuyDate(obj.getString("buyDate"));
                         tm31.setAmount(obj.getString("amount"));
+                        tm31.setId_buy_tm31(obj.getString("id_buy_tm31"));
 
                         Log.d("Buy date: ", tm31.getBuyDate());
                         tm31List.add(tm31);

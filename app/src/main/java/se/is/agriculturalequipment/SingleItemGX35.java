@@ -2,9 +2,12 @@ package se.is.agriculturalequipment;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import se.is.agriculturalequipment.DAO.ChangeStatusDAOServer;
 import se.is.agriculturalequipment.model.GX35;
 
 public class SingleItemGX35 extends AppCompatActivity {
@@ -17,6 +20,8 @@ public class SingleItemGX35 extends AppCompatActivity {
         setContentView(R.layout.activity_single_item_gx35);
 
         GX35 edtGx35 = (GX35) getIntent().getSerializableExtra("editGX35");
+        final String table_name = getIntent().getStringExtra("table_name");
+        final String id_who_buy;
 
         TextView txtID = (TextView) findViewById(R.id.txtIdCustomer);
         TextView txtName = (TextView) findViewById(R.id.txtName);
@@ -69,5 +74,27 @@ public class SingleItemGX35 extends AppCompatActivity {
         txtDealStatus.setText(edtGx35.getDealStatus());
         txtBuyDate.setText(edtGx35.getBuyDate());
         txtAmount.setText(edtGx35.getAmount());
+        id_who_buy = edtGx35.getId_buy_gx35();
+
+
+        //Check if deal status are Buy.
+        /*if (edtGx35.getDealStatus() == "Buy") {
+            Toast.makeText(this, "Equal Buy" + edtGx35.getDealStatus(), Toast.LENGTH_SHORT).show();
+            //btnChangeStatus.setEnabled(false);
+        } else {
+            Toast.makeText(this, "Status is not Buy" + edtGx35.getDealStatus(), Toast.LENGTH_SHORT).show();
+        }*/
+
+        //Change status from Save to Buy.
+        btnChangeStatus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ChangeStatusDAOServer updateDealStatus = new ChangeStatusDAOServer(getApplicationContext());
+                updateDealStatus.updateDealStatus(id_who_buy, table_name);
+
+                Toast.makeText(SingleItemGX35.this, "เปลี่ยนสถานะการซื้อสำเร็จ.", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        });
     }
 }

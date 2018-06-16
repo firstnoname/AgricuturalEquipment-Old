@@ -20,6 +20,7 @@ import com.android.volley.toolbox.Volley;
 import java.util.HashMap;
 import java.util.Map;
 
+import se.is.agriculturalequipment.DAO.ChangeStatusDAOServer;
 import se.is.agriculturalequipment.history.HistoryG200Lists;
 import se.is.agriculturalequipment.model.G200;
 
@@ -34,6 +35,7 @@ public class SingleItemG200 extends AppCompatActivity {
 
         //Get object from HistoryG200List.
         final G200 edtG200 = (G200) getIntent().getSerializableExtra("editG200");
+        final String table_name = getIntent().getStringExtra("table_name");
         final String id_who_buy;
 
         TextView txtID = (TextView) findViewById(R.id.txtIdCustomer);
@@ -84,8 +86,13 @@ public class SingleItemG200 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                //Update deal status in server.
+                ChangeStatusDAOServer updateDealStatus = new ChangeStatusDAOServer(getApplicationContext());
+                updateDealStatus.updateDealStatus(id_who_buy, table_name);
+
+                Toast.makeText(SingleItemG200.this, "เปลี่ยนสถานะการซื้อสำเร็จ." + id_who_buy + " : " + table_name, Toast.LENGTH_SHORT).show();
+                finish();
                 //Toast.makeText(SingleItemG200.this, id_who_buy, Toast.LENGTH_SHORT).show();
-                RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
+                /*RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
                 String url_update_dealStatus = "http://tomori.siameki.com/update_dealStatus.php";
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url_update_dealStatus,
@@ -108,12 +115,12 @@ public class SingleItemG200 extends AppCompatActivity {
                     protected Map<String, String> getParams() throws AuthFailureError{
                         Map<String, String> params = new HashMap<>();
                         params.put("id_who_buy", id_who_buy);
-
+                        params.put("table_name", table_name);
                         return params;
                     }
                 };
 
-                queue.add(stringRequest);
+                queue.add(stringRequest);*/
             }
         });
     }

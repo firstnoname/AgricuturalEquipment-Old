@@ -2,11 +2,14 @@ package se.is.agriculturalequipment;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+import se.is.agriculturalequipment.DAO.ChangeStatusDAOServer;
 import se.is.agriculturalequipment.model.TM31;
 
 public class SingleItemTM31 extends AppCompatActivity {
@@ -19,6 +22,8 @@ public class SingleItemTM31 extends AppCompatActivity {
         setContentView(R.layout.activity_single_item_tm31);
 
         TM31 tm31 = (TM31) getIntent().getSerializableExtra("editTM31");
+        final String table_name = getIntent().getStringExtra("table_name");
+        final String id_who_buy;
 
         TextView txtID = (TextView) findViewById(R.id.txtIdCustomer);
         TextView txtName = (TextView) findViewById(R.id.txtName);
@@ -57,5 +62,17 @@ public class SingleItemTM31 extends AppCompatActivity {
         txtDealStatus.setText(tm31.getDealStatus());
         txtBuyDate.setText(tm31.getBuyDate());
         txtAmount.setText(tm31.getAmount());
+        id_who_buy = tm31.getId_buy_tm31();
+
+        btnChangeStatus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ChangeStatusDAOServer updateDealStatus = new ChangeStatusDAOServer(getApplicationContext());
+                updateDealStatus.updateDealStatus(id_who_buy, table_name);
+
+                Toast.makeText(SingleItemTM31.this, "เปลี่ยนสถานะการซื้อสำเร็จ.", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        });
     }
 }

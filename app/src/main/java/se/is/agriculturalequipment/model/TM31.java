@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 public class TM31 implements Serializable {
 
-    private String id_customer, identification_no, name;
+    private String id_customer, identification_no, name, id_buy_tm31;
     private String engineStatus, airChamber, sealSet, adjustSet, dischargeMetal;
     private String suctionMetal;
     private String pistonSet;
@@ -26,10 +26,11 @@ public class TM31 implements Serializable {
 
     }
 
-    public TM31(String id_customer, String identification_no, String name, String engineStatus, String airChamber, String sealSet, String adjustSet, String dischargeMetal, String suctionMetal, String pistonSet, String starterRopeReel, String pressureGauge, String ballValveSwitch, String oilFilter, String newPaint, String oilTankCap, String dealStatus, String buyDate, String amount) {
+    public TM31(String id_customer, String identification_no, String name, String id_buy_tm31, String engineStatus, String airChamber, String sealSet, String adjustSet, String dischargeMetal, String suctionMetal, String pistonSet, String starterRopeReel, String pressureGauge, String ballValveSwitch, String oilFilter, String newPaint, String oilTankCap, String dealStatus, String buyDate, String amount) {
         this.id_customer = id_customer;
         this.identification_no = identification_no;
         this.name = name;
+        this.id_buy_tm31 = id_buy_tm31;
         this.engineStatus = engineStatus;
         this.airChamber = airChamber;
         this.sealSet = sealSet;
@@ -71,6 +72,14 @@ public class TM31 implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getId_buy_tm31(){
+        return id_buy_tm31;
+    }
+
+    public void setId_buy_tm31(String id_buy_tm31) {
+        this.id_buy_tm31 = id_buy_tm31;
     }
 
     public String getEngineStatus() {

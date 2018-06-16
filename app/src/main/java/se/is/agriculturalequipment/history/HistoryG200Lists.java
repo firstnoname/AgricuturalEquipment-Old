@@ -63,6 +63,7 @@ public class HistoryG200Lists extends AppCompatActivity {
                         String.valueOf(adapterHistoryG200.getItemId(position)), Toast.LENGTH_SHORT).show();*/
                 Intent intentEditG200 = new Intent(HistoryG200Lists.this, SingleItemG200.class);
                 intentEditG200.putExtra("editG200", (Serializable) adapterHistoryG200.getItem(position));
+                intentEditG200.putExtra("table_name", "g200");
 //                Toast.makeText(HistoryG200Lists.this, adapterHistoryG200.getItem(position).toString()
 //                        , Toast.LENGTH_SHORT).show();
                 startActivity(intentEditG200);

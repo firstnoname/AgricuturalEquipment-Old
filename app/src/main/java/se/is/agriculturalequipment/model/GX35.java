@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 public class GX35 implements Serializable {
 
-    private String id_customer, identification_no, name;
+    private String id_customer, identification_no, name, id_buy_gx35;
     private String engineStatus, starter, fuelTank, controlSwitch, brushCutterBlade, airFilter, carburetor;
     private String cylinderSet;
     private String ballValveSwitchOil;
@@ -26,7 +26,7 @@ public class GX35 implements Serializable {
     public GX35() {
     }
 
-    public GX35(String id_customer, String identification_no, String name, String engineStatus, String starter, String fuelTank, String controlSwitch, String brushCutterBlade, String airFilter, String carburetor, String cylinderSet, String ballValveSwitchOil, String muffler, String gearDiver, String mainPipe, String switchOnOff, String coil, String fuelTankCap, String newPaint, String shaft, String oilTankCap, String sparkPlug, String dealStatus, String buyDate, String amount) {
+    public GX35(String id_customer, String identification_no, String name,String id_buy_gx35, String engineStatus, String starter, String fuelTank, String controlSwitch, String brushCutterBlade, String airFilter, String carburetor, String cylinderSet, String ballValveSwitchOil, String muffler, String gearDiver, String mainPipe, String switchOnOff, String coil, String fuelTankCap, String newPaint, String shaft, String oilTankCap, String sparkPlug, String dealStatus, String buyDate, String amount) {
         this.id_customer = id_customer;
         this.identification_no = identification_no;
         this.name = name;
@@ -76,6 +76,14 @@ public class GX35 implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getId_buy_gx35(){
+        return id_buy_gx35;
+    }
+
+    public void setId_buy_gx35(String id_buy_gx35) {
+        this.id_buy_gx35 = id_buy_gx35;
     }
 
     public String getEngineStatus() {
