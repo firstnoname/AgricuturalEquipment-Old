@@ -77,10 +77,10 @@ public class EstimateT200 extends AppCompatActivity {
                 rdg9.setVisibility(View.VISIBLE);
                 rdg10.setVisibility(View.VISIBLE);
                 rdg11.setVisibility(View.VISIBLE);
-                rdg12.setVisibility(View.VISIBLE);
+                rdg12.setVisibility(View.GONE);
                 rdg13.setVisibility(View.VISIBLE);
-                rdg14.setVisibility(View.VISIBLE);
-                rdg15.setVisibility(View.VISIBLE);
+                rdg14.setVisibility(View.GONE);
+                rdg15.setVisibility(View.GONE);
                 rdg16.setVisibility(View.VISIBLE);
                 rdg17.setVisibility(View.VISIBLE);
 
@@ -105,12 +105,12 @@ public class EstimateT200 extends AppCompatActivity {
                 rdg9.setVisibility(View.VISIBLE);
                 rdg10.setVisibility(View.VISIBLE);
                 rdg11.setVisibility(View.VISIBLE);
-                rdg12.setVisibility(View.VISIBLE);
+                rdg12.setVisibility(View.GONE);
                 rdg13.setVisibility(View.GONE);
                 rdg14.setVisibility(View.VISIBLE);
-                rdg15.setVisibility(View.VISIBLE);
+                rdg15.setVisibility(View.GONE);
                 rdg16.setVisibility(View.VISIBLE);
-                rdg17.setVisibility(View.VISIBLE);
+                rdg17.setVisibility(View.GONE);
 
                 layoutButtonGroup.setVisibility(View.VISIBLE);
 
@@ -393,10 +393,10 @@ public class EstimateT200 extends AppCompatActivity {
             arrNameList.add(rdbSelectedFuelTankCap.getText().toString());
 
             /*No15 = ทำสี */
-            idSelectedNewPaint = rdg15.getCheckedRadioButtonId();
+            /*idSelectedNewPaint = rdg15.getCheckedRadioButtonId();
             rdbSelectedNewPaint = (RadioButton) findViewById(idSelectedNewPaint);
             arrSelectedID.add(idxSelectedNewPaint = rdg15.indexOfChild(rdbSelectedNewPaint));
-            arrNameList.add(rdbSelectedNewPaint.getText().toString());
+            arrNameList.add(rdbSelectedNewPaint.getText().toString());*/
 
              /*No16 = แกนเพลา */
             idSelectedShaft = rdg16.getCheckedRadioButtonId();
@@ -405,10 +405,10 @@ public class EstimateT200 extends AppCompatActivity {
             arrNameList.add(rdbSelectedShaft.getText().toString());
 
             /*No17 = ฝาถังน้ำมันเครื่อง */
-            idSelectedOilTankCap = rdg17.getCheckedRadioButtonId();
+            /*idSelectedOilTankCap = rdg17.getCheckedRadioButtonId();
             rdbSelectedOilTankCap = (RadioButton) findViewById(idSelectedOilTankCap);
             arrSelectedID.add(idxSelectedOilTankCap = rdg17.indexOfChild(rdbSelectedOilTankCap));
-            arrNameList.add(rdbSelectedOilTankCap.getText().toString());
+            arrNameList.add(rdbSelectedOilTankCap.getText().toString());*/
         }
 
 
@@ -455,9 +455,9 @@ public class EstimateT200 extends AppCompatActivity {
             rdb11_1.setChecked(true);
             rdb12_1.setChecked(true);
             rdb14_1.setChecked(true);
-            rdb15_1.setChecked(true);
+            //rdb15_1.setChecked(true);
             rdb16_1.setChecked(true);
-            rdb17_1.setChecked(true);
+            //rdb17_1.setChecked(true);
         }
 
     }

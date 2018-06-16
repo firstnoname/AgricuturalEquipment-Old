@@ -83,10 +83,10 @@ public class EstimateGX35 extends AppCompatActivity {
                 rdg9.setVisibility(View.VISIBLE);
                 rdg10.setVisibility(View.VISIBLE);
                 rdg11.setVisibility(View.VISIBLE);
-                rdg12.setVisibility(View.VISIBLE);
+                rdg12.setVisibility(View.GONE);
                 rdg13.setVisibility(View.VISIBLE);
-                rdg14.setVisibility(View.VISIBLE);
-                rdg15.setVisibility(View.VISIBLE);
+                rdg14.setVisibility(View.GONE);
+                rdg15.setVisibility(View.GONE);
                 rdg16.setVisibility(View.VISIBLE);
                 rdg17.setVisibility(View.VISIBLE);
                 rdg18.setVisibility(View.VISIBLE);
@@ -113,12 +113,12 @@ public class EstimateGX35 extends AppCompatActivity {
                 rdg9.setVisibility(View.VISIBLE);
                 rdg10.setVisibility(View.VISIBLE);
                 rdg11.setVisibility(View.VISIBLE);
-                rdg12.setVisibility(View.VISIBLE);
+                rdg12.setVisibility(View.GONE);
                 rdg13.setVisibility(View.GONE);
                 rdg14.setVisibility(View.VISIBLE);
-                rdg15.setVisibility(View.VISIBLE);
+                rdg15.setVisibility(View.GONE);
                 rdg16.setVisibility(View.VISIBLE);
-                rdg17.setVisibility(View.VISIBLE);
+                rdg17.setVisibility(View.GONE);
                 rdg18.setVisibility(View.VISIBLE);
 
                 layoutButtonGroup.setVisibility(View.VISIBLE);
@@ -162,9 +162,9 @@ public class EstimateGX35 extends AppCompatActivity {
             rdb11_1.setChecked(true);
             rdb12_1.setChecked(true);
             rdb14_1.setChecked(true);
-            rdb15_1.setChecked(true);
+            //rdb15_1.setChecked(true);
             rdb16_1.setChecked(true);
-            rdb17_1.setChecked(true);
+            //rdb17_1.setChecked(true);
             rdb18_1.setChecked(true);
 
         }
@@ -341,10 +341,10 @@ public class EstimateGX35 extends AppCompatActivity {
             arrNameList.add(rdbSelectedMainPipe.getText().toString());
 
              /*No12 = สวิตช์ปิดเปิด*/
-            idSelectedSwitchOnOff = rdg12.getCheckedRadioButtonId();
+            /*idSelectedSwitchOnOff = rdg12.getCheckedRadioButtonId();
             rdbSelectedSwitchOnOff = (RadioButton) findViewById(idSelectedSwitchOnOff);
             arrSelectedID.add(idxSelectedSwitchOnOff = rdg12.indexOfChild(rdbSelectedSwitchOnOff));
-            arrNameList.add(rdbSelectedSwitchOnOff.getText().toString());
+            arrNameList.add(rdbSelectedSwitchOnOff.getText().toString());*/
 
              /*No13 = คอยล์ */
             idSelectedCoil = rdg13.getCheckedRadioButtonId();
@@ -359,10 +359,10 @@ public class EstimateGX35 extends AppCompatActivity {
             arrNameList.add(rdbSelectedFuelTankCap.getText().toString());
 
              /*No15 = ทำสี */
-            idSelectedNewPaint = rdg15.getCheckedRadioButtonId();
+            /*idSelectedNewPaint = rdg15.getCheckedRadioButtonId();
             rdbSelectedNewPaint = (RadioButton) findViewById(idSelectedNewPaint);
             arrSelectedID.add(idxSelectedNewPaint = rdg15.indexOfChild(rdbSelectedNewPaint));
-            arrNameList.add(rdbSelectedNewPaint.getText().toString());
+            arrNameList.add(rdbSelectedNewPaint.getText().toString());*/
 
              /*No16 = แกนเพลา*/
             idSelectedShaft = rdg16.getCheckedRadioButtonId();
@@ -371,10 +371,10 @@ public class EstimateGX35 extends AppCompatActivity {
             arrNameList.add(rdbSelectedShaft.getText().toString());
 
              /*No17 = ฝาถังน้ำมันเครื่อง */
-            idSelectedOilTankCap = rdg17.getCheckedRadioButtonId();
+            /*idSelectedOilTankCap = rdg17.getCheckedRadioButtonId();
             rdbSelectedOilTankCap = (RadioButton) findViewById(idSelectedOilTankCap);
             arrSelectedID.add(idxSelectedOilTankCap = rdg17.indexOfChild(rdbSelectedOilTankCap));
-            arrNameList.add(rdbSelectedOilTankCap.getText().toString());
+            arrNameList.add(rdbSelectedOilTankCap.getText().toString());*/
 
              /*No18 = ปลั๊กหัวเทียน*/
             idSelectedSparkPlug = rdg18.getCheckedRadioButtonId();
@@ -438,10 +438,10 @@ public class EstimateGX35 extends AppCompatActivity {
             arrNameList.add(rdbSelectedMainPipe.getText().toString());
 
              /*No12 = สวิตช์ปิดเปิด*/
-            idSelectedSwitchOnOff = rdg12.getCheckedRadioButtonId();
+            /*idSelectedSwitchOnOff = rdg12.getCheckedRadioButtonId();
             rdbSelectedSwitchOnOff = (RadioButton) findViewById(idSelectedSwitchOnOff);
             arrSelectedID.add(idxSelectedSwitchOnOff = rdg12.indexOfChild(rdbSelectedSwitchOnOff));
-            arrNameList.add(rdbSelectedSwitchOnOff.getText().toString());
+            arrNameList.add(rdbSelectedSwitchOnOff.getText().toString());*/
 
              /*No14 = ฝาถังน้ำมัน*/
             idSelectedFuelTankCap = rdg14.getCheckedRadioButtonId();
@@ -450,10 +450,10 @@ public class EstimateGX35 extends AppCompatActivity {
             arrNameList.add(rdbSelectedFuelTankCap.getText().toString());
 
              /*No15 = ทำสี */
-            idSelectedNewPaint = rdg15.getCheckedRadioButtonId();
+            /*idSelectedNewPaint = rdg15.getCheckedRadioButtonId();
             rdbSelectedNewPaint = (RadioButton) findViewById(idSelectedNewPaint);
             arrSelectedID.add(idxSelectedNewPaint = rdg15.indexOfChild(rdbSelectedNewPaint));
-            arrNameList.add(rdbSelectedNewPaint.getText().toString());
+            arrNameList.add(rdbSelectedNewPaint.getText().toString());*/
 
              /*No16 = แกนเพลา*/
             idSelectedShaft = rdg16.getCheckedRadioButtonId();
@@ -462,10 +462,10 @@ public class EstimateGX35 extends AppCompatActivity {
             arrNameList.add(rdbSelectedShaft.getText().toString());
 
              /*No17 = ฝาถังน้ำมันเครื่อง */
-            idSelectedOilTankCap = rdg17.getCheckedRadioButtonId();
+            /*idSelectedOilTankCap = rdg17.getCheckedRadioButtonId();
             rdbSelectedOilTankCap = (RadioButton) findViewById(idSelectedOilTankCap);
             arrSelectedID.add(idxSelectedOilTankCap = rdg17.indexOfChild(rdbSelectedOilTankCap));
-            arrNameList.add(rdbSelectedOilTankCap.getText().toString());
+            arrNameList.add(rdbSelectedOilTankCap.getText().toString());*/
 
              /*No18 = ปลั๊กหัวเทียน*/
             idSelectedSparkPlug = rdg18.getCheckedRadioButtonId();
@@ -480,8 +480,8 @@ public class EstimateGX35 extends AppCompatActivity {
         intentSubmitEstimateGX160.putExtra("idxEngine", idxSelectedEngine);
         intentSubmitEstimateGX160.putStringArrayListExtra("arrListName", arrNameList);
         intentSubmitEstimateGX160.putIntegerArrayListExtra("arrSelectedID", arrSelectedID);
-        Log.d("arrListName : ", arrNameList.toString());
-        Log.d("arrSelectID : ", arrSelectedID.toString());
+        //Log.d("arrListName : ", arrNameList.toString());
+        //Log.d("arrSelectID : ", arrSelectedID.toString());
         startActivity(intentSubmitEstimateGX160);
 
     }
