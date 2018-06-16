@@ -115,7 +115,7 @@ public class EstimateGX35 extends AppCompatActivity {
                 rdg11.setVisibility(View.VISIBLE);
                 rdg12.setVisibility(View.GONE);
                 rdg13.setVisibility(View.GONE);
-                rdg14.setVisibility(View.VISIBLE);
+                rdg14.setVisibility(View.GONE);
                 rdg15.setVisibility(View.GONE);
                 rdg16.setVisibility(View.VISIBLE);
                 rdg17.setVisibility(View.GONE);
@@ -353,10 +353,10 @@ public class EstimateGX35 extends AppCompatActivity {
             arrNameList.add(rdbSelectedCoil.getText().toString());
 
              /*No14 = ฝาถังน้ำมัน*/
-            idSelectedFuelTankCap = rdg14.getCheckedRadioButtonId();
+            /*idSelectedFuelTankCap = rdg14.getCheckedRadioButtonId();
             rdbSelectedFuelTankCap = (RadioButton) findViewById(idSelectedFuelTankCap);
             arrSelectedID.add(idxSelectedFuelTankCap = rdg14.indexOfChild(rdbSelectedFuelTankCap));
-            arrNameList.add(rdbSelectedFuelTankCap.getText().toString());
+            arrNameList.add(rdbSelectedFuelTankCap.getText().toString());*/
 
              /*No15 = ทำสี */
             /*idSelectedNewPaint = rdg15.getCheckedRadioButtonId();
@@ -371,10 +371,10 @@ public class EstimateGX35 extends AppCompatActivity {
             arrNameList.add(rdbSelectedShaft.getText().toString());
 
              /*No17 = ฝาถังน้ำมันเครื่อง */
-            /*idSelectedOilTankCap = rdg17.getCheckedRadioButtonId();
+            idSelectedOilTankCap = rdg17.getCheckedRadioButtonId();
             rdbSelectedOilTankCap = (RadioButton) findViewById(idSelectedOilTankCap);
             arrSelectedID.add(idxSelectedOilTankCap = rdg17.indexOfChild(rdbSelectedOilTankCap));
-            arrNameList.add(rdbSelectedOilTankCap.getText().toString());*/
+            arrNameList.add(rdbSelectedOilTankCap.getText().toString());
 
              /*No18 = ปลั๊กหัวเทียน*/
             idSelectedSparkPlug = rdg18.getCheckedRadioButtonId();
@@ -444,10 +444,10 @@ public class EstimateGX35 extends AppCompatActivity {
             arrNameList.add(rdbSelectedSwitchOnOff.getText().toString());*/
 
              /*No14 = ฝาถังน้ำมัน*/
-            idSelectedFuelTankCap = rdg14.getCheckedRadioButtonId();
+           /* idSelectedFuelTankCap = rdg14.getCheckedRadioButtonId();
             rdbSelectedFuelTankCap = (RadioButton) findViewById(idSelectedFuelTankCap);
             arrSelectedID.add(idxSelectedFuelTankCap = rdg14.indexOfChild(rdbSelectedFuelTankCap));
-            arrNameList.add(rdbSelectedFuelTankCap.getText().toString());
+            arrNameList.add(rdbSelectedFuelTankCap.getText().toString());*/
 
              /*No15 = ทำสี */
             /*idSelectedNewPaint = rdg15.getCheckedRadioButtonId();

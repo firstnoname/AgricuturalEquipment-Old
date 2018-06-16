@@ -59,7 +59,7 @@ public class SubmitEstimateG200 extends AppCompatActivity {
             dFuelTank = Double.parseDouble(priceFuelTank);
             dAirFilter = Double.parseDouble(priceAirFilter);
             dCarburetor = Double.parseDouble(priceCarburetor);
-            dCylinderSet = Double.parseDouble(priceCylinderSet);
+            //dCylinderSet = Double.parseDouble(priceCylinderSet);
             dBallValveSwitchOil = Double.parseDouble(priceBallValveSwitchOil);
             dMuffler = Double.parseDouble(priceMuffler);
             dSwitchOnOff = Double.parseDouble(priceSwitchOnOff);
@@ -70,14 +70,15 @@ public class SubmitEstimateG200 extends AppCompatActivity {
             dSparkPlug = Double.parseDouble(priceSparkPlug);
 
             //Estimate price.
-            dAmount = 4400 - (dStarter + dFuelTank + dAirFilter + dCarburetor + dCylinderSet +
+            dAmount = 4400 - (dStarter + dFuelTank + dAirFilter + dCarburetor +
                     dBallValveSwitchOil + dMuffler + dSwitchOnOff + dCoil + dFuelTankCap +
                     dNewPaint + dOilTankCap + dSparkPlug);
 
         } else {
+            dStarter = Double.parseDouble(priceStarter);
             dFuelTank = Double.parseDouble(priceFuelTank);
             dAirFilter = Double.parseDouble(priceAirFilter);
-            dCylinderSet = Double.parseDouble(priceCylinderSet);
+            //dCylinderSet = Double.parseDouble(priceCylinderSet);
             dMuffler = Double.parseDouble(priceMuffler);
             dSwitchOnOff = Double.parseDouble(priceSwitchOnOff);
             dFuelTankCap = Double.parseDouble(priceFuelTankCap);
@@ -87,7 +88,7 @@ public class SubmitEstimateG200 extends AppCompatActivity {
             dSparkPlug = Double.parseDouble(priceSparkPlug);
 
             //Estimate price.
-            dAmount = 2640 - (dFuelTank + dAirFilter + dCylinderSet +
+            dAmount = 2640 - (dStarter + dFuelTank + dAirFilter +
                     dMuffler + dSwitchOnOff + dFuelTankCap +
                     dNewPaint + dOilTankCap + dSparkPlug);
         }
@@ -110,7 +111,7 @@ public class SubmitEstimateG200 extends AppCompatActivity {
                     dFuelTank.toString(),
                     dAirFilter.toString(),
                     dCarburetor.toString(),
-                    dCylinderSet.toString(),
+                    //dCylinderSet.toString(),
                     dBallValveSwitchOil.toString(),
                     dMuffler.toString(),
                     dSwitchOnOff.toString(),
@@ -124,9 +125,10 @@ public class SubmitEstimateG200 extends AppCompatActivity {
         } else {
             strPrice = new String[]{
                     "30%",
+                    dStarter.toString(),
                     dFuelTank.toString(),
                     dAirFilter.toString(),
-                    dCylinderSet.toString(),
+                    //dCylinderSet.toString(),
                     dMuffler.toString(),
                     dSwitchOnOff.toString(),
                     dFuelTankCap.toString(),
@@ -246,12 +248,20 @@ public class SubmitEstimateG200 extends AppCompatActivity {
         } else {
 
             if (idSelectedList.get(1) == 1) {
+                priceStarter = strPartPrice[0];
+            } else if (idSelectedList.get(1) == 2) {
+                priceStarter = "0.0";
+            } else {
+                priceStarter = "0.0";
+            }
+
+            if (idSelectedList.get(2) == 1) {
                 priceFuelTank = strPartPrice[1];
             } else {
                 priceFuelTank = "0.0";
             }
 
-            if (idSelectedList.get(2) == 1) {
+            if (idSelectedList.get(3) == 1) {
                 priceAirFilter = strPartPrice[2];
             } else if (idSelectedList.get(3) == 2) {
                 priceAirFilter = "0.0";
@@ -259,43 +269,43 @@ public class SubmitEstimateG200 extends AppCompatActivity {
                 priceAirFilter = "0.0";
             }
 
-            if (idSelectedList.get(3) == 1) {
+            if (idSelectedList.get(4) == 1) {
                 priceCylinderSet = strPartPrice[4];
             } else {
                 priceCylinderSet = "0.0";
             }
 
-            if (idSelectedList.get(4) == 1) {
+            if (idSelectedList.get(5) == 1) {
                 priceMuffler = strPartPrice[6];
             } else {
                 priceMuffler = "0.0";
             }
 
-            if (idSelectedList.get(5) == 1) {
+            if (idSelectedList.get(6) == 1) {
                 priceSwitchOnOff = strPartPrice[7];
             } else {
                 priceSwitchOnOff = "0.0";
             }
 
-            if (idSelectedList.get(6) == 1) {
+            if (idSelectedList.get(7) == 1) {
                 priceFuelTankCap = strPartPrice[9];
             } else {
                 priceFuelTankCap = "0.0";
             }
 
-            if (idSelectedList.get(7) == 1) {
+            if (idSelectedList.get(8) == 1) {
                 priceNewPaint = strPartPrice[10];
             } else {
                 priceNewPaint = "0.0";
             }
 
-            if (idSelectedList.get(8) == 1) {
+            if (idSelectedList.get(9) == 1) {
                 priceOilTankCap = strPartPrice[11];
             } else {
                 priceOilTankCap = "0.0";
             }
 
-            if (idSelectedList.get(9) == 1) {
+            if (idSelectedList.get(10) == 1) {
                 priceSparkPlug = strPartPrice[12];
             } else {
                 priceSparkPlug = "0.0";

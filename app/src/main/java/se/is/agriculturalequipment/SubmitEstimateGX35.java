@@ -66,10 +66,10 @@ public class SubmitEstimateGX35 extends AppCompatActivity {
                     dMuffler.toString(),
                     dGearDiver.toString(),
                     dMainPipe.toString(),
-                    dSwitchOnOff.toString(),
+//                    dSwitchOnOff.toString(),
                     dCoil.toString(),
-                    dFuelTankCap.toString(),
-                    dNewPaint.toString(),
+//                    dFuelTankCap.toString(),
+//                    dNewPaint.toString(),
                     dShaft.toString(),
                     dOilTankCap.toString(),
                     dSparkPlug.toString()
@@ -87,11 +87,11 @@ public class SubmitEstimateGX35 extends AppCompatActivity {
                     dMuffler.toString(),
                     dGearDiver.toString(),
                     dMainPipe.toString(),
-                    dSwitchOnOff.toString(),
-                    dFuelTankCap.toString(),
-                    dNewPaint.toString(),
+//                    dSwitchOnOff.toString(),
+//                    dFuelTankCap.toString(),
+//                    dNewPaint.toString(),
                     dShaft.toString(),
-                    dOilTankCap.toString(),
+//                    dOilTankCap.toString(),
                     dSparkPlug.toString()
             };
 
@@ -123,18 +123,18 @@ public class SubmitEstimateGX35 extends AppCompatActivity {
             dMuffler = Double.parseDouble(priceMuffler);
             dGearDiver = Double.parseDouble(priceGearDiver);
             dMainPipe = Double.parseDouble(priceMainPipe);
-            dSwitchOnOff = Double.parseDouble(priceSwitchOnOff);
+//            dSwitchOnOff = Double.parseDouble(priceSwitchOnOff);
             dCoil = Double.parseDouble(priceCoil);
-            dFuelTankCap = Double.parseDouble(priceFuelTankCap);
-            dNewPaint = Double.parseDouble(priceNewPaint);
+//            dFuelTankCap = Double.parseDouble(priceFuelTankCap);
+//            dNewPaint = Double.parseDouble(priceNewPaint);
             dShaft = Double.parseDouble(priceShaft);
             dOilTankCap = Double.parseDouble(priceOilTankCap);
             dSparkPlug = Double.parseDouble(priceSparkPlug);
 
             //Estimate price.
             dAmount = 4400 - (dStarter + dFuelTank + dControlSwitch + dBrushCutterBlade + dAirFilter +
-                    dCarburetor + dCylinderSet + dBallValveSwitchOil + dMuffler + dGearDiver + dMainPipe +
-                    dSwitchOnOff + dCoil + dFuelTankCap + dNewPaint + dShaft + dOilTankCap + dSparkPlug);
+                    dCarburetor + dCylinderSet + dBallValveSwitchOil + dMuffler + dGearDiver +
+                    dMainPipe + dCoil + dShaft + dOilTankCap + dSparkPlug);
 
         } else {
             dStarter = Double.parseDouble(priceStarter);
@@ -146,17 +146,16 @@ public class SubmitEstimateGX35 extends AppCompatActivity {
             dMuffler = Double.parseDouble(priceMuffler);
             dGearDiver = Double.parseDouble(priceGearDiver);
             dMainPipe = Double.parseDouble(priceMainPipe);
-            dSwitchOnOff = Double.parseDouble(priceSwitchOnOff);
-            dFuelTankCap = Double.parseDouble(priceFuelTankCap);
-            dNewPaint = Double.parseDouble(priceNewPaint);
+//            dSwitchOnOff = Double.parseDouble(priceSwitchOnOff);
+//            dFuelTankCap = Double.parseDouble(priceFuelTankCap);
+//            dNewPaint = Double.parseDouble(priceNewPaint);
             dShaft = Double.parseDouble(priceStarter);
-            dOilTankCap = Double.parseDouble(priceOilTankCap);
+//            dOilTankCap = Double.parseDouble(priceOilTankCap);
             dSparkPlug = Double.parseDouble(priceSparkPlug);
 
             //Estimate price.
             dAmount = 2640 - (dStarter + dFuelTank + dControlSwitch + dBrushCutterBlade + dAirFilter +
-                    dBallValveSwitchOil + dMuffler + dGearDiver + dMainPipe + dSwitchOnOff + dFuelTankCap +
-                    dNewPaint + dShaft + dOilTankCap + dSparkPlug);
+                    dBallValveSwitchOil + dMuffler + dGearDiver + dMainPipe + dShaft + dSparkPlug);
         }
 
     }
@@ -253,19 +252,19 @@ public class SubmitEstimateGX35 extends AppCompatActivity {
                 priceMainPipe = "0.0";
             }
 
-            if (idSelectedList.get(12) == 1) {
+            /*if (idSelectedList.get(12) == 1) {
                 priceSwitchOnOff = strPartPrice[11];
             } else {
                 priceSwitchOnOff = "0.0";
-            }
+            }*/
 
-            if (idSelectedList.get(13) == 1) {
+            if (idSelectedList.get(12) == 1) {
                 priceCoil = strPartPrice[12];
             } else {
                 priceCoil = "0.0";
             }
 
-            if (idSelectedList.get(14) == 1) {
+            /*if (idSelectedList.get(14) == 1) {
                 priceFuelTankCap = strPartPrice[13];
             } else {
                 priceFuelTankCap = "0.0";
@@ -275,21 +274,21 @@ public class SubmitEstimateGX35 extends AppCompatActivity {
                 priceNewPaint = strPartPrice[14];
             } else {
                 priceNewPaint = "0.0";
-            }
+            }*/
 
-            if (idSelectedList.get(16) == 1) {
+            if (idSelectedList.get(13) == 1) {
                 priceShaft = strPartPrice[15];
             } else {
                 priceShaft = "0.0";
             }
 
-            if (idSelectedList.get(17) == 1) {
+            if (idSelectedList.get(14) == 1) {
                 priceOilTankCap = strPartPrice[16];
             } else {
                 priceOilTankCap = "0.0";
             }
 
-            if (idSelectedList.get(18) == 1) {
+            if (idSelectedList.get(15) == 1) {
                 priceSparkPlug = strPartPrice[17];
             } else {
                 priceSparkPlug = "0.0";
@@ -356,13 +355,13 @@ public class SubmitEstimateGX35 extends AppCompatActivity {
                 priceMainPipe = "0.0";
             }
 
-            if (idSelectedList.get(10) == 1) {
+            /*if (idSelectedList.get(10) == 1) {
                 priceSwitchOnOff = strPartPrice[11];
             } else {
                 priceSwitchOnOff = "0.0";
-            }
+            }*/
 
-            if (idSelectedList.get(11) == 1) {
+            /*if (idSelectedList.get(11) == 1) {
                 priceFuelTankCap = strPartPrice[13];
             } else {
                 priceFuelTankCap = "0.0";
@@ -372,21 +371,21 @@ public class SubmitEstimateGX35 extends AppCompatActivity {
                 priceNewPaint = strPartPrice[14];
             } else {
                 priceNewPaint = "0.0";
-            }
+            }*/
 
-            if (idSelectedList.get(13) == 1) {
+            if (idSelectedList.get(10) == 1) {
                 priceShaft = strPartPrice[15];
             } else {
                 priceShaft = "0.0";
             }
 
-            if (idSelectedList.get(14) == 1) {
+            /*if (idSelectedList.get(14) == 1) {
                 priceOilTankCap = strPartPrice[16];
             } else {
                 priceOilTankCap = "0.0";
-            }
+            }*/
 
-            if (idSelectedList.get(15) == 1) {
+            if (idSelectedList.get(11) == 1) {
                 priceSparkPlug = strPartPrice[17];
             } else {
                 priceSparkPlug = "0.0";

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -73,7 +74,7 @@ public class EstimateG200 extends AppCompatActivity {
                 rdg2.setVisibility(View.VISIBLE);
                 rdg3.setVisibility(View.VISIBLE);
                 rdg4.setVisibility(View.VISIBLE);
-                rdg5.setVisibility(View.VISIBLE);
+                rdg5.setVisibility(View.GONE);
                 rdg6.setVisibility(View.VISIBLE);
                 rdg7.setVisibility(View.VISIBLE);
                 rdg8.setVisibility(View.VISIBLE);
@@ -94,11 +95,11 @@ public class EstimateG200 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 rdbEngineTrue.setChecked(false);
-                rdg1.setVisibility(View.GONE);
+                rdg1.setVisibility(View.VISIBLE);
                 rdg2.setVisibility(View.VISIBLE);
                 rdg3.setVisibility(View.VISIBLE);
                 rdg4.setVisibility(View.GONE);
-                rdg5.setVisibility(View.VISIBLE);
+                rdg5.setVisibility(View.GONE);
                 rdg6.setVisibility(View.GONE);
                 rdg7.setVisibility(View.VISIBLE);
                 rdg8.setVisibility(View.VISIBLE);
@@ -223,10 +224,10 @@ public class EstimateG200 extends AppCompatActivity {
             arrNameList.add(rdbSelectedCarburetor.getText().toString());
 
             /*No5 = ท่อไอเสีย*/
-            idSelectedCylinderSet = rdg5.getCheckedRadioButtonId();
+            /*idSelectedCylinderSet = rdg5.getCheckedRadioButtonId();
             rdbSelectedCylinderSet = (RadioButton) findViewById(idSelectedCylinderSet);
             arrSelectedID.add(idxSelectedCylinderSet = rdg5.indexOfChild(rdbSelectedCylinderSet));
-            arrNameList.add(rdbSelectedCylinderSet.getText().toString());
+            arrNameList.add(rdbSelectedCylinderSet.getText().toString());*/
 
             /*No6 = ปลั๊กหัวเทียน*/
             idSelectedBallValveSwitchOil = rdg6.getCheckedRadioButtonId();
@@ -276,6 +277,10 @@ public class EstimateG200 extends AppCompatActivity {
             arrSelectedID.add(idxSelectedSparkPlug = rdg13.indexOfChild(rdbSelectedSparkPlug));
             arrNameList.add(rdbSelectedSparkPlug.getText().toString());
         }else{
+            idSelectedStarter = rdg1.getCheckedRadioButtonId();
+            rdbSelectedStarter = (RadioButton) findViewById(idSelectedStarter);
+            arrSelectedID.add(idxSelectedStarter = rdg1.indexOfChild(rdbSelectedStarter));
+            arrNameList.add(rdbSelectedStarter.getText().toString());
 
             /*No2 = ฝาถังน้ำมันเบนซิน*/
             idSelectedFuelTank = rdg2.getCheckedRadioButtonId();
@@ -290,10 +295,10 @@ public class EstimateG200 extends AppCompatActivity {
             arrNameList.add(rdbSelectedAirFilter.getText().toString());
 
             /*No5 = ท่อไอเสีย*/
-            idSelectedCylinderSet = rdg5.getCheckedRadioButtonId();
+            /*idSelectedCylinderSet = rdg5.getCheckedRadioButtonId();
             rdbSelectedCylinderSet = (RadioButton) findViewById(idSelectedCylinderSet);
             arrSelectedID.add(idxSelectedCylinderSet = rdg5.indexOfChild(rdbSelectedCylinderSet));
-            arrNameList.add(rdbSelectedCylinderSet.getText().toString());
+            arrNameList.add(rdbSelectedCylinderSet.getText().toString());*/
 
             /*No7 = คาร์บูเรเตอร์*/
             idSelectedMuffler = rdg7.getCheckedRadioButtonId();
@@ -336,6 +341,8 @@ public class EstimateG200 extends AppCompatActivity {
         intentSubmitEstimateG200.putExtra("idxEngine", idxSelectedEngine);
         intentSubmitEstimateG200.putStringArrayListExtra("arrListName",arrNameList);
         intentSubmitEstimateG200.putIntegerArrayListExtra("arrSelectedID", arrSelectedID);
+        /*Log.d("arrListName : ", arrNameList.toString());
+        Log.d("arrSelectID : ", arrSelectedID.toString());*/
         startActivity(intentSubmitEstimateG200);
 
     }
@@ -358,6 +365,7 @@ public class EstimateG200 extends AppCompatActivity {
             rdb13_1.setChecked(true);
         }else {
             //Can't start.
+            rdb1_1.setChecked(true);
             rdb2_1.setChecked(true);
             rdb3_1.setChecked(true);
             rdb5_1.setChecked(true);

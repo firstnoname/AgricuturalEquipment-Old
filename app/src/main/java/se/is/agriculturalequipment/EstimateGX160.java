@@ -70,7 +70,7 @@ public class EstimateGX160 extends AppCompatActivity {
                 rdg2.setVisibility(View.VISIBLE);
                 rdg3.setVisibility(View.VISIBLE);
                 rdg4.setVisibility(View.VISIBLE);
-                rdg5.setVisibility(View.VISIBLE);
+                rdg5.setVisibility(View.GONE);
                 rdg6.setVisibility(View.VISIBLE);
                 rdg7.setVisibility(View.VISIBLE);
                 rdg8.setVisibility(View.VISIBLE);
@@ -91,11 +91,11 @@ public class EstimateGX160 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 rdbEngineTrue.setChecked(false);
-                rdg1.setVisibility(View.GONE);
+                rdg1.setVisibility(View.VISIBLE);
                 rdg2.setVisibility(View.VISIBLE);
                 rdg3.setVisibility(View.VISIBLE);
                 rdg4.setVisibility(View.GONE);
-                rdg5.setVisibility(View.VISIBLE);
+                rdg5.setVisibility(View.GONE);
                 rdg6.setVisibility(View.VISIBLE);
                 rdg7.setVisibility(View.VISIBLE);
                 rdg8.setVisibility(View.VISIBLE);
@@ -223,10 +223,10 @@ public class EstimateGX160 extends AppCompatActivity {
             arrNameList.add(rdbSelectedCarburetor.getText().toString());
 
             /*No5 = เสื้อสูบ */
-            idSelectedCylinderSet= rdg5.getCheckedRadioButtonId();
+            /*idSelectedCylinderSet= rdg5.getCheckedRadioButtonId();
             rdbSelectedCylinderSet= (RadioButton) findViewById(idSelectedCylinderSet);
             arrSelectedID.add(idxSelectedCylinderSet= rdg5.indexOfChild(rdbSelectedCylinderSet));
-            arrNameList.add(rdbSelectedCylinderSet.getText().toString());
+            arrNameList.add(rdbSelectedCylinderSet.getText().toString());*/
 
             /*No6 = ก๊อกน้ำมัน*/
             idSelectedBallValveSwitchOil= rdg6.getCheckedRadioButtonId();
@@ -280,6 +280,11 @@ public class EstimateGX160 extends AppCompatActivity {
 
 
         }else{
+            idSelectedStarter = rdg1.getCheckedRadioButtonId();
+            rdbSelectedStarter = (RadioButton) findViewById(idSelectedStarter);
+            arrSelectedID.add(idxSelectedStarter = rdg1.indexOfChild(rdbSelectedStarter));
+            arrNameList.add(rdbSelectedStarter.getText().toString());
+
             /*No2 = สังน้ำมัน*/
             idSelectedFuelTank= rdg2.getCheckedRadioButtonId();
             rdbSelectedFuelTank= (RadioButton) findViewById(idSelectedFuelTank);
@@ -293,10 +298,10 @@ public class EstimateGX160 extends AppCompatActivity {
             arrNameList.add(rdbSelectedAirFilter.getText().toString());
 
             /*No5 = เสื้อสูบ*/
-            idSelectedCylinderSet= rdg5.getCheckedRadioButtonId();
+            /*idSelectedCylinderSet= rdg5.getCheckedRadioButtonId();
             rdbSelectedCylinderSet= (RadioButton) findViewById(idSelectedCylinderSet);
             arrSelectedID.add(idxSelectedCylinderSet= rdg5.indexOfChild(rdbSelectedCylinderSet));
-            arrNameList.add(rdbSelectedCylinderSet.getText().toString());
+            arrNameList.add(rdbSelectedCylinderSet.getText().toString());*/
 
             /*No6 = ทก๊อกน้ำมัน*/
             idSelectedBallValveSwitchOil= rdg6.getCheckedRadioButtonId();
@@ -372,6 +377,7 @@ public class EstimateGX160 extends AppCompatActivity {
             rdb13_1.setChecked(true);
         }else {
             //Can't start.
+            rdb1_1.setChecked(true);
             rdb2_1.setChecked(true);
             rdb3_1.setChecked(true);
             rdb5_1.setChecked(true);
