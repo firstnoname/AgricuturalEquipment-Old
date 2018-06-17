@@ -414,6 +414,8 @@ public class EstimateG200 extends AppCompatActivity {
         ImageView mImage = (ImageView) mView.findViewById(R.id.imageGuide);
         ImageView mImageL = (ImageView) mView.findViewById(R.id.imageGuideLeft);
         TextView mText = (TextView) mView.findViewById(R.id.txtGuideDialog);
+        TextView changeText = (TextView) mView.findViewById(R.id.textView96);
+        TextView notText = (TextView) mView.findViewById(R.id.textView62) ;
 
         switch (view.getId()) {
             case R.id.txtViewEngine:
@@ -517,6 +519,8 @@ public class EstimateG200 extends AppCompatActivity {
                 mImage.setImageResource(R.drawable.g200_new_paint_change);
                 mImageL.setImageResource(R.drawable.g200_new_paint_not);
                 mText.setVisibility(view.INVISIBLE);
+                changeText.setText("ทำสีใหม่");
+                notText.setText("ไม่ต้องทำสีใหม่");
                 mText.setText("สีตัวเครื่องจะดูแยกเป็น 2 ส่วน คือ ส่วนของถังน้ำมัน และ ส่วนของตัวเครื่องหรือฝากระโปรง โดยจะพิจารณาว่า ต้องทำสีใหม่ในกรณีที่มีสนิมหรือสีมีการหลุดลอกให้เห็น และไม่ต้องทำสี");
 //                Toast.makeText(this, "Muffler has clicked", Toast.LENGTH_SHORT).show();
                 break;
