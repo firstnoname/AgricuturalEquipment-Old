@@ -499,6 +499,7 @@ public class EstimateG200 extends AppCompatActivity {
 //                Toast.makeText(this, "Switch on-off has clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.txtViewCoil:
+
                 mText.setVisibility(view.INVISIBLE);
                 mText.setText("คอยล์ เป็นตัวจุดระเบิดเครื่องว่าเครื่องจะสามารถใช้งานได้หรือไม่  พิจารณา 2 แบบ คือ\n" +
                         "1.\tเปลี่ยนใหม่ คือ ตัวคอยล์ไม่มีไฟ พิจารณาจากการหมุนจานกระตุกแล้วนำสายไฟไปใกล้กับตัวเครื่องจะไม่มีไฟออกมา\n" +
@@ -520,6 +521,8 @@ public class EstimateG200 extends AppCompatActivity {
 //                Toast.makeText(this, "Muffler has clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.txtViewOilTankCap:
+                mImage.setImageResource(R.drawable.g200_oil_filter_change);
+                mImageL.setImageResource(R.drawable.g200_oil_filter_not);
                 mText.setVisibility(view.INVISIBLE);
                 mText.setText("ฝาถังน้ำมันเครื่อง พิจารณา 2 แบบ คือพิจารณาว่า ปิดแล้วน้ำมันรั่วออกจากตัวถังหรือไม่ รั่วจะต้องเปลี่ยน ปิดแล้วไม่มีการรั่วไม่ต้องทำการเปลี่ยน");
 //                Toast.makeText(this, "Oil Tank Cap clicked", Toast.LENGTH_SHORT).show();
