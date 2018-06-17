@@ -63,6 +63,12 @@ public class SingleItemTM31 extends AppCompatActivity {
         txtBuyDate.setText(tm31.getBuyDate());
         txtAmount.setText(tm31.getAmount());
         id_who_buy = tm31.getId_buy_tm31();
+        if(tm31.getDealStatus().contains("Buy")){
+            btnChangeStatus.setVisibility(View.INVISIBLE);
+        } else {
+            btnChangeStatus.setText("ซื้อ");
+        }
+
 
         btnChangeStatus.setOnClickListener(new View.OnClickListener() {
             @Override
