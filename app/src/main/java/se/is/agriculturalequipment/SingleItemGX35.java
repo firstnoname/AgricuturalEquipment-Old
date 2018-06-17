@@ -78,6 +78,7 @@ public class SingleItemGX35 extends AppCompatActivity {
 
 
         //Check if deal status are Buy.
+
         /*if (edtGx35.getDealStatus() == "Buy") {
             Toast.makeText(this, "Equal Buy" + edtGx35.getDealStatus(), Toast.LENGTH_SHORT).show();
             //btnChangeStatus.setEnabled(false);

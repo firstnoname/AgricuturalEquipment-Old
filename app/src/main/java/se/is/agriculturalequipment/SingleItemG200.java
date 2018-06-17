@@ -82,6 +82,13 @@ public class SingleItemG200 extends AppCompatActivity {
         id_who_buy = edtG200.getId_buy_g200();
 
         //Change status from Save to Buy.
+
+        if(edtG200.getDealStatus().contains("Buy")){
+            btnChangeStatus.setVisibility(View.INVISIBLE);
+        } else {
+            btnChangeStatus.setText("ซื้อ");
+        }
+
         btnChangeStatus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
