@@ -399,6 +399,7 @@ public class EstimateTM31 extends AppCompatActivity {
             case R.id.txtViewAirChamber:
                 mImage.setImageResource(R.drawable.tm31_airchamber_change);
                 mImageL.setImageResource(R.drawable.tm31_airchamber_not);
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("หม้อลม พิจารณา 2 แบบ คือ\n" +
                         "1.\tเปลี่ยนใหม่ คือ หม้อลมชำรุดเสียหายมีรอยแตก , เกลียวที่ใส่กับตัวเครื่องไม่สามารถใช้งานได้\n" +
                         "2.\tไม่เปลี่ยน คือ สามารถใช้งานได้ปกติ\n");
@@ -409,6 +410,7 @@ public class EstimateTM31 extends AppCompatActivity {
             case R.id.txtViewAdjustSet:
                 mImage.setImageResource(R.drawable.tm31_adjustset_change);
                 mImageL.setImageResource(R.drawable.tm31_adjustset_not);
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("ตัวตั้งโปโล พิจารณา 3 แบบ คือ\n" +
                         "1.\tเปลี่ยนทั้งตัว คือ ไม่สามารถใช้งานได้ หัก หรือมีรอยร้าว\n" +
                         "2.\tเปลี่ยนเฉพาะตัวลิ้นที่อยู่ข้างใน คือ ตัวตั้งโปโลไม่หักหรือชำรุดแต่ไม่สามารถตั่งค่าการส่งน้ำได้\n" +
@@ -417,6 +419,7 @@ public class EstimateTM31 extends AppCompatActivity {
             case R.id.txtViewDischargeMetal:
                 mImage.setImageResource(R.drawable.tm31_dischargemetal_change);
                 mImageL.setImageResource(R.drawable.tm31_dischargemetal_not);
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("ท่อนดูด พิจารณา 2 แบบ คือ\n" +
                         "1.\tเปลี่ยนใหม่ คือ หักหรือมีรอยร้าว , เกลียวที่ใช้คันต่อกันส่วนอื่นไม่สามารถใช้งานได้\n" +
                         "2.\tไม่เปลี่ยน คือ ไม่มีร่องรอยของการชำรุดเสียหายจนใช้งานไม่ได้\n");
@@ -424,6 +427,7 @@ public class EstimateTM31 extends AppCompatActivity {
             case R.id.txtViewSuctionMetal:
                 mImage.setImageResource(R.drawable.tm31_suctionmetal_change);
                 mImageL.setImageResource(R.drawable.tm31_suctionmetal_not);
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("ท่อนส่ง พิจารณา 2 แบบ คือ\n" +
                         "1.\tเปลี่ยนใหม่ คือ หักหรือมีรอยร้าว , เกลียวที่ใช้คันต่อกันส่วนอื่นไม่สามารถใช้งานได้\n" +
                         "2.\tไม่เปลี่ยน คือ ไม่มีร่องรอยของการชำรุดเสียหายจนใช้งานไม่ได้\n");
@@ -431,6 +435,7 @@ public class EstimateTM31 extends AppCompatActivity {
             case R.id.txtViewPistonSet:
                 mImage.setImageResource(R.drawable.tm31_pistonset_change);
                 mImageL.setImageResource(R.drawable.tm31_pistonset_not);
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("ลูกสูบ พิจารณา 2 แบบ คือ\n" +
                         "1.\tเปลี่ยน คือ ลูกสูบมีลายเป็นเส้น \n" +
                         "2.\tไม่เปลี่ยน คือ ลูกสูบ ไม่มีรอยหรือมีตำหนิที่เห็นได้ชัด\n");
@@ -438,6 +443,7 @@ public class EstimateTM31 extends AppCompatActivity {
             case R.id.txtViewStarterRopeReel:
                 mImage.setImageResource(R.drawable.tm31_starterropereel_change);
                 mImageL.setImageResource(R.drawable.tm31_starterropereel_not);
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("มู่เล่ย์ พิจารณา 2 แบบ คือ\n" +
                         "1.\tเปลี่ยน คือ ไม่สามารถใช้งานได้มีการแตกหัก , ใส่กับเพลามอเตอร์แล้วหลวม ,ร่องใส่มู่เล่ย์สายพานหลวม\n" +
                         "2.\tไม่เปลี่ยน คือ ไม่มีร่องรอยการแตกหัก สามารถใส่กับเพลามอเตอร์ได้สนิท\n");
@@ -445,6 +451,7 @@ public class EstimateTM31 extends AppCompatActivity {
             case R.id.txtViewPressureGauge:
                 mImage.setImageResource(R.drawable.tm31_pressuregauge_change);
                 mImageL.setImageResource(R.drawable.tm31_pressuregauge_not);
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("เกย์วัดความดัน พิจารณา 2 แบบ คือ\n" +
                         "1.\tเปลี่ยน คือ แตกหัก , ใช้งานไม่ได้\n" +
                         "2.\tไม่เปลี่ยน คือ สามารถใช้งานได้ปกติ\n");
@@ -452,19 +459,23 @@ public class EstimateTM31 extends AppCompatActivity {
             case R.id.txtViewBallValveSwitch:
                 mImage.setImageResource(R.drawable.tm31_ballvalveswitch_change);
                 mImageL.setImageResource(R.drawable.tm31_ballvalveswitch_not);
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("ก๊อกน้ำ พิจารณา 2 แบบ คือ\n" +
                         "1.\tเปลี่ยนใหม่ คือ ไม่สามารถเปิดหรือปิดน้ำที่ไหลผ่านได้ , ชำรุดเสียหายไม่สามารถใช้งานได้\n" +
                         "2.\tไม่เปลี่ยน คือ สามารถเปิดปิดน้ำได้ , ไม่แตกหักเสียหาย\n");
                 break;
             case R.id.txtViewOilFilter:
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("ฝาปิดน้ำมันเครื่อง พิจารณา 2 แบบ คือ\n" +
                         "1.\tเปลี่ยนฝาน้ำมันเครื่อง คือ ไม่สามารถปิดฝาให้สนิท มีน้ำมันรัว\n" +
                         "2.\tไม่เปลี่ยนฝาน้ำมันเครื่อง คือ สามารถปิดฝาได้สนิท น้ำมันไม่รั่วออกจากถัง\n");
                 break;
             case R.id.txtViewNewPaint:
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("");
                 break;
             case R.id.txtViewOilTankCap:
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("");
                 break;
         }

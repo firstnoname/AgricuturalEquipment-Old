@@ -476,6 +476,7 @@ public class EstimateT200 extends AppCompatActivity {
             case R.id.txtViewStarter:
                 mImage.setImageResource(R.drawable.t200_starter_change);
                 mImageL.setImageResource(R.drawable.t200_starter_not);
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("จานกระตุกจานกระตุกเครื่อง พิจารณา 3 แบบ คือ\n" +
                         "1.\tเปลี่ยนทั่งชุดของจานกระตุก คือ จานกระตุกไม่สามารถใช้ได้เลยกระชากแล้วไม่เกาะเครื่อง ไม่สามารถทำการ สตาทเครื่องได้\n" +
                         "2.\tเปลี่ยนเฉพาะเชือกกระตุก คือ สามารถที่จะทำการสตาทเครื่องได้ เพียงแต่เชือกที่ใช้ในการกระชากชำรุดเสียหาย\n" +
@@ -484,6 +485,7 @@ public class EstimateT200 extends AppCompatActivity {
             case R.id.txtFuelTank:
                 mImage.setImageResource(R.drawable.t200_fueltank_change);
                 mImageL.setImageResource(R.drawable.t200_fueltank_not);
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("");
                 break;
             case R.id.txtViewControlSwitch:
@@ -496,6 +498,7 @@ public class EstimateT200 extends AppCompatActivity {
             case R.id.txtViewBrushCutterBlade:
                 mImage.setImageResource(R.drawable.t200_brushcutterblade_change);
                 mImageL.setImageResource(R.drawable.t200_brushcutterblade_not);
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("ใบมีดตัดหญ้า พิจารณา 2 แบบคือ\n" +
                         "1.\tเปลี่ยน คือ ใบมีดบิ่นหรือหัก\n" +
                         "2.\tไม่เปลี่ยน คือ ใบมีดเต็มใบ ไม่บิ่นหรือหัก\n");
@@ -503,6 +506,7 @@ public class EstimateT200 extends AppCompatActivity {
             case R.id.txtViewAirFilter:
                 mImage.setImageResource(R.drawable.t200_airfilter_change);
                 mImageL.setImageResource(R.drawable.t200_airfilter_not);
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("หม้อกรองอากาศ พิจารณา 3 แบบ คือ\n" +
                         "1.\tเปลี่ยนเฉพาะไส้กรองอากาศ คือ ตัวหม้อกรองไม่ชำรุดเสียหายแต่ไส้กรองสกปรกหรือเสียหาย\n" +
                         "2.\tเปลี่ยนทั้งลูก คือ ตัวหม้อกรองชำรุดเสียหายทั้งหมด หรือ ชำรุดในส่วนของการยึดติดกับตัวเครื่อง\n" +
@@ -511,11 +515,13 @@ public class EstimateT200 extends AppCompatActivity {
             case R.id.txtViewCarburetor:
                 mImage.setImageResource(R.drawable.t200_carnurater_change);
                 mImageL.setImageResource(R.drawable.t200_carnurater_not);
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("คาร์บูเรเตอร์ เป็นตัวที่ใช้ในการเร่งเครื่องยนต์ว่าจะให้เบาหรือจะให้เร่งเครื่อง พิจารณา 2 แบบ คือ\n" +
                         "1  เปลี่ยนใหม่ คือ น้ำมันเครื่องเบนซินไม่สามารถไหลผ่านคาร์บูเรเตอร์ , เครื่องยนต์ไม่สามารถเร่งหรือเบาได้ ,เข็มเร่งที่เป็นตัวเปิดปิดอากาศไม่สามารถทำงานได้\n" +
                         "2\tไม่เปลี่ยน คือ สามารถทำงานได้ปกติ \n");
                 break;
             case R.id.txtViewCylinderSet:
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("เสื้อสูบ พิจารณา 2 แบบ คือ\n" +
                         "1เปลี่ยนทั้งเสื้อสูบ คือ หมุนมูเลย์หรือจานกระตุกที่ติดมากับเครื่องแล้วไม่สามารถ หมุนได้แสดงว่าลูกสูบที่อยู่ข้างในมีอาการติดขัดหรือเสื้อสูบอาจเป็นรอยได้ , เสื้อสูบมีรอยแต่หรือชำรุด\n" +
                         "2ไม่เปลี่ยน คือ มีแรงอัด เสื้อสูบไม่ชำรุดเสียหาย สามารถใช้งานได้ปก\n");
@@ -523,6 +529,7 @@ public class EstimateT200 extends AppCompatActivity {
             case R.id.txtViewBallValveSwitchOil:
                 mImage.setImageResource(R.drawable.t200_ballvalveswitch_change);
                 mImageL.setImageResource(R.drawable.t200_ballvalveswitch_not);
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("ก๊อกน้ำมันเครื่องเบนซิน พิจารณา 2 แบบ คือ\n" +
                         "1เปลี่ยนใหม่ คือ น้ำมันไม่สามารถไหลผ่านได้ , ตัวกรองที่อยู่ในก๊อกชำรุดเสียหาย , ตัวก๊อกไม่อยู่ในสภาพที่ทำงานได้,ปิดก๊อกแล้วแต่น้ำมันเบนซินยังไหลอยู่\n" +
                         "2ไม่เปลี่ยน คือ สามารถทำงานได้ปกติ\n");
@@ -530,6 +537,7 @@ public class EstimateT200 extends AppCompatActivity {
             case R.id.txtViewMuffler:
                 mImage.setImageResource(R.drawable.t200_muffler_change);
                 mImageL.setImageResource(R.drawable.t200_muffler_not);
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("ท่อไอเสีย พิจารณา 2 แบบ คือ\n" +
                         "1.\tเปลี่ยนใหม่ คือ ท่อไอเสียแตกหรือสภาพไม่พร้อมในการใช้งาน\n" +
                         "2.\tไม่เปลี่ยน  คือ พร้อมในการใช้งาน\n");
@@ -537,6 +545,7 @@ public class EstimateT200 extends AppCompatActivity {
             case R.id.txtViewGearDiver:
                 mImage.setImageResource(R.drawable.t200_geardiver_change);
                 mImageL.setImageResource(R.drawable.t200_geardiver_not);
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("คอตัดหญ้า พิจารณา 3 แบบ คือ\n" +
                         "1.\tเปลี่ยนทั้งชุด คือ คอตัดหญ้ามีรอยแตก\n" +
                         "2.\tเปลี่ยนเฉพาะเฟื่องที่อยู่ในคอตัดหญ้า  คือ คอตัดหญ้าไม่มีรอยแตกหักแต่ตรงใบมีดหมุนฟรี หรือไม่สามารถหมุนได้\n" +
@@ -545,6 +554,7 @@ public class EstimateT200 extends AppCompatActivity {
             case R.id.txtViewMainPipe:
                 mImage.setImageResource(R.drawable.t200_mainpipe_change);
                 mImageL.setImageResource(R.drawable.t200_mainpipe_not);
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("กระบอกหางเครื่องตัดหญ้า พิจารณา 2 แบบ คือ\n" +
                         "5.1.\tเปลี่ยน คือ กระบอกหางขาด , ไม่อยู่ในสภาพที่ใช้งานได้\n" +
                         "5.2.\tไม่เปลี่ยน คือ กระบอกหางอยู่ในสภาพที่ใช้งานได้\n");
@@ -558,19 +568,23 @@ public class EstimateT200 extends AppCompatActivity {
             case R.id.txtViewFuelTankCap:
                 mImage.setImageResource(R.drawable.t200_fueltankcap_change);
                 mImageL.setImageResource(R.drawable.t200_fueltankcap_not);
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("ถังน้ำมัน พิจารณา 2 แบบ คือ\n" +
                         "1.\tเปลี่ยนใหม่ คือ ถังน้ำมันชำรุดไม่สามารถเก็บน้ำมันเบนซินไว้ได้ , ไม่สามารถยึดติดกับตัวเครื่องได้\n" +
                         "2.\tไม่เปลี่ยน คือ ถังน้ำมันไม่ชำรุด สามารถยึดติดกับตัวเครื่องได้\n");
                 break;
             case R.id.txtViewNewPaint:
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("");
                 break;
             case R.id.txtViewShaft:
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("แกนเพลา พิจารณา 2 แบบ\n" +
                         "1.\tเปลี่ยนแกนเพลา ในกรณี เครื่องสตาร์ติด บีบคันเร่งแล้วใบมีดไม่หมุน\n" +
                         "2.\tไม่เปลี่ยนแกนเพลา ในกรณี เครื่องสตาร์ทติด เร่งเครื่องแล้วใบมีดหมุน\n");
                 break;
             case R.id.txtViewOilTankCap:
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("ฝาถังน้ำมันเครื่อง พิจารณา 2 แบบ คือพิจารณาว่า ปิดแล้วน้ำมันรั่วออกจากตัวถังหรือไม่ รั่วจะต้องเปลี่ยน ปิดแล้วไม่มีการรั่วไม่ต้องทำการเปลี่ยน");
                 break;
         }

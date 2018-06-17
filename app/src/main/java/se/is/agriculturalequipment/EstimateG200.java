@@ -427,6 +427,7 @@ public class EstimateG200 extends AppCompatActivity {
                 //Do something.
                 mImage.setImageResource(R.drawable.g200_starter_change);
                 mImageL.setImageResource(R.drawable.g200_starter_not);
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("จานกระตุกเครื่อง พิจารณา 3 แบบ คือ\n" +
                         "1.\tเปลี่ยนทั่งชุดของจานกระตุก คือ จานกระตุกไม่สามารถใช้ได้เลยกระชากแล้วไม่เกาะเครื่อง ไม่สามารถทำการ สตาทเครื่องได้\n" +
                         "2.\tเปลี่ยนเฉพาะเชือกกระตุก คือ จานกระตุกสามารถหมุนเกาะเครื่องได้พียงแต่เชือกที่ใช้ในการกระชากชำรุดเสียหาย\n" +
@@ -437,6 +438,7 @@ public class EstimateG200 extends AppCompatActivity {
                 //Do something.
                 mImage.setImageResource(R.drawable.g200_fueltank_change);
                 mImageL.setImageResource(R.drawable.g200_fueltank_not);
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("ถังนำมันเครื่อง พิจารณา 2 แบบ\n" +
                         "1.\tเปลี่ยนถังน้ำมัน ในกรณีที่ถังมีรอยแตกร้าวหรือตัวรูที่ใส่ตัวกรองน้ำมันชำรุดไม่สามารถใช้งานได้\n" +
                         "2.\tไม่เปลี่ยน ในกรณีที่ สภาพสมบูรณ์ไม่มีรอยแตกร้าวให้เห็นใส่น้ำมันแล้วไม่มีรอยรั่ว\n");
@@ -446,6 +448,7 @@ public class EstimateG200 extends AppCompatActivity {
                 //Do something.
                 mImage.setImageResource(R.drawable.g200_airfilter_change);
                 mImageL.setImageResource(R.drawable.g200_airfilter_not);
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("หม้อกรองอากาศ พิจารณา 3 แบบ คือ\n" +
                         "1.\tเปลี่ยนเฉพาะไส้กรองอากาศ คือ ตัวหม้อกรองอากาศไม่มีรอยแตกหรือชำรุดในส่วนของการยึดติดกับตัวเครื่อง แต่ตัวไส้กรองมีการชำรุดหรือสกปรก\n" +
                         "2.\tเปลี่ยนทั้งลูก คือ ตัวหม้อกรองชำรุดเสียหายทั้งหมด หรือ ชำรุดในส่วนของการยึดติดกับตัวเครื่อง\n" +
@@ -455,12 +458,14 @@ public class EstimateG200 extends AppCompatActivity {
             case R.id.txtViewCarburetor:
                 mImage.setImageResource(R.drawable.g200_carburetor_change);
                 mImageL.setImageResource(R.drawable.g200_carburetor_not);
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("คาร์บูเรเตอร์ เป็นตัวที่ใช้ในการเร่งเครื่องยนต์ว่าจะให้เบาหรือจะให้เร่งเครื่อง พิจารณา 2 แบบ คือ\n" +
                         "1.\tเปลี่ยนใหม่ คือ น้ำมันเครื่องเบนซินไม่สามารถไหลผ่านคาร์บูเรเตอร์ , เครื่องยนต์ไม่สามารถเร่งหรือเบาได้ ,เข็มเร่งที่เป็นตัวเปิดปิดอากาศไม่สามารถทำงานได้\n" +
                         "2.\tไม่เปลี่ยน คือ สามารถทำงานได้ปกติ\n");
 //                Toast.makeText(this, "Carburetor has clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.txtViewCylinderSet:
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("เสื้อสูบ เป็นส่วนที่สำคัญของตัวเครื่อง พิจารณา 2 แบบ\n" +
                         "1.\tเปลี่ยนเสื้อสูบ ในกรณีที่จานกระตุกไม่สามารถหมุนได้ หรือ หมุนแล้วมีเสียงดังที่ผิดปกติ\n" +
                         "2.\tไม่เปลี่ยน ในกรณี ที่สามารถหมุนจานกระตุก และไม่มีเสียงดังที่ผิดปกติ\n");
@@ -469,6 +474,7 @@ public class EstimateG200 extends AppCompatActivity {
             case R.id.txtViewBallValveSwitchOil:
                 mImage.setImageResource(R.drawable.g200_ballvalveswitchoil_change);
                 mImageL.setImageResource(R.drawable.g200_ballvalveswitchoil_not);
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("ก๊อกน้ำมันเครื่องเบนซิน พิจารณา 2 แบบ คือ\n" +
                         "1.\tเปลี่ยนใหม่ คือ น้ำมันไม่สามารถไหลผ่านได้ , ตัวกรองที่อยู่ในก๊อกชำรุดเสียหาย , ตัวก๊อกไม่อยู่ในสภาพที่ทำงานได้,ปิดก๊อกแล้วแต่น้ำมันเบนซินยังไหลอยู่\n" +
                         "2.\tไม่เปลี่ยน คือ สามารถทำงานได้ปกติ\n");
@@ -477,6 +483,7 @@ public class EstimateG200 extends AppCompatActivity {
             case R.id.txtViewMuffler:
                 mImage.setImageResource(R.drawable.g200_muffler_change);
                 mImageL.setImageResource(R.drawable.g200_muffler_not);
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("ท่อไอเสีย พิจารณา 2 แบบ คือ\n" +
                         "1.\tเปลี่ยนใหม่ คือ ท่อไอเสียแตกหรือสภาพไม่พร้อมในการใช้งาน\n" +
                         "2.\tไม่เปลี่ยน  คือ พร้อมในการใช้งานไม่เป็นสนิทหรือแตก\n");
@@ -485,12 +492,14 @@ public class EstimateG200 extends AppCompatActivity {
             case R.id.txtViewSwitchOnOff:
                 mImage.setImageResource(R.drawable.g200_switch_on_off_change);
                 mImageL.setImageResource(R.drawable.g200_switch_on_off_not);
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("สวิตช์ปิดเปิดเครื่อง พิจารณา 2 แบบ คือ\n" +
                         "1.\tเปลี่ยนใหม่ คือ ไม่อยู่ในสภาพที่ใช้งานได้ ตัวสวิตช์มีสายขาดหรือปรับปิดเปิดเครื่องไม่ได้\n" +
                         "2.\tไม่เปลี่ยน คือ สามารถใช้งานได้ปกติ\n");
 //                Toast.makeText(this, "Switch on-off has clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.txtViewCoil:
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("คอยล์ เป็นตัวจุดระเบิดเครื่องว่าเครื่องจะสามารถใช้งานได้หรือไม่  พิจารณา 2 แบบ คือ\n" +
                         "1.\tเปลี่ยนใหม่ คือ ตัวคอยล์ไม่มีไฟ พิจารณาจากการหมุนจานกระตุกแล้วนำสายไฟไปใกล้กับตัวเครื่องจะไม่มีไฟออกมา\n" +
                         "2.\tไม่เปลี่ยน คือ คอยล์มีไฟออกเมื่อหมุนจานกระตุกแล้วนำสายไฟไปใกล้กับตัวเครื่อง\n");
@@ -499,22 +508,26 @@ public class EstimateG200 extends AppCompatActivity {
             case R.id.txtViewFuelTankCap:
                 mImage.setImageResource(R.drawable.g200_fueltankcap_change);
                 mImageL.setImageResource(R.drawable.g200_fueltankcap_not);
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("ฝาถังน้ำมันเบนซิน พิจารณาว่า ปิดแล้วน้ำมันรั่วออกจากตัวถังหรือไม่ รั่วจะต้องเปลี่ยน ปิดแล้วไม่มีการรั่วไม่ต้องทำการเปลี่ยน");
 //                Toast.makeText(this, "Fuel Tank Cap has clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.txtViewNewPaint:
                 mImage.setImageResource(R.drawable.g200_new_paint_change);
                 mImageL.setImageResource(R.drawable.g200_new_paint_not);
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("สีตัวเครื่องจะดูแยกเป็น 2 ส่วน คือ ส่วนของถังน้ำมัน และ ส่วนของตัวเครื่องหรือฝากระโปรง โดยจะพิจารณาว่า ต้องทำสีใหม่ในกรณีที่มีสนิมหรือสีมีการหลุดลอกให้เห็น และไม่ต้องทำสี");
 //                Toast.makeText(this, "Muffler has clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.txtViewOilTankCap:
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("ฝาถังน้ำมันเครื่อง พิจารณา 2 แบบ คือพิจารณาว่า ปิดแล้วน้ำมันรั่วออกจากตัวถังหรือไม่ รั่วจะต้องเปลี่ยน ปิดแล้วไม่มีการรั่วไม่ต้องทำการเปลี่ยน");
 //                Toast.makeText(this, "Oil Tank Cap clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.txtViewSparkPlug:
                 mImage.setImageResource(R.drawable.g200_spark_plug_change);
                 mImageL.setImageResource(R.drawable.g200_spark_plug_not);
+                mText.setVisibility(view.INVISIBLE);
                 mText.setText("ปลั๊กหัวเทียนจะเป็นส่วนของคอยล์ที่จะเป็นตัวจุดระเบิดเครื่องทำให้เครื่องทำงานได้ พิจารณา 2 แบบ คือ\n" +
                         "1.\tเปลี่ยนใหม่ คือ สายขาดหรือไม่อยู่ในสภาพที่ใช้งานได้\n" +
                         "2.\tไม่เปลี่ยน คือ สามารถทำงานได้ปกติ\n");
