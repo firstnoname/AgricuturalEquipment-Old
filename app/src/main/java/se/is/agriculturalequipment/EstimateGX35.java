@@ -480,8 +480,8 @@ public class EstimateGX35 extends AppCompatActivity {
         intentSubmitEstimateGX160.putExtra("idxEngine", idxSelectedEngine);
         intentSubmitEstimateGX160.putStringArrayListExtra("arrListName", arrNameList);
         intentSubmitEstimateGX160.putIntegerArrayListExtra("arrSelectedID", arrSelectedID);
-        //Log.d("arrListName : ", arrNameList.toString());
-        //Log.d("arrSelectID : ", arrSelectedID.toString());
+        Log.d("arrListName : ", arrNameList.toString());
+        Log.d("arrSelectID : ", arrSelectedID.toString());
         startActivity(intentSubmitEstimateGX160);
 
     }

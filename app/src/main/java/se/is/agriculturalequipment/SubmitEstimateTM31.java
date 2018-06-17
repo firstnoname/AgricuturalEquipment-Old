@@ -51,10 +51,9 @@ public class SubmitEstimateTM31 extends AppCompatActivity {
 
         if (idxEngine == 0) {
             strPrice = new String[]{
-                    "0.0",
                     dAirChamber.toString(),
                     dSealSet.toString(),
-                    dAdjustSet.toString(),
+//                    dAdjustSet.toString(),
                     dDischargeMetal.toString(),
                     dSuctionMetal.toString(),
                     dPistonSet.toString(),
@@ -62,13 +61,13 @@ public class SubmitEstimateTM31 extends AppCompatActivity {
                     dPressureGauge.toString(),
                     dBallValveSwitch.toString(),
                     dOilFilter.toString(),
-                    dNewPaint.toString(),
-                    dOilTankCap.toString(),
+//                    dNewPaint.toString(),
+//                    dOilTankCap.toString(),
 
             };
 
         } else {
-            strPrice = new String[]{
+            /*strPrice = new String[]{
                     "30%",
                     dAirChamber.toString(),
                     dSealSet.toString(),
@@ -83,7 +82,7 @@ public class SubmitEstimateTM31 extends AppCompatActivity {
                     dNewPaint.toString(),
                     dOilTankCap.toString(),
 
-            };
+            };*/
 
         }
 
@@ -104,7 +103,7 @@ public class SubmitEstimateTM31 extends AppCompatActivity {
         if (idxEngine == 0) {
             dAirChamber = Double.parseDouble(priceAirChamber);
             dSealSet = Double.parseDouble(priceSealSet);
-            dAdjustSet = Double.parseDouble(priceAdjustSet);
+//            dAdjustSet = Double.parseDouble(priceAdjustSet);
             dDischargeMetal = Double.parseDouble(priceDischargeMetal);
             dSuctionMetal = Double.parseDouble(priceSuctionMetal);
             dPistonSet = Double.parseDouble(pricePistonSet);
@@ -112,15 +111,15 @@ public class SubmitEstimateTM31 extends AppCompatActivity {
             dPressureGauge = Double.parseDouble(pricePressureGauge);
             dBallValveSwitch = Double.parseDouble(priceBallValveSwitch);
             dOilFilter = Double.parseDouble(priceOilFilter);
-            dNewPaint = Double.parseDouble(priceNewPaint);
-            dOilTankCap = Double.parseDouble(priceOilTankCap);
+            /*dNewPaint = Double.parseDouble(priceNewPaint);
+            dOilTankCap = Double.parseDouble(priceOilTankCap);*/
 
             //Estimate price.
-            dAmount = 4400 - (dAirChamber + dSealSet + dAdjustSet + dDischargeMetal + dSuctionMetal +
-                    dPistonSet + dStarterRopeReel + dPressureGauge + dBallValveSwitch + dOilFilter + dNewPaint + dOilTankCap);
+            dAmount = dAirChamber + dSealSet + dDischargeMetal + dSuctionMetal +
+                    dPistonSet + dStarterRopeReel + dPressureGauge + dBallValveSwitch + dOilFilter;
 
         } else {
-            dAirChamber = Double.parseDouble(priceAirChamber);
+           /* dAirChamber = Double.parseDouble(priceAirChamber);
             dSealSet = Double.parseDouble(priceSealSet);
             dAdjustSet = Double.parseDouble(priceAdjustSet);
             dDischargeMetal = Double.parseDouble(priceDischargeMetal);
@@ -136,7 +135,7 @@ public class SubmitEstimateTM31 extends AppCompatActivity {
 
             //Estimate price.
             dAmount = 4400 - (dAirChamber + dSealSet + dAdjustSet + dDischargeMetal + dSuctionMetal +
-                    dPistonSet + dStarterRopeReel + dPressureGauge + dBallValveSwitch + dOilFilter + dNewPaint + dOilTankCap);
+                    dPistonSet + dStarterRopeReel + dPressureGauge + dBallValveSwitch + dOilFilter + dNewPaint + dOilTankCap);*/
         }
 
     }
@@ -159,70 +158,70 @@ public class SubmitEstimateTM31 extends AppCompatActivity {
 
         //Compare data from SQLite.
         if (idxEngine == 0) {
-            if (idSelectedList.get(1) == 1) {
+            if (idSelectedList.get(0) == 1) {
                 priceAirChamber = strPartPrice[0];
             } else {
                 priceAirChamber = "0.0";
             }
 
-            if (idSelectedList.get(2) == 1) {
+            if (idSelectedList.get(1) == 1) {
                 priceSealSet = strPartPrice[1];
             } else {
                 priceSealSet = "0.0";
             }
 
-            if (idSelectedList.get(3) == 1) {
+            /*if (idSelectedList.get(3) == 1) {
                 priceAdjustSet = strPartPrice[2];
             } else if (idSelectedList.get(3) == 2) {
                 priceAdjustSet = "125";
             } else {
                 priceAdjustSet = "0.0";
-            }
+            }*/
 
             // 3 choices
-            if (idSelectedList.get(4) == 1) {
+            if (idSelectedList.get(2) == 1) {
                 priceDischargeMetal = strPartPrice[3];
             } else {
                 priceDischargeMetal = "0.0";
             }
 
-            if (idSelectedList.get(5) == 1) {
+            if (idSelectedList.get(3) == 1) {
                 priceSuctionMetal = strPartPrice[4];
             } else {
                 priceSuctionMetal = "0.0";
             }
 
-            if (idSelectedList.get(6) == 1) {
+            if (idSelectedList.get(4) == 1) {
                 pricePistonSet = strPartPrice[5];
             } else {
                 pricePistonSet = "0.0";
             }
 
-            if (idSelectedList.get(7) == 1) {
+            if (idSelectedList.get(5) == 1) {
                 priceStarterRopeReel = strPartPrice[6];
             } else {
                 priceStarterRopeReel = "0.0";
             }
 
-            if (idSelectedList.get(8) == 1) {
+            if (idSelectedList.get(6) == 1) {
                 pricePressureGauge = strPartPrice[7];
             } else {
                 pricePressureGauge = "0.0";
             }
 
-            if (idSelectedList.get(9) == 1) {
+            if (idSelectedList.get(7) == 1) {
                 priceBallValveSwitch = strPartPrice[8];
             } else {
                 priceBallValveSwitch = "0.0";
             }
 
-            if (idSelectedList.get(10) == 1) {
+            if (idSelectedList.get(8) == 1) {
                 priceOilFilter = strPartPrice[9];
             } else {
                 priceOilFilter = "0.0";
             }
 
-            if (idSelectedList.get(11) == 1) {
+            /*if (idSelectedList.get(11) == 1) {
                 priceNewPaint = strPartPrice[10];
             } else {
                 priceNewPaint = "0.0";
@@ -232,12 +231,12 @@ public class SubmitEstimateTM31 extends AppCompatActivity {
                 priceOilTankCap = strPartPrice[11];
             } else {
                 priceOilTankCap = "0.0";
-            }
+            }*/
 
 
         } else {
 
-            if (idSelectedList.get(1) == 1) {
+           /* if (idSelectedList.get(1) == 1) {
                 priceAirChamber = strPartPrice[0];
             } else {
                 priceAirChamber = "0.0";
@@ -309,7 +308,7 @@ public class SubmitEstimateTM31 extends AppCompatActivity {
                 priceOilTankCap = strPartPrice[11];
             } else {
                 priceOilTankCap = "0.0";
-            }
+            }*/
 
 
         }

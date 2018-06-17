@@ -52,8 +52,28 @@ public class EstimateTM31 extends AppCompatActivity {
         setContentView(R.layout.activity_estimate_tm31);
 
         bindWidget();
-        hideRadioGroup();
-        onClickListener();
+
+        rdgCheckEngine.setVisibility(View.GONE);
+        rdg1.setVisibility(View.VISIBLE);
+        rdg2.setVisibility(View.GONE);
+        rdg3.setVisibility(View.VISIBLE);//ตัวตั้งโปโล
+        rdg4.setVisibility(View.VISIBLE);
+        rdg5.setVisibility(View.VISIBLE);
+        rdg6.setVisibility(View.VISIBLE);
+        rdg7.setVisibility(View.VISIBLE);
+        rdg8.setVisibility(View.VISIBLE);
+        rdg9.setVisibility(View.VISIBLE);
+        rdg10.setVisibility(View.VISIBLE);
+        rdg11.setVisibility(View.GONE);
+        rdg12.setVisibility(View.GONE);
+
+
+        layoutButtonGroup.setVisibility(View.VISIBLE);
+        idxSelectedEngine = 0;
+        setDefaultSelect(0);
+
+        /*hideRadioGroup();
+        onClickListener();*/
 
     }
 
@@ -63,7 +83,7 @@ public class EstimateTM31 extends AppCompatActivity {
             public void onClick(View view) {
                 rdbEngineFalse.setChecked(false);
                 rdg1.setVisibility(View.VISIBLE);
-                rdg2.setVisibility(View.VISIBLE);
+                rdg2.setVisibility(View.GONE);
                 rdg3.setVisibility(View.VISIBLE);
                 rdg4.setVisibility(View.VISIBLE);
                 rdg5.setVisibility(View.VISIBLE);
@@ -72,8 +92,8 @@ public class EstimateTM31 extends AppCompatActivity {
                 rdg8.setVisibility(View.VISIBLE);
                 rdg9.setVisibility(View.VISIBLE);
                 rdg10.setVisibility(View.VISIBLE);
-                rdg11.setVisibility(View.VISIBLE);
-                rdg12.setVisibility(View.VISIBLE);
+                rdg11.setVisibility(View.GONE);
+                rdg12.setVisibility(View.GONE);
 
 
                 layoutButtonGroup.setVisibility(View.VISIBLE);
@@ -184,8 +204,8 @@ public class EstimateTM31 extends AppCompatActivity {
         //Get id and text from RadioButton.
         idSelectedEngine = rdgCheckEngine.getCheckedRadioButtonId();
         rdbSelectedEngine = (RadioButton) findViewById(idSelectedEngine);
-        arrSelectedID.add(idxSelectedEngine = rdgCheckEngine.indexOfChild(rdbSelectedEngine));
-        arrNameList.add(rdbSelectedEngine.getText().toString());
+        /*arrSelectedID.add(0);
+        arrNameList.add("ไม่ต้องเช็ค");*/
 //        Check can start or not. 0 = The engine can starts, 1 = The engine can't starts.
         if (idxSelectedEngine == 0) {
 
@@ -196,10 +216,10 @@ public class EstimateTM31 extends AppCompatActivity {
             arrNameList.add(rdbSelectedAirChamber.getText().toString());
 
             /*No2 = ลูกยางชุด*/
-            idSelectedSealSet = rdg2.getCheckedRadioButtonId();
+            /*idSelectedSealSet = rdg2.getCheckedRadioButtonId();
             rdbSelectedSealSet = (RadioButton) findViewById(idSelectedSealSet);
             arrSelectedID.add(idxSelectedSealSet = rdg2.indexOfChild(rdbSelectedSealSet));
-            arrNameList.add(rdbSelectedSealSet.getText().toString());
+            arrNameList.add(rdbSelectedSealSet.getText().toString());*/
 
             /*No3 = ตัวตั้งโปโล*/
             idSelectedAdjustSet = rdg3.getCheckedRadioButtonId();
@@ -251,91 +271,91 @@ public class EstimateTM31 extends AppCompatActivity {
 
 
             /*No11 = ทำสี */
-            idSelectedNewPaint = rdg11.getCheckedRadioButtonId();
+            /*idSelectedNewPaint = rdg11.getCheckedRadioButtonId();
             rdbSelectedNewPaint = (RadioButton) findViewById(idSelectedNewPaint);
             arrSelectedID.add(idxSelectedNewPaint = rdg11.indexOfChild(rdbSelectedNewPaint));
             arrNameList.add(rdbSelectedNewPaint.getText().toString());
 
-            /*No12 = ฝาถังน้ำมันเครื่อง */
+            *//*No12 = ฝาถังน้ำมันเครื่อง *//*
             idSelectedOilTankCap = rdg12.getCheckedRadioButtonId();
             rdbSelectedOilTankCap = (RadioButton) findViewById(idSelectedOilTankCap);
             arrSelectedID.add(idxSelectedOilTankCap = rdg12.indexOfChild(rdbSelectedOilTankCap));
-            arrNameList.add(rdbSelectedOilTankCap.getText().toString());
+            arrNameList.add(rdbSelectedOilTankCap.getText().toString());*/
 
 
         } else {
             /*No1 = หม้อลม*/
-            idSelectedAirChamber = rdg1.getCheckedRadioButtonId();
+           /* idSelectedAirChamber = rdg1.getCheckedRadioButtonId();
             rdbSelectedAirChamber = (RadioButton) findViewById(idSelectedAirChamber);
             arrSelectedID.add(idxSelectedAirChamber = rdg1.indexOfChild(rdbSelectedAirChamber));
             arrNameList.add(rdbSelectedAirChamber.getText().toString());
 
-            /*No2 = ลูกยางชุด*/
+            *//*No2 = ลูกยางชุด*//*
             idSelectedSealSet = rdg2.getCheckedRadioButtonId();
             rdbSelectedSealSet = (RadioButton) findViewById(idSelectedSealSet);
             arrSelectedID.add(idxSelectedSealSet = rdg2.indexOfChild(rdbSelectedSealSet));
             arrNameList.add(rdbSelectedSealSet.getText().toString());
 
-            /*No3 = ตัวตั้งโปโล*/
+            *//*No3 = ตัวตั้งโปโล*//*
             idSelectedAdjustSet = rdg3.getCheckedRadioButtonId();
             rdbSelectedAdjustSet = (RadioButton) findViewById(idSelectedAdjustSet);
             arrSelectedID.add(idxSelectedAdjustSet = rdg3.indexOfChild(rdbSelectedAdjustSet));
             arrNameList.add(rdbSelectedAdjustSet.getText().toString());
 
-            /*No4 = ท่อนดูด*/
+            *//*No4 = ท่อนดูด*//*
             idSelectedDischargeMetal = rdg4.getCheckedRadioButtonId();
             rdbSelectedDischargeMetal = (RadioButton) findViewById(idSelectedDischargeMetal);
             arrSelectedID.add(idxSelectedDischargeMetal = rdg4.indexOfChild(rdbSelectedDischargeMetal));
             arrNameList.add(rdbSelectedDischargeMetal.getText().toString());
 
-            /*No5 = ท่อนส่ง */
+            *//*No5 = ท่อนส่ง *//*
             idSelectedSuctionMetal = rdg5.getCheckedRadioButtonId();
             rdbSelectedSuctionMetal = (RadioButton) findViewById(idSelectedSuctionMetal);
             arrSelectedID.add(idxSelectedSuctionMetal = rdg5.indexOfChild(rdbSelectedSuctionMetal));
             arrNameList.add(rdbSelectedSuctionMetal.getText().toString());
 
-            /*No6 = ลูกสูบ */
+            *//*No6 = ลูกสูบ *//*
             idSelectedPistonSet = rdg6.getCheckedRadioButtonId();
             rdbSelectedPistonSet = (RadioButton) findViewById(idSelectedPistonSet);
             arrSelectedID.add(idxSelectedPistonSet = rdg6.indexOfChild(rdbSelectedPistonSet));
             arrNameList.add(rdbSelectedPistonSet.getText().toString());
 
-            /*No7 = มู่เล่ย์*/
+            *//*No7 = มู่เล่ย์*//*
             idSelectedStarterRopeReel = rdg7.getCheckedRadioButtonId();
             rdbSelectedStarterRopeReel = (RadioButton) findViewById(idSelectedStarterRopeReel);
             arrSelectedID.add(idxSelectedStarterRopeReel = rdg7.indexOfChild(rdbSelectedStarterRopeReel));
             arrNameList.add(rdbSelectedStarterRopeReel.getText().toString());
 
-            /*No8 = เกย์วัดความดัน*/
+            *//*No8 = เกย์วัดความดัน*//*
             idSelectedPressureGauge = rdg8.getCheckedRadioButtonId();
             rdbSelectedPressureGauge = (RadioButton) findViewById(idSelectedPressureGauge);
             arrSelectedID.add(idxSelectedPressureGauge = rdg8.indexOfChild(rdbSelectedPressureGauge));
             arrNameList.add(rdbSelectedPressureGauge.getText().toString());
 
-            /*No9 = ก๊อกน้ำ*/
+            *//*No9 = ก๊อกน้ำ*//*
             idSelectedBallValveSwitch = rdg9.getCheckedRadioButtonId();
             rdbSelectedBallValveSwitch = (RadioButton) findViewById(idSelectedBallValveSwitch);
             arrSelectedID.add(idxSelectedBallValveSwitch = rdg9.indexOfChild(rdbSelectedBallValveSwitch));
             arrNameList.add(rdbSelectedBallValveSwitch.getText().toString());
 
-             /*No10 = ฝาถังน้ำมันเครื่อง */
+             *//*No10 = ฝาถังน้ำมันเครื่อง *//*
             idSelectedOilTankCap = rdg10.getCheckedRadioButtonId();
             rdbSelectedOilTankCap = (RadioButton) findViewById(idSelectedOilTankCap);
             arrSelectedID.add(idxSelectedOilTankCap = rdg10.indexOfChild(rdbSelectedOilTankCap));
             arrNameList.add(rdbSelectedOilTankCap.getText().toString());
 
 
-            /*No11 = ทำสี */
+            *//*No11 = ทำสี *//*
             idSelectedNewPaint = rdg11.getCheckedRadioButtonId();
             rdbSelectedNewPaint = (RadioButton) findViewById(idSelectedNewPaint);
             arrSelectedID.add(idxSelectedNewPaint = rdg11.indexOfChild(rdbSelectedNewPaint));
             arrNameList.add(rdbSelectedNewPaint.getText().toString());
 
-            /*No12 = ฝาถังน้ำมันเครื่อง */
+            *//*No12 = ฝาถังน้ำมันเครื่อง *//*
             idSelectedOilTankCap = rdg12.getCheckedRadioButtonId();
             rdbSelectedOilTankCap = (RadioButton) findViewById(idSelectedOilTankCap);
             arrSelectedID.add(idxSelectedOilTankCap = rdg12.indexOfChild(rdbSelectedOilTankCap));
-            arrNameList.add(rdbSelectedOilTankCap.getText().toString());
+            arrNameList.add(rdbSelectedOilTankCap.getText().toString());*/
         }
 
 
@@ -367,7 +387,7 @@ public class EstimateTM31 extends AppCompatActivity {
 
         } else {
             //Can't start.
-            rdb1_1.setChecked(true);
+            /*rdb1_1.setChecked(true);
             rdb2_1.setChecked(true);
             rdb3_1.setChecked(true);
             rdb4_1.setChecked(true);
@@ -378,7 +398,7 @@ public class EstimateTM31 extends AppCompatActivity {
             rdb9_1.setChecked(true);
             rdb10_1.setChecked(true);
             rdb11_1.setChecked(true);
-            rdb12_1.setChecked(true);
+            rdb12_1.setChecked(true);*/
 
 
         }
