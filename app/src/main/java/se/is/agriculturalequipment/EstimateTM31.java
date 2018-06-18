@@ -485,6 +485,8 @@ public class EstimateTM31 extends AppCompatActivity {
                         "2.\tไม่เปลี่ยน คือ สามารถเปิดปิดน้ำได้ , ไม่แตกหักเสียหาย\n");
                 break;
             case R.id.txtViewOilFilter:
+                mImage.setImageResource(R.drawable.tm31_fueltankcap_change);
+                mImageL.setImageResource(R.drawable.tm31_fueltankcap_not);
                 mText.setVisibility(view.INVISIBLE);
                 mText.setText("ฝาปิดน้ำมันเครื่อง พิจารณา 2 แบบ คือ\n" +
                         "1.\tเปลี่ยนฝาน้ำมันเครื่อง คือ ไม่สามารถปิดฝาให้สนิท มีน้ำมันรัว\n" +
