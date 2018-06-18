@@ -45,10 +45,10 @@ public class HistoryT200List extends AppCompatActivity {
         listview_t200.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intentEditGX35 = new Intent(HistoryT200List.this, SingleItemGX35.class);
-                intentEditGX35.putExtra("editGX35", (Serializable) adapterHistoryT200.getItem(position));
-                intentEditGX35.putExtra("table_name", "t200");
-                startActivity(intentEditGX35);
+                Intent intentEditT200 = new Intent(HistoryT200List.this, SingleItemGX35.class);
+                intentEditT200.putExtra("editGX35", (Serializable) adapterHistoryT200.getItem(position));
+                intentEditT200.putExtra("table_name", "t200");
+                startActivity(intentEditT200);
             }
         });
 
@@ -68,6 +68,7 @@ public class HistoryT200List extends AppCompatActivity {
                         t200.setIdentification_no(obj.getString("identification_no"));
                         t200.setName(obj.getString("name"));
                         t200.setId_buy_gx35(obj.getString("id_buy_t200"));
+                        t200.setEngineStatus(obj.getString("engineStatus"));
                         t200.setStarter(obj.getString("starter"));
                         t200.setFuelTank(obj.getString("fuelTank"));
                         t200.setControlSwitch(obj.getString("controlSwitch"));
@@ -90,7 +91,7 @@ public class HistoryT200List extends AppCompatActivity {
                         t200.setBuyDate(obj.getString("buyDate"));
                         t200.setAmount(obj.getString("amount"));
 
-                        Log.d("Buy date: ", t200.getBuyDate());
+                        //Log.d("Buy date: ", t200.getBuyDate());
                         t200List.add(t200);
 
                     } catch (JSONException e) {

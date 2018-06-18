@@ -3,6 +3,7 @@ package se.is.agriculturalequipment;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -15,10 +16,10 @@ public class SubmitEstimateT200 extends AppCompatActivity {
     private String priceStarter, priceFuelTank, priceControlSwitch, priceBrushCutterBlade, priceAirFilter,
             priceCarburetor, priceCylinderSet, priceBallValveSwitchOil, priceMuffler, priceGearDiver,
             priceMainPipe, priceSwitchOnOff, priceCoil, priceFuelTankCap, priceNewPaint, priceShaft,
-            priceOilTankCap;
+            priceOilTankCap, priceSparkPlug;
     private Double dStarter, dFuelTank, dControlSwitch, dBrushCutterBlade, dAirFilter, dCarburetor,
             dCylinderSet, dBallValveSwitchOil, dMuffler, dGearDiver, dMainPipe, dSwitchOnOff, dCoil,
-            dFuelTankCap, dNewPaint, dShaft, dOilTankCap;
+            dFuelTankCap, dNewPaint, dShaft, dOilTankCap, dSparkPlug;
     private Double dAmount = 0.0;
     private TextView txtAmount;
     private ListView listViewEstimatedT200;
@@ -71,6 +72,7 @@ public class SubmitEstimateT200 extends AppCompatActivity {
                     //dNewPaint.toString(),
                     dShaft.toString(),
                     dOilTankCap.toString(),
+                    dSparkPlug.toString()
 
             };
 
@@ -90,6 +92,7 @@ public class SubmitEstimateT200 extends AppCompatActivity {
                     //dFuelTankCap.toString(),
                     //dNewPaint.toString(),
                     dShaft.toString(),
+                    dSparkPlug.toString()
 
             };
 
@@ -127,11 +130,12 @@ public class SubmitEstimateT200 extends AppCompatActivity {
 //            dNewPaint = Double.parseDouble(priceNewPaint);
             dShaft = Double.parseDouble(priceShaft);
             dOilTankCap = Double.parseDouble(priceOilTankCap);
+            dSparkPlug = Double.parseDouble(priceSparkPlug);
 
             //Estimate price.
             dAmount = 4400 - (dStarter + dFuelTank + dControlSwitch + dBrushCutterBlade + dAirFilter +
                     dCarburetor + dCylinderSet + dBallValveSwitchOil + dMuffler + dGearDiver + dMainPipe +
-                    dCoil + dShaft + dOilTankCap);
+                    dCoil + dShaft + dOilTankCap + dSparkPlug);
 
         } else {
             dStarter = Double.parseDouble(priceStarter);
@@ -147,11 +151,12 @@ public class SubmitEstimateT200 extends AppCompatActivity {
 //            dFuelTankCap = Double.parseDouble(priceFuelTankCap);
 //            dNewPaint = Double.parseDouble(priceNewPaint);
             dShaft = Double.parseDouble(priceStarter);
+            dSparkPlug = Double.parseDouble(priceSparkPlug);
 
 
             //Estimate price.
             dAmount = 2640 - (dStarter + dFuelTank + dControlSwitch + dBrushCutterBlade + dAirFilter +
-                    dBallValveSwitchOil + dMuffler + dGearDiver + dMainPipe + dShaft);
+                    dBallValveSwitchOil + dMuffler + dGearDiver + dMainPipe + dShaft + dSparkPlug);
         }
 
     }
@@ -172,6 +177,9 @@ public class SubmitEstimateT200 extends AppCompatActivity {
         TableT200 objTableT200 = new TableT200(this);
         String[] strPartPrice = objTableT200.readPartPrice();
 
+        for (int i = 0; i<strPartPrice.length; i++) {
+            Log.d("Query string", i + " : " + strPartPrice[i]);
+        }
         //Compare data from SQLite.
         if (idxEngine == 0) {
             if (idSelectedList.get(1) == 1) {
@@ -284,6 +292,11 @@ public class SubmitEstimateT200 extends AppCompatActivity {
                 priceOilTankCap = "0.0";
             }
 
+            if (idSelectedList.get(15) == 1) {
+                priceSparkPlug = strPartPrice[17];
+            } else {
+                priceSparkPlug = "0.0";
+            }
 
         } else {
 
@@ -376,6 +389,8 @@ public class SubmitEstimateT200 extends AppCompatActivity {
             } else {
                 priceOilTankCap = "0.0";
             }*/
+
+
 
 
         }

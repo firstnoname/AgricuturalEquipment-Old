@@ -40,6 +40,7 @@ public class BackgroundTaskTM31 extends AsyncTask<String, Void, String> {
             String idNo = params[1];
             String name = params[2];
             String amount = params[3];
+
             String imageName = params[4];
             String encodedImage = params[5];
             String strName = params[6];

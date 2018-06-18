@@ -211,28 +211,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtBrushCutterBlade" />
 
             <TextView
-                android:id="@+id/textView61"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="สถานะคาร์บูเรเตอร์ :"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView60" />
-
-            <TextView
-                android:id="@+id/txtCarburetor"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="TextView"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView61"
-                app:layout_constraintTop_toBottomOf="@+id/txtAirFilter" />
-
-            <TextView
                 android:id="@+id/textView64"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
@@ -240,7 +218,7 @@
                 android:layout_marginTop="8dp"
                 android:text="สถานะเสื้อสูบ :"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView61" />
+                app:layout_constraintTop_toBottomOf="@+id/textView60" />
 
             <TextView
                 android:id="@+id/txtCylinderSet"
@@ -253,7 +231,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/textView64"
-                app:layout_constraintTop_toBottomOf="@+id/txtCarburetor" />
+                app:layout_constraintTop_toBottomOf="@+id/txtAirFilter" />
 
             <TextView
                 android:id="@+id/textView75"
@@ -388,50 +366,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtSwitchOnOff" />
 
             <TextView
-                android:id="@+id/textView81"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="สถานะฝาถังน้ำมัน :"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView80" />
-
-            <TextView
-                android:id="@+id/txtFuelTankCap"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="TextView"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView81"
-                app:layout_constraintTop_toBottomOf="@+id/txtCoil" />
-
-            <TextView
-                android:id="@+id/textView82"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="ทำสีใหม่ :"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView81" />
-
-            <TextView
-                android:id="@+id/txtNewPaint"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="TextView"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView82"
-                app:layout_constraintTop_toBottomOf="@+id/txtFuelTankCap" />
-
-            <TextView
                 android:id="@+id/textView83"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
@@ -439,7 +373,7 @@
                 android:layout_marginTop="8dp"
                 android:text="สถานะแกนเพลา :"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView82" />
+                app:layout_constraintTop_toBottomOf="@+id/textView80" />
 
             <TextView
                 android:id="@+id/txtShaft"
@@ -451,7 +385,7 @@
                 android:text="TextView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView83"
-                app:layout_constraintTop_toBottomOf="@+id/txtNewPaint" />
+                app:layout_constraintTop_toBottomOf="@+id/txtCoil" />
 
             <TextView
                 android:id="@+id/textView84"

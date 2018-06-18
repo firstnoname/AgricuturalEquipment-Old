@@ -701,6 +701,40 @@
 
             <!--                No 17              -->
 
+            <RadioGroup
+                android:id="@+id/no18"
+                android:layout_below="@+id/no17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="false"
+                android:layout_centerHorizontal="false">
+
+                <TextView
+                    android:id="@+id/txtViewSparkPlug"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="ปลั้คหัวเทียน (Spark Plug)"
+                    android:onClick="txtViewClickedT200"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/radioBtn18_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="เปลี่ยนปลั้คหัวเทียน"></RadioButton>
+
+                <RadioButton
+                    android:id="@+id/radioBtn18_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="ไม่เปลี่ยนปลั้คหัวเทียน"></RadioButton>
+
+            </RadioGroup>
+
+            <!--                No 18              -->
+
 
 
             <LinearLayout

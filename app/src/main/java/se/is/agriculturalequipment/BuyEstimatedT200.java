@@ -66,6 +66,7 @@ public class BuyEstimatedT200 extends AppCompatActivity {
         strName = intent.getStringArrayExtra("partName");
         partName = Arrays.toString(strName);
 
+        Log.d("partName = ", partName);
     }
 
     private void bindWidget() {

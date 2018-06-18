@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class EstimateT200 extends AppCompatActivity {
     private RadioGroup rdgCheckEngine, rdg1, rdg2, rdg3, rdg4, rdg5, rdg6, rdg7, rdg8, rdg9, rdg10,
-            rdg11, rdg12, rdg13, rdg14, rdg15, rdg16, rdg17;
+            rdg11, rdg12, rdg13, rdg14, rdg15, rdg16, rdg17, rdg18;
 
     private RadioButton rdbEngineTrue, rdbEngineFalse, rdb1_1, rdb1_2, rdb1_3,
             rdb2_1, rdb2_2,
@@ -34,22 +34,23 @@ public class EstimateT200 extends AppCompatActivity {
             rdb14_1, rdb14_2,
             rdb15_1, rdb15_2,
             rdb16_1, rdb16_2,
-            rdb17_1, rdb17_2;
+            rdb17_1, rdb17_2,
+            rdb18_1, rdb18_2;
 
     private RadioButton rdbSelectedEngine, rdbSelectedStarter, rdbSelectedFuelTank, rdbSelectedControlSwitch,
             rdbSelectedBrushCutterBlade, rdbSelectedAirFilter, rdbSelectedCarburetor, rdbSelectedCylinderSet, rdbSelectedBallValveSwitchOil,
             rdbSelectedMuffler, rdbSelectedGearDiver, rdbSelectedMainPipe, rdbSelectedSwitchOnOff, rdbSelectedCoil,
-            rdbSelectedFuelTankCap, rdbSelectedNewPaint, rdbSelectedShaft, rdbSelectedOilTankCap;
+            rdbSelectedFuelTankCap, rdbSelectedNewPaint, rdbSelectedShaft, rdbSelectedOilTankCap, rdbSelectedSparkPlug;
 
     private Integer idSelectedEngine, idSelectedStarter, idSelectedFuelTank, idSelectedControlSwitch,
             idSelectedBrushCutterBlade, idSelectedAirFilter, idSelectedCarburetor, idSelectedCylinderSet, idSelectedBallValveSwitchOil,
             idSelectedMuffler, idSelectedGearDiver, idSelectedMainPipe, idSelectedSwitchOnOff, idSelectedCoil,
-            idSelectedFuelTankCap, idSelectedNewPaint, idSelectedShaft, idSelectedOilTankCap;
+            idSelectedFuelTankCap, idSelectedNewPaint, idSelectedShaft, idSelectedOilTankCap, idSelectedSparkPlug;
 
     private Integer idxSelectedEngine, idxSelectedStarter, idxSelectedFuelTank, idxSelectedControlSwitch,
             idxSelectedBrushCutterBlade, idxSelectedAirFilter, idxSelectedCarburetor, idxSelectedCylinderSet, idxSelectedBallValveSwitchOil,
             idxSelectedMuffler, idxSelectedGearDiver, idxSelectedMainPipe, idxSelectedSwitchOnOff, idxSelectedCoil,
-            idxSelectedFuelTankCap, idxSelectedNewPaint, idxSelectedShaft, idxSelectedOilTankCap;
+            idxSelectedFuelTankCap, idxSelectedNewPaint, idxSelectedShaft, idxSelectedOilTankCap, idxSelectedSparkPlug;
 
     private LinearLayout layoutButtonGroup;
 
@@ -83,6 +84,8 @@ public class EstimateT200 extends AppCompatActivity {
                 rdg15.setVisibility(View.GONE);
                 rdg16.setVisibility(View.VISIBLE);
                 rdg17.setVisibility(View.VISIBLE);
+                rdg18.setVisibility(View.VISIBLE);
+
 
                 layoutButtonGroup.setVisibility(View.VISIBLE);
 
@@ -109,8 +112,9 @@ public class EstimateT200 extends AppCompatActivity {
                 rdg13.setVisibility(View.GONE);
                 rdg14.setVisibility(View.GONE);
                 rdg15.setVisibility(View.GONE);
-                rdg16.setVisibility(View.VISIBLE);
+                rdg16.setVisibility(View.GONE);
                 rdg17.setVisibility(View.GONE);
+                rdg18.setVisibility(View.VISIBLE);
 
                 layoutButtonGroup.setVisibility(View.VISIBLE);
 
@@ -138,6 +142,7 @@ public class EstimateT200 extends AppCompatActivity {
         rdg15 = (RadioGroup) findViewById(R.id.no15);
         rdg16 = (RadioGroup) findViewById(R.id.no16);
         rdg17 = (RadioGroup) findViewById(R.id.no17);
+        rdg18 = (RadioGroup) findViewById(R.id.no18);
 
         rdbEngineFalse = (RadioButton) findViewById(R.id.radioBtnEngineFalse);
         rdbEngineTrue = (RadioButton) findViewById(R.id.radioBtnEngineTrue);
@@ -179,6 +184,8 @@ public class EstimateT200 extends AppCompatActivity {
         rdb16_2 = (RadioButton) findViewById(R.id.radioBtn16_2);
         rdb17_1 = (RadioButton) findViewById(R.id.radioBtn17_1);
         rdb17_2 = (RadioButton) findViewById(R.id.radioBtn17_2);
+        rdb18_1 = (RadioButton) findViewById(R.id.radioBtn18_1);
+        rdb18_2 = (RadioButton) findViewById(R.id.radioBtn18_2);
 
 
         layoutButtonGroup = (LinearLayout) findViewById(R.id.layoutNavigation);
@@ -202,6 +209,7 @@ public class EstimateT200 extends AppCompatActivity {
         rdg15.setVisibility(View.GONE);
         rdg16.setVisibility(View.GONE);
         rdg17.setVisibility(View.GONE);
+        rdg18.setVisibility(View.GONE);
 
 
         layoutButtonGroup.setVisibility(View.GONE);
@@ -323,6 +331,12 @@ public class EstimateT200 extends AppCompatActivity {
             arrSelectedID.add(idxSelectedOilTankCap = rdg17.indexOfChild(rdbSelectedOilTankCap));
             arrNameList.add(rdbSelectedOilTankCap.getText().toString());
 
+            /*No18 = ปลั้คหัวเทียน*/
+            idSelectedSparkPlug = rdg18.getCheckedRadioButtonId();
+            rdbSelectedSparkPlug = (RadioButton) findViewById(idSelectedSparkPlug);
+            arrSelectedID.add(idxSelectedSparkPlug = rdg18.indexOfChild(rdbSelectedSparkPlug));
+            arrNameList.add(rdbSelectedSparkPlug.getText().toString());
+
 
         } else {
             /*No1 = จานกระตุกชุด*/
@@ -409,6 +423,12 @@ public class EstimateT200 extends AppCompatActivity {
             rdbSelectedOilTankCap = (RadioButton) findViewById(idSelectedOilTankCap);
             arrSelectedID.add(idxSelectedOilTankCap = rdg17.indexOfChild(rdbSelectedOilTankCap));
             arrNameList.add(rdbSelectedOilTankCap.getText().toString());*/
+
+            /*No18 = ปลั้คหัวเทียน*/
+            idSelectedSparkPlug = rdg18.getCheckedRadioButtonId();
+            rdbSelectedSparkPlug = (RadioButton) findViewById(idSelectedSparkPlug);
+            arrSelectedID.add(idxSelectedSparkPlug = rdg18.indexOfChild(rdbSelectedSparkPlug));
+            arrNameList.add(rdbSelectedSparkPlug.getText().toString());
         }
 
 
@@ -442,6 +462,7 @@ public class EstimateT200 extends AppCompatActivity {
             rdb15_1.setChecked(true);
             rdb16_1.setChecked(true);
             rdb17_1.setChecked(true);
+            rdb18_1.setChecked(true);
         } else {
             //Can't start.
             rdb1_1.setChecked(true);
@@ -458,6 +479,7 @@ public class EstimateT200 extends AppCompatActivity {
             //rdb15_1.setChecked(true);
             rdb16_1.setChecked(true);
             //rdb17_1.setChecked(true);
+            rdb18_1.setChecked(true);
         }
 
     }
@@ -587,6 +609,8 @@ public class EstimateT200 extends AppCompatActivity {
                 mText.setVisibility(view.INVISIBLE);
                 mText.setText("ฝาถังน้ำมันเครื่อง พิจารณา 2 แบบ คือพิจารณาว่า ปิดแล้วน้ำมันรั่วออกจากตัวถังหรือไม่ รั่วจะต้องเปลี่ยน ปิดแล้วไม่มีการรั่วไม่ต้องทำการเปลี่ยน");
                 break;
+            case  R.id.txtViewSparkPlug:
+
         }
 
         mBuilder.setView(mView);

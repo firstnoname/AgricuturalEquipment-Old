@@ -31,7 +31,7 @@ public class SingleItemGX35 extends AppCompatActivity {
         TextView txtBrushCutterBlade = (TextView) findViewById(R.id.txtBrushCutterBlade);
         TextView txtFuelTank = (TextView) findViewById(R.id.txtFuelTank);
         TextView txtAirFilter = (TextView) findViewById(R.id.txtAirFilter);
-        TextView txtCarburetor = (TextView) findViewById(R.id.txtCarburetor);
+//        TextView txtCarburetor = (TextView) findViewById(R.id.txtCarburetor);
         TextView txtCylinderSet = (TextView) findViewById(R.id.txtCylinderSet);
         TextView txtBallValveSwitchOil = (TextView) findViewById(R.id.txtBallValveSwitchOil);
         TextView txtMuffler = (TextView) findViewById(R.id.txtMuffler);
@@ -39,8 +39,8 @@ public class SingleItemGX35 extends AppCompatActivity {
         TextView txtMainPipe = (TextView) findViewById(R.id.txtMainPipe);
         TextView txtSwitchOnOff = (TextView) findViewById(R.id.txtSwitchOnOff);
         TextView txtCoil = (TextView) findViewById(R.id.txtCoil);
-        TextView txtFuelTankCap = (TextView) findViewById(R.id.txtFuelTankCap);
-        TextView txtNewPaint = (TextView) findViewById(R.id.txtNewPaint);
+//        TextView txtFuelTankCap = (TextView) findViewById(R.id.txtFuelTankCap);
+//        TextView txtNewPaint = (TextView) findViewById(R.id.txtNewPaint);
         TextView txtShaft = (TextView) findViewById(R.id.txtShaft);
         TextView txtOilTankCap = (TextView) findViewById(R.id.txtOilTankCap);
         TextView txtSparkPlug = (TextView) findViewById(R.id.txtSparkPlug);
@@ -58,7 +58,7 @@ public class SingleItemGX35 extends AppCompatActivity {
         txtBrushCutterBlade.setText(edtGx35.getBrushCutterBlade());
         txtFuelTank.setText(edtGx35.getFuelTank());
         txtAirFilter.setText(edtGx35.getAirFilter());
-        txtCarburetor.setText(edtGx35.getCarburetor());
+//        txtCarburetor.setText(edtGx35.getCarburetor());
         txtCylinderSet.setText(edtGx35.getCylinderSet());
         txtBallValveSwitchOil.setText(edtGx35.getBallValveSwitchOil());
         txtMuffler.setText(edtGx35.getMuffler());
@@ -66,8 +66,8 @@ public class SingleItemGX35 extends AppCompatActivity {
         txtMainPipe.setText(edtGx35.getMainPipe());
         txtSwitchOnOff.setText(edtGx35.getSwitchOnOff());
         txtCoil.setText(edtGx35.getCoil());
-        txtFuelTankCap.setText(edtGx35.getFuelTankCap());
-        txtNewPaint.setText(edtGx35.getNewPaint());
+//        txtFuelTankCap.setText(edtGx35.getFuelTankCap());
+//        txtNewPaint.setText(edtGx35.getNewPaint());
         txtShaft.setText(edtGx35.getShaft());
         txtOilTankCap.setText(edtGx35.getOilTankCap());
         txtSparkPlug.setText(edtGx35.getSparkPlug());
